@@ -24,7 +24,6 @@ struct ExampleViewModel: DynamicHeightCalculable {
         sizingLabel.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
         sizingLabel.lineBreakMode = .byTruncatingTail
         sizingLabel.text = body
-        
         let maxSize = CGSize(width: width, height: .greatestFiniteMagnitude)
         let size = sizingLabel.sizeThatFits(maxSize)
         

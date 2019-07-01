@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint!
     
     private var data: [ExampleModel] = ExampleData.dataSet1
+    var count = 0
     
     private enum Segment: Int {
         case dataSet1 = 0, dataSet2, dataSet3
@@ -33,6 +34,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         
         let edgeInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
         flowLayout.sectionInset = edgeInsets
+        
+        //Padding
+        flowLayout.minimumInteritemSpacing = 8
+        flowLayout.minimumLineSpacing = 16
         
         setCollectionViewHeight(with: data, edgeInsets: flowLayout.sectionInset)
     }
@@ -60,12 +65,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.exampleCellReuseIdentifier, for: indexPath) as! ExampleCell
         let example = data[indexPath.item]
+        
         let viewModel = ExampleViewModel(example: example)
         
         cell.configure(with: viewModel)
         
         return cell
     }
+    
+    
+    
+    
+
     
 
     /*
