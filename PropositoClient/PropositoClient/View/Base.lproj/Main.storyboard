@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XAd-WR-zXe">
-                                <rect key="frame" x="0.0" y="118" width="414" height="200"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="44" y="142" width="370" height="311"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="QDO-c2-7mu"/>
+                                    <constraint firstAttribute="height" constant="311" id="QDO-c2-7mu"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="By1-8B-mOC">
                                     <size key="itemSize" width="50" height="50"/>
@@ -37,11 +37,11 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.69411764705882351" green="0.87058823529411766" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XAd-WR-zXe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ije-aE-4yU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XAd-WR-zXe" secondAttribute="bottom" constant="544" id="WNn-Zg-3XH"/>
-                            <constraint firstItem="XAd-WR-zXe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="Yhf-7Y-fp8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XAd-WR-zXe" secondAttribute="bottom" constant="409" id="Eaw-cN-6gG"/>
+                            <constraint firstItem="XAd-WR-zXe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="Ije-aE-4yU"/>
+                            <constraint firstItem="XAd-WR-zXe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="98" id="Yhf-7Y-fp8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XAd-WR-zXe" secondAttribute="trailing" id="krX-Ue-bS9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -54,6 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="20.758928571428569"/>
         </scene>
     </scenes>
 </document>

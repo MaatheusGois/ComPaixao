@@ -11,12 +11,17 @@ import Foundation
 struct ExampleData {
     
     static let dataSet1 = [
-        ExampleModel(title: "Lorem ipsum", body: "dolor sit amet, consectetur adipiscing elit,"),
-        ExampleModel(title: "sed do eiusmod", body: "tempor incididunt"),
-        ExampleModel(title: "Duis aute", body: "irure dolor in reprehenderit "),
-        ExampleModel(title: "in voluptate", body: nil),
-        ExampleModel(title: "velit esse cillum dolore eu fugiat nulla pariatur.", body: "Excepteur sint"),
-        ExampleModel(title: "occaecat cupidatat", body: "non proident,")
+        ExampleModel(title: "Ivanildo da Silva", body: "Drogas"),
+        ExampleModel(title: "Ivanildo da Silva", body: "Drogas"),
+        ExampleModel(title: "Ivanildo da Silva", body: "Drogas"),
+        ExampleModel(title: "Ivanildo da Silva", body: "Drogas"),
+        ExampleModel(title: "Ivanildo da Silva", body: "Drogas"),
+        ExampleModel(title: "Ivanildo da Silva", body: "Drogas"),
+//        ExampleModel(title: "sed do eiusmod", body: "tempor incididunt"),
+//        ExampleModel(title: "Duis aute", body: "irure dolor in reprehenderit "),
+//        ExampleModel(title: "in voluptate", body: nil),
+//        ExampleModel(title: "velit esse cillum dolore eu fugiat nulla pariatur.", body: "Excepteur sint"),
+//        ExampleModel(title: "occaecat cupidatat", body: "non proident,")
     ]
     
     static let dataSet2 = [

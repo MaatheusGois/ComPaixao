@@ -18,16 +18,44 @@ final class ExampleCell: UICollectionViewCell {
         didSet{
             if self.isSelected
             {
-                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-                self.backgroundColor = UIColor.red
-//                self.tickImageView.isHidden = false
+                
+                
+                let originalTransform = self.transform
+                
+                if(originalTransform.d == 1) {
+       
+                    //TODO
+                    let sizePadding = ((self.frame.size.height * 1.26)/2 - (self.frame.size.height)/2) - 7
+                    
+                    //Set scale
+                    let scaledTransform = originalTransform.scaledBy(x: 1.1, y: 1.26)
+                    //Set translate
+                    let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 0.0, y: sizePadding)
+                    
+                    //Animation
+                    UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseInOut], animations: {
+                        
+                        self.transform = scaledAndTranslatedTransform
+//                        self.backgroundColor = UIColor.red
+                        self.alpha = 1
+                        
+                    })
+                }
+                
+                
             }
             else
             {
-                self.transform = CGAffineTransform.identity
-                self.backgroundColor = UIColor.gray
-//                self.alpha = 0.5
-//                self.tickImageView.isHidden = true
+                
+                UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseInOut], animations: {
+                    
+                    self.transform = CGAffineTransform.identity
+//                    self.backgroundColor = #colorLiteral(red: 0.2274509804, green: 0.2509803922, blue: 0.3529411765, alpha: 1)
+                    self.alpha = 0.5
+                    
+                })
+                
+                
             }
         }
     }
@@ -38,6 +66,9 @@ final class ExampleCell: UICollectionViewCell {
     
     private static let sizingCell = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil).first! as! ExampleCell
     
+    
+    
+    
     public func configure(with viewModel: ExampleViewModel, isSizing: Bool = false) {
         body.text = viewModel.body
         
@@ -46,7 +77,13 @@ final class ExampleCell: UICollectionViewCell {
         }
         
         title.text = viewModel.title
-        layer.cornerRadius = 7.0
+        layer.cornerRadius = 12.0
+        self.backgroundColor = #colorLiteral(red: 0.2274509804, green: 0.2509803922, blue: 0.3529411765, alpha: 1)
+        if(self.transform.d == 1){
+            self.alpha = 0.5
+        }
+        
+        
     }
     
     public static func height(for viewModel: ExampleViewModel, forWidth width: CGFloat) -> CGFloat {
@@ -64,7 +101,8 @@ final class ExampleCell: UICollectionViewCell {
             return Constants.maximumCardHeight
         }
         
-        return size.height
+//        return size.height
+        return 200
     }
     
 }

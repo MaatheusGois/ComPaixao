@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint!
     
     private var data: [ExampleModel] = ExampleData.dataSet1
-    var count = 0
+    var first = false
     
     private enum Segment: Int {
         case dataSet1 = 0, dataSet2, dataSet3
@@ -24,7 +24,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        first = true
         setupCollectioView()
     }
     
@@ -32,11 +32,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         let nib = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
         
-        let edgeInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
+        let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 8)
         flowLayout.sectionInset = edgeInsets
         
         //Padding
-        flowLayout.minimumInteritemSpacing = 8
+        flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 16
         
         setCollectionViewHeight(with: data, edgeInsets: flowLayout.sectionInset)
@@ -58,6 +58,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     // MARK: - UICollectionViewDatasource
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -69,24 +70,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         let viewModel = ExampleViewModel(example: example)
         
         cell.configure(with: viewModel)
+//        if first {
+//            cell.isSelected = true
+//            first = false
+//        } else {
+//            cell.isSelected = false
+//        }
         
         return cell
     }
     
     
-    
-    
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

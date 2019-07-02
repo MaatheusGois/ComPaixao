@@ -27,7 +27,8 @@ struct ExampleViewModel: DynamicHeightCalculable {
         let maxSize = CGSize(width: width, height: .greatestFiniteMagnitude)
         let size = sizingLabel.sizeThatFits(maxSize)
         
-        return size.height
+//        return size.height
+        return 200
     }
     
 }
