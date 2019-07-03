@@ -32,7 +32,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         let nib = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
         
-        let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 8)
+        let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
         flowLayout.sectionInset = edgeInsets
         
         //Padding
@@ -70,15 +70,28 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         let viewModel = ExampleViewModel(example: example)
         
         cell.configure(with: viewModel)
-//        if first {
-//            cell.isSelected = true
-//            first = false
-//        } else {
-//            cell.isSelected = false
-//        }
+
         
+        cell.button.tag = indexPath.row
+        cell.button.addTarget(self,
+                              action: #selector(funcButton),
+                              for: .touchUpInside)
         return cell
     }
+    
+    @objc func funcButton(sender : UIButton){
+        print(sender.tag)
+        guard let image = UIImage(named: "checkUP") else {
+        
+            print("Image Not Found")
+            return
+            
+        }
+        
+        sender.setBackgroundImage(image, for: .normal)
+        
+    }
+    
     
     
 
