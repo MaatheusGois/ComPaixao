@@ -18,5 +18,12 @@ struct ExampleData {
         ExampleModel(title: "Ivanildo da Silva", body: "Drogas", date: nil),
         ExampleModel(title: "Ivanildo da Silva", body: "Drogas", date: nil)
     ]
+    static let dataSet2 = [
+        ExampleModel(title: "Visitação", body: "Ivanildo", date: nil),
+        ExampleModel(title: "Visitação", body: "Ivanildo", date: nil),
+        ExampleModel(title: "Visitação", body: "Ivanildo", date: nil),
+        ExampleModel(title: "Visitação", body: "Ivanildo", date: nil),
+        ExampleModel(title: "Visitação", body: "Ivanildo", date: nil),
+    ]
     
 }

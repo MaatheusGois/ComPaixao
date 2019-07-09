@@ -13,6 +13,8 @@ final class ExampleCell: UICollectionViewCell {
     @IBOutlet var title: UILabel!
     @IBOutlet var body: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var data: UILabel!
+    
 //    @IBOutlet var button: UILabel!
 
     override var isSelected: Bool{

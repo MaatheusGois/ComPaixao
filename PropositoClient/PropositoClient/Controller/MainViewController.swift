@@ -21,7 +21,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     
     private var data: [ExampleModel] = ExampleData.dataSet1
-    private var data2: [ExampleModel] = ExampleData.dataSet1
+    private var data2: [ExampleModel] = ExampleData.dataSet2
     
     
     private enum Segment: Int {
@@ -94,16 +94,37 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         
         collectionViewHeightConstraintAct.constant = height + edgeInsets.top + edgeInsets.bottom
     }
+    
+    
+    
+    
+    
+    
+    
     // MARK: - UICollectionViewDatasource
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        if collectionView == self.collectionViewPray {
+            return data.count
+        } else {
+            return data2.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.exampleCellReuseIdentifier, for: indexPath) as! ExampleCell
-        let example = data[indexPath.item]
+        
+        
+        var example:ExampleModel
+        
+        if collectionView == self.collectionViewPray {
+            example = data[indexPath.item]
+            cell.data.alpha = 0
+        } else {
+            example = data2[indexPath.item]
+        }
         
         let viewModel = ExampleViewModel(example: example)
         

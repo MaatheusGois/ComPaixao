@@ -74,6 +74,7 @@
             <connections>
                 <outlet property="body" destination="p5m-2F-DQ9" id="Due-WR-V0h"/>
                 <outlet property="button" destination="xvx-4E-9gw" id="Ja5-ED-kTb"/>
+                <outlet property="data" destination="YyB-eJ-6E6" id="rdg-vd-1iz"/>
                 <outlet property="title" destination="wya-pM-cpE" id="Sxn-kP-Xv6"/>
             </connections>
             <point key="canvasLocation" x="52.173913043478265" y="-172.76785714285714"/>
