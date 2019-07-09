@@ -111,6 +111,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VXa-h8-U6f"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="n4o-8N-jpc"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.69411764705882351" green="0.87058823529411766" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

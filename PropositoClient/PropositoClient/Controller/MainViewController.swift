@@ -31,6 +31,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectioView()
+        setupCollectioViewAct()
     }
     
     
@@ -49,6 +50,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         setCollectionViewHeight(with: data, edgeInsets: flowLayoutPray.sectionInset)
     }
     
+    
     private func setCollectionViewHeight(with data: [ExampleModel], edgeInsets: UIEdgeInsets) {
         let viewModels = data.compactMap { ExampleViewModel(example: $0) }
         
@@ -63,6 +65,35 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         collectionViewHeightConstraintPray.constant = height + edgeInsets.top + edgeInsets.bottom
     }
     
+    //Act
+    private func setupCollectioViewAct() {
+        let nib = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil)
+        collectionViewAct.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
+        
+        let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
+        flowLayoutAct.sectionInset = edgeInsets
+        
+        //Padding
+        flowLayoutAct.minimumInteritemSpacing = 0
+        flowLayoutAct.minimumLineSpacing = 16
+        
+        setCollectionViewHeightAct(with: data2, edgeInsets: flowLayoutAct.sectionInset)
+    }
+    
+    private func setCollectionViewHeightAct(with data: [ExampleModel], edgeInsets: UIEdgeInsets) {
+        
+        let viewModels = data.compactMap { ExampleViewModel(example: $0) }
+        
+        guard let viewModel = calculateHeighest(with: viewModels, forWidth: Constants.cardWidth) else {
+            return
+        }
+        
+        let height = ExampleCell.height(for: viewModel, forWidth: Constants.cardWidth)
+        
+        flowLayoutAct.itemSize = CGSize(width: Constants.cardWidth, height: height)
+        
+        collectionViewHeightConstraintAct.constant = height + edgeInsets.top + edgeInsets.bottom
+    }
     // MARK: - UICollectionViewDatasource
     
     
