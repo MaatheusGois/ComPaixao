@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/MainViewController.swift"
-            timestampString = "584341550.257249"
+            timestampString = "584342829.126974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,12 +106,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/MainViewController.swift"
-            timestampString = "584341550.258394"
+            timestampString = "584342829.127544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "setupCollectioView()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "MainViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PropositoClient/Controller/MainViewController.swift"
+            timestampString = "584342829.12787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,23 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/MainViewController.swift"
-            timestampString = "584341550.25896"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "setupCollectioView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PropositoClient/Controller/MainViewController.swift"
-            timestampString = "584341550.259666"
+            timestampString = "584342829.128172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -147,14 +147,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.collectionView2.getter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  symbolName = "PropositoClient.MainViewController.collectionViewAct.getter : Swift.Optional&lt;__C.UICollectionView&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.244894"
+                  timestampString = "584342562.38919"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -162,14 +162,14 @@
                   offsetFromSymbolStart = "114">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.collectionView2.setter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  symbolName = "PropositoClient.MainViewController.collectionViewAct.setter : Swift.Optional&lt;__C.UICollectionView&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.2466559"
+                  timestampString = "584342562.392063"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -177,14 +177,14 @@
                   offsetFromSymbolStart = "128">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.collectionView2.modify : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  symbolName = "PropositoClient.MainViewController.collectionViewAct.modify : Swift.Optional&lt;__C.UICollectionView&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.250623"
+                  timestampString = "584342562.394942"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -192,14 +192,14 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.collectionView2.modify : Swift.Optional&lt;__C.UICollectionView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "PropositoClient.MainViewController.collectionViewAct.modify : Swift.Optional&lt;__C.UICollectionView&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.255361"
+                  timestampString = "584342562.3973759"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -207,14 +207,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PropositoClient.MainViewController"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.259312"
+                  timestampString = "584342562.3995399"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -222,14 +222,14 @@
                   offsetFromSymbolStart = "458">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PropositoClient.MainViewController&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.263103"
+                  timestampString = "584342562.4015141"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -242,184 +242,76 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/MainViewController.swift"
-            timestampString = "584341550.260509"
+            timestampString = "584342829.128472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "MainViewController"
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.(data in _E67ABA8936D88A27EF3369C3FCDAA2DF).getter : Swift.Array&lt;PropositoClient.ExampleModel&gt;"
-                  moduleName = "PropositoClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.333784"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "114">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.(data in _E67ABA8936D88A27EF3369C3FCDAA2DF).setter : Swift.Array&lt;PropositoClient.ExampleModel&gt;"
-                  moduleName = "PropositoClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.335626"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.(data in _E67ABA8936D88A27EF3369C3FCDAA2DF).modify : Swift.Array&lt;PropositoClient.ExampleModel&gt;"
-                  moduleName = "PropositoClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.337248"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.(data in _E67ABA8936D88A27EF3369C3FCDAA2DF).modify : Swift.Array&lt;PropositoClient.ExampleModel&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "PropositoClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.341336"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PropositoClient.MainViewController"
-                  moduleName = "PropositoClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.345215"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "699">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PropositoClient.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PropositoClient.MainViewController&gt;"
-                  moduleName = "PropositoClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.34834"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "613">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PropositoClient/Controller/MainViewController.swift"
-            timestampString = "584341550.261252"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "Segment"
-            landmarkType = "13">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.MainViewController.(Segment in _E67ABA8936D88A27EF3369C3FCDAA2DF).init(rawValue: Swift.Int) -&gt; Swift.Optional&lt;PropositoClient.MainViewController.(Segment in _E67ABA8936D88A27EF3369C3FCDAA2DF)&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.361815"
+                  timestampString = "584342562.4210269"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "49">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.MainViewController.(Segment in _E67ABA8936D88A27EF3369C3FCDAA2DF).init(rawValue: Swift.Int) -&gt; Swift.Optional&lt;PropositoClient.MainViewController.(Segment in _E67ABA8936D88A27EF3369C3FCDAA2DF)&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.365777"
+                  timestampString = "584342562.423259"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "73">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.MainViewController.(Segment in _E67ABA8936D88A27EF3369C3FCDAA2DF).init(rawValue: Swift.Int) -&gt; Swift.Optional&lt;PropositoClient.MainViewController.(Segment in _E67ABA8936D88A27EF3369C3FCDAA2DF)&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.3687561"
+                  timestampString = "584342562.425503"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "97">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.MainViewController.(Segment in _E67ABA8936D88A27EF3369C3FCDAA2DF).rawValue.getter : Swift.Int"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/MainViewController.swift"
-                  timestampString = "584341415.371326"
+                  timestampString = "584342562.427799"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "53">
                </Location>
             </Locations>
@@ -432,7 +324,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-            timestampString = "584341550.261833"
+            timestampString = "584342829.1287709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -444,11 +336,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-            timestampString = "584341550.2620291"
+            timestampString = "584342829.128821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -457,14 +349,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.ExampleCell.title.getter : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-                  timestampString = "584341415.3794121"
+                  timestampString = "584342829.340559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -472,14 +364,14 @@
                   offsetFromSymbolStart = "114">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.ExampleCell.title.setter : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-                  timestampString = "584341415.3822"
+                  timestampString = "584342829.3484499"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -487,14 +379,14 @@
                   offsetFromSymbolStart = "128">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.ExampleCell.title.modify : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-                  timestampString = "584341415.384609"
+                  timestampString = "584342829.353605"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -502,14 +394,14 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.ExampleCell.title.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-                  timestampString = "584341415.386268"
+                  timestampString = "584342829.361992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -517,14 +409,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.ExampleCell.init(frame: __C.CGRect) -&gt; PropositoClient.ExampleCell"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-                  timestampString = "584341415.388001"
+                  timestampString = "584342829.364849"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -532,14 +424,14 @@
                   offsetFromSymbolStart = "54">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.ExampleCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PropositoClient.ExampleCell&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
-                  timestampString = "584341415.390026"
+                  timestampString = "584342829.3664449"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -568,11 +460,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleData.swift"
-            timestampString = "584341165.923479"
+            timestampString = "584342829.12889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -584,11 +476,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleData.swift"
-            timestampString = "584341165.923525"
+            timestampString = "584342829.1289411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -597,14 +489,14 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "globalinit_33_06D616200A78067931A4BEF9194F8637_func0"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleData.swift"
-                  timestampString = "584341415.40885"
+                  timestampString = "584342650.211768"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -612,14 +504,14 @@
                   offsetFromSymbolStart = "1370">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PropositoClient.ExampleData.dataSet1.unsafeMutableAddressor : Swift.Array&lt;PropositoClient.ExampleModel&gt;"
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleData.swift"
-                  timestampString = "584341415.413963"
+                  timestampString = "584342650.214296"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -632,11 +524,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleData.swift"
-            timestampString = "584341165.923565"
+            timestampString = "584342829.128989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -648,17 +540,97 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleData.swift"
-            timestampString = "584341165.923605"
+            timestampString = "584342829.129034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "dataSet1"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleData.swift"
+            timestampString = "584342829.129079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "dataSet1"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PropositoClient/Controller/MainViewController.swift"
+            timestampString = "584342829.1291161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "setupCollectioView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
+            timestampString = "584342829.129324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "ExampleCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_14E853909A119F896C68105ED021A613_func0"
+                  moduleName = "PropositoClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
+                  timestampString = "584342829.378003"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PropositoClient.ExampleCell.(sizingCell in _14E853909A119F896C68105ED021A613).unsafeMutableAddressor : PropositoClient.ExampleCell"
+                  moduleName = "PropositoClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/View/UICollectionViewHorizontal/ExampleCell.swift"
+                  timestampString = "584342829.379359"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

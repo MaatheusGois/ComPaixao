@@ -11,14 +11,18 @@ import UIKit
 class MainViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet var collectionViewPray: UICollectionView!
+    @IBOutlet var flowLayoutPray: UICollectionViewFlowLayout!
+    @IBOutlet var collectionViewHeightConstraintPray: NSLayoutConstraint!
     
-    @IBOutlet var flowLayout: UICollectionViewFlowLayout!
-    @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet var collectionViewAct: UICollectionView!
+    @IBOutlet var flowLayoutAct: UICollectionViewFlowLayout!
+    @IBOutlet var collectionViewHeightConstraintAct: NSLayoutConstraint!
     
     
     private var data: [ExampleModel] = ExampleData.dataSet1
-    var first = false
+    private var data2: [ExampleModel] = ExampleData.dataSet1
+    
     
     private enum Segment: Int {
         case dataSet1 = 0, dataSet2, dataSet3
@@ -26,23 +30,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        first = true
         setupCollectioView()
     }
     
+    
+    //Pray
     private func setupCollectioView() {
         let nib = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil)
         collectionViewPray.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
         
         let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
-        flowLayout.sectionInset = edgeInsets
+        flowLayoutPray.sectionInset = edgeInsets
         
         //Padding
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 16
+        flowLayoutPray.minimumInteritemSpacing = 0
+        flowLayoutPray.minimumLineSpacing = 16
         
-        setCollectionViewHeight(with: data, edgeInsets: flowLayout.sectionInset)
+        setCollectionViewHeight(with: data, edgeInsets: flowLayoutPray.sectionInset)
     }
     
     private func setCollectionViewHeight(with data: [ExampleModel], edgeInsets: UIEdgeInsets) {
@@ -54,9 +58,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         
         let height = ExampleCell.height(for: viewModel, forWidth: Constants.cardWidth)
         
-        flowLayout.itemSize = CGSize(width: Constants.cardWidth, height: height)
+        flowLayoutPray.itemSize = CGSize(width: Constants.cardWidth, height: height)
         
-        collectionViewHeightConstraint.constant = height + edgeInsets.top + edgeInsets.bottom
+        collectionViewHeightConstraintPray.constant = height + edgeInsets.top + edgeInsets.bottom
     }
     
     // MARK: - UICollectionViewDatasource

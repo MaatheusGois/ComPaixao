@@ -134,9 +134,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="collectionViewHeightConstraint" destination="QDO-c2-7mu" id="ajF-gg-Blt"/>
+                        <outlet property="collectionViewAct" destination="6ws-GL-Fwb" id="ryu-Ti-uXv"/>
+                        <outlet property="collectionViewHeightConstraintAct" destination="rBn-Wc-nNP" id="odH-Or-l7N"/>
+                        <outlet property="collectionViewHeightConstraintPray" destination="QDO-c2-7mu" id="ajF-gg-Blt"/>
                         <outlet property="collectionViewPray" destination="XAd-WR-zXe" id="m1Z-hq-wby"/>
-                        <outlet property="flowLayout" destination="By1-8B-mOC" id="OT3-BF-wd1"/>
+                        <outlet property="flowLayoutAct" destination="qol-pZ-RqE" id="wgb-Os-p5h"/>
+                        <outlet property="flowLayoutPray" destination="By1-8B-mOC" id="OT3-BF-wd1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
