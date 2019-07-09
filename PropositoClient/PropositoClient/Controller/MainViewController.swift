@@ -10,9 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource {
     
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var collectionViewPray: UICollectionView!
+    
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet var collectionViewHeightConstraint: NSLayoutConstraint!
+    
+    
     
     private var data: [ExampleModel] = ExampleData.dataSet1
     var first = false
@@ -30,7 +33,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     private func setupCollectioView() {
         let nib = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
+        collectionViewPray.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
         
         let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
         flowLayout.sectionInset = edgeInsets
@@ -88,7 +91,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
             
         }
         
-        sender.setBackgroundImage(image, for: .normal)
+        sender.setBackgroundImage(image, for: .selected)
         
     }
     
