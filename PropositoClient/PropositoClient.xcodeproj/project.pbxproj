@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756322D4361800DACA7A /* Centrale Sans Regular.otf */; };
 		8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756422D4361800DACA7A /* Centrale Sans Bold.otf */; };
+		8611756822D5757900DACA7A /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611756722D5757900DACA7A /* ChoiceViewController.swift */; };
 		8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628F5C922CFD65800844544 /* CoreDataManager.swift */; };
 		8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628F5CB22CFD9BA00844544 /* GenericDAO.swift */; };
 		8699400F22D40B8E00069F8F /* ActDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699400E22D40B8E00069F8F /* ActDAO.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		8611756322D4361800DACA7A /* Centrale Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Regular.otf"; sourceTree = "<group>"; };
 		8611756422D4361800DACA7A /* Centrale Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Bold.otf"; sourceTree = "<group>"; };
+		8611756722D5757900DACA7A /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		8628F5C922CFD65800844544 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8628F5CB22CFD9BA00844544 /* GenericDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDAO.swift; sourceTree = "<group>"; };
 		8699400E22D40B8E00069F8F /* ActDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActDAO.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				86F426B822CAA7410032AA5B /* MainViewController.swift */,
 				86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */,
+				8611756722D5757900DACA7A /* ChoiceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				86F426CA22CAAD5E0032AA5B /* ExampleData.swift in Sources */,
 				8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */,
 				86F426C622CAAD220032AA5B /* ExampleModel.swift in Sources */,
+				8611756822D5757900DACA7A /* ChoiceViewController.swift in Sources */,
 				86CC746622CFDD0D00D5174E /* PrayHandler.swift in Sources */,
 				8699400F22D40B8E00069F8F /* ActDAO.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Pray.swift in Sources */,

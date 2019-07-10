@@ -147,7 +147,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
             
         }
         
-        sender.setBackgroundImage(image, for: .selected)
+        sender.setBackgroundImage(image, for: .normal)
         
     }
     
