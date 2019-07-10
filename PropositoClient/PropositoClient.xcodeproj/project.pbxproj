@@ -15,6 +15,7 @@
 		8699400F22D40B8E00069F8F /* ActDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699400E22D40B8E00069F8F /* ActDAO.swift */; };
 		8699401122D40BC900069F8F /* Act.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401022D40BC900069F8F /* Act.swift */; };
 		8699401322D40C7600069F8F /* ActHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401222D40C7600069F8F /* ActHandler.swift */; };
+		86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A9871A22D67D730014B71E /* AddPrayViewController.swift */; };
 		86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */; };
 		86B889A422CC34530097F0D7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B889A322CC34530097F0D7 /* logo.png */; };
 		86B889A622CC36950097F0D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B889A522CC36950097F0D7 /* Extensions.swift */; };
@@ -45,6 +46,7 @@
 		8699400E22D40B8E00069F8F /* ActDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActDAO.swift; sourceTree = "<group>"; };
 		8699401022D40BC900069F8F /* Act.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act.swift; sourceTree = "<group>"; };
 		8699401222D40C7600069F8F /* ActHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActHandler.swift; sourceTree = "<group>"; };
+		86A9871A22D67D730014B71E /* AddPrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrayViewController.swift; sourceTree = "<group>"; };
 		86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewController.swift; sourceTree = "<group>"; };
 		86B889A222CC33810097F0D7 /* PropositoClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PropositoClient.entitlements; sourceTree = "<group>"; };
 		86B889A322CC34530097F0D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -184,8 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				86F426B822CAA7410032AA5B /* MainViewController.swift */,
-				86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */,
 				8611756722D5757900DACA7A /* ChoiceViewController.swift */,
+				86A9871A22D67D730014B71E /* AddPrayViewController.swift */,
+				86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				8699401122D40BC900069F8F /* Act.swift in Sources */,
 				86F426CE22CAAD7A0032AA5B /* DynamicHeightCalculable.swift in Sources */,
+				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				86F426C422CAAD140032AA5B /* ExampleCell.swift in Sources */,
 				86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */,
 				86F426CA22CAAD5E0032AA5B /* ExampleData.swift in Sources */,

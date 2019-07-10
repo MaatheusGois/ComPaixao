@@ -553,7 +553,7 @@
 											"top": 692,
 											"width": 113.8134765625,
 											"height": 13,
-											"text": "+oracao: String",
+											"text": "+pray: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1528,7 +1528,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFrrATX684p0vs="
 							},
-							"name": "oracao",
+							"name": "pray",
 							"type": "String"
 						},
 						{

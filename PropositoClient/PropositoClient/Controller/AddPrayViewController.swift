@@ -1,40 +1,38 @@
 //
-//  ChoiceViewController.swift
+//  AddPrayViewController.swift
 //  PropositoClient
 //
-//  Created by Matheus Gois on 09/07/19.
+//  Created by Matheus Gois on 10/07/19.
 //  Copyright © 2019 Matheus Gois. All rights reserved.
 //
 
 import UIKit
 
-class ChoiceViewController: UIViewController {
+class AddPrayViewController: UIViewController {
 
     @IBAction func close(_ sender: Any) {
+        //Animate transition
         let transition: CATransition = CATransition()
         transition.duration = 0.78
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.reveal
         transition.subtype = CATransitionSubtype.fromBottom
         self.view.window!.layer.add(transition, forKey: nil)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Hide Keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //Hide Keyboard
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
-    */
 
 }
