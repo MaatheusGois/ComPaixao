@@ -32,6 +32,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         super.viewDidLoad()
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        collectionViewAct.reloadData()
+        collectionViewPray.reloadData()
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         self.prayers = []

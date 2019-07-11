@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ivanildo da Silva" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wya-pM-cpE">
-                        <rect key="frame" x="0.0" y="68" width="178" height="68"/>
+                        <rect key="frame" x="10" y="68" width="158" height="68"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="68" id="Q9i-44-Epm"/>
                         </constraints>
@@ -47,8 +47,8 @@
                         </constraints>
                         <state key="normal" image="check"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5m-2F-DQ9">
-                        <rect key="frame" x="0.0" y="136" width="178" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5m-2F-DQ9">
+                        <rect key="frame" x="10" y="136" width="158" height="22"/>
                         <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="22"/>
                         <color key="textColor" red="0.6705882352941176" green="0.84705882352941175" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -57,13 +57,13 @@
             </view>
             <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
             <constraints>
-                <constraint firstItem="wya-pM-cpE" firstAttribute="leading" secondItem="JtQ-nK-7ZX" secondAttribute="leading" id="3eH-2x-3hj"/>
+                <constraint firstItem="wya-pM-cpE" firstAttribute="leading" secondItem="JtQ-nK-7ZX" secondAttribute="leading" constant="10" id="3eH-2x-3hj"/>
                 <constraint firstItem="p5m-2F-DQ9" firstAttribute="top" secondItem="wya-pM-cpE" secondAttribute="bottom" id="7Ki-wD-qXZ"/>
                 <constraint firstItem="JtQ-nK-7ZX" firstAttribute="trailing" secondItem="xvx-4E-9gw" secondAttribute="trailing" constant="20" id="9sz-pu-3nA"/>
-                <constraint firstItem="JtQ-nK-7ZX" firstAttribute="trailing" secondItem="p5m-2F-DQ9" secondAttribute="trailing" id="DFX-DU-1zO"/>
-                <constraint firstItem="p5m-2F-DQ9" firstAttribute="leading" secondItem="JtQ-nK-7ZX" secondAttribute="leading" id="EVZ-DL-dfF"/>
+                <constraint firstItem="JtQ-nK-7ZX" firstAttribute="trailing" secondItem="p5m-2F-DQ9" secondAttribute="trailing" constant="10" id="DFX-DU-1zO"/>
+                <constraint firstItem="p5m-2F-DQ9" firstAttribute="leading" secondItem="JtQ-nK-7ZX" secondAttribute="leading" constant="10" id="EVZ-DL-dfF"/>
                 <constraint firstItem="YyB-eJ-6E6" firstAttribute="leading" secondItem="JtQ-nK-7ZX" secondAttribute="leading" id="Gh3-YJ-1Ot"/>
-                <constraint firstItem="JtQ-nK-7ZX" firstAttribute="trailing" secondItem="wya-pM-cpE" secondAttribute="trailing" id="S3l-Ww-68B"/>
+                <constraint firstItem="JtQ-nK-7ZX" firstAttribute="trailing" secondItem="wya-pM-cpE" secondAttribute="trailing" constant="10" id="S3l-Ww-68B"/>
                 <constraint firstItem="wya-pM-cpE" firstAttribute="top" secondItem="xvx-4E-9gw" secondAttribute="bottom" constant="10" id="SfT-XX-ukK"/>
                 <constraint firstItem="YyB-eJ-6E6" firstAttribute="top" secondItem="p5m-2F-DQ9" secondAttribute="bottom" constant="20" id="dAX-tG-QnT"/>
                 <constraint firstItem="JtQ-nK-7ZX" firstAttribute="bottom" secondItem="YyB-eJ-6E6" secondAttribute="bottom" constant="32" id="hST-RI-v2b"/>

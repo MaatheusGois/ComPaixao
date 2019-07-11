@@ -12,12 +12,7 @@ class AddPrayViewController: UIViewController {
 
     @IBAction func close(_ sender: Any) {
         //Animate transition
-        let transition: CATransition = CATransition()
-        transition.duration = 0.78
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.reveal
-        transition.subtype = CATransitionSubtype.fromBottom
-        self.view.window!.layer.add(transition, forKey: nil)
+        configTransition()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -51,6 +46,7 @@ class AddPrayViewController: UIViewController {
             switch (res) {
             case .success(let prayers):
                 print(prayers)
+                goToMain()
             case .error(let description):
                 print(description)
             }
@@ -71,5 +67,18 @@ class AddPrayViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
+    private func configTransition(){
+        let transition: CATransition = CATransition()
+        transition.duration = 0.78
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromBottom
+        self.view.window!.layer.add(transition, forKey: nil)
+    }
+    
+    private func goToMain(){
+        configTransition()
+        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+    }
 }

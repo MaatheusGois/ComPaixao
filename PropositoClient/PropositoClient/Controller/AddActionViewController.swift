@@ -11,12 +11,7 @@ import UIKit
 class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     //Button of close
     @IBAction func close(_ sender: Any) {
-        let transition: CATransition = CATransition()
-        transition.duration = 0.78
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.reveal
-        transition.subtype = CATransitionSubtype.fromBottom
-        self.view.window!.layer.add(transition, forKey: nil)
+        self.configTransition()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -90,7 +85,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             }
         }
         
-        pickerSelected = pickerData[0] 
+        pickerSelected = pickerData[0]
         
         
         //Set a Color UIPickerView Date
@@ -122,7 +117,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             switch (res) {
             case .success(let act):
                 self.createNotification(act)
-                print(act)
+                self.goToMain()
             case .error(let description):
                 print(description)
             }
@@ -153,5 +148,19 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
         //create
         appDelegate?.enviarNotificacao(title, subtitle, mensage, identifier, time)
+    }
+    
+    private func configTransition(){
+        let transition: CATransition = CATransition()
+        transition.duration = 0.78
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromBottom
+        self.view.window!.layer.add(transition, forKey: nil)
+    }
+    
+    private func goToMain(){
+        configTransition()
+        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
     }
 }
