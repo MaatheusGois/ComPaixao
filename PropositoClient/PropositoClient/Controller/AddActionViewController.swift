@@ -27,6 +27,9 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     //Picker of prayers
     var pickerData: [String] = [String]()
+    var pickerDataId: [Int] = [Int]()
+    var pickerSelected: String = ""
+    
     @IBOutlet weak var pickerPray: UIPickerView!
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +44,9 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor:  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
     }
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerSelected = pickerData[row]
+    }
     
     
     //Date picker
@@ -70,8 +75,22 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         super.viewDidLoad()
         
         //Data of Prayers
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
         
+        //Load data of the Prayers
+        PrayHandler.loadPrayWith { (res) in
+            switch (res) {
+            case .success(let prayers):
+                prayers.forEach({ (pray) in
+                    self.pickerData.append(pray.title)
+                    self.pickerDataId.append(pray.id)
+                })
+                
+            case .error(let description):
+                print(description)
+            }
+        }
+        
+        pickerSelected = pickerData[0] 
         
         
         //Set a Color UIPickerView Date
@@ -91,17 +110,24 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     
     //Button of Add Pray
-    
     @IBAction func addAction(_ sender: UIButton) {
-        let title = "Aqui vai o título"
-        let subtitle = "Aqui vai o subtítulo"
-        let mensage = "Aqui colocamos o corpo da mensagem"
-        let identifier = "identifier\(title)"
-        var time = self.dateInPicker - Date()
-        if(time < 0){
-            time = 10
+        //body
+        let title = descriptionPray.text ?? ""
+        let pray = pickerSelected
+        let date = self.dateInPicker
+        //act
+        let act = Act(id: Int.gererateId(), title: title, pray: pray, completed: false, date: date)
+        //save local
+        ActHandler.create(act: act) { (res) in
+            switch (res) {
+            case .success(let act):
+                self.createNotification(act)
+                print(act)
+            case .error(let description):
+                print(description)
+            }
         }
-        self.createNotification(title, subtitle, mensage, identifier, time)
+
     }
     
     
@@ -111,12 +137,21 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         view.endEditing(true)
     }
     
-    
-    func createNotification(_ title: String,_  subtitle: String,_  mensage: String,_  identifier: String, _ time: TimeInterval) {
+    //Create Notification
+    func createNotification(_ act:Act) {
+        //call app
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        //Create notification
         
-        
+        //create body
+        let title = act.title
+        let subtitle = act.pray
+        let mensage = "A fé sem obras é morta!"
+        let identifier = "identifier\(title)"
+        var time = act.date - Date()
+        if(time < 0){
+            time = 10
+        }
+        //create
         appDelegate?.enviarNotificacao(title, subtitle, mensage, identifier, time)
     }
 }

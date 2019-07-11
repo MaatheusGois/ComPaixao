@@ -31,12 +31,6 @@ class PrayDAO: GenericDAO {
             throw DAOError.internalError(description: "Failed to create NSManagedObject")
         }
         
-        pray.setValue(Int64(newEntity.id), forKeyPath: "id")
-        pray.setValue(newEntity.title, forKeyPath: "title")
-        pray.setValue(newEntity.purpose, forKeyPath: "purpose")
-        pray.setValue(newEntity.answered, forKeyPath: "answered")
-        pray.setValue(newEntity.acts, forKeyPath: "acts")
-        
         pray.id        = Int64(newEntity.id)
         pray.title     = newEntity.title
         pray.purpose   = newEntity.purpose

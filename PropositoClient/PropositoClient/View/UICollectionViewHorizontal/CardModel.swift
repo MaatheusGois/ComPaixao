@@ -1,5 +1,5 @@
 //
-//  ExampleModel.swift
+//  Model.swift
 //  PropositoClient
 //
 //  Created by Matheus Gois on 01/07/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExampleModel {
+struct CardModel {
     
     let title: String
     let body: String

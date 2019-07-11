@@ -1,5 +1,5 @@
 //
-//  ExampleViewModel.swift
+//  ViewModel.swift
 //  PropositoClient
 //
 //  Created by Matheus Gois on 01/07/19.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct ExampleViewModel: DynamicHeightCalculable {
+struct ViewModel: DynamicHeightCalculable {
     
     let title: String
     let body: String?
     
-    init(example: ExampleModel) {
+    init(example: CardModel) {
         title = example.title
         body = example.body
     }

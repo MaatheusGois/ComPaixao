@@ -49,8 +49,8 @@ class AddPrayViewController: UIViewController {
         let pray = Pray(id: id, title: title, purpose: purpose, answered: false, acts: [])
         PrayHandler.create(pray: pray) { (res) in
             switch (res) {
-            case .success(let tasks):
-                print(tasks)
+            case .success(let prayers):
+                print(prayers)
             case .error(let description):
                 print(description)
             }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ExampleCell: UICollectionViewCell {
+final class Cell: UICollectionViewCell {
     
     @IBOutlet var title: UILabel!
     @IBOutlet var body: UILabel!
@@ -63,12 +63,12 @@ final class ExampleCell: UICollectionViewCell {
     
     
     
-    private static let sizingCell = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil).first! as! ExampleCell
+    private static let sizingCell = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil).first! as! Cell
     
     
     
     
-    public func configure(with viewModel: ExampleViewModel, isSizing: Bool = false) {
+    public func configure(with viewModel: ViewModel, isSizing: Bool = false) {
         body.text = viewModel.body
         
         guard !isSizing else {
@@ -85,7 +85,7 @@ final class ExampleCell: UICollectionViewCell {
         
     }
     
-    public static func height(for viewModel: ExampleViewModel, forWidth width: CGFloat) -> CGFloat {
+    public static func height(for viewModel: ViewModel, forWidth width: CGFloat) -> CGFloat {
         sizingCell.prepareForReuse()
         sizingCell.configure(with: viewModel, isSizing: true)
         var fittingSize = UIView.layoutFittingCompressedSize
