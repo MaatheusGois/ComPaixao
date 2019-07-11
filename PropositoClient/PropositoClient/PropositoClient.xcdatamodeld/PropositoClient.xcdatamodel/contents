@@ -10,12 +10,12 @@
     <entity name="PrayEntity" representedClassName="PrayEntity" syncable="YES" codeGenerationType="class">
         <attribute name="acts" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="answered" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="purpose" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PrayEntity" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="ActEntity" positionX="-63" positionY="18" width="128" height="120"/>
+        <element name="PrayEntity" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

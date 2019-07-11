@@ -30,6 +30,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Load data of the Prayers
+        PrayHandler.loadPrayWith { (res) in
+            switch (res) {
+            case .success(let tasks):
+                tasks.forEach({ (pray) in
+                    self.data.append(
+                        ExampleModel(title: pray.title, body: pray.purpose, date: nil)
+                    )
+                    
+                })
+                
+            case .error(let description):
+                print(description)
+            }
+        }
         setupCollectioView()
         setupCollectioViewAct()
     }
