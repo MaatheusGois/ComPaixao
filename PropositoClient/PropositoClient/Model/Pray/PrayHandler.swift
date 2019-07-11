@@ -7,12 +7,12 @@
 //
 
 enum PrayLoadResponse: Error {
-    case success(tasks: [Pray])
+    case success(prayers: [Pray])
     case error(description: String)
 }
 
 enum PrayUpdateResponse: Error {
-    case success(tasks: Pray)
+    case success(prayers: Pray)
     case error(description: String)
 }
 
@@ -20,7 +20,7 @@ class PrayHandler {
     static func create(pray:Pray, withCompletion completion:(PrayUpdateResponse) -> Void) {
         do {
             try PrayDAO.shared.create(newEntity: pray)
-            completion(PrayUpdateResponse.success(tasks: pray))
+            completion(PrayUpdateResponse.success(prayers: pray))
         } catch {
             completion(PrayUpdateResponse.error(description: "OPS!! we have a problem to create your pray"))
         }
@@ -29,7 +29,7 @@ class PrayHandler {
     static func loadPrayWith(completion: @escaping (PrayLoadResponse) -> Void) {
         do {
             let prayers = try PrayDAO.shared.read()
-            completion(PrayLoadResponse.success(tasks: prayers))
+            completion(PrayLoadResponse.success(prayers: prayers))
         } catch {
             completion(PrayLoadResponse.error(description: "OPS!! we have a problem to read your prayers"))
         }
@@ -37,7 +37,7 @@ class PrayHandler {
     static func update(pray: Pray, withCompletion completion:(PrayUpdateResponse) -> Void) {
         do {
             try PrayDAO.shared.update(entity: pray)
-            completion(PrayUpdateResponse.success(tasks: pray))
+            completion(PrayUpdateResponse.success(prayers: pray))
         }catch{
             completion(PrayUpdateResponse.error(description: "OPS!! We have a problem to update your Task"))
         }
@@ -46,7 +46,7 @@ class PrayHandler {
     static func delete(pray: Pray, withCompletion completion:(PrayUpdateResponse) -> Void) {
         do {
             try PrayDAO.shared.delete(entity: pray)
-            completion(PrayUpdateResponse.success(tasks: pray))
+            completion(PrayUpdateResponse.success(prayers: pray))
         }catch{
             completion(PrayUpdateResponse.error(description: "OPS!! We have a problem to delete your Task"))
         }

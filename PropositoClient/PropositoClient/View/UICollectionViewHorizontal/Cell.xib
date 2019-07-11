@@ -17,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2ed-l9-CVJ" customClass="ExampleCell" customModule="PropositoClient" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2ed-l9-CVJ" customClass="Cell" customModule="PropositoClient" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="178" height="254"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -74,7 +74,7 @@
             <connections>
                 <outlet property="body" destination="p5m-2F-DQ9" id="Due-WR-V0h"/>
                 <outlet property="button" destination="xvx-4E-9gw" id="Ja5-ED-kTb"/>
-                <outlet property="data" destination="YyB-eJ-6E6" id="rdg-vd-1iz"/>
+                <outlet property="date" destination="YyB-eJ-6E6" id="rdg-vd-1iz"/>
                 <outlet property="title" destination="wya-pM-cpE" id="Sxn-kP-Xv6"/>
             </connections>
             <point key="canvasLocation" x="52.173913043478265" y="-172.76785714285714"/>

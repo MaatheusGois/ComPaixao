@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class ExampleCell: UICollectionViewCell {
+final class Cell: UICollectionViewCell {
     
     @IBOutlet var title: UILabel!
     @IBOutlet var body: UILabel!
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var data: UILabel!
+    @IBOutlet weak var date: UILabel!
     
 //    @IBOutlet var button: UILabel!
 
@@ -63,18 +63,19 @@ final class ExampleCell: UICollectionViewCell {
     
     
     
-    private static let sizingCell = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil).first! as! ExampleCell
+    private static let sizingCell = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil).first! as! Cell
     
     
     
     
-    public func configure(with viewModel: ExampleViewModel, isSizing: Bool = false) {
+    public func configure(with viewModel: ViewModel, isSizing: Bool = false) {
         body.text = viewModel.body
+        
         
         guard !isSizing else {
             return
         }
-        
+        date.text = viewModel.date
         title.text = viewModel.title
         layer.cornerRadius = 12.0
         self.backgroundColor = #colorLiteral(red: 0.2274509804, green: 0.2509803922, blue: 0.3529411765, alpha: 1)
@@ -85,7 +86,7 @@ final class ExampleCell: UICollectionViewCell {
         
     }
     
-    public static func height(for viewModel: ExampleViewModel, forWidth width: CGFloat) -> CGFloat {
+    public static func height(for viewModel: ViewModel, forWidth width: CGFloat) -> CGFloat {
         sizingCell.prepareForReuse()
         sizingCell.configure(with: viewModel, isSizing: true)
         var fittingSize = UIView.layoutFittingCompressedSize

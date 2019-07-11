@@ -9,7 +9,7 @@
 import UIKit
 
 class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
-
+    //Button of close
     @IBAction func close(_ sender: Any) {
         let transition: CATransition = CATransition()
         transition.duration = 0.78
@@ -19,6 +19,36 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.view.window!.layer.add(transition, forKey: nil)
         self.dismiss(animated: false, completion: nil)
     }
+    
+    //Description
+    @IBOutlet weak var descriptionPray: UITextField!
+
+    
+    
+    //Picker of prayers
+    var pickerData: [String] = [String]()
+    var pickerDataId: [Int] = [Int]()
+    var pickerSelected: String = ""
+    
+    @IBOutlet weak var pickerPray: UIPickerView!
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor:  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerSelected = pickerData[row]
+    }
+    
+    
     //Date picker
     var dateInPicker = Date()
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -36,9 +66,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         dateInPicker = sender.date
     }
     
-    //picker of prayers
-    var pickerData: [String] = [String]()
-    @IBOutlet weak var pickerPray: UIPickerView!
+    
     
     
     
@@ -46,14 +74,27 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Data of Prayers
+        
+        //Load data of the Prayers
+        PrayHandler.loadPrayWith { (res) in
+            switch (res) {
+            case .success(let prayers):
+                prayers.forEach({ (pray) in
+                    self.pickerData.append(pray.title)
+                    self.pickerDataId.append(pray.id)
+                })
+                
+            case .error(let description):
+                print(description)
+            }
+        }
+        
+        pickerSelected = pickerData[0] 
+        
         
         //Set a Color UIPickerView Date
         self.datePicker.setValue(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), forKeyPath: "textColor")
-        
-        
-        //Data of Prayers
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
-        
         
         
         //Hide keyboard
@@ -61,52 +102,32 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         view.addGestureRecognizer(tap)
     }
     
-    //Picker of Pray
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-
-    
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor:  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
-    }
     
 
     
     
     
     
-    //Notification
-    var appDelegate = UIApplication.shared.delegate as? AppDelegate
-    @IBAction func sendNotification(_ sender: UIButton) {
-        //O appDelegate é chamado para usar seu novo método de notificação
-        
-        //Nas variáveis abaixo definimos o corpo da mensagem
-        let titulo = "Aqui vai o título"
-        let subtitulo = "Aqui vai o subtítulo"
-        let mensagem = "Aqui colocamos o corpo da mensagem"
-        
-        //O identificador serve para o caso de queremos identificar uma notificação especifica
-        let identificador = "identifier\(Int.random(in: 0..<6))"
-        
-        
-        //Tempo
-        var tempo = self.dateInPicker - Date()
-        if(tempo < 0){
-            tempo = 10
+    //Button of Add Pray
+    @IBAction func addAction(_ sender: UIButton) {
+        //body
+        let title = descriptionPray.text ?? ""
+        let pray = pickerSelected
+        let date = self.dateInPicker
+        //act
+        let act = Act(id: Int.gererateId(), title: title, pray: pray, completed: false, date: date)
+        //save local
+        ActHandler.create(act: act) { (res) in
+            switch (res) {
+            case .success(let act):
+                self.createNotification(act)
+                print(act)
+            case .error(let description):
+                print(description)
+            }
         }
-        print(tempo)
-        self.appDelegate?.enviarNotificacao(titulo, subtitulo, mensagem, identificador, tempo)
-        
+
     }
     
     
@@ -114,5 +135,23 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     //Hide Keyboard
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    //Create Notification
+    func createNotification(_ act:Act) {
+        //call app
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        //create body
+        let title = act.title
+        let subtitle = act.pray
+        let mensage = "A fé sem obras é morta!"
+        let identifier = "identifier\(title)"
+        var time = act.date - Date()
+        if(time < 0){
+            time = 10
+        }
+        //create
+        appDelegate?.enviarNotificacao(title, subtitle, mensage, identifier, time)
     }
 }

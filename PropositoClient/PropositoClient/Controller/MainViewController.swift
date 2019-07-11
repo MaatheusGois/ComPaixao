@@ -20,8 +20,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var collectionViewHeightConstraintAct: NSLayoutConstraint!
     
     
-    private var data: [ExampleModel] = ExampleData.dataSet1
-    private var data2: [ExampleModel] = ExampleData.dataSet2
+    private var prayers: [CardModel] = Data.pray
+    private var acts: [CardModel] = Data.act
     
     
     private enum Segment: Int {
@@ -30,15 +30,49 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        self.prayers = []
+        self.acts = []
+        //Load data of the Prayers
+        PrayHandler.loadPrayWith { (res) in
+            switch (res) {
+            case .success(let prayers):
+                prayers.forEach({ (pray) in
+                    self.prayers.append(
+                        CardModel(title: pray.title, body: pray.purpose, date: nil)
+                    )
+                    
+                })
+                
+            case .error(let description):
+                print(description)
+            }
+        }
+        //Load data of the Acts
+        ActHandler.loadActWith { (res) in
+            switch (res) {
+            case .success(let acts):
+                acts.forEach({ (act) in
+                    self.acts.append(CardModel(title: act.title, body: act.pray, date: Date.getFormattedDate(date: act.date)))
+                })
+            case .error(let description):
+                print(description)
+            }
+        }
         setupCollectioView()
         setupCollectioViewAct()
+        collectionViewAct.reloadData()
+        collectionViewPray.reloadData()
     }
     
     
     //Pray
     private func setupCollectioView() {
-        let nib = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil)
-        collectionViewPray.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
+        let nib = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil)
+        collectionViewPray.register(nib, forCellWithReuseIdentifier: Constants.cellReuseIdentifier)
         
         let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
         flowLayoutPray.sectionInset = edgeInsets
@@ -47,18 +81,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         flowLayoutPray.minimumInteritemSpacing = 0
         flowLayoutPray.minimumLineSpacing = 16
         
-        setCollectionViewHeight(with: data, edgeInsets: flowLayoutPray.sectionInset)
+        setCollectionViewHeight(with: prayers, edgeInsets: flowLayoutPray.sectionInset)
     }
     
     
-    private func setCollectionViewHeight(with data: [ExampleModel], edgeInsets: UIEdgeInsets) {
-        let viewModels = data.compactMap { ExampleViewModel(example: $0) }
+    private func setCollectionViewHeight(with data: [CardModel], edgeInsets: UIEdgeInsets) {
+        let viewModels = data.compactMap { ViewModel(example: $0) }
         
         guard let viewModel = calculateHeighest(with: viewModels, forWidth: Constants.cardWidth) else {
             return
         }
         
-        let height = ExampleCell.height(for: viewModel, forWidth: Constants.cardWidth)
+        let height = Cell.height(for: viewModel, forWidth: Constants.cardWidth)
         
         flowLayoutPray.itemSize = CGSize(width: Constants.cardWidth, height: height)
         
@@ -67,8 +101,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     //Act
     private func setupCollectioViewAct() {
-        let nib = UINib(nibName: Constants.exampleCellReuseIdentifier, bundle: nil)
-        collectionViewAct.register(nib, forCellWithReuseIdentifier: Constants.exampleCellReuseIdentifier)
+        let nib = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil)
+        collectionViewAct.register(nib, forCellWithReuseIdentifier: Constants.cellReuseIdentifier)
         
         let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
         flowLayoutAct.sectionInset = edgeInsets
@@ -77,18 +111,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         flowLayoutAct.minimumInteritemSpacing = 0
         flowLayoutAct.minimumLineSpacing = 16
         
-        setCollectionViewHeightAct(with: data2, edgeInsets: flowLayoutAct.sectionInset)
+        setCollectionViewHeightAct(with: acts, edgeInsets: flowLayoutAct.sectionInset)
     }
     
-    private func setCollectionViewHeightAct(with data: [ExampleModel], edgeInsets: UIEdgeInsets) {
+    private func setCollectionViewHeightAct(with data: [CardModel], edgeInsets: UIEdgeInsets) {
         
-        let viewModels = data.compactMap { ExampleViewModel(example: $0) }
+        let viewModels = data.compactMap { ViewModel(example: $0) }
         
         guard let viewModel = calculateHeighest(with: viewModels, forWidth: Constants.cardWidth) else {
             return
         }
         
-        let height = ExampleCell.height(for: viewModel, forWidth: Constants.cardWidth)
+        let height = Cell.height(for: viewModel, forWidth: Constants.cardWidth)
         
         flowLayoutAct.itemSize = CGSize(width: Constants.cardWidth, height: height)
         
@@ -105,28 +139,28 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionViewPray {
-            return data.count
+            return prayers.count
         } else {
-            return data2.count
+            return acts.count
         }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.exampleCellReuseIdentifier, for: indexPath) as! ExampleCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellReuseIdentifier, for: indexPath) as! Cell
         
         
-        var example:ExampleModel
+        var example:CardModel
         
         if collectionView == self.collectionViewPray {
-            example = data[indexPath.item]
-            cell.data.alpha = 0
+            example = prayers[indexPath.item]
+            cell.date.alpha = 0
         } else {
-            example = data2[indexPath.item]
+            example = acts[indexPath.item]
         }
         
-        let viewModel = ExampleViewModel(example: example)
+        let viewModel = ViewModel(example: example)
         
         cell.configure(with: viewModel)
 

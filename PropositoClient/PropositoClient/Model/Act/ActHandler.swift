@@ -14,7 +14,7 @@ enum ActLoadResponse: Error {
 }
 
 enum ActUpdateResponse: Error {
-    case success(acts: Act)
+    case success(act: Act)
     case error(description: String)
 }
 
@@ -22,13 +22,13 @@ class ActHandler {
     static func create(act:Act, withCompletion completion:(ActUpdateResponse) -> Void) {
         do {
             try ActDAO.shared.create(newEntity: act)
-            completion(ActUpdateResponse.success(acts: act))
+            completion(ActUpdateResponse.success(act: act))
         } catch {
             completion(ActUpdateResponse.error(description: "OPS!! we have a problem to create your act"))
         }
     }
     
-    static func loadPrayWith(completion: @escaping (ActLoadResponse) -> Void) {
+    static func loadActWith(completion: @escaping (ActLoadResponse) -> Void) {
         do {
             let acts = try ActDAO.shared.read()
             completion(ActLoadResponse.success(acts: acts))
@@ -40,16 +40,16 @@ class ActHandler {
     static func update(act: Act, withCompletion completion:(ActUpdateResponse) -> Void) {
         do {
             try ActDAO.shared.update(entity: act)
-            completion(ActUpdateResponse.success(acts: act))
+            completion(ActUpdateResponse.success(act: act))
         }catch{
             completion(ActUpdateResponse.error(description: "OPS!! We have a problem to update your Act"))
         }
     }
     
-    static func delete(acts: Act, withCompletion completion:(ActUpdateResponse) -> Void) {
+    static func delete(act: Act, withCompletion completion:(ActUpdateResponse) -> Void) {
         do {
-            try ActDAO.shared.delete(entity: acts)
-            completion(ActUpdateResponse.success(acts: acts))
+            try ActDAO.shared.delete(entity: act)
+            completion(ActUpdateResponse.success(act: act))
         }catch{
             completion(ActUpdateResponse.error(description: "OPS!! We have a problem to delete your Task"))
         }
