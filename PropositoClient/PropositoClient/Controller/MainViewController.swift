@@ -52,7 +52,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
             }
         }
         //Load data of the Acts
-        ActHandler.loadPrayWith { (res) in
+        ActHandler.loadActWith { (res) in
             switch (res) {
             case .success(let acts):
                 acts.forEach({ (act) in
@@ -155,7 +155,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
         
         if collectionView == self.collectionViewPray {
             example = prayers[indexPath.item]
-            cell.data.alpha = 0
+            cell.date.alpha = 0
         } else {
             example = acts[indexPath.item]
         }

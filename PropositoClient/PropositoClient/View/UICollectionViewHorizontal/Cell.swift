@@ -13,7 +13,7 @@ final class Cell: UICollectionViewCell {
     @IBOutlet var title: UILabel!
     @IBOutlet var body: UILabel!
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var data: UILabel!
+    @IBOutlet weak var date: UILabel!
     
 //    @IBOutlet var button: UILabel!
 
@@ -71,10 +71,11 @@ final class Cell: UICollectionViewCell {
     public func configure(with viewModel: ViewModel, isSizing: Bool = false) {
         body.text = viewModel.body
         
+        
         guard !isSizing else {
             return
         }
-        
+        date.text = viewModel.date
         title.text = viewModel.title
         layer.cornerRadius = 12.0
         self.backgroundColor = #colorLiteral(red: 0.2274509804, green: 0.2509803922, blue: 0.3529411765, alpha: 1)

@@ -28,7 +28,7 @@ class ActHandler {
         }
     }
     
-    static func loadPrayWith(completion: @escaping (ActLoadResponse) -> Void) {
+    static func loadActWith(completion: @escaping (ActLoadResponse) -> Void) {
         do {
             let acts = try ActDAO.shared.read()
             completion(ActLoadResponse.success(acts: acts))
