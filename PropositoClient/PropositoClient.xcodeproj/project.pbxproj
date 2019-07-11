@@ -150,7 +150,6 @@
 				86F4269F22CAA5E80032AA5B /* AppDelegate.swift */,
 				86B889A522CC36950097F0D7 /* Extensions.swift */,
 				86F426B422CAA6730032AA5B /* Model */,
-				86F426A622CAA5E80032AA5B /* PropositoClient.xcdatamodeld */,
 				86F426B522CAA67C0032AA5B /* View */,
 				86F426B622CAA6880032AA5B /* Controller */,
 				86F426A922CAA5EA0032AA5B /* Assets.xcassets */,
@@ -167,6 +166,7 @@
 				8628F5CD22CFD9BD00844544 /* Persistence */,
 				8699400D22D40B7100069F8F /* Act */,
 				86CC746222CFDCE400D5174E /* Pray */,
+				86F426A622CAA5E80032AA5B /* PropositoClient.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,7 +520,8 @@
 				86F426A722CAA5E80032AA5B /* PropositoClient.xcdatamodel */,
 			);
 			currentVersion = 86F426A722CAA5E80032AA5B /* PropositoClient.xcdatamodel */;
-			path = PropositoClient.xcdatamodeld;
+			name = PropositoClient.xcdatamodeld;
+			path = ../PropositoClient.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
