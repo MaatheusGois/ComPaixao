@@ -152,7 +152,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     private func configTransition(){
         let transition: CATransition = CATransition()
-        transition.duration = 0.78
+        transition.duration = 0.78 / 2
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.reveal
         transition.subtype = CATransitionSubtype.fromBottom

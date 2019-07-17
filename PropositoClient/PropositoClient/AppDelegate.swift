@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("O usúario não permitiu, não podemos enviar notificacão")
             }
         }
-        
+        sleep(1)
         return true
     }
 

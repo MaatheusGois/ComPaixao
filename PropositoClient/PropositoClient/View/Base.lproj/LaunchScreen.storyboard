@@ -19,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="GVt-Sj-pZ6">
-                                <rect key="frame" x="61" y="307" width="292" height="293"/>
+                                <rect key="frame" x="61" y="191" width="292" height="514"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.72941176470588232" green="0.8666666666666667" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GVt-Sj-pZ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="61" id="DKY-wp-AJw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GVt-Sj-pZ6" secondAttribute="bottom" constant="262" id="IEm-ZO-V27"/>
-                            <constraint firstItem="GVt-Sj-pZ6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="263" id="Kco-EK-NaS"/>
-                            <constraint firstItem="GVt-Sj-pZ6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Mow-tD-7l5"/>
+                            <constraint firstItem="GVt-Sj-pZ6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="147" id="jRS-BE-QTj"/>
+                            <constraint firstItem="GVt-Sj-pZ6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nWs-nz-1LY"/>
+                            <constraint firstItem="GVt-Sj-pZ6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="oPa-8k-eMY"/>
+                            <constraint firstItem="GVt-Sj-pZ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="61" id="uBP-Jl-eKd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

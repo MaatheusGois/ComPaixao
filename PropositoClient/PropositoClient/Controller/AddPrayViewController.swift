@@ -9,9 +9,9 @@
 import UIKit
 
 class AddPrayViewController: UIViewController {
-
+    
+    //Back
     @IBAction func close(_ sender: Any) {
-        //Animate transition
         configTransition()
         self.dismiss(animated: false, completion: nil)
     }
@@ -40,7 +40,7 @@ class AddPrayViewController: UIViewController {
     @IBAction func add(_ sender: Any) {
         let title = titlePray.text ?? ""
         let purpose = purposePray.text ?? ""
-        let id = Int.random(in: 0 ..< 10000000000)
+        let id = Int.gererateId()
         let pray = Pray(id: id, title: title, purpose: purpose, answered: false, acts: [])
         PrayHandler.create(pray: pray) { (res) in
             switch (res) {
@@ -70,7 +70,7 @@ class AddPrayViewController: UIViewController {
     
     private func configTransition(){
         let transition: CATransition = CATransition()
-        transition.duration = 0.78
+        transition.duration = 0.78  / 2
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.reveal
         transition.subtype = CATransitionSubtype.fromBottom

@@ -35,7 +35,7 @@ final class Cell: UICollectionViewCell {
                     let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: 0.0, y: sizePadding)
                     
                     //Animation
-                    UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseInOut], animations: {
+                    UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseInOut], animations: {
                         
                         self.transform = scaledAndTranslatedTransform
                         self.alpha = 1
@@ -48,7 +48,7 @@ final class Cell: UICollectionViewCell {
             else
             {
                 
-                UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseInOut], animations: {
+                UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseInOut], animations: {
                     
                     self.transform = CGAffineTransform.identity
                     self.alpha = 0.5

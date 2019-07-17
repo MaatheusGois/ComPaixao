@@ -20,9 +20,6 @@ class ActDAO: GenericDAO {
     private init(){}
     
     func create(newEntity: Act) throws {
-        if idExists(id: newEntity.id) {
-            throw DAOError.invalidData(description: "ID already exists")
-        }
         
         guard let actEntity = NSEntityDescription.entity(forEntityName: self.entityName, in: managedContext) else {
             throw DAOError.internalError(description: "Failed to create NSEntityDescription Entity")
@@ -32,7 +29,7 @@ class ActDAO: GenericDAO {
             throw DAOError.internalError(description: "Failed to create NSManagedObject")
         }
         
-        act.id        = Int64(newEntity.id)
+        act.id        = idExists(id: newEntity.id) ? Int64(newEntity.id + 100000000000 + Int.gererateId()) : Int64(newEntity.id)
         act.title     = newEntity.title
         act.date      = newEntity.date
         act.pray      = newEntity.pray
