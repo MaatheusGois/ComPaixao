@@ -608,13 +608,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/AddPrayViewController.swift"
-            timestampString = "585103216.742731"
+            timestampString = "585115492.6190079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "add(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -624,13 +624,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/AddPrayViewController.swift"
-            timestampString = "585103216.7428679"
+            timestampString = "585115492.6200449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "add(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -640,7 +640,7 @@
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/AddPrayViewController.swift"
-                  timestampString = "585111180.551299"
+                  timestampString = "585115493.301625"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
@@ -655,7 +655,7 @@
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/AddPrayViewController.swift"
-                  timestampString = "585111180.554165"
+                  timestampString = "585115493.3033381"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -672,13 +672,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/AddPrayViewController.swift"
-            timestampString = "585103216.742964"
+            timestampString = "585115492.620108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "add(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -688,7 +688,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/AddActionViewController.swift"
-            timestampString = "585103216.743697"
+            timestampString = "585115492.6201611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -704,7 +704,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/AddActionViewController.swift"
-            timestampString = "585103216.744972"
+            timestampString = "585115492.620513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"

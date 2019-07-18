@@ -13,7 +13,7 @@ class ChoiceViewController: UIViewController {
     @IBAction func close(_ sender: Any) {
         let transition: CATransition = CATransition()
         transition.duration = 0.78 / 2
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.reveal
         transition.subtype = CATransitionSubtype.fromBottom
         self.view.window!.layer.add(transition, forKey: nil)
