@@ -48,7 +48,6 @@
 		8699401222D40C7600069F8F /* ActHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActHandler.swift; sourceTree = "<group>"; };
 		86A9871A22D67D730014B71E /* AddPrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrayViewController.swift; sourceTree = "<group>"; };
 		86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewController.swift; sourceTree = "<group>"; };
-		86B889A222CC33810097F0D7 /* PropositoClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PropositoClient.entitlements; sourceTree = "<group>"; };
 		86B889A322CC34530097F0D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		86B889A522CC36950097F0D7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		86CC745C22CFDB4F00D5174E /* PrayDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayDAO.swift; sourceTree = "<group>"; };
@@ -146,7 +145,6 @@
 		86F4269E22CAA5E80032AA5B /* PropositoClient */ = {
 			isa = PBXGroup;
 			children = (
-				86B889A222CC33810097F0D7 /* PropositoClient.entitlements */,
 				86F4269F22CAA5E80032AA5B /* AppDelegate.swift */,
 				86B889A522CC36950097F0D7 /* Extensions.swift */,
 				86F426B422CAA6730032AA5B /* Model */,

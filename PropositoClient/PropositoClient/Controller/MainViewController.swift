@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource {
+class MainViewController: UIViewController, UICollectionViewDataSource, UIScrollViewDelegate {
+    //Main Scroll View
+    @IBOutlet weak var mainScrollView: UIScrollView!
     
     @IBOutlet var collectionViewPray: UICollectionView!
     @IBOutlet var flowLayoutPray: UICollectionViewFlowLayout!
@@ -30,7 +32,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mainScrollView.delegate = self
+    }
+    
+    //Remove horizontal scroll
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if mainScrollView.contentOffset.x != 0 {
+            mainScrollView.contentOffset.x = 0
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
