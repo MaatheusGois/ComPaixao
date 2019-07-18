@@ -80,12 +80,21 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                     self.pickerDataId.append(pray.id)
                 })
                 
+                
             case .error(let description):
                 print(description)
             }
         }
         
-        pickerSelected = pickerData[0]
+        if pickerData.count != 0 {
+            pickerSelected = pickerData[0]
+        } else {
+            pickerData.append("Nenhuma oração")
+        }
+        
+        
+        
+        
         
         
         //Set a Color UIPickerView Date
