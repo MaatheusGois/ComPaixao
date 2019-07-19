@@ -640,12 +640,12 @@
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/AddPrayViewController.swift"
-                  timestampString = "585115493.301625"
+                  timestampString = "585197257.475902"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "1431">
+                  offsetFromSymbolStart = "1196">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -655,12 +655,12 @@
                   moduleName = "PropositoClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maatheusgois/repos/Proposito/PropositoClient/PropositoClient/Controller/AddPrayViewController.swift"
-                  timestampString = "585115493.3033381"
+                  timestampString = "585197257.479161"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
                   endingLineNumber = "47"
-                  offsetFromSymbolStart = "197">
+                  offsetFromSymbolStart = "152">
                </Location>
             </Locations>
          </BreakpointContent>
