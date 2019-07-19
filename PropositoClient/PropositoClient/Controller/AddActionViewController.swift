@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     //Button of close
     @IBAction func close(_ sender: Any) {
         self.configTransition()
@@ -61,11 +61,6 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         dateInPicker = sender.date
     }
     
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,12 +86,6 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         } else {
             pickerData.append("Nenhuma oração")
         }
-        
-        
-        
-        
-        
-        
         //Set a Color UIPickerView Date
         self.datePicker.setValue(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), forKeyPath: "textColor")
         
@@ -105,13 +94,6 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    
-    
-    
-
-    
-    
-    
     
     //Button of Add Pray
     @IBAction func addAction(_ sender: UIButton) {
@@ -134,11 +116,13 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     }
     
-    
-    
     //Hide Keyboard
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
     }
     
     //Create Notification
@@ -159,6 +143,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         appDelegate?.enviarNotificacao(title, subtitle, mensage, identifier, time)
     }
     
+    //Transitions
     private func configTransition(){
         let transition: CATransition = CATransition()
         transition.duration = 0.78 / 2

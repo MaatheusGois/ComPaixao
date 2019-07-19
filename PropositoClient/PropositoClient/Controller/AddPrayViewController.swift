@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPrayViewController: UIViewController {
+class AddPrayViewController: UIViewController, UITextFieldDelegate {
     
     //Back
     @IBAction func close(_ sender: Any) {
@@ -57,6 +57,8 @@ class AddPrayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         //Hide Keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -67,7 +69,16 @@ class AddPrayViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
+    }
     
+    
+    
+    
+    
+    //Transitions
     private func configTransition(){
         let transition: CATransition = CATransition()
         transition.duration = 0.78  / 2

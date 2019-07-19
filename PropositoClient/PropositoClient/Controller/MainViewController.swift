@@ -33,6 +33,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     override func viewDidLoad() {
         super.viewDidLoad()
         mainScrollView.delegate = self
+        loadData()
     }
     
     //Remove horizontal scroll
@@ -48,6 +49,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func loadData() {
         self.prayers = []
         self.acts = []
         //Load data of the Prayers
