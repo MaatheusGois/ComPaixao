@@ -9,15 +9,23 @@
 import UIKit
 
 class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    
+    
     //Button of close
     @IBAction func close(_ sender: Any) {
         self.configTransition()
         self.dismiss(animated: false, completion: nil)
     }
     
+    
     //Description
     @IBOutlet weak var descriptionPray: UITextField!
+    @IBOutlet weak var alertDescription: UILabel!
+    
 
+    func validateDescription() -> Bool {
+        return descriptionPray.text != ""
+    }
     
     
     //Picker of prayers
@@ -47,25 +55,73 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     //Date picker
     var dateInPicker = Date()
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var alertDate: UILabel!
+    
+    func validateDate() -> Bool {
+        return datePicker.date >= Date()
+    }
+    
+    
+    
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        //alert is hiden when the person change the date
+        alertDate.isHidden = true
         
         let dateFormatter = DateFormatter()
-        
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
-        
-        let strDate = dateFormatter.string(from: sender.date)
-        
-        //print Date
-        print(strDate)
         dateInPicker = sender.date
+        
     }
+    
+    //Button of Add Pray
+    @IBAction func addAction(_ sender: UIButton) {
+        if validateDescription() {
+            if validateDate() {
+                //Body
+                let title = descriptionPray.text ?? ""
+                let pray = pickerSelected
+                let date = self.dateInPicker
+                
+                //Act
+                let act = Act(id: Int.gererateId(), title: title, pray: pray, completed: false, date: date)
+                
+                //Create in CoreDate
+                ActHandler.create(act: act) { (res) in
+                    switch (res) {
+                    case .success(let act):
+                        self.createNotification(act)
+                        self.goToMain()
+                    case .error(let description):
+                        print(description)
+                    }
+                }
+            } else {
+                alertDate.isHidden = false
+            }
+        } else {
+            alertDescription.isHidden = false
+        }
+        
+
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Data of Prayers
+        loadData()
         
+        setForRemoveAlerts()
+        
+        //Hide keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func loadData() {
         //Load data of the Prayers
         PrayHandler.loadPrayWith { (res) in
             switch (res) {
@@ -88,32 +144,14 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
         //Set a Color UIPickerView Date
         self.datePicker.setValue(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), forKeyPath: "textColor")
-        
-        
-        //Hide keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
     }
     
-    //Button of Add Pray
-    @IBAction func addAction(_ sender: UIButton) {
-        //body
-        let title = descriptionPray.text ?? ""
-        let pray = pickerSelected
-        let date = self.dateInPicker
-        //act
-        let act = Act(id: Int.gererateId(), title: title, pray: pray, completed: false, date: date)
-        //save local
-        ActHandler.create(act: act) { (res) in
-            switch (res) {
-            case .success(let act):
-                self.createNotification(act)
-                self.goToMain()
-            case .error(let description):
-                print(description)
-            }
-        }
-
+    //Take editing in textfilds
+    func setForRemoveAlerts() {
+        descriptionPray.addTarget(self, action: #selector(descriptionDidChange(_:)), for: .editingChanged)
+    }
+    @objc func descriptionDidChange(_ textField: UITextField) {
+        alertDescription.isHidden = true
     }
     
     //Hide Keyboard

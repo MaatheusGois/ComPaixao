@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPk-fE-rTu">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -175,7 +175,7 @@
             <objects>
                 <viewController id="t1e-Hy-v49" customClass="ChoiceViewController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vcW-Dj-1HX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="g4L-z8-w9q">
@@ -371,27 +371,47 @@
                                             <action selector="datePickerChanged:" destination="rUW-yc-ZNL" eventType="valueChanged" id="aic-di-0ks"/>
                                         </connections>
                                     </datePicker>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Por favor, adicione uma data válida." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19g-rC-33i">
+                                        <rect key="frame" x="42" y="548" width="335" height="12"/>
+                                        <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="12"/>
+                                        <color key="textColor" red="0.90196078430000004" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, adicione uma descrição." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYy-yp-Mwa">
+                                        <rect key="frame" x="42" y="142" width="335" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="335" id="qMi-zq-xPF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="12"/>
+                                        <color key="textColor" red="0.90196078430000004" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="TYy-yp-Mwa" firstAttribute="top" secondItem="fEd-ql-CaY" secondAttribute="bottom" constant="5" id="1tC-oX-Lhf"/>
                                     <constraint firstItem="9Py-C4-51z" firstAttribute="leading" secondItem="GJO-de-dxO" secondAttribute="leading" id="8Yf-Fi-IEX"/>
                                     <constraint firstItem="yjL-K8-IsT" firstAttribute="leading" secondItem="HJa-5u-moJ" secondAttribute="leading" constant="37" id="9cz-EK-LM0"/>
                                     <constraint firstItem="NMy-0r-uQ5" firstAttribute="top" secondItem="fEd-ql-CaY" secondAttribute="bottom" constant="32" id="B0b-ZV-A9X"/>
                                     <constraint firstAttribute="bottom" secondItem="SYN-Uz-MON" secondAttribute="bottom" constant="70" id="H17-Qi-Rbd"/>
                                     <constraint firstItem="fEd-ql-CaY" firstAttribute="leading" secondItem="SYN-Uz-MON" secondAttribute="leading" id="Kwl-UP-DPt"/>
+                                    <constraint firstItem="19g-rC-33i" firstAttribute="leading" secondItem="HJa-5u-moJ" secondAttribute="leading" constant="42" id="NU1-ih-GT3"/>
                                     <constraint firstItem="fEd-ql-CaY" firstAttribute="trailing" secondItem="SYN-Uz-MON" secondAttribute="trailing" id="Pcx-Cm-GXg"/>
                                     <constraint firstItem="fEd-ql-CaY" firstAttribute="centerX" secondItem="HJa-5u-moJ" secondAttribute="centerX" id="Q6k-tX-5gY"/>
                                     <constraint firstAttribute="trailing" secondItem="yjL-K8-IsT" secondAttribute="trailing" constant="37" id="V36-nj-yLM"/>
                                     <constraint firstAttribute="trailing" secondItem="fEd-ql-CaY" secondAttribute="trailing" constant="37" id="a3g-fG-PMO"/>
                                     <constraint firstItem="fEd-ql-CaY" firstAttribute="leading" secondItem="HJa-5u-moJ" secondAttribute="leading" constant="37" id="cJ0-9C-HeP"/>
                                     <constraint firstItem="XWu-SS-60Z" firstAttribute="leading" secondItem="HJa-5u-moJ" secondAttribute="leading" constant="37" id="ceA-ML-cco"/>
+                                    <constraint firstItem="TYy-yp-Mwa" firstAttribute="leading" secondItem="19g-rC-33i" secondAttribute="leading" id="dQI-wp-62B"/>
                                     <constraint firstItem="9Py-C4-51z" firstAttribute="leading" secondItem="HJa-5u-moJ" secondAttribute="leading" constant="37" id="dzq-VI-4t7"/>
                                     <constraint firstItem="NMy-0r-uQ5" firstAttribute="centerX" secondItem="XWu-SS-60Z" secondAttribute="centerX" constant="6.5" id="f2x-f4-RGO"/>
                                     <constraint firstAttribute="trailing" secondItem="GJO-de-dxO" secondAttribute="trailing" constant="37" id="gVL-Yv-i16"/>
                                     <constraint firstItem="SYN-Uz-MON" firstAttribute="top" secondItem="XWu-SS-60Z" secondAttribute="bottom" constant="41" id="gYh-xg-Kc6"/>
                                     <constraint firstItem="fEd-ql-CaY" firstAttribute="top" secondItem="GJO-de-dxO" secondAttribute="bottom" constant="8" symbolic="YES" id="hFU-GQ-HoC"/>
                                     <constraint firstItem="XWu-SS-60Z" firstAttribute="top" secondItem="yjL-K8-IsT" secondAttribute="bottom" constant="8" symbolic="YES" id="lnU-vu-H1L"/>
+                                    <constraint firstItem="NMy-0r-uQ5" firstAttribute="top" secondItem="TYy-yp-Mwa" secondAttribute="bottom" constant="10" id="lon-aN-M5T"/>
                                     <constraint firstItem="9Py-C4-51z" firstAttribute="top" secondItem="HJa-5u-moJ" secondAttribute="top" constant="43" id="mGW-H9-pHm"/>
                                     <constraint firstItem="GJO-de-dxO" firstAttribute="top" secondItem="9Py-C4-51z" secondAttribute="bottom" constant="19" id="tVz-oN-G1g"/>
+                                    <constraint firstItem="19g-rC-33i" firstAttribute="top" secondItem="SYN-Uz-MON" secondAttribute="bottom" constant="5" id="vH1-K2-Yaj"/>
                                     <constraint firstItem="GJO-de-dxO" firstAttribute="leading" secondItem="NMy-0r-uQ5" secondAttribute="leading" id="whN-Ol-jLG"/>
                                     <constraint firstItem="yjL-K8-IsT" firstAttribute="top" secondItem="NMy-0r-uQ5" secondAttribute="bottom" constant="8" symbolic="YES" id="xEU-2z-avG"/>
                                 </constraints>
@@ -434,6 +454,8 @@
                         <viewLayoutGuide key="safeArea" id="RRm-eO-gKn"/>
                     </view>
                     <connections>
+                        <outlet property="alertDate" destination="19g-rC-33i" id="3An-LS-CsT"/>
+                        <outlet property="alertDescription" destination="TYy-yp-Mwa" id="rJW-pA-yEv"/>
                         <outlet property="datePicker" destination="SYN-Uz-MON" id="JES-0L-kFY"/>
                         <outlet property="descriptionPray" destination="GJO-de-dxO" id="mN5-rA-JSP"/>
                         <outlet property="pickerPray" destination="yjL-K8-IsT" id="MLV-tX-OJw"/>
@@ -441,7 +463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBf-03-BJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785.5072463768117" y="327.45535714285711"/>
+            <point key="canvasLocation" x="1784.057971014493" y="325.44642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fag-6y-PbM">
@@ -516,6 +538,16 @@
                                             <constraint firstAttribute="height" constant="3" id="J9P-QO-aq4"/>
                                         </constraints>
                                     </imageView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, adicione um título." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-Nf-NML">
+                                        <rect key="frame" x="42" y="141" width="335" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="335" id="rsx-CN-U6E"/>
+                                            <constraint firstAttribute="height" constant="14" id="zEz-pg-PAf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="12"/>
+                                        <color key="textColor" red="0.90196078431372551" green="0.22352941176470587" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9U-XB-gnf">
                                         <rect key="frame" x="37" y="225" width="176" height="45"/>
                                         <constraints>
@@ -567,6 +599,12 @@ em uma palavra</string>
                                             <action selector="addWithAction:" destination="3sP-2a-eOZ" eventType="touchUpInside" id="wDx-fg-wrB"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Por favor, adicione um propósito." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBj-44-j5d">
+                                        <rect key="frame" x="42" y="338" width="335" height="12"/>
+                                        <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="12"/>
+                                        <color key="textColor" red="0.90196078430000004" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="5oU-kq-ZrC" firstAttribute="leading" secondItem="hdi-hC-rcQ" secondAttribute="trailing" constant="16" id="0FY-Ps-RgP"/>
@@ -574,6 +612,7 @@ em uma palavra</string>
                                     <constraint firstItem="F0X-rz-9S3" firstAttribute="leading" secondItem="bt9-6N-yro" secondAttribute="leading" constant="37" id="3LB-1o-vTs"/>
                                     <constraint firstItem="aCG-Ky-ynY" firstAttribute="leading" secondItem="bt9-6N-yro" secondAttribute="leading" constant="37" id="6EL-pT-g5O"/>
                                     <constraint firstItem="Onk-pK-3vN" firstAttribute="centerX" secondItem="bt9-6N-yro" secondAttribute="centerX" id="A0O-L3-MVi"/>
+                                    <constraint firstItem="Hr5-Nf-NML" firstAttribute="top" secondItem="j8F-My-5dE" secondAttribute="bottom" constant="5" id="DXb-ef-kh4"/>
                                     <constraint firstItem="hdi-hC-rcQ" firstAttribute="leading" secondItem="bt9-6N-yro" secondAttribute="leading" constant="37" id="Ed0-bB-yIk"/>
                                     <constraint firstItem="J9U-XB-gnf" firstAttribute="leading" secondItem="Onk-pK-3vN" secondAttribute="leading" id="FvY-DE-OnO"/>
                                     <constraint firstItem="J9U-XB-gnf" firstAttribute="top" secondItem="j8F-My-5dE" secondAttribute="bottom" constant="89" id="Ik1-0k-tU5"/>
@@ -586,6 +625,9 @@ em uma palavra</string>
                                     <constraint firstItem="j8F-My-5dE" firstAttribute="leading" secondItem="J9U-XB-gnf" secondAttribute="leading" id="U5N-Nl-tYS"/>
                                     <constraint firstItem="aCG-Ky-ynY" firstAttribute="trailing" secondItem="Onk-pK-3vN" secondAttribute="trailing" id="ZEj-6m-hUr"/>
                                     <constraint firstAttribute="trailing" secondItem="5oU-kq-ZrC" secondAttribute="trailing" constant="37" id="b1Y-bL-VFO"/>
+                                    <constraint firstItem="Hr5-Nf-NML" firstAttribute="leading" secondItem="mBj-44-j5d" secondAttribute="leading" id="bzc-1Q-qmO"/>
+                                    <constraint firstItem="Hr5-Nf-NML" firstAttribute="leading" secondItem="bt9-6N-yro" secondAttribute="leading" constant="42" id="caN-L1-NBD"/>
+                                    <constraint firstItem="mBj-44-j5d" firstAttribute="top" secondItem="zKL-is-e25" secondAttribute="bottom" constant="5" id="hfv-Y7-IMZ"/>
                                     <constraint firstItem="aCG-Ky-ynY" firstAttribute="top" secondItem="F0X-rz-9S3" secondAttribute="bottom" constant="18" id="mP3-D4-Ocx"/>
                                     <constraint firstItem="hdi-hC-rcQ" firstAttribute="top" secondItem="zKL-is-e25" secondAttribute="bottom" constant="90" id="pqJ-gP-dNw"/>
                                     <constraint firstItem="Onk-pK-3vN" firstAttribute="trailing" secondItem="zKL-is-e25" secondAttribute="trailing" id="ptL-7w-yWY"/>
@@ -633,19 +675,21 @@ em uma palavra</string>
                         <viewLayoutGuide key="safeArea" id="j1W-pS-Cgz"/>
                     </view>
                     <connections>
+                        <outlet property="alertPurpose" destination="mBj-44-j5d" id="PyJ-2a-oax"/>
+                        <outlet property="alertTitle" destination="Hr5-Nf-NML" id="hqP-Xa-LNd"/>
                         <outlet property="purposePray" destination="Onk-pK-3vN" id="Tbr-LN-dxr"/>
                         <outlet property="titlePray" destination="aCG-Ky-ynY" id="5IM-JR-cg1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txN-VJ-mOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2856.521739130435" y="-526.33928571428567"/>
+            <point key="canvasLocation" x="2853.6231884057975" y="-527.67857142857144"/>
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="66.666664123535156" height="66.666664123535156"/>
-        <image name="background" width="138" height="298.66665649414062"/>
+        <image name="add" width="100" height="100"/>
+        <image name="background" width="207" height="448"/>
         <image name="segue" width="46" height="46"/>
-        <image name="voltar" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="voltar" width="250" height="250"/>
     </resources>
 </document>
