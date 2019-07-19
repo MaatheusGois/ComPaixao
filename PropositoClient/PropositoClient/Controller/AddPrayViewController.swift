@@ -85,6 +85,24 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    //Validade number of characters in the textfild
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        return updatedText.count <= 17
+    }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+        
+        return changedText.count <= 17
+    }
+    
     //Take editing in textfilds
     func setForRemoveAlerts() {
         titlePray.addTarget(self, action: #selector(titleDidChange(_:)), for: .editingChanged)
