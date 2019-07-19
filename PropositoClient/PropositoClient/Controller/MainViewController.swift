@@ -110,7 +110,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
         
         flowLayoutPray.itemSize = CGSize(width: Constants.cardWidth, height: height)
         
-        collectionViewHeightConstraintPray.constant = height + edgeInsets.top + edgeInsets.bottom
+//        collectionViewHeightConstraintPray.constant = height + edgeInsets.top + edgeInsets.bottom
     }
     
     //Act
@@ -140,7 +140,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
         
         flowLayoutAct.itemSize = CGSize(width: Constants.cardWidth, height: height)
         
-        collectionViewHeightConstraintAct.constant = height + edgeInsets.top + edgeInsets.bottom
+//        collectionViewHeightConstraintAct.constant = height + edgeInsets.top + edgeInsets.bottom
     }
     
     
