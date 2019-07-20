@@ -624,7 +624,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/AddActionViewController.swift"
-            timestampString = "585347843.736421"
+            timestampString = "585349702.205503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -640,7 +640,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropositoClient/Controller/AddActionViewController.swift"
-            timestampString = "585347843.7369829"
+            timestampString = "585349702.205898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -694,6 +694,22 @@
             startingLineNumber = "42"
             endingLineNumber = "42"
             landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PropositoClient/Controller/AddActionViewController.swift"
+            timestampString = "585349702.2061681"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
