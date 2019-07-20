@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -106,6 +107,16 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     }
     
+    var userWantNotification = false
+    @IBAction func wantNotification(_ sender: UISwitch) {
+        if sender.isOn {
+            requestAuthNotification()
+            userWantNotification = true
+        } else {
+            userWantNotification = false
+        }
+    }
+    
     
     
     override func viewDidLoad() {
@@ -183,20 +194,22 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     //Create Notification
     func createNotification(_ act:Act) {
-        //call app
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        
-        //create body
-        let title = act.title
-        let subtitle = act.pray
-        let mensage = "A fé sem obras é morta!"
-        let identifier = "identifier\(title)"
-        var time = act.date - Date()
-        if(time < 0){
-            time = 10
+        if userWantNotification {
+            //call app
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            
+            //create body
+            let title = act.title
+            let subtitle = act.pray
+            let mensage = "A fé sem obras é morta!"
+            let identifier = "identifier\(title)"
+            var time = act.date - Date()
+            if(time < 0){
+                time = 10
+            }
+            //create
+            appDelegate?.enviarNotificacao(title, subtitle, mensage, identifier, time)
         }
-        //create
-        appDelegate?.enviarNotificacao(title, subtitle, mensage, identifier, time)
     }
     
     //Transitions
@@ -212,5 +225,19 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     private func goToMain(){
         configTransition()
         self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+    }
+    
+    private func requestAuthNotification(){
+        let notificationCenter = UNUserNotificationCenter.current()
+        //        //Request notification
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        notificationCenter.delegate = appDelegate
+        let opcoes: UNAuthorizationOptions = [.alert, .sound, .badge]
+        notificationCenter.requestAuthorization(options: opcoes) {
+            (foiPermitido, error) in
+            if !foiPermitido {
+                print("O usúario não permitiu, não podemos enviar notificacão")
+            }
+        }
     }
 }

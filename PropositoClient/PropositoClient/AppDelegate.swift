@@ -19,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //Request notification
-        notificationCenter.delegate = self
-        let opcoes: UNAuthorizationOptions = [.alert, .sound, .badge]
-        notificationCenter.requestAuthorization(options: opcoes) {
-            (foiPermitido, error) in
-            if !foiPermitido {
-                print("O usúario não permitiu, não podemos enviar notificacão")
-            }
-        }
+//        //Request notification
+//        notificationCenter.delegate = self
+//        let opcoes: UNAuthorizationOptions = [.alert, .sound, .badge]
+//        notificationCenter.requestAuthorization(options: opcoes) {
+//            (foiPermitido, error) in
+//            if !foiPermitido {
+//                print("O usúario não permitiu, não podemos enviar notificacão")
+//            }
+//        }
         sleep(1)
         return true
     }
