@@ -29,6 +29,8 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var pickerSelected: String = ""
     var pickerSelectedRow: Int = 0
     @IBOutlet weak var pickerPray: UIPickerView!
+    @IBOutlet weak var alertPicker: UILabel!
+    
     override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }
     func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return pickerData.count }
@@ -57,30 +59,32 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     //Button of Add Pray
     @IBAction func addAction(_ sender: UIButton) {
-        if validateDescription() {
-            if validateDate() {
-                //Body
-                let title = descriptionPray.text ?? ""
-                let pray = pickerSelected
-                let date = self.dateInPicker
-                let prayID = self.prayers[pickerSelectedRow].id
-                
-                //Act
-                let act = Act(id: Int.gererateId(), prayID: prayID, title: title, pray: pray, completed: false, date: date)
-                
-                //Create in CoreDate
-                ActHandler.create(act: act) { (res) in
-                    switch (res) {
-                    case .success(let act):
-                        self.addActIntoPray(act)
-                        self.sendNotification(act)
-                        self.goToMain()
-                    case .error(let description):
-                        print(description)
+        if prayers.count > 0 {
+            if validateDescription() {
+                if validateDate() {
+                    //Body
+                    let title = descriptionPray.text ?? ""
+                    let pray = pickerSelected
+                    let date = self.dateInPicker
+                    let prayID = self.prayers[pickerSelectedRow].id
+                    
+                    //Act
+                    let act = Act(id: Int.gererateId(), prayID: prayID, title: title, pray: pray, completed: false, date: date)
+                    
+                    //Create in CoreDate
+                    ActHandler.create(act: act) { (res) in
+                        switch (res) {
+                        case .success(let act):
+                            self.addActIntoPray(act)
+                            self.sendNotification(act)
+                            self.goToMain()
+                        case .error(let description):
+                            print(description)
+                        }
                     }
-                }
-            } else { alertDate.isHidden = false }
-        } else { alertDescription.isHidden = false }
+                } else { alertDate.isHidden = false }
+            } else { alertDescription.isHidden = false }
+        } else { alertPicker.isHidden = false }
     }
     
     //Switch Notification

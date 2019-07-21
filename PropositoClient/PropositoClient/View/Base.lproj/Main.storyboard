@@ -411,22 +411,31 @@
                                             <action selector="wantNotification:" destination="rUW-yc-ZNL" eventType="valueChanged" id="jzj-M8-IYW"/>
                                         </connections>
                                     </switch>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, adicione uma oração antes." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkh-LH-n7x">
+                                        <rect key="frame" x="42" y="269" width="335" height="17"/>
+                                        <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="12"/>
+                                        <color key="textColor" red="0.90196078430000004" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="9Py-C4-51z" firstAttribute="leading" secondItem="HJa-5u-moJ" secondAttribute="leading" constant="37" id="0SE-bw-rVh"/>
                                     <constraint firstItem="NMy-0r-uQ5" firstAttribute="leading" secondItem="yjL-K8-IsT" secondAttribute="leading" id="5Tt-vj-uJM"/>
+                                    <constraint firstItem="kkh-LH-n7x" firstAttribute="trailing" secondItem="yjL-K8-IsT" secondAttribute="trailing" id="5XD-XJ-ZtB"/>
+                                    <constraint firstItem="kkh-LH-n7x" firstAttribute="top" secondItem="NMy-0r-uQ5" secondAttribute="bottom" constant="60" id="66f-gw-0gB"/>
                                     <constraint firstItem="TYy-yp-Mwa" firstAttribute="top" secondItem="fEd-ql-CaY" secondAttribute="bottom" constant="5" id="6jS-AG-MJs"/>
                                     <constraint firstItem="ViI-p0-R9M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bAY-RW-C2g" secondAttribute="trailing" constant="10" id="7tK-nJ-WGI"/>
                                     <constraint firstItem="NMy-0r-uQ5" firstAttribute="top" secondItem="TYy-yp-Mwa" secondAttribute="bottom" constant="30" id="8Cg-F4-vZC"/>
-                                    <constraint firstItem="bAY-RW-C2g" firstAttribute="top" secondItem="19g-rC-33i" secondAttribute="bottom" constant="20" id="BMO-2o-kf1"/>
                                     <constraint firstItem="TYy-yp-Mwa" firstAttribute="leading" secondItem="HJa-5u-moJ" secondAttribute="leading" constant="42" id="Dtl-ky-llt"/>
                                     <constraint firstItem="TYy-yp-Mwa" firstAttribute="leading" secondItem="19g-rC-33i" secondAttribute="leading" id="FEQ-m1-uey"/>
                                     <constraint firstItem="fEd-ql-CaY" firstAttribute="trailing" secondItem="TYy-yp-Mwa" secondAttribute="trailing" id="Ger-Gt-XqF"/>
                                     <constraint firstItem="SYN-Uz-MON" firstAttribute="leading" secondItem="bAY-RW-C2g" secondAttribute="leading" id="IVA-hE-bR7"/>
                                     <constraint firstAttribute="trailing" secondItem="ViI-p0-R9M" secondAttribute="trailing" constant="42" id="IZS-cw-On5"/>
+                                    <constraint firstItem="XWu-SS-60Z" firstAttribute="top" secondItem="kkh-LH-n7x" secondAttribute="bottom" constant="41" id="Jju-l7-f1t"/>
                                     <constraint firstItem="9Py-C4-51z" firstAttribute="top" secondItem="HJa-5u-moJ" secondAttribute="top" constant="32" id="M6R-WI-sic"/>
                                     <constraint firstItem="SYN-Uz-MON" firstAttribute="top" secondItem="XWu-SS-60Z" secondAttribute="bottom" constant="7" id="O9C-nN-CtV"/>
                                     <constraint firstItem="yjL-K8-IsT" firstAttribute="top" secondItem="TYy-yp-Mwa" secondAttribute="bottom" constant="60" id="ORd-tv-0te"/>
+                                    <constraint firstItem="kkh-LH-n7x" firstAttribute="leading" secondItem="TYy-yp-Mwa" secondAttribute="leading" id="Q1q-dL-daW"/>
                                     <constraint firstItem="XWu-SS-60Z" firstAttribute="top" secondItem="yjL-K8-IsT" secondAttribute="bottom" constant="30" id="T5b-BQ-cbb"/>
                                     <constraint firstItem="yjL-K8-IsT" firstAttribute="trailing" secondItem="SYN-Uz-MON" secondAttribute="trailing" id="Tk2-T6-8TM"/>
                                     <constraint firstAttribute="trailing" secondItem="GJO-de-dxO" secondAttribute="trailing" constant="37" id="Yxa-OB-eBg"/>
@@ -487,6 +496,7 @@
                     <connections>
                         <outlet property="alertDate" destination="19g-rC-33i" id="3An-LS-CsT"/>
                         <outlet property="alertDescription" destination="TYy-yp-Mwa" id="rJW-pA-yEv"/>
+                        <outlet property="alertPicker" destination="kkh-LH-n7x" id="ydt-Ez-XIj"/>
                         <outlet property="datePicker" destination="SYN-Uz-MON" id="JES-0L-kFY"/>
                         <outlet property="descriptionPray" destination="GJO-de-dxO" id="mN5-rA-JSP"/>
                         <outlet property="pickerPray" destination="yjL-K8-IsT" id="MLV-tX-OJw"/>
