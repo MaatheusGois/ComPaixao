@@ -36,6 +36,14 @@ class ActHandler {
             completion(ActLoadResponse.error(description: "OPS!! we have a problem to read your acts"))
         }
     }
+    static func findByID(id: Int, withCompletion completion:(ActUpdateResponse) -> Void) {
+        do {
+            let act = try ActDAO.shared.findByID(id: id)
+            completion(ActUpdateResponse.success(act: act))
+        }catch{
+            completion(ActUpdateResponse.error(description: "OPS!! We have a problem to update your Act"))
+        }
+    }
     
     static func update(act: Act, withCompletion completion:(ActUpdateResponse) -> Void) {
         do {
@@ -45,6 +53,7 @@ class ActHandler {
             completion(ActUpdateResponse.error(description: "OPS!! We have a problem to update your Act"))
         }
     }
+    
     
     static func delete(act: Act, withCompletion completion:(ActUpdateResponse) -> Void) {
         do {

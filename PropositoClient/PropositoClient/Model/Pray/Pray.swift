@@ -8,9 +8,9 @@
 
 struct Pray: Codable {
     let id: Int
-    let title, purpose: String
-    let answered: Bool
-    let acts:[String]
+    var title, purpose: String
+    var answered: Bool
+    var acts:[Int]
     
     enum CodingKeys: String, CodingKey {
         case id, title, answered, acts, purpose

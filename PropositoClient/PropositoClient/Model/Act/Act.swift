@@ -10,13 +10,13 @@ import Foundation
 
 
 struct Act: Codable {
-    let id: Int
-    let title, pray: String
-    let completed: Bool
-    let date: Date
+    let id, prayID: Int
+    var title, pray: String
+    var completed: Bool
+    var date: Date
     
     enum CodingKeys: String, CodingKey {
-        case id, title, pray, completed, date
+        case id, prayID, title, pray, completed, date
     }
 }
 

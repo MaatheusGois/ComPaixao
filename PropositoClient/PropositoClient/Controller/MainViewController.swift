@@ -22,9 +22,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     @IBOutlet var collectionViewHeightConstraintAct: NSLayoutConstraint!
     
     
-    private var prayers: [CardModel] = Data.pray
-    private var acts: [CardModel] = Data.act
-    
+    private var prayersCard: [CardModel] = Data.pray
+    private var prayers = [Pray]()
+    private var actsCard: [CardModel] = Data.act
+    private var acts = [Act]()
     
     private enum Segment: Int {
         case dataSet1 = 0, dataSet2, dataSet3
@@ -49,21 +50,69 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        loadData()
+        loadDataPray()
+        loadDataAct()
     }
     
-    func loadData() {
+    private func loadDataPray(){
+        self.prayersCard = []
         self.prayers = []
+        PrayHandler.loadPrayWith { (res) in
+            switch (res) {
+            case .success(let prayers):
+                prayers.forEach({ (pray) in
+                    if !pray.answered {
+                        self.prayers.append(pray)
+                        self.prayersCard.append(
+                            CardModel(title: pray.title, body: pray.purpose, date: nil)
+                        )
+                    }
+                })
+                
+            case .error(let description):
+                print(description)
+            }
+        }
+        setupCollectioViewPray()
+        collectionViewPray.reloadData()
+    }
+    private func loadDataAct(){
+        self.actsCard = []
         self.acts = []
+        ActHandler.loadActWith { (res) in
+            switch (res) {
+            case .success(let acts):
+                acts.forEach({ (act) in
+                    if !act.completed {
+                        self.acts.append(act)
+                        self.actsCard.append(
+                            CardModel(title: act.title, body: act.pray, date: Date.getFormattedDate(date: act.date))
+                        )
+                    }
+                })
+            case .error(let description):
+                print(description)
+            }
+        }
+        setupCollectioViewAct()
+        collectionViewAct.reloadData()
+    }
+    
+    
+    func loadData() {
+        self.prayersCard = []
+        self.actsCard = []
         //Load data of the Prayers
         PrayHandler.loadPrayWith { (res) in
             switch (res) {
             case .success(let prayers):
                 prayers.forEach({ (pray) in
-                    self.prayers.append(
-                        CardModel(title: pray.title, body: pray.purpose, date: nil)
-                    )
-                    
+                    if !pray.answered {
+                        self.prayers.append(pray)
+                        self.prayersCard.append(
+                            CardModel(title: pray.title, body: pray.purpose, date: nil)
+                        )
+                    }
                 })
                 
             case .error(let description):
@@ -75,21 +124,26 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
             switch (res) {
             case .success(let acts):
                 acts.forEach({ (act) in
-                    self.acts.append(CardModel(title: act.title, body: act.pray, date: Date.getFormattedDate(date: act.date)))
+                    if !act.completed {
+                        self.acts.append(act)
+                        self.actsCard.append(
+                            CardModel(title: act.title, body: act.pray, date: Date.getFormattedDate(date: act.date))
+                        )
+                    }
                 })
             case .error(let description):
                 print(description)
             }
         }
-        setupCollectioView()
+        setupCollectioViewPray()
         setupCollectioViewAct()
         collectionViewAct.reloadData()
         collectionViewPray.reloadData()
     }
     
     
-    //Pray
-    private func setupCollectioView() {
+    // Config CollectioView Pray
+    private func setupCollectioViewPray() {
         let nib = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil)
         collectionViewPray.register(nib, forCellWithReuseIdentifier: Constants.cellReuseIdentifier)
         
@@ -100,10 +154,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
         flowLayoutPray.minimumInteritemSpacing = 0
         flowLayoutPray.minimumLineSpacing = 16
         
-        setCollectionViewHeight(with: prayers, edgeInsets: flowLayoutPray.sectionInset)
+        setCollectionViewHeight(with: prayersCard, edgeInsets: flowLayoutPray.sectionInset)
     }
-    
-    
     private func setCollectionViewHeight(with data: [CardModel], edgeInsets: UIEdgeInsets) {
         let viewModels = data.compactMap { ViewModel(example: $0) }
         
@@ -118,7 +170,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
 //        collectionViewHeightConstraintPray.constant = height + edgeInsets.top + edgeInsets.bottom
     }
     
-    //Act
+    // Config CollectioView Act
     private func setupCollectioViewAct() {
         let nib = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil)
         collectionViewAct.register(nib, forCellWithReuseIdentifier: Constants.cellReuseIdentifier)
@@ -130,7 +182,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
         flowLayoutAct.minimumInteritemSpacing = 0
         flowLayoutAct.minimumLineSpacing = 16
         
-        setCollectionViewHeightAct(with: acts, edgeInsets: flowLayoutAct.sectionInset)
+        setCollectionViewHeightAct(with: actsCard, edgeInsets: flowLayoutAct.sectionInset)
     }
     
     private func setCollectionViewHeightAct(with data: [CardModel], edgeInsets: UIEdgeInsets) {
@@ -154,57 +206,68 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     
     
     
-    // MARK: - UICollectionViewDatasource
+    // CollectionView Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionViewPray {
-            return prayers.count
-        } else {
-            return acts.count
-        }
-        
+        if collectionView == self.collectionViewPray { return prayersCard.count } else { return actsCard.count }
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellReuseIdentifier, for: indexPath) as! Cell
-        
-        
         var example:CardModel
         
         if collectionView == self.collectionViewPray {
-            example = prayers[indexPath.item]
+            example = prayersCard[indexPath.item]
             cell.date.alpha = 0
+            cell.button.addTarget(self,
+                                  action: #selector(funcPrayButtonCheck),
+                                  for: .touchUpInside)
         } else {
-            example = acts[indexPath.item]
+            example = actsCard[indexPath.item]
+            cell.button.addTarget(self,
+                                  action: #selector(funcActButtonCheck),
+                                  for: .touchUpInside)
         }
         
         let viewModel = ViewModel(example: example)
-        
         cell.configure(with: viewModel)
-
-        
         cell.button.tag = indexPath.row
-        cell.button.addTarget(self,
-                              action: #selector(funcButton),
-                              for: .touchUpInside)
+        
+        
         return cell
     }
     
-    @objc func funcButton(sender : UIButton){
-        print(sender.tag)
-        guard let image = UIImage(named: "checkUP") else {
-        
-            print("Image Not Found")
-            return
-            
-        }
-        
-        sender.setBackgroundImage(image, for: .normal)
-        
+    @objc func funcPrayButtonCheck(sender : UIButton){
+        var prayToUpdate = self.prayers[sender.tag]
+        prayToUpdate.answered = true
+        updatePray(prayToUpdate)
+    }
+    @objc func funcActButtonCheck(sender : UIButton){
+        var actToUpdate = self.acts[sender.tag]
+        actToUpdate.completed = true
+        updateAct(actToUpdate)
     }
     
+    private func updatePray(_ prayToUpdate:Pray){
+        PrayHandler.update(pray: prayToUpdate) { (res) in
+            switch (res) {
+            case .success(let pray):
+                print(pray)
+                loadDataPray()
+            case .error(let description):
+                print(description)
+            }
+        }
+    }
+    private func updateAct(_ actToUpdate:Act){
+        ActHandler.update(act: actToUpdate) { (res) in
+            switch (res) {
+            case .success(let act):
+                print(act)
+                loadDataAct()
+            case .error(let description):
+                print(description)
+            }
+        }
+    }
     
-    
-
 }

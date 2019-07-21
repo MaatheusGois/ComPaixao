@@ -30,6 +30,7 @@ class ActDAO: GenericDAO {
         }
         
         act.id        = idExists(id: newEntity.id) ? Int64(newEntity.id + 100000000000 + Int.gererateId()) : Int64(newEntity.id)
+        act.prayID    = Int64(newEntity.prayID)
         act.title     = newEntity.title
         act.date      = newEntity.date
         act.pray      = newEntity.pray
@@ -39,7 +40,7 @@ class ActDAO: GenericDAO {
         do {
             try managedContext.save()
         } catch {
-            throw DAOError.internalError(description: "Problem to save Task using CoreData")
+            throw DAOError.internalError(description: "Problem to save Act using CoreData")
         }
     }
     
@@ -50,13 +51,14 @@ class ActDAO: GenericDAO {
             let result = try managedContext.fetch(fetchRequest)
             
             guard let actData = result as? [ActEntity] else {
-                throw DAOError.internalError(description: "Error to cast fetch result to [PrayEntity]")
+                throw DAOError.internalError(description: "Error to cast fetch result to [ActEntity]")
             }
             
             var acts:[Act] = []
             
             for act in actData {
                 acts.append(Act(id: Int(act.id),
+                                    prayID: Int(act.prayID),
                                     title: act.title ?? "",
                                     pray: act.pray ?? "",
                                     completed: act.completed,
@@ -69,8 +71,39 @@ class ActDAO: GenericDAO {
         }
     }
     
-    func update(entity: Act) throws {
+    func findByID(id: Int) throws -> Act{
         throw DAOError.internalError(description: "Not implement")
+    }
+    
+    func update(entity: Act) throws {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "id = %d", entity.id)
+        
+        do {
+            var result = try managedContext.fetch(fetchRequest)
+            
+            if(result.count != 0){
+                let act = result[0] as! NSManagedObject
+                act.setValue(entity.title, forKeyPath: "title")
+                act.setValue(entity.prayID, forKeyPath: "prayID")
+                act.setValue(entity.date, forKeyPath: "date")
+                act.setValue(entity.pray, forKeyPath: "pray")
+                act.setValue(entity.completed, forKeyPath: "completed")
+                
+                do{
+                    try managedContext.save()
+                } catch {
+                    throw DAOError.internalError(description: "Problem to save Act using CoreData")
+                }
+                
+            } else {
+                throw DAOError.internalError(description: "Act not found")
+            }
+            
+        } catch {
+            throw DAOError.internalError(description: "Problema during CoreData fetch")
+        }
     }
     
     func delete(entity: Act) throws {

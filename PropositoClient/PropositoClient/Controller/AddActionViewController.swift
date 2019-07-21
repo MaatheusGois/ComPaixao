@@ -11,68 +11,48 @@ import UserNotifications
 
 class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
-    
     //Button of close
     @IBAction func close(_ sender: Any) {
         self.configTransition()
         self.dismiss(animated: false, completion: nil)
     }
     
-    
     //Description
     @IBOutlet weak var descriptionPray: UITextField!
     @IBOutlet weak var alertDescription: UILabel!
-    
-
-    func validateDescription() -> Bool {
-        return descriptionPray.text != ""
-    }
-    
+    func validateDescription() -> Bool { return descriptionPray.text != "" }
     
     //Picker of prayers
+    var prayers = [Pray]()
     var pickerData: [String] = [String]()
     var pickerDataId: [Int] = [Int]()
     var pickerSelected: String = ""
-    
+    var pickerSelectedRow: Int = 0
     @IBOutlet weak var pickerPray: UIPickerView!
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
+    override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return pickerData.count }
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor:  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerSelected = pickerData[row]
+        pickerSelectedRow = row
     }
-    
     
     //Date picker
     var dateInPicker = Date()
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var alertDate: UILabel!
     
-    func validateDate() -> Bool {
-        return datePicker.date >= Date()
-    }
-    
-    
+    func validateDate() -> Bool { return datePicker.date >= Date() }
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
-        //alert is hiden when the person change the date
         alertDate.isHidden = true
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
         dateInPicker = sender.date
-        
     }
     
     //Button of Add Pray
@@ -83,30 +63,27 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 let title = descriptionPray.text ?? ""
                 let pray = pickerSelected
                 let date = self.dateInPicker
+                let prayID = self.prayers[pickerSelectedRow].id
                 
                 //Act
-                let act = Act(id: Int.gererateId(), title: title, pray: pray, completed: false, date: date)
+                let act = Act(id: Int.gererateId(), prayID: prayID, title: title, pray: pray, completed: false, date: date)
                 
                 //Create in CoreDate
                 ActHandler.create(act: act) { (res) in
                     switch (res) {
                     case .success(let act):
-                        self.createNotification(act)
+                        self.addActIntoPray(act)
+                        self.sendNotification(act)
                         self.goToMain()
                     case .error(let description):
                         print(description)
                     }
                 }
-            } else {
-                alertDate.isHidden = false
-            }
-        } else {
-            alertDescription.isHidden = false
-        }
-        
-
+            } else { alertDate.isHidden = false }
+        } else { alertDescription.isHidden = false }
     }
     
+    //Switch Notification
     var userWantNotification = false
     @IBAction func wantNotification(_ sender: UISwitch) {
         if sender.isOn {
@@ -138,10 +115,12 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             switch (res) {
             case .success(let prayers):
                 prayers.forEach({ (pray) in
-                    self.pickerData.append(pray.title)
-                    self.pickerDataId.append(pray.id)
+                    if !pray.answered {
+                        self.prayers.append(pray)
+                        self.pickerData.append(pray.title)
+                        self.pickerDataId.append(pray.id)
+                    }
                 })
-                
                 
             case .error(let description):
                 print(description)
@@ -193,7 +172,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     //Create Notification
-    func createNotification(_ act:Act) {
+    func sendNotification(_ act:Act) {
         if userWantNotification {
             //call app
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -237,6 +216,19 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             (foiPermitido, error) in
             if !foiPermitido {
                 print("O usúario não permitiu, não podemos enviar notificacão")
+            }
+        }
+    }
+    private func addActIntoPray(_ act:Act){
+        var prayToUpdate = self.prayers[pickerSelectedRow]
+        prayToUpdate.acts.append(act.id)
+        
+        PrayHandler.update(pray: prayToUpdate) { (res) in
+            switch (res) {
+            case .success(let pray):
+                print(pray)
+            case .error(let description):
+                print(description)
             }
         }
     }

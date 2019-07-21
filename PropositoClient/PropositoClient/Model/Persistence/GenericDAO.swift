@@ -18,6 +18,7 @@ protocol GenericDAO {
     
     func create(newEntity: T) throws
     func read() throws -> [T]
+    func findByID(id: Int) throws -> T
     func update(entity: T) throws
     func delete(entity: T) throws
 }

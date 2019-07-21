@@ -25,7 +25,7 @@ final class Cell: UICollectionViewCell {
                 let originalTransform = self.transform
                 
                 if(originalTransform.d == 1) {
-       
+                    
                     //TODO
                     let sizePadding = ((self.frame.size.height * 1.26)/2 - (self.frame.size.height)/2) - 7
                     
@@ -36,23 +36,27 @@ final class Cell: UICollectionViewCell {
                     
                     //Animation
                     UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseInOut], animations: {
-                        
+                        self.button.isEnabled = true
                         self.transform = scaledAndTranslatedTransform
                         self.alpha = 1
-                        
                     })
+                } else {
+                    
+                    UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseInOut], animations: {
+                        self.button.isEnabled = false
+                        self.transform = CGAffineTransform.identity
+                        self.alpha = 0.5
+                    })
+
                 }
-                
-                
             }
             else
             {
                 
                 UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseInOut], animations: {
-                    
+                    self.button.isEnabled = false
                     self.transform = CGAffineTransform.identity
                     self.alpha = 0.5
-                    
                 })
                 
             }
