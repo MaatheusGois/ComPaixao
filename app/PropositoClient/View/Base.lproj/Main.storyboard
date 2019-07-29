@@ -44,7 +44,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="2dm-vC-wPF">
                                 <rect key="frame" x="0.0" y="135" width="414" height="727"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Suas" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UNP-lI-HBD">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Suas" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UNP-lI-HBD">
                                         <rect key="frame" x="39" y="15" width="97" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="97" id="xmj-vF-kE3"/>
@@ -53,7 +53,7 @@
                                         <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="26"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Orações" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0kO-Ch-o1k">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Orações" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0kO-Ch-o1k">
                                         <rect key="frame" x="39" y="40" width="127" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="KJA-Xr-vlT"/>
@@ -81,7 +81,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="yVE-7o-Y42"/>
                                         </connections>
                                     </collectionView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Suas" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-jK-AEg">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Suas" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-jK-AEg">
                                         <rect key="frame" x="38" y="368" width="97" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="GcG-GW-fuM"/>
@@ -91,7 +91,7 @@
                                         <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="26"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ações" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gg1-oo-UV2">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ações" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gg1-oo-UV2">
                                         <rect key="frame" x="38" y="401" width="127" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="127" id="Tku-ss-BOK"/>
