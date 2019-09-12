@@ -82,19 +82,19 @@
                                         </connections>
                                     </collectionView>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Suas" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-jK-AEg">
-                                        <rect key="frame" x="39" y="368" width="63" height="26"/>
+                                        <rect key="frame" x="39" y="370" width="63" height="26"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="26"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ações" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gg1-oo-UV2">
-                                        <rect key="frame" x="39" y="394" width="128" height="32"/>
+                                        <rect key="frame" x="39" y="396" width="128" height="33"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="32"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="collectionView2" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6ws-GL-Fwb">
-                                        <rect key="frame" x="30" y="395" width="385" height="311"/>
+                                        <rect key="frame" x="30" y="396" width="385" height="311"/>
                                         <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qol-pZ-RqE">
                                             <size key="itemSize" width="50" height="50"/>
@@ -111,20 +111,19 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="0kO-Ch-o1k" firstAttribute="top" secondItem="UNP-lI-HBD" secondAttribute="top" constant="26" id="63P-hk-lDv"/>
-                                    <constraint firstItem="JpP-jK-AEg" firstAttribute="leading" secondItem="Gg1-oo-UV2" secondAttribute="leading" id="6tV-yD-Euu"/>
                                     <constraint firstItem="JpP-jK-AEg" firstAttribute="width" secondItem="UNP-lI-HBD" secondAttribute="width" id="7f2-i3-PdS"/>
                                     <constraint firstItem="XAd-WR-zXe" firstAttribute="leading" secondItem="2dm-vC-wPF" secondAttribute="leading" constant="30" id="9Ne-bj-h7H"/>
                                     <constraint firstItem="JpP-jK-AEg" firstAttribute="centerX" secondItem="UNP-lI-HBD" secondAttribute="centerX" id="BQy-X0-2b1"/>
                                     <constraint firstItem="UNP-lI-HBD" firstAttribute="leading" secondItem="2dm-vC-wPF" secondAttribute="leading" constant="39" id="Dyd-CQ-F61"/>
                                     <constraint firstItem="Gg1-oo-UV2" firstAttribute="width" secondItem="0kO-Ch-o1k" secondAttribute="width" id="F5M-hf-bKZ"/>
                                     <constraint firstItem="UNP-lI-HBD" firstAttribute="leading" secondItem="0kO-Ch-o1k" secondAttribute="leading" id="Fb4-dI-mTp"/>
-                                    <constraint firstItem="6ws-GL-Fwb" firstAttribute="top" secondItem="JpP-jK-AEg" secondAttribute="bottom" constant="1" id="Hd5-Ed-FSL"/>
-                                    <constraint firstItem="JpP-jK-AEg" firstAttribute="top" secondItem="XAd-WR-zXe" secondAttribute="bottom" constant="18" id="Off-aE-q8Y"/>
+                                    <constraint firstItem="6ws-GL-Fwb" firstAttribute="top" secondItem="JpP-jK-AEg" secondAttribute="bottom" id="Hd5-Ed-FSL"/>
+                                    <constraint firstItem="JpP-jK-AEg" firstAttribute="top" secondItem="XAd-WR-zXe" secondAttribute="bottom" constant="20" id="Off-aE-q8Y"/>
                                     <constraint firstAttribute="bottom" secondItem="6ws-GL-Fwb" secondAttribute="bottom" constant="14" id="P5T-g5-avw"/>
                                     <constraint firstItem="XAd-WR-zXe" firstAttribute="trailing" secondItem="6ws-GL-Fwb" secondAttribute="trailing" id="ZuE-it-e75"/>
                                     <constraint firstItem="Gg1-oo-UV2" firstAttribute="top" secondItem="JpP-jK-AEg" secondAttribute="bottom" id="dP1-Rh-5Xg"/>
                                     <constraint firstItem="Gg1-oo-UV2" firstAttribute="leading" secondItem="0kO-Ch-o1k" secondAttribute="leading" id="h3n-q3-1a8"/>
-                                    <constraint firstItem="Gg1-oo-UV2" firstAttribute="height" secondItem="0kO-Ch-o1k" secondAttribute="height" id="hIf-6n-uzU"/>
+                                    <constraint firstItem="Gg1-oo-UV2" firstAttribute="height" secondItem="0kO-Ch-o1k" secondAttribute="height" constant="1" id="hIf-6n-uzU"/>
                                     <constraint firstItem="XAd-WR-zXe" firstAttribute="width" secondItem="2dm-vC-wPF" secondAttribute="width" multiplier="0.93" id="hTT-8i-9b0"/>
                                     <constraint firstItem="6ws-GL-Fwb" firstAttribute="height" secondItem="XAd-WR-zXe" secondAttribute="height" id="ipX-AW-baZ"/>
                                     <constraint firstAttribute="trailing" secondItem="XAd-WR-zXe" secondAttribute="trailing" id="lJD-l4-aJh"/>
