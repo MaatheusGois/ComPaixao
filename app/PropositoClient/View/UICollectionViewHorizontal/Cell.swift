@@ -15,8 +15,6 @@ final class Cell: UICollectionViewCell {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var date: UILabel!
     
-//    @IBOutlet var button: UILabel!
-
     override var isSelected: Bool{
         didSet{
             if self.isSelected
@@ -91,21 +89,6 @@ final class Cell: UICollectionViewCell {
     }
     
     public static func height(for viewModel: ViewModel, forWidth width: CGFloat) -> CGFloat {
-        sizingCell.prepareForReuse()
-        sizingCell.configure(with: viewModel, isSizing: true)
-        var fittingSize = UIView.layoutFittingCompressedSize
-        fittingSize.width = width
-        
-        let size = sizingCell.contentView.systemLayoutSizeFitting(fittingSize,
-                                                                  withHorizontalFittingPriority: .required,
-                                                                  verticalFittingPriority: .defaultLow)
-        
-
-        guard size.height < Constants.maximumCardHeight else {
-            return Constants.maximumCardHeight
-        }
-        
-//        return size.height
         return 200
     }
     

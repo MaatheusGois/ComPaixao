@@ -24,8 +24,6 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         return titlePray.text != ""
     }
     
-    
-    
     //Purpose
     @IBOutlet weak var purposePray: UITextField!
     @IBOutlet weak var alertPurpose: UILabel!
@@ -34,14 +32,8 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         return purposePray.text != ""
     }
     
-    
-    
     //Add With Action
-    @IBAction func addWithAction(_ sender: Any) {
-        
-        
-    }
-    
+    @IBAction func addWithAction(_ sender: Any) { }
     
     //Add
     @IBAction func add(_ sender: Any) {
@@ -66,7 +58,6 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
                 alertPurpose.isHidden = false
             }
         } else {
-//            print("Dont have text in title")
             alertTitle.isHidden = false
         }
         
@@ -76,7 +67,6 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setForRemoveAlerts()
         
         //Hide Keyboard
@@ -89,17 +79,14 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
-        
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        
         return updatedText.count <= 17
     }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
-        
         let changedText = currentText.replacingCharacters(in: stringRange, with: text)
-        
         return changedText.count <= 17
     }
     
@@ -108,9 +95,11 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         titlePray.addTarget(self, action: #selector(titleDidChange(_:)), for: .editingChanged)
         purposePray.addTarget(self, action: #selector(purposeDidChange(_:)), for: .editingChanged)
     }
+    
     @objc func titleDidChange(_ textField: UITextField) {
         alertTitle.isHidden = true
     }
+    
     @objc func purposeDidChange(_ textField: UITextField) {
         alertPurpose.isHidden = true
     }
@@ -119,6 +108,7 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return false
@@ -128,7 +118,6 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     private func configTransition(){
         let transition: CATransition = CATransition()
         transition.duration = 0.78  / 2
-//        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.reveal
         transition.subtype = CATransitionSubtype.fromBottom
         self.view.window!.layer.add(transition, forKey: nil)

@@ -18,16 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let notificationCenter = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-//        //Request notification
-//        notificationCenter.delegate = self
-//        let opcoes: UNAuthorizationOptions = [.alert, .sound, .badge]
-//        notificationCenter.requestAuthorization(options: opcoes) {
-//            (foiPermitido, error) in
-//            if !foiPermitido {
-//                print("O usúario não permitiu, não podemos enviar notificacão")
-//            }
-//        }
+        application.applicationIconBadgeNumber = 0;
         sleep(1)
         return true
     }
@@ -48,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        application.applicationIconBadgeNumber = 0;
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

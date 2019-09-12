@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
 		8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756322D4361800DACA7A /* Centrale Sans Regular.otf */; };
 		8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756422D4361800DACA7A /* Centrale Sans Bold.otf */; };
 		8611756822D5757900DACA7A /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611756722D5757900DACA7A /* ChoiceViewController.swift */; };
@@ -18,7 +19,6 @@
 		86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A9871A22D67D730014B71E /* AddPrayViewController.swift */; };
 		86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */; };
 		86B889A422CC34530097F0D7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B889A322CC34530097F0D7 /* logo.png */; };
-		86B889A622CC36950097F0D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B889A522CC36950097F0D7 /* Extensions.swift */; };
 		86CC745D22CFDB4F00D5174E /* PrayDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC745C22CFDB4F00D5174E /* PrayDAO.swift */; };
 		86CC746422CFDCF200D5174E /* Pray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746322CFDCF200D5174E /* Pray.swift */; };
 		86CC746622CFDD0D00D5174E /* PrayHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746522CFDD0D00D5174E /* PrayHandler.swift */; };
@@ -38,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		8611756322D4361800DACA7A /* Centrale Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Regular.otf"; sourceTree = "<group>"; };
 		8611756422D4361800DACA7A /* Centrale Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Bold.otf"; sourceTree = "<group>"; };
 		8611756722D5757900DACA7A /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		86A9871A22D67D730014B71E /* AddPrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrayViewController.swift; sourceTree = "<group>"; };
 		86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewController.swift; sourceTree = "<group>"; };
 		86B889A322CC34530097F0D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		86B889A522CC36950097F0D7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../Extensions.swift; sourceTree = "<group>"; };
 		86CC745C22CFDB4F00D5174E /* PrayDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayDAO.swift; sourceTree = "<group>"; };
 		86CC746322CFDCF200D5174E /* Pray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pray.swift; sourceTree = "<group>"; };
 		86CC746522CFDD0D00D5174E /* PrayHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayHandler.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		8652531522E16B44009654B8 /* Extends */ = {
 			isa = PBXGroup;
 			children = (
-				86B889A522CC36950097F0D7 /* Extensions.swift */,
+				82A5B7D1232A73FF009AC33C /* Extensions.swift */,
 			);
 			path = Extends;
 			sourceTree = "<group>";
@@ -305,6 +305,7 @@
 				8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */,
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
 				8611756822D5757900DACA7A /* ChoiceViewController.swift in Sources */,
+				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
 				86CC746622CFDD0D00D5174E /* PrayHandler.swift in Sources */,
 				8699400F22D40B8E00069F8F /* ActDAO.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Pray.swift in Sources */,
@@ -314,7 +315,6 @@
 				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
 				86CC745D22CFDB4F00D5174E /* PrayDAO.swift in Sources */,
 				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,
-				86B889A622CC36950097F0D7 /* Extensions.swift in Sources */,
 				8699401322D40C7600069F8F /* ActHandler.swift in Sources */,
 				86F426CC22CAAD6C0032AA5B /* Constants.swift in Sources */,
 			);

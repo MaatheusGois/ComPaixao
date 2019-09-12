@@ -12,6 +12,4 @@ struct Constants {
     static let cellReuseIdentifier: String = "Cell"
     static let cardWidth: CGFloat = 115
     static let maximumCardHeight: CGFloat = 200
-    //    static let maximumCardHeight: CGFloat = 400
-    
 }

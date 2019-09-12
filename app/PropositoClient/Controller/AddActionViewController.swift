@@ -28,12 +28,22 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var pickerDataId: [Int] = [Int]()
     var pickerSelected: String = ""
     var pickerSelectedRow: Int = 0
+    
     @IBOutlet weak var pickerPray: UIPickerView!
     @IBOutlet weak var alertPicker: UILabel!
     
-    override func didReceiveMemoryWarning() { super.didReceiveMemoryWarning() }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { return pickerData.count }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: pickerData[row], attributes: [NSAttributedString.Key.foregroundColor:  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
     }
@@ -98,14 +108,11 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Data of Prayers
         loadData()
-        
         setForRemoveAlerts()
         
         //Hide keyboard
@@ -199,7 +206,6 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     private func configTransition(){
         let transition: CATransition = CATransition()
         transition.duration = 0.78 / 2
-//        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.reveal
         transition.subtype = CATransitionSubtype.fromBottom
         self.view.window!.layer.add(transition, forKey: nil)
@@ -212,7 +218,6 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     private func requestAuthNotification(){
         let notificationCenter = UNUserNotificationCenter.current()
-        //        //Request notification
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         notificationCenter.delegate = appDelegate
         let opcoes: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -223,6 +228,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             }
         }
     }
+    
     private func addActIntoPray(_ act:Act){
         var prayToUpdate = self.prayers[pickerSelectedRow]
         prayToUpdate.acts.append(act.id)
