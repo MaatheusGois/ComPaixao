@@ -81,7 +81,7 @@ class ActDAO: GenericDAO {
         fetchRequest.predicate = NSPredicate(format: "id = %d", entity.id)
         
         do {
-            var result = try managedContext.fetch(fetchRequest)
+            let result = try managedContext.fetch(fetchRequest)
             
             if(result.count != 0){
                 let act = result[0] as! NSManagedObject

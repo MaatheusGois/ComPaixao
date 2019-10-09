@@ -13,7 +13,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     //Button of close
     @IBAction func close(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //Description
@@ -157,7 +157,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         
-        return updatedText.count <= 17
+        return updatedText.count <= 50
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
@@ -165,7 +165,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         let changedText = currentText.replacingCharacters(in: stringRange, with: text)
         
-        return changedText.count <= 17
+        return changedText.count <= 50
     }
     
     //Take editing in textfilds
@@ -206,7 +206,9 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     private func goToMain(){
-        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        guard let main = self.presentingViewController?.presentingViewController?.children[0] as? MainViewController else { return }
+        main.loadDataAct()
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     private func requestAuthNotification(){

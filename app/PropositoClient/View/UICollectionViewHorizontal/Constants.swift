@@ -9,6 +9,7 @@
 import UIKit
 
 struct Constants {
+    
     static let cellReuseIdentifier: String = "Cell"
     static let cardWidth: CGFloat = 115
     static let maximumCardHeight: CGFloat = 200
@@ -21,6 +22,5 @@ struct Constants {
     
     static let collectionMarginInteringSpacing: CGFloat = 0
     static let collectionMarginLineSpacing: CGFloat = 16
-    
     
 }

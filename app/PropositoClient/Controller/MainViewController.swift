@@ -48,11 +48,32 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     }
 
     override func viewDidAppear(_ animated: Bool) {
+//        loadDataPray()
+//        loadDataAct()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("here")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         loadDataPray()
         loadDataAct()
     }
     
-    private func loadDataPray(){
+    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        print("here")
+    }
+    
+    override func willMove(toParent parent: UIViewController?) {
+        print("here")
+    }
+    
+    override func didMove(toParent parent: UIViewController?) {
+        print("here")
+    }
+    
+    func loadDataPray(){
         self.prayersCard = []
         self.prayers = []
         PrayHandler.loadPrayWith { (res) in
@@ -66,7 +87,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
                         )
                     }
                 })
-                
             case .error(let description):
                 print(description)
             }
@@ -75,7 +95,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
         collectionViewPray.reloadData()
     }
     
-    private func loadDataAct(){
+    func loadDataAct(){
         self.actsCard = []
         self.acts = []
         ActHandler.loadActWith { (res) in
@@ -113,7 +133,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
                         )
                     }
                 })
-                
             case .error(let description):
                 print(description)
             }
@@ -220,8 +239,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     private func updatePray(_ prayToUpdate:Pray, _ sender:UIButton){
         PrayHandler.update(pray: prayToUpdate) { (res) in
             switch (res) {
-            case .success(let pray):
-                print(pray)
+            case .success(_ ):
                 removePrayWithAnimate(sender)
             case .error(let description):
                 print(description)
@@ -232,8 +250,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     private func updateAct(_ actToUpdate:Act, _ sender:UIButton){
         ActHandler.update(act: actToUpdate) { (res) in
             switch (res) {
-            case .success(let act):
-                print(act)
+            case .success(_ ):
                 removeActWithAnimate(sender)
             case .error(let description):
                 print(description)
@@ -242,7 +259,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     }
     
     private func removePrayWithAnimate(_ sender:UIButton){
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseInOut], animations: {
             sender.superview?.superview?.transform = CGAffineTransform.identity
             sender.superview?.superview?.alpha = 0
         }, completion: {(finished:Bool) in
@@ -251,7 +268,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     }
     
     private func removeActWithAnimate(_ sender:UIButton){
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseInOut], animations: {
             sender.superview?.superview?.transform = CGAffineTransform.identity
             sender.superview?.superview?.alpha = 0
         }, completion: {(finished:Bool) in

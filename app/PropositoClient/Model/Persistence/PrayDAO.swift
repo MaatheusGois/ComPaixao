@@ -74,7 +74,7 @@ class PrayDAO: GenericDAO {
         fetchRequest.predicate = NSPredicate(format: "id = %d", id)
         
         do {
-            var result = try managedContext.fetch(fetchRequest)
+            let result = try managedContext.fetch(fetchRequest)
             
             if(result.count != 0){
                 let pray = result[0] as! NSManagedObject
@@ -111,7 +111,7 @@ class PrayDAO: GenericDAO {
         fetchRequest.predicate = NSPredicate(format: "id = %d", entity.id)
         
         do {
-            var result = try managedContext.fetch(fetchRequest)
+            let result = try managedContext.fetch(fetchRequest)
             
             if(result.count != 0){
                 let pray = result[0] as! NSManagedObject

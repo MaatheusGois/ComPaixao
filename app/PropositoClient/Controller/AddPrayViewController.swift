@@ -24,7 +24,7 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     
     //Back
     @IBAction func close(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //Title
@@ -78,14 +78,14 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        return updatedText.count <= 17
+        return updatedText.count <= 50
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let changedText = currentText.replacingCharacters(in: stringRange, with: text)
-        return changedText.count <= 17
+        return changedText.count <= 50
     }
     
     //Take editing in textfilds
@@ -113,7 +113,9 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func goToMain(){
-        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        guard let main = self.presentingViewController?.presentingViewController?.children[0] as? MainViewController else { return }
+        main.loadDataPray()
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @objc
