@@ -10,9 +10,20 @@ import UIKit
 
 class AddPrayViewController: UIViewController, UITextFieldDelegate {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setForRemoveAlerts()
+        
+        //Hide Keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     //Back
     @IBAction func close(_ sender: Any) {
-        configTransition()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -60,20 +71,7 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         } else {
             alertTitle.isHidden = false
         }
-        
     }
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setForRemoveAlerts()
-        
-        //Hide Keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
     
     //Validade number of characters in the textfild
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -103,7 +101,7 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
     @objc func purposeDidChange(_ textField: UITextField) {
         alertPurpose.isHidden = true
     }
-
+    
     //Hide Keyboard
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -113,18 +111,18 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
         return false
     }
-
-    //Transitions
-    private func configTransition(){
-        let transition: CATransition = CATransition()
-        transition.duration = 0.78  / 2
-        transition.type = CATransitionType.reveal
-        transition.subtype = CATransitionSubtype.fromBottom
-        self.view.window!.layer.add(transition, forKey: nil)
-    }
     
     private func goToMain(){
-        configTransition()
         self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+    }
+    
+    @objc
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y = -150 // Move view 150 points upward
+    }
+    
+    @objc
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0 // Move view to original position
     }
 }

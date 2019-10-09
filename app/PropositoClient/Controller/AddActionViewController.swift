@@ -13,7 +13,6 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     //Button of close
     @IBAction func close(_ sender: Any) {
-        self.configTransition()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -31,6 +30,21 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBOutlet weak var pickerPray: UIPickerView!
     @IBOutlet weak var alertPicker: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //Data of Prayers
+        loadData()
+        setForRemoveAlerts()
+        
+        //Hide keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil);
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -108,17 +122,6 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //Data of Prayers
-        loadData()
-        setForRemoveAlerts()
-        
-        //Hide keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
     
     func loadData() {
         //Load data of the Prayers
@@ -202,17 +205,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
-    //Transitions
-    private func configTransition(){
-        let transition: CATransition = CATransition()
-        transition.duration = 0.78 / 2
-        transition.type = CATransitionType.reveal
-        transition.subtype = CATransitionSubtype.fromBottom
-        self.view.window!.layer.add(transition, forKey: nil)
-    }
-    
     private func goToMain(){
-        configTransition()
         self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
@@ -241,5 +234,14 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 print(description)
             }
         }
+    }
+    @objc
+    func keyboardWillShow(sender: NSNotification) {
+         self.view.frame.origin.y = -85
+    }
+    
+    @objc
+    func keyboardWillHide(sender: NSNotification) {
+         self.view.frame.origin.y = 0 // Move view to original position
     }
 }

@@ -20,9 +20,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     @IBOutlet var flowLayoutAct: UICollectionViewFlowLayout!
     @IBOutlet var collectionViewHeightConstraintAct: NSLayoutConstraint!
     
-    private var prayersCard: [CardModel] = Data.pray
+    private var prayersCard: [CardModel] = [CardModel]()
     private var prayers = [Pray]()
-    private var actsCard: [CardModel] = Data.act
+    private var actsCard: [CardModel] = [CardModel]()
     private var acts = [Act]()
     
     private enum Segment: Int {
@@ -143,40 +143,38 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
     }
     
     
+    
     // Config CollectioView Pray
     private func setupCollectioViewPray() {
         let nib = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil)
         collectionViewPray.register(nib, forCellWithReuseIdentifier: Constants.cellReuseIdentifier)
-        let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
+        let edgeInsets = UIEdgeInsets(top: Constants.collectionMarginTop, left: Constants.collectionMarginLeft, bottom: Constants.collectionMarginBotton, right: Constants.collectionMarginRight)
         flowLayoutPray.sectionInset = edgeInsets
-        flowLayoutPray.minimumInteritemSpacing = 0
-        flowLayoutPray.minimumLineSpacing = 16
+        flowLayoutPray.minimumInteritemSpacing = Constants.collectionMarginInteringSpacing
+        flowLayoutPray.minimumLineSpacing = Constants.collectionMarginLineSpacing
+        
         setCollectionViewHeight(with: prayersCard, edgeInsets: flowLayoutPray.sectionInset)
     }
     private func setCollectionViewHeight(with data: [CardModel], edgeInsets: UIEdgeInsets) {
-        let viewModels = data.compactMap { ViewModel(example: $0) }
-        guard let viewModel = calculateHeighest(with: viewModels, forWidth: Constants.cardWidth) else { return }
-        let height = Cell.height(for: viewModel, forWidth: Constants.cardWidth)
-        flowLayoutPray.itemSize = CGSize(width: Constants.cardWidth, height: height)
-        }
+        flowLayoutPray.itemSize = CGSize(width: Constants.cardWidth, height: Constants.maximumCardHeight)
+    }
     
     // Config CollectioView Act
     private func setupCollectioViewAct() {
         let nib = UINib(nibName: Constants.cellReuseIdentifier, bundle: nil)
         collectionViewAct.register(nib, forCellWithReuseIdentifier: Constants.cellReuseIdentifier)
-        let edgeInsets = UIEdgeInsets(top: 8.0, left: 20, bottom: 12, right: 16)
+        
+        let edgeInsets = UIEdgeInsets(top: Constants.collectionMarginTop, left: Constants.collectionMarginLeft, bottom: Constants.collectionMarginBotton, right: Constants.collectionMarginRight)
         flowLayoutAct.sectionInset = edgeInsets
-        flowLayoutAct.minimumInteritemSpacing = 0
-        flowLayoutAct.minimumLineSpacing = 16
+        flowLayoutAct.minimumInteritemSpacing = Constants.collectionMarginInteringSpacing
+        flowLayoutAct.minimumLineSpacing = Constants.collectionMarginLineSpacing
+        
         setCollectionViewHeightAct(with: actsCard, edgeInsets: flowLayoutAct.sectionInset)
     }
     
     private func setCollectionViewHeightAct(with data: [CardModel], edgeInsets: UIEdgeInsets) {
-        let viewModels = data.compactMap { ViewModel(example: $0) }
-        guard let viewModel = calculateHeighest(with: viewModels, forWidth: Constants.cardWidth) else { return }
-        let height = Cell.height(for: viewModel, forWidth: Constants.cardWidth)
-        flowLayoutAct.itemSize = CGSize(width: Constants.cardWidth, height: height)
-        }
+        flowLayoutAct.itemSize = CGSize(width: Constants.cardWidth, height: Constants.maximumCardHeight)
+    }
     
     // CollectionView Datasource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

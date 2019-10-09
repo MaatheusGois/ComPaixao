@@ -9,9 +9,7 @@
 import Foundation
 
 struct CardModel {
-    
     let title: String
     let body: String
     let date: String?
-    
 }

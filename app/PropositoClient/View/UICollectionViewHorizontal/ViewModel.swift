@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol DynamicHeightCalculable {
+    func height(forWidth: CGFloat) -> CGFloat
+}
 struct ViewModel: DynamicHeightCalculable {
     
     let title: String
@@ -21,7 +24,9 @@ struct ViewModel: DynamicHeightCalculable {
     }
     
     public func height(forWidth width: CGFloat) -> CGFloat {
-        return 200
+        return Constants.maximumCardHeight
     }
     
 }
+
+
