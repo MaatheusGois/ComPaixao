@@ -1,5 +1,5 @@
-# I'm Not Ashamed
-**I'm Not Ashamed** is a project inspired in the movie "I'm Not Ashamed" for the Kingdom of Jesus.
+# ComPaixão
+**ComPaixão** is a project inspired in the movie "I'm Not Ashamed" for the Kingdom of Jesus.
 
 
 <img src="./design/preview.png"/>
