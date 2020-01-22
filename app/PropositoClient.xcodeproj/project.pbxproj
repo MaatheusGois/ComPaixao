@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
+		8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */; };
+		8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */; };
+		8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
 		8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756322D4361800DACA7A /* Centrale Sans Regular.otf */; };
 		8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756422D4361800DACA7A /* Centrale Sans Bold.otf */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Extra Thin.otf"; sourceTree = "<group>"; };
+		8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Centrale Sans Medium.otf"; path = "PropositoClient/Fonts/Centrale Sans Medium.otf"; sourceTree = SOURCE_ROOT; };
+		8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Thin.otf"; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		8611756322D4361800DACA7A /* Centrale Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Regular.otf"; sourceTree = "<group>"; };
 		8611756422D4361800DACA7A /* Centrale Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Bold.otf"; sourceTree = "<group>"; };
@@ -101,6 +107,13 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
+		8246345B23D9107700AA58F6 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +145,10 @@
 		8699401422D435EC00069F8F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */,
+				8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */,
 				8611756422D4361800DACA7A /* Centrale Sans Bold.otf */,
+				8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */,
 				8611756322D4361800DACA7A /* Centrale Sans Regular.otf */,
 			);
 			path = Fonts;
@@ -200,6 +216,7 @@
 		86F426B522CAA67C0032AA5B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8246345B23D9107700AA58F6 /* Card */,
 				8699401422D435EC00069F8F /* Fonts */,
 				86F426B722CAA6E20032AA5B /* UICollectionViewHorizontal */,
 				86F426A322CAA5E80032AA5B /* Main.storyboard */,
@@ -300,8 +317,11 @@
 				8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */,
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
 				86B889A422CC34530097F0D7 /* logo.png in Resources */,
+				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
 				86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */,
 				86F426AA22CAA5EA0032AA5B /* Assets.xcassets in Resources */,
+				8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */,
+				8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */,
 				86F426A522CAA5E80032AA5B /* Main.storyboard in Resources */,
 				8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */,
 			);
