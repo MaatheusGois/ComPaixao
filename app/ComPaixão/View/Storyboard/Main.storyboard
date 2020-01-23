@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPk-fE-rTu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPk-fE-rTu">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="ComPaixa_o" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,7 +177,7 @@
         <!--Choice View Controller-->
         <scene sceneID="DT5-rD-pyy">
             <objects>
-                <viewController id="t1e-Hy-v49" customClass="ChoiceViewController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t1e-Hy-v49" customClass="ChoiceViewController" customModule="ComPaixa_o" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vcW-Dj-1HX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,7 +198,7 @@
                                     <action selector="close:" destination="t1e-Hy-v49" eventType="touchUpInside" id="iKW-KQ-mnZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT0-Ow-bDy" customClass="RoundButton" customModule="PropositoClient" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT0-Ow-bDy" customClass="RoundButton" customModule="ComPaixa_o" customModuleProvider="target">
                                 <rect key="frame" x="20" y="309" width="374" height="80"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.25098039220000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -219,7 +219,7 @@
                                     <segue destination="3sP-2a-eOZ" kind="show" id="xn8-A3-c8v"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNy-5t-yL1" customClass="RoundButton" customModule="PropositoClient" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNy-5t-yL1" customClass="RoundButton" customModule="ComPaixa_o" customModuleProvider="target">
                                 <rect key="frame" x="20" y="409" width="374" height="80"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.25098039220000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -282,7 +282,7 @@
         <!--Add Action View Controller-->
         <scene sceneID="I1L-UR-UGe">
             <objects>
-                <viewController id="rUW-yc-ZNL" customClass="AddActionViewController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rUW-yc-ZNL" customClass="AddActionViewController" customModule="ComPaixa_o" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3os-ev-hbl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +462,7 @@
                                     <constraint firstItem="yjL-K8-IsT" firstAttribute="leading" secondItem="XWu-SS-60Z" secondAttribute="leading" id="zeL-nx-Rbx"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-1u-WdD" customClass="RoundButton" customModule="PropositoClient" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-1u-WdD" customClass="RoundButton" customModule="ComPaixa_o" customModuleProvider="target">
                                 <rect key="frame" x="37" y="702" width="340" height="80"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.25098039220000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -536,7 +536,7 @@
         <!--Add Pray View Controller-->
         <scene sceneID="MPf-0A-ocz">
             <objects>
-                <viewController id="3sP-2a-eOZ" customClass="AddPrayViewController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3sP-2a-eOZ" customClass="AddPrayViewController" customModule="ComPaixa_o" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lb2-pP-KKR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -664,7 +664,7 @@ em uma palavra</string>
                                     <constraint firstItem="Hr5-Nf-NML" firstAttribute="trailing" secondItem="Onk-pK-3vN" secondAttribute="trailing" id="wpI-7c-crI"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-yR-IaK" customClass="RoundButton" customModule="PropositoClient" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-yR-IaK" customClass="RoundButton" customModule="ComPaixa_o" customModuleProvider="target">
                                 <rect key="frame" x="37" y="702" width="340" height="80"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.25098039220000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -718,7 +718,7 @@ em uma palavra</string>
     </scenes>
     <resources>
         <image name="add" width="100" height="100"/>
-        <image name="background" width="207" height="448"/>
+        <image name="background" width="1125" height="2436"/>
         <image name="voltar" width="250" height="250"/>
     </resources>
 </document>

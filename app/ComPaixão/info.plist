@@ -22,14 +22,17 @@
 	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Centrale Sans Bold.otf</string>
-		<string>Centrale Sans Regular.otf</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Centrale Sans Bold.otf</string>
+		<string>Centrale Sans Regular.otf</string>
+		<string>Centrale Sans Extra Thin.otf</string>
+		<string>Centrale Sans Thin.otf</string>
+		<string>Centrale Sans Medium.otf</string>
+	</array>
 </dict>
 </plist>
