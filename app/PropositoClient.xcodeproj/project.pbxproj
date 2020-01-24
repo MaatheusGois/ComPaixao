@@ -107,13 +107,6 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
-		8246345B23D9107700AA58F6 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
 		827E4A7323DB80D400C99BF0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +122,23 @@
 				86B889A322CC34530097F0D7 /* logo.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		827E4A7523DB814400C99BF0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				86F426A322CAA5E80032AA5B /* Main.storyboard */,
+				86F426AB22CAA5EA0032AA5B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		827E4A7623DB815400C99BF0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				86F426B722CAA6E20032AA5B /* UICollectionViewHorizontal */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
@@ -171,13 +181,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		86BE26E922CC1CB000F6931E /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		86CC746222CFDCE400D5174E /* Pray */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +215,6 @@
 				86F426B522CAA67C0032AA5B /* View */,
 				86F426B622CAA6880032AA5B /* Controller */,
 				86F426A922CAA5EA0032AA5B /* Assets.xcassets */,
-				86BE26E922CC1CB000F6931E /* Fonts */,
 				86F426AE22CAA5EA0032AA5B /* Info.plist */,
 			);
 			path = PropositoClient;
@@ -232,11 +234,9 @@
 		86F426B522CAA67C0032AA5B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8246345B23D9107700AA58F6 /* Card */,
+				827E4A7623DB815400C99BF0 /* Components */,
 				827E4A7323DB80D400C99BF0 /* Assets */,
-				86F426B722CAA6E20032AA5B /* UICollectionViewHorizontal */,
-				86F426A322CAA5E80032AA5B /* Main.storyboard */,
-				86F426AB22CAA5EA0032AA5B /* LaunchScreen.storyboard */,
+				827E4A7523DB814400C99BF0 /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
