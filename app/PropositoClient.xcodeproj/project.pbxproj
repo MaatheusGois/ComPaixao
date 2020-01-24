@@ -114,6 +114,23 @@
 			path = Card;
 			sourceTree = "<group>";
 		};
+		827E4A7323DB80D400C99BF0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				827E4A7423DB80DA00C99BF0 /* Images */,
+				8699401422D435EC00069F8F /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		827E4A7423DB80DA00C99BF0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				86B889A322CC34530097F0D7 /* logo.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +212,6 @@
 				86F426B522CAA67C0032AA5B /* View */,
 				86F426B622CAA6880032AA5B /* Controller */,
 				86F426A922CAA5EA0032AA5B /* Assets.xcassets */,
-				86B889A322CC34530097F0D7 /* logo.png */,
 				86BE26E922CC1CB000F6931E /* Fonts */,
 				86F426AE22CAA5EA0032AA5B /* Info.plist */,
 			);
@@ -217,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				8246345B23D9107700AA58F6 /* Card */,
-				8699401422D435EC00069F8F /* Fonts */,
+				827E4A7323DB80D400C99BF0 /* Assets */,
 				86F426B722CAA6E20032AA5B /* UICollectionViewHorizontal */,
 				86F426A322CAA5E80032AA5B /* Main.storyboard */,
 				86F426AB22CAA5EA0032AA5B /* LaunchScreen.storyboard */,
