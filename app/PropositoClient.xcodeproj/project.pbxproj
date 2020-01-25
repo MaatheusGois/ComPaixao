@@ -13,6 +13,8 @@
 		8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */; };
 		827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7823DB8A6D00C99BF0 /* Gradient.swift */; };
 		827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7A23DB90C700C99BF0 /* MainController.swift */; };
+		827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7C23DC629800C99BF0 /* UIView.swift */; };
+		827E4A8023DC84EB00C99BF0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7F23DC84EB00C99BF0 /* Theme.swift */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
 		8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756322D4361800DACA7A /* Centrale Sans Regular.otf */; };
 		8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756422D4361800DACA7A /* Centrale Sans Bold.otf */; };
@@ -47,6 +49,8 @@
 		8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Thin.otf"; sourceTree = "<group>"; };
 		827E4A7823DB8A6D00C99BF0 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		827E4A7A23DB90C700C99BF0 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		827E4A7C23DC629800C99BF0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = PropositoClient/Controller/Main/UIView.swift; sourceTree = SOURCE_ROOT; };
+		827E4A7F23DC84EB00C99BF0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		8611756322D4361800DACA7A /* Centrale Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Regular.otf"; sourceTree = "<group>"; };
 		8611756422D4361800DACA7A /* Centrale Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Bold.otf"; sourceTree = "<group>"; };
@@ -154,6 +158,14 @@
 			path = Designable;
 			sourceTree = "<group>";
 		};
+		827E4A7E23DC84E200C99BF0 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				827E4A7F23DC84EB00C99BF0 /* Theme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,12 +177,13 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		8652531522E16B44009654B8 /* Extends */ = {
+		8652531522E16B44009654B8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				82A5B7D1232A73FF009AC33C /* Extensions.swift */,
+				827E4A7C23DC629800C99BF0 /* UIView.swift */,
 			);
-			path = Extends;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		8699400D22D40B7100069F8F /* Act */ = {
@@ -223,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				86F4269F22CAA5E80032AA5B /* AppDelegate.swift */,
-				8652531522E16B44009654B8 /* Extends */,
+				8652531522E16B44009654B8 /* Extension */,
 				86F426B422CAA6730032AA5B /* Model */,
 				86F426B522CAA67C0032AA5B /* View */,
 				86F426B622CAA6880032AA5B /* Controller */,
@@ -247,6 +260,7 @@
 		86F426B522CAA67C0032AA5B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				827E4A7E23DC84E200C99BF0 /* Themes */,
 				827E4A7723DB8A5C00C99BF0 /* Designable */,
 				827E4A7623DB815400C99BF0 /* Components */,
 				827E4A7323DB80D400C99BF0 /* Assets */,
@@ -366,6 +380,8 @@
 			files = (
 				8699401122D40BC900069F8F /* Act.swift in Sources */,
 				827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */,
+				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
+				827E4A8023DC84EB00C99BF0 /* Theme.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
 				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
