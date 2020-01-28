@@ -22,7 +22,7 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func validateDescription() -> Bool { return descriptionPray.text != "" }
     
     //Picker of prayers
-    var prayers = [Pray]()
+    var prayers = [Prayer]()
     var pickerData: [String] = [String]()
     var pickerDataId: [Int] = [Int]()
     var pickerSelected: String = ""
@@ -83,32 +83,32 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     //Button of Add Pray
     @IBAction func addAction(_ sender: UIButton) {
-        if prayers.count > 0 {
-            if validateDescription() {
-                if validateDate() {
-                    //Body
-                    let title = descriptionPray.text ?? ""
-                    let pray = pickerSelected
-                    let date = self.dateInPicker
-                    let prayID = self.prayers[pickerSelectedRow].id
-                    
-                    //Act
-                    let act = Act(id: Int.gererateId(), prayID: prayID, title: title, pray: pray, completed: false, date: date)
-                    
-                    //Create in CoreDate
-                    ActHandler.create(act: act) { (res) in
-                        switch (res) {
-                        case .success(let act):
-                            self.addActIntoPray(act)
-                            self.sendNotification(act)
-                            self.goToMain()
-                        case .error(let description):
-                            print(description)
-                        }
-                    }
-                } else { alertDate.isHidden = false }
-            } else { alertDescription.isHidden = false }
-        } else { alertPicker.isHidden = false }
+//        if prayers.count > 0 {
+//            if validateDescription() {
+//                if validateDate() {
+//                    //Body
+//                    let title = descriptionPray.text ?? ""
+//                    let pray = pickerSelected
+//                    let date = self.dateInPicker
+//                    let prayID = self.prayers[pickerSelectedRow].id
+//                    
+//                    //Act
+//                    let act = Action(id: Int.gererateId(), prayID: prayID, title: title, pray: pray, completed: false, date: date)
+//                    
+//                    //Create in CoreDate
+//                    ActionHandler.create(act: act) { (res) in
+//                        switch (res) {
+//                        case .success(let act):
+//                            self.addActIntoPray(act)
+//                            self.sendNotification(act)
+//                            self.goToMain()
+//                        case .error(let description):
+//                            print(description)
+//                        }
+//                    }
+//                } else { alertDate.isHidden = false }
+//            } else { alertDescription.isHidden = false }
+//        } else { alertPicker.isHidden = false }
     }
     
     //Switch Notification
@@ -125,29 +125,29 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func loadData() {
         //Load data of the Prayers
-        PrayHandler.loadPrayWith { (res) in
-            switch (res) {
-            case .success(let prayers):
-                prayers.forEach({ (pray) in
-                    if !pray.answered {
-                        self.prayers.append(pray)
-                        self.pickerData.append(pray.title)
-                        self.pickerDataId.append(pray.id)
-                    }
-                })
-                
-            case .error(let description):
-                print(description)
-            }
-        }
-        
-        if pickerData.count != 0 {
-            pickerSelected = pickerData[0]
-        } else {
-            pickerData.append("Nenhuma oração")
-        }
-        //Set a Color UIPickerView Date
-        self.datePicker.setValue(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), forKeyPath: "textColor")
+//        PrayerHandler.loadPrayWith { (res) in
+//            switch (res) {
+//            case .success(let prayers):
+//                prayers.forEach({ (pray) in
+//                    if !pray.answered {
+//                        self.prayers.append(pray)
+////                        self.pickerData.append(pray.title)
+//                        self.pickerDataId.append(pray.id)
+//                    }
+//                })
+//
+//            case .error(let description):
+//                print(description)
+//            }
+//        }
+//
+//        if pickerData.count != 0 {
+//            pickerSelected = pickerData[0]
+//        } else {
+//            pickerData.append("Nenhuma oração")
+//        }
+//        //Set a Color UIPickerView Date
+//        self.datePicker.setValue(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), forKeyPath: "textColor")
     }
     
     //Validade number of characters in the textfild
@@ -186,14 +186,14 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     //Create Notification
-    func sendNotification(_ act:Act) {
+    func sendNotification(_ act:Action) {
         if userWantNotification {
             //call app
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             
             //create body
-            let title = act.title
-            let subtitle = act.pray
+            let title = act.name
+            let subtitle = "" //REMAKE
             let mensage = "A fé sem obras é morta!"
             let identifier = "identifier\(title)"
             var time = act.date - Date()
@@ -224,11 +224,11 @@ class AddActionViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
-    private func addActIntoPray(_ act:Act){
+    private func addActIntoPray(_ act:Action){
         var prayToUpdate = self.prayers[pickerSelectedRow]
-        prayToUpdate.acts.append(act.id)
+        prayToUpdate.actions.append(act.id)
         
-        PrayHandler.update(pray: prayToUpdate) { (res) in
+        PrayerHandler.update(pray: prayToUpdate) { (res) in
             switch (res) {
             case .success(let pray):
                 print(pray)

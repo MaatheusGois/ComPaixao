@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ActEntity" representedClassName="ActEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="pray" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="prayID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="prayID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="remember" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repetition" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="whenRepeat" optional="YES" attributeType="String"/>
     </entity>
     <entity name="PrayEntity" representedClassName="PrayEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="acts" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="answered" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="purpose" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="actions" optional="YES" attributeType="Transformable"/>
+        <attribute name="answered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="remember" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repetition" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="whenRepeat" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ActEntity" positionX="-63" positionY="18" width="128" height="135"/>
-        <element name="PrayEntity" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="ActEntity" positionX="-63" positionY="18" width="128" height="178"/>
+        <element name="PrayEntity" positionX="-63" positionY="-18" width="128" height="193"/>
     </elements>
 </model>

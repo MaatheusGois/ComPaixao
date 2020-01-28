@@ -11,25 +11,33 @@
 		8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */; };
 		8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */; };
 		8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */; };
+		8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */; };
 		827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7823DB8A6D00C99BF0 /* Gradient.swift */; };
 		827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7A23DB90C700C99BF0 /* MainController.swift */; };
 		827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7C23DC629800C99BF0 /* UIView.swift */; };
 		827E4A8023DC84EB00C99BF0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7F23DC84EB00C99BF0 /* Theme.swift */; };
+		827EB45523DD033D00F8C3E1 /* PrayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB45323DD033D00F8C3E1 /* PrayerCell.swift */; };
+		827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB45423DD033D00F8C3E1 /* PrayerCell.xib */; };
+		827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB45723DD04FB00F8C3E1 /* PictureImageView.swift */; };
+		827EB45C23DD0A0200F8C3E1 /* PrayerCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB45B23DD0A0200F8C3E1 /* PrayerCellDataSource.swift */; };
+		827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB45D23DD0A1800F8C3E1 /* PrayerCellDelegate.swift */; };
+		827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */; };
+		827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
 		8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756322D4361800DACA7A /* Centrale Sans Regular.otf */; };
 		8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756422D4361800DACA7A /* Centrale Sans Bold.otf */; };
 		8611756822D5757900DACA7A /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8611756722D5757900DACA7A /* ChoiceViewController.swift */; };
 		8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628F5C922CFD65800844544 /* CoreDataManager.swift */; };
 		8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628F5CB22CFD9BA00844544 /* GenericDAO.swift */; };
-		8699400F22D40B8E00069F8F /* ActDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699400E22D40B8E00069F8F /* ActDAO.swift */; };
-		8699401122D40BC900069F8F /* Act.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401022D40BC900069F8F /* Act.swift */; };
-		8699401322D40C7600069F8F /* ActHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401222D40C7600069F8F /* ActHandler.swift */; };
+		8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699400E22D40B8E00069F8F /* ActionDAO.swift */; };
+		8699401122D40BC900069F8F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401022D40BC900069F8F /* Action.swift */; };
+		8699401322D40C7600069F8F /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401222D40C7600069F8F /* ActionHandler.swift */; };
 		86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A9871A22D67D730014B71E /* AddPrayViewController.swift */; };
 		86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */; };
 		86B889A422CC34530097F0D7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B889A322CC34530097F0D7 /* logo.png */; };
-		86CC745D22CFDB4F00D5174E /* PrayDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC745C22CFDB4F00D5174E /* PrayDAO.swift */; };
-		86CC746422CFDCF200D5174E /* Pray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746322CFDCF200D5174E /* Pray.swift */; };
-		86CC746622CFDD0D00D5174E /* PrayHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746522CFDD0D00D5174E /* PrayHandler.swift */; };
+		86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */; };
+		86CC746422CFDCF200D5174E /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746322CFDCF200D5174E /* Prayer.swift */; };
+		86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746522CFDD0D00D5174E /* PrayerHandler.swift */; };
 		86F426A022CAA5E80032AA5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4269F22CAA5E80032AA5B /* AppDelegate.swift */; };
 		86F426A522CAA5E80032AA5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F426A322CAA5E80032AA5B /* Main.storyboard */; };
 		86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86F426A622CAA5E80032AA5B /* PropositoClient.xcdatamodeld */; };
@@ -47,25 +55,33 @@
 		8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Extra Thin.otf"; sourceTree = "<group>"; };
 		8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Centrale Sans Medium.otf"; path = "PropositoClient/Fonts/Centrale Sans Medium.otf"; sourceTree = SOURCE_ROOT; };
 		8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Thin.otf"; sourceTree = "<group>"; };
+		8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellViewModel.swift; sourceTree = "<group>"; };
 		827E4A7823DB8A6D00C99BF0 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		827E4A7A23DB90C700C99BF0 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		827E4A7C23DC629800C99BF0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = PropositoClient/Controller/Main/UIView.swift; sourceTree = SOURCE_ROOT; };
 		827E4A7F23DC84EB00C99BF0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		827EB45323DD033D00F8C3E1 /* PrayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCell.swift; sourceTree = "<group>"; };
+		827EB45423DD033D00F8C3E1 /* PrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrayerCell.xib; sourceTree = "<group>"; };
+		827EB45723DD04FB00F8C3E1 /* PictureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
+		827EB45B23DD0A0200F8C3E1 /* PrayerCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellDataSource.swift; sourceTree = "<group>"; };
+		827EB45D23DD0A1800F8C3E1 /* PrayerCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellDelegate.swift; sourceTree = "<group>"; };
+		827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPrayerCell.swift; sourceTree = "<group>"; };
+		827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPrayerCell.xib; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		8611756322D4361800DACA7A /* Centrale Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Regular.otf"; sourceTree = "<group>"; };
 		8611756422D4361800DACA7A /* Centrale Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Bold.otf"; sourceTree = "<group>"; };
 		8611756722D5757900DACA7A /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		8628F5C922CFD65800844544 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8628F5CB22CFD9BA00844544 /* GenericDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDAO.swift; sourceTree = "<group>"; };
-		8699400E22D40B8E00069F8F /* ActDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActDAO.swift; sourceTree = "<group>"; };
-		8699401022D40BC900069F8F /* Act.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act.swift; sourceTree = "<group>"; };
-		8699401222D40C7600069F8F /* ActHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActHandler.swift; sourceTree = "<group>"; };
+		8699400E22D40B8E00069F8F /* ActionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDAO.swift; sourceTree = "<group>"; };
+		8699401022D40BC900069F8F /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		8699401222D40C7600069F8F /* ActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
 		86A9871A22D67D730014B71E /* AddPrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrayViewController.swift; sourceTree = "<group>"; };
 		86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewController.swift; sourceTree = "<group>"; };
 		86B889A322CC34530097F0D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		86CC745C22CFDB4F00D5174E /* PrayDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayDAO.swift; sourceTree = "<group>"; };
-		86CC746322CFDCF200D5174E /* Pray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pray.swift; sourceTree = "<group>"; };
-		86CC746522CFDD0D00D5174E /* PrayHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayHandler.swift; sourceTree = "<group>"; };
+		86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDAO.swift; sourceTree = "<group>"; };
+		86CC746322CFDCF200D5174E /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
+		86CC746522CFDD0D00D5174E /* PrayerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerHandler.swift; sourceTree = "<group>"; };
 		86F4269C22CAA5E80032AA5B /* PropositoClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropositoClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F4269F22CAA5E80032AA5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F426A422CAA5E80032AA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +132,15 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
+		8272B22523DFC29500CFFD9B /* PrayerCell */ = {
+			isa = PBXGroup;
+			children = (
+				827EB45B23DD0A0200F8C3E1 /* PrayerCellDataSource.swift */,
+				827EB45D23DD0A1800F8C3E1 /* PrayerCellDelegate.swift */,
+			);
+			path = PrayerCell;
+			sourceTree = "<group>";
+		};
 		827E4A7323DB80D400C99BF0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +170,8 @@
 		827E4A7623DB815400C99BF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				827EB45F23DD0DE700F8C3E1 /* AllPrayerCell */,
+				827EB45223DD031300F8C3E1 /* PrayerCell */,
 				86F426B722CAA6E20032AA5B /* UICollectionViewHorizontal */,
 			);
 			path = Components;
@@ -154,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				827E4A7823DB8A6D00C99BF0 /* Gradient.swift */,
+				827EB45723DD04FB00F8C3E1 /* PictureImageView.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -166,12 +194,54 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
+		827EB45223DD031300F8C3E1 /* PrayerCell */ = {
+			isa = PBXGroup;
+			children = (
+				827EB45323DD033D00F8C3E1 /* PrayerCell.swift */,
+				827EB45423DD033D00F8C3E1 /* PrayerCell.xib */,
+			);
+			path = PrayerCell;
+			sourceTree = "<group>";
+		};
+		827EB45923DD098800F8C3E1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8272B22523DFC29500CFFD9B /* PrayerCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		827EB45F23DD0DE700F8C3E1 /* AllPrayerCell */ = {
+			isa = PBXGroup;
+			children = (
+				827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */,
+				827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */,
+			);
+			path = AllPrayerCell;
+			sourceTree = "<group>";
+		};
+		827EB46423DD187300F8C3E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				827EB46523DD189A00F8C3E1 /* PrayerCell */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		827EB46523DD189A00F8C3E1 /* PrayerCell */ = {
+			isa = PBXGroup;
+			children = (
+				8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */,
+			);
+			path = PrayerCell;
+			sourceTree = "<group>";
+		};
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
 				8628F5CB22CFD9BA00844544 /* GenericDAO.swift */,
-				86CC745C22CFDB4F00D5174E /* PrayDAO.swift */,
-				8699400E22D40B8E00069F8F /* ActDAO.swift */,
+				86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */,
+				8699400E22D40B8E00069F8F /* ActionDAO.swift */,
 				8628F5C922CFD65800844544 /* CoreDataManager.swift */,
 			);
 			path = Persistence;
@@ -186,13 +256,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		8699400D22D40B7100069F8F /* Act */ = {
+		8699400D22D40B7100069F8F /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				8699401022D40BC900069F8F /* Act.swift */,
-				8699401222D40C7600069F8F /* ActHandler.swift */,
+				8699401022D40BC900069F8F /* Action.swift */,
+				8699401222D40C7600069F8F /* ActionHandler.swift */,
 			);
-			path = Act;
+			path = Action;
 			sourceTree = "<group>";
 		};
 		8699401422D435EC00069F8F /* Fonts */ = {
@@ -207,13 +277,13 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		86CC746222CFDCE400D5174E /* Pray */ = {
+		86CC746222CFDCE400D5174E /* Prayer */ = {
 			isa = PBXGroup;
 			children = (
-				86CC746322CFDCF200D5174E /* Pray.swift */,
-				86CC746522CFDD0D00D5174E /* PrayHandler.swift */,
+				86CC746322CFDCF200D5174E /* Prayer.swift */,
+				86CC746522CFDD0D00D5174E /* PrayerHandler.swift */,
 			);
-			path = Pray;
+			path = Prayer;
 			sourceTree = "<group>";
 		};
 		86F4269322CAA5E80032AA5B = {
@@ -237,6 +307,7 @@
 			children = (
 				86F4269F22CAA5E80032AA5B /* AppDelegate.swift */,
 				8652531522E16B44009654B8 /* Extension */,
+				827EB46423DD187300F8C3E1 /* ViewModel */,
 				86F426B422CAA6730032AA5B /* Model */,
 				86F426B522CAA67C0032AA5B /* View */,
 				86F426B622CAA6880032AA5B /* Controller */,
@@ -250,8 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				8628F5CD22CFD9BD00844544 /* Persistence */,
-				8699400D22D40B7100069F8F /* Act */,
-				86CC746222CFDCE400D5174E /* Pray */,
+				8699400D22D40B7100069F8F /* Action */,
+				86CC746222CFDCE400D5174E /* Prayer */,
 				86F426A622CAA5E80032AA5B /* PropositoClient.xcdatamodeld */,
 			);
 			path = Model;
@@ -272,6 +343,7 @@
 		86F426B622CAA6880032AA5B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				827EB45923DD098800F8C3E1 /* Components */,
 				8246345823D90EE500AA58F6 /* Main */,
 				8611756722D5757900DACA7A /* ChoiceViewController.swift */,
 				8246345923D90EF300AA58F6 /* Pray */,
@@ -361,8 +433,10 @@
 				8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */,
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
 				86B889A422CC34530097F0D7 /* logo.png in Resources */,
+				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
 				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
 				86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */,
+				827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */,
 				86F426AA22CAA5EA0032AA5B /* Assets.xcassets in Resources */,
 				8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */,
 				8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */,
@@ -378,7 +452,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8699401122D40BC900069F8F /* Act.swift in Sources */,
+				8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */,
+				8699401122D40BC900069F8F /* Action.swift in Sources */,
 				827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */,
 				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
 				827E4A8023DC84EB00C99BF0 /* Theme.swift in Sources */,
@@ -390,17 +465,22 @@
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
 				8611756822D5757900DACA7A /* ChoiceViewController.swift in Sources */,
 				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
-				86CC746622CFDD0D00D5174E /* PrayHandler.swift in Sources */,
-				8699400F22D40B8E00069F8F /* ActDAO.swift in Sources */,
-				86CC746422CFDCF200D5174E /* Pray.swift in Sources */,
+				86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */,
+				827EB45C23DD0A0200F8C3E1 /* PrayerCellDataSource.swift in Sources */,
+				827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */,
+				8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */,
+				827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */,
+				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
 				86F426A022CAA5E80032AA5B /* AppDelegate.swift in Sources */,
 				8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */,
 				86F426C822CAAD4D0032AA5B /* ViewModel.swift in Sources */,
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,
 				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
-				86CC745D22CFDB4F00D5174E /* PrayDAO.swift in Sources */,
+				86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */,
 				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,
-				8699401322D40C7600069F8F /* ActHandler.swift in Sources */,
+				827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */,
+				827EB45523DD033D00F8C3E1 /* PrayerCell.swift in Sources */,
+				8699401322D40C7600069F8F /* ActionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

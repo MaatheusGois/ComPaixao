@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PrayerCell" id="gTV-IL-0wX" customClass="PrayerCell" customModule="PropositoClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAD-VW-Wun">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-7O-gt5" customClass="ProfilePictureImageView" customModule="PropositoClient" customModuleProvider="target">
+                                <rect key="frame" x="128" y="12" width="20" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdasdasdasdasdasdas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-gw-gR1">
+                                <rect key="frame" x="12" y="12" width="104" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idb-5B-gb3">
+                                <rect key="frame" x="12" y="81" width="136" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ynm-7O-gt5" firstAttribute="leading" secondItem="9XU-gw-gR1" secondAttribute="trailing" constant="12" id="2Hu-yA-mhr"/>
+                            <constraint firstItem="ynm-7O-gt5" firstAttribute="width" secondItem="tAD-VW-Wun" secondAttribute="width" multiplier="0.125" id="3N3-1M-952"/>
+                            <constraint firstAttribute="trailing" secondItem="ynm-7O-gt5" secondAttribute="trailing" constant="12" id="9cG-AR-z93"/>
+                            <constraint firstItem="9XU-gw-gR1" firstAttribute="leading" secondItem="tAD-VW-Wun" secondAttribute="leading" constant="12" id="RYN-Cu-S5K"/>
+                            <constraint firstAttribute="trailing" secondItem="idb-5B-gb3" secondAttribute="trailing" constant="12" id="a2q-Fm-Wnc"/>
+                            <constraint firstItem="ynm-7O-gt5" firstAttribute="height" secondItem="tAD-VW-Wun" secondAttribute="height" multiplier="0.181818" id="m2N-5s-URa"/>
+                            <constraint firstItem="ynm-7O-gt5" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="12" id="ovt-Ht-kbC"/>
+                            <constraint firstAttribute="bottom" secondItem="idb-5B-gb3" secondAttribute="bottom" constant="12" id="r11-i9-OTp"/>
+                            <constraint firstItem="9XU-gw-gR1" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="12" id="sZP-fG-6n7"/>
+                            <constraint firstItem="idb-5B-gb3" firstAttribute="leading" secondItem="tAD-VW-Wun" secondAttribute="leading" constant="12" id="x0c-ED-IWZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="tAD-VW-Wun" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kRU-49-RaJ"/>
+                <constraint firstItem="tAD-VW-Wun" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mYN-na-Kuz"/>
+                <constraint firstAttribute="trailing" secondItem="tAD-VW-Wun" secondAttribute="trailing" id="s2c-nD-NjJ"/>
+                <constraint firstAttribute="bottom" secondItem="tAD-VW-Wun" secondAttribute="bottom" id="yTc-W9-M2O"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="161" height="106"/>
+            <point key="canvasLocation" x="-213.04347826086959" y="75"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="profile" width="2160" height="2160"/>
+    </resources>
+</document>

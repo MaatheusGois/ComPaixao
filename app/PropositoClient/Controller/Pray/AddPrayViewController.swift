@@ -51,20 +51,20 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         
         if validateTitlePray() {
             if validatePurposePray() {
-                let title:String   = titlePray.text   ?? ""
-                let purpose:String = purposePray.text ?? ""
-                let pray = Pray(id: Int.gererateId(), title: title, purpose: purpose, answered: false, acts: [])
-                
-                //Create Pray in CoreData
-                PrayHandler.create(pray: pray) { (res) in
-                    switch (res) {
-                    case .success(let prayers):
-                        print(prayers)
-                        goToMain()
-                    case .error(let description):
-                        print(description)
-                    }
-                }
+//                let title:String   = titlePray.text   ?? ""
+//                let purpose:String = purposePray.text ?? ""
+//                let pray = Prayer(id: Int.gererateId(), title: title, purpose: purpose, answered: false, actions: [])
+//                
+//                //Create Pray in CoreData
+//                PrayerHandler.create(pray: pray) { (res) in
+//                    switch (res) {
+//                    case .success(let prayers):
+//                        print(prayers)
+//                        goToMain()
+//                    case .error(let description):
+//                        print(description)
+//                    }
+//                }
             } else {
                 alertPurpose.isHidden = false
             }
