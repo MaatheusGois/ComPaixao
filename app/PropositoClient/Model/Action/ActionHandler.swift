@@ -19,56 +19,54 @@ enum ActionUpdateResponse: Error {
 }
 
 class ActionHandler {
-    static func create(act:Action, withCompletion completion:(ActionUpdateResponse) -> Void) {
+    static func create(act: Action, withCompletion completion: (ActionUpdateResponse) -> Void) {
         do {
             try ActionDAO.shared.create(newEntity: act)
             completion(ActionUpdateResponse.success(act: act))
         } catch {
-            completion(ActionUpdateResponse.error(description: "OPS!! we have a problem to create your act"))
+            completion(ActionUpdateResponse.error(description: "\(error)"))
         }
     }
-    
     static func loadActWith(completion: @escaping (ActionLoadResponse) -> Void) {
         do {
             let acts = try ActionDAO.shared.read()
             completion(ActionLoadResponse.success(acts: acts))
         } catch {
-            completion(ActionLoadResponse.error(description: "OPS!! we have a problem to read your acts"))
+            completion(ActionLoadResponse.error(description: "\(error)"))
         }
     }
-    static func findByID(id: UUID, withCompletion completion:(ActionUpdateResponse) -> Void) {
+    static func findByID(uuid: UUID, withCompletion
+        completion: (ActionUpdateResponse) -> Void) {
         do {
-            let act = try ActionDAO.shared.findByID(id: id)
+            let act = try ActionDAO.shared.readOne(uuid: uuid)
             completion(ActionUpdateResponse.success(act: act))
-        }catch{
-            completion(ActionUpdateResponse.error(description: "OPS!! We have a problem to update your Act"))
+        } catch {
+            completion(ActionUpdateResponse.error(description: "\(error)"))
         }
     }
-    
-    static func update(act: Action, withCompletion completion:(ActionUpdateResponse) -> Void) {
+    static func update(act: Action, withCompletion completion: (ActionUpdateResponse) -> Void) {
         do {
             try ActionDAO.shared.update(entity: act)
             completion(ActionUpdateResponse.success(act: act))
-        }catch{
-            completion(ActionUpdateResponse.error(description: "OPS!! We have a problem to update your Act"))
+        } catch {
+            completion(ActionUpdateResponse.error(description: "\(error)"))
         }
     }
-    
-    
-    static func delete(act: Action, withCompletion completion:(ActionUpdateResponse) -> Void) {
+    static func delete(act: Action, withCompletion
+        completion: (ActionUpdateResponse) -> Void) {
         do {
             try ActionDAO.shared.delete(entity: act)
             completion(ActionUpdateResponse.success(act: act))
-        }catch{
-            completion(ActionUpdateResponse.error(description: "OPS!! We have a problem to delete your Task"))
+        } catch {
+            completion(ActionUpdateResponse.error(description: "\(error)"))
         }
     }
     static private func saveLocally(_ acts: [Action]) {
         for act in acts {
             do {
                 try ActionDAO.shared.create(newEntity: act)
-            }catch{
-                print("Error to save task \"\(act.name)\" locally");
+            } catch {
+                NSLog("Error to save task \"\(act.name)\" locally")
             }
         }
     }

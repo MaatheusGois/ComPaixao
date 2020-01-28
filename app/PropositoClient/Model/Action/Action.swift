@@ -8,10 +8,8 @@
 
 import Foundation
 
-
 struct Action: Codable {
-    
-    let id: UUID
+    let uuid: UUID
     var prayID: UUID?
     var name: String
     var date: Date
@@ -20,9 +18,8 @@ struct Action: Codable {
     var repetition: Bool
     var whenRepeat: String?
     var completed: Bool
-    
     enum CodingKeys: String, CodingKey {
-        case id, prayID, name, date, time, remember, repetition, whenRepeat, completed
+        case uuid, prayID, name, date, time, remember, repetition, whenRepeat, completed
     }
 }
 

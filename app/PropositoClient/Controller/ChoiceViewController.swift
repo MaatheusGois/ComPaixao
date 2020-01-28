@@ -13,7 +13,6 @@ class ChoiceViewController: UIViewController {
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

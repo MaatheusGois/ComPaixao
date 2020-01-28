@@ -10,7 +10,6 @@ import UIKit
 
 @IBDesignable
 class ProfilePictureImageView: UIImageView {
-
     @IBInspectable var cornerRadius: Double {
          get {
            return Double(self.layer.cornerRadius)
@@ -18,20 +17,15 @@ class ProfilePictureImageView: UIImageView {
            self.layer.cornerRadius = CGFloat(newValue)
          }
     }
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-    
     func setup() {
-//        setStyle(.circle)
         self.layer.cornerRadius = 12
     }
-    
 }

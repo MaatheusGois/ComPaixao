@@ -9,19 +9,16 @@
 import UIKit
 
 extension UIView {
-    
     enum Style {
         case card
         case circle
         case rounded
     }
-    
     func setStyle(_ style: Style) {
         switch style {
         case .card:
             clipsToBounds = true
             layer.cornerRadius = 4
-            
             layer.shadowColor = UIColor.black.cgColor
             layer.shadowOffset = CGSize(width: 0, height: 4)
             layer.shadowRadius = 12
@@ -30,7 +27,6 @@ extension UIView {
             clipsToBounds = true
             let radius = frame.height / 2
             layer.cornerRadius = radius
-            
             layer.shadowColor = UIColor.black.cgColor
             layer.shadowOffset = CGSize(width: 0, height: 4)
             layer.shadowRadius = 4
@@ -41,5 +37,4 @@ extension UIView {
             layer.cornerRadius = frame.height / 2
         }
     }
-    
 }

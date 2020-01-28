@@ -15,10 +15,9 @@ enum DAOError: Error {
 
 protocol GenericDAO {
     associatedtype T
-    
     func create(newEntity: T) throws
     func read() throws -> [T]
-    func findByID(id: UUID) throws -> T
+    func readOne(uuid: UUID) throws -> T
     func update(entity: T) throws
     func delete(entity: T) throws
 }

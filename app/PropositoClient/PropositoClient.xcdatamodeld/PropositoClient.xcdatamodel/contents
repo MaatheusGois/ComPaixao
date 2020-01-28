@@ -3,24 +3,24 @@
     <entity name="ActEntity" representedClassName="ActEntity" syncable="YES" codeGenerationType="class">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="prayID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="remember" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="repetition" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="whenRepeat" optional="YES" attributeType="String"/>
     </entity>
     <entity name="PrayEntity" representedClassName="PrayEntity" syncable="YES" codeGenerationType="class">
         <attribute name="actions" optional="YES" attributeType="Transformable"/>
         <attribute name="answered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="remember" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="repetition" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="whenRepeat" optional="YES" attributeType="String"/>
     </entity>
     <elements>
