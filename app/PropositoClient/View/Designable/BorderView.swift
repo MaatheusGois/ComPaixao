@@ -1,25 +1,24 @@
 //
-//  PictureImageView.swift
+//  BorderView.swift
 //  PropositoClient
 //
-//  Created by Matheus Silva on 25/01/20.
+//  Created by Matheus Silva on 30/01/20.
 //  Copyright © 2020 Matheus Gois. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-@IBDesignable
-extension UIView {
+@IBDesignable extension UIView {
     @IBInspectable var borderColor: UIColor? {
         set {
-            layer.borderColor = newValue!.cgColor
+            layer.borderColor = newValue?.cgColor
         }
         get {
-            if let color = layer.borderColor {
-                return UIColor(cgColor: color)
-            } else {
+            guard let color = layer.borderColor else {
                 return nil
             }
+            return UIColor(cgColor: color)
         }
     }
     @IBInspectable var borderWidth: CGFloat {

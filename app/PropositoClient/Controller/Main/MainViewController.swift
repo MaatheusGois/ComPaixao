@@ -90,7 +90,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
         self.prayersCard = []
         self.actsCard = []
         //Load data of the Prayers
-        PrayerHandler.loadPrayWith { (res) in
+        PrayerHandler.getAll { (res) in
             switch res {
             case .success(let prayers):
                 prayers.forEach({ (pray) in

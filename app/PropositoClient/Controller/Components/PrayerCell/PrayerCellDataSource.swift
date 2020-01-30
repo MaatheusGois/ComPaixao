@@ -10,12 +10,13 @@ import UIKit
 
 class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
     var prayers: Prayers
-    var collectionView: UICollectionView?
-    var viewController: MainViewController?
+    weak var collectionView: UICollectionView?
+    weak var viewController: UIViewController?
+    
     init(prayers: Prayers) {
         self.prayers = prayers
     }
-    func setup(collectionView: UICollectionView, viewController: MainViewController) {
+    func setup(collectionView: UICollectionView, viewController: UIViewController) {
         self.collectionView = collectionView
         self.viewController = viewController
         collectionView.dataSource = self
@@ -25,7 +26,16 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
         let allChallengeCell = UINib(nibName: "AllPrayerCell", bundle: nil)
         collectionView.register(allChallengeCell, forCellWithReuseIdentifier: "AllPrayerCell")
     }
-    func fetch(idApple: String, delegate: PrayerCellDelegate) { }
+    func fetch(delegate: PrayerCellDelegate) {
+        PrayerHandler.getAll { (response) in
+            switch response {
+            case .success(let prayers):
+                print(prayers)
+            case .error(let description):
+                print(description) //TODO:- Gerar alerta
+            }
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.prayers.count == 0 {
             return 0
@@ -44,9 +54,10 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PrayerCell",
                                                              for: indexPath) as? PrayerCell {
                 let index = prayers.count - indexPath.row - 1
-                cell.nameLabel?.text = prayers[index].name
-                let count = prayers[index].actions.count
-                if count == 0 {} //Definir variacao da quatidade de praticas
+                let prayerViewModel = PrayerCellViewModel(prayer: prayers[index])
+                cell.nameLabel?.text = prayerViewModel.name
+                cell.descriptionLabel?.text = prayerViewModel.detailTextString
+                cell.image.image = prayerViewModel.image
                 return cell
             }
         }

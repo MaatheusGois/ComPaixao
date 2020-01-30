@@ -28,7 +28,7 @@ class PrayerHandler {
             completion(PrayerUpdateResponse.error(description: "\(error)"))
         }
     }
-    static func loadPrayWith(completion: @escaping (PrayerLoadResponse) -> Void) {
+    static func getAll(completion: @escaping (PrayerLoadResponse) -> Void) {
         do {
             let prayers = try PrayerDAO.shared.read()
             completion(PrayerLoadResponse.success(prayers: prayers))
@@ -36,7 +36,7 @@ class PrayerHandler {
             completion(PrayerLoadResponse.error(description: "\(error)"))
         }
     }
-    static func findByID(uuid: UUID, withCompletion
+    static func getOne(uuid: UUID, withCompletion
                                    completion: (PrayerUpdateResponse) -> Void) {
         do {
             let pray = try PrayerDAO.shared.readOne(uuid: uuid)

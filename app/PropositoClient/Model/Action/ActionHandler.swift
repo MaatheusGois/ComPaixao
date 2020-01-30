@@ -27,7 +27,7 @@ class ActionHandler {
             completion(ActionUpdateResponse.error(description: "\(error)"))
         }
     }
-    static func loadActWith(completion: @escaping (ActionLoadResponse) -> Void) {
+    static func getAll(completion: @escaping (ActionLoadResponse) -> Void) {
         do {
             let acts = try ActionDAO.shared.read()
             completion(ActionLoadResponse.success(acts: acts))
@@ -35,7 +35,7 @@ class ActionHandler {
             completion(ActionLoadResponse.error(description: "\(error)"))
         }
     }
-    static func findByID(uuid: UUID, withCompletion
+    static func getOne(uuid: UUID, withCompletion
         completion: (ActionUpdateResponse) -> Void) {
         do {
             let act = try ActionDAO.shared.readOne(uuid: uuid)

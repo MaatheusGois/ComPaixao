@@ -11,7 +11,7 @@ import UIKit
 class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var prayers: Prayers
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
 
     init(prayers: Prayers) {
         self.prayers = prayers
@@ -23,21 +23,19 @@ class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let verify = prayers.count > 3 ? indexPath.row == 3 : indexPath.row == prayers.count
-        if verify {
-            let height: Double = Double(collectionView.frame.height - 40)
-            let width: Double = Double(collectionView.frame.width + 20) * 0.32
-            return CGSize(width: width, height: height)
-        }
-        let height: Double = Double(collectionView.frame.height - 40)
-        let width: Double = Double(collectionView.frame.width + 20) * 0.80
+//        let verify = prayers.count > 3 ? indexPath.row == 3 : indexPath.row == prayers.count
+//        if verify {
+//            let height: Double = Double(collectionView.frame.height - 40)
+//            let width: Double = Double(collectionView.frame.width + 20) * 0.32
+//            return CGSize(width: width, height: height)
+//        }
+        let height: Double = Double(collectionView.frame.width) * 0.29333333333
+        let width: Double = Double(collectionView.frame.width) * 0.42666666666
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let verify = prayers.count > 3 ? indexPath.row == 3 : indexPath.row < prayers.count
-        if verify {
-            toChallengeDetail(index: indexPath.row)
-        }
+        if verify { toChallengeDetail(index: indexPath.row) }
     }
     func toChallengeDetail(index: Int) {
         let prayer = prayers[prayers.count - index - 1]

@@ -4,9 +4,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Centrale Sans Medium.otf">
+            <string>CentraleSans-Medium</string>
+        </array>
+        <array key="Centrale Sans Thin.otf">
+            <string>CentraleSans-Thin</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,6 +29,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAD-VW-Wun">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="WW0-p5-DxD">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-7O-gt5" customClass="ProfilePictureImageView" customModule="PropositoClient" customModuleProvider="target">
                                 <rect key="frame" x="128" y="12" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
@@ -29,15 +41,15 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdasdasdasdasdasdas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-gw-gR1">
-                                <rect key="frame" x="12" y="12" width="104" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="12" y="12" width="104" height="59.5"/>
+                                <fontDescription key="fontDescription" name="CentraleSans-Medium" family="Centrale Sans Medium" pointSize="17"/>
+                                <color key="textColor" name="default_02"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idb-5B-gb3">
-                                <rect key="frame" x="12" y="81" width="136" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="12" y="81.5" width="136" height="16.5"/>
+                                <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="14"/>
+                                <color key="textColor" name="default_02"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -46,12 +58,16 @@
                             <constraint firstItem="ynm-7O-gt5" firstAttribute="leading" secondItem="9XU-gw-gR1" secondAttribute="trailing" constant="12" id="2Hu-yA-mhr"/>
                             <constraint firstItem="ynm-7O-gt5" firstAttribute="width" secondItem="tAD-VW-Wun" secondAttribute="width" multiplier="0.125" id="3N3-1M-952"/>
                             <constraint firstAttribute="trailing" secondItem="ynm-7O-gt5" secondAttribute="trailing" constant="12" id="9cG-AR-z93"/>
+                            <constraint firstItem="WW0-p5-DxD" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" id="DNi-Dt-ODi"/>
+                            <constraint firstItem="WW0-p5-DxD" firstAttribute="leading" secondItem="tAD-VW-Wun" secondAttribute="leading" id="DR1-25-TiA"/>
                             <constraint firstItem="9XU-gw-gR1" firstAttribute="leading" secondItem="tAD-VW-Wun" secondAttribute="leading" constant="12" id="RYN-Cu-S5K"/>
                             <constraint firstAttribute="trailing" secondItem="idb-5B-gb3" secondAttribute="trailing" constant="12" id="a2q-Fm-Wnc"/>
+                            <constraint firstAttribute="bottom" secondItem="WW0-p5-DxD" secondAttribute="bottom" id="d8R-np-VX5"/>
                             <constraint firstItem="ynm-7O-gt5" firstAttribute="height" secondItem="tAD-VW-Wun" secondAttribute="height" multiplier="0.181818" id="m2N-5s-URa"/>
                             <constraint firstItem="ynm-7O-gt5" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="12" id="ovt-Ht-kbC"/>
                             <constraint firstAttribute="bottom" secondItem="idb-5B-gb3" secondAttribute="bottom" constant="12" id="r11-i9-OTp"/>
                             <constraint firstItem="9XU-gw-gR1" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="12" id="sZP-fG-6n7"/>
+                            <constraint firstAttribute="trailing" secondItem="WW0-p5-DxD" secondAttribute="trailing" id="spX-nv-mDf"/>
                             <constraint firstItem="idb-5B-gb3" firstAttribute="leading" secondItem="tAD-VW-Wun" secondAttribute="leading" constant="12" id="x0c-ED-IWZ"/>
                         </constraints>
                     </view>
@@ -65,10 +81,19 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="161" height="106"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="idb-5B-gb3" id="ryX-kL-x3T"/>
+                <outlet property="image" destination="ynm-7O-gt5" id="DSs-Ut-fjw"/>
+                <outlet property="nameLabel" destination="9XU-gw-gR1" id="Q1H-To-Ipx"/>
+            </connections>
             <point key="canvasLocation" x="-213.04347826086959" y="75"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="background_gradient" width="1600" height="1100"/>
         <image name="profile" width="2160" height="2160"/>
+        <namedColor name="default_02">
+            <color red="0.94900000095367432" green="0.93699997663497925" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
