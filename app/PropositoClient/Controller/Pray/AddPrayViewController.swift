@@ -20,7 +20,7 @@ class AddPrayViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    //Back
+    //MARK:- Back
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

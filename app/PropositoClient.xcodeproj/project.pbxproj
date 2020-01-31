@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207CC5423E49309003D8A06 /* ActionViewController.swift */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
+		823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BC23E4A6CB00DA2255 /* Keyboard.swift */; };
 		8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */; };
 		8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */; };
 		8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		8207CC5423E49309003D8A06 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		823922BC23E4A6CB00DA2255 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Extra Thin.otf"; sourceTree = "<group>"; };
 		8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Centrale Sans Medium.otf"; path = "PropositoClient/Fonts/Centrale Sans Medium.otf"; sourceTree = SOURCE_ROOT; };
 		8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Thin.otf"; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		823922BB23E4A6B800DA2255 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
 		8246345823D90EE500AA58F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +222,7 @@
 		827EB45923DD098800F8C3E1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				823922BB23E4A6B800DA2255 /* Keyboard */,
 				8272B22523DFC29500CFFD9B /* PrayerCell */,
 			);
 			path = Components;
@@ -519,6 +530,7 @@
 				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
 				86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */,
 				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,
+				823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */,
 				827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */,
 				827EB45523DD033D00F8C3E1 /* PrayerCell.swift in Sources */,
 				8699401322D40C7600069F8F /* ActionHandler.swift in Sources */,

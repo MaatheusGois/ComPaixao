@@ -22,8 +22,10 @@ class PrayerViewController: UIViewController {
         setupName()
         setupDate()
         setupTime()
+        generatorImpact()
     }
     func setupName() {
+        name.tintColor = .primary
         name.addPadding(.left(10))
         lineName.frame.size.height = 0.5
     }
@@ -38,6 +40,19 @@ class PrayerViewController: UIViewController {
         time.subviews[0].subviews[2].backgroundColor = .primary
         time.subviews[0].subviews[1].alpha = 0.2
         time.subviews[0].subviews[2].alpha = 0.2
+    }
+    // MARK: - Back
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    func setupKeyboard() { //TODO - fix
+        let keyboard = Keyboard(viewController: self)
+        keyboard.hide()
+        keyboard.up()
+    }
+    func generatorImpact() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
     /*
     // MARK: - Navigation
