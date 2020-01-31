@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UIStatusBarStyle</key>
-	<string>.default</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light.</string>
+	<string>UIStatusBarStyleDefault</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

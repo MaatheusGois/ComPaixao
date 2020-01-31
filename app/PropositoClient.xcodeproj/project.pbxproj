@@ -23,6 +23,10 @@
 		827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */; };
 		827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
+		82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */; };
+		82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */; };
+		82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8D23E3BB4500C8EB96 /* Padding.swift */; };
+		82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */; };
 		8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756322D4361800DACA7A /* Centrale Sans Regular.otf */; };
 		8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756422D4361800DACA7A /* Centrale Sans Bold.otf */; };
 		8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628F5C922CFD65800844544 /* CoreDataManager.swift */; };
@@ -65,6 +69,10 @@
 		827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPrayerCell.swift; sourceTree = "<group>"; };
 		827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPrayerCell.xib; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
+		82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderColor.swift; sourceTree = "<group>"; };
+		82FE2E8D23E3BB4500C8EB96 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = PropositoClient/View/Designable/Padding.swift; sourceTree = SOURCE_ROOT; };
+		82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReturn.swift; sourceTree = "<group>"; };
 		8611756322D4361800DACA7A /* Centrale Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Regular.otf"; sourceTree = "<group>"; };
 		8611756422D4361800DACA7A /* Centrale Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Bold.otf"; sourceTree = "<group>"; };
 		8628F5C922CFD65800844544 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				86A9871A22D67D730014B71E /* AddPrayViewController.swift */,
+				82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */,
 			);
 			path = Pray;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 			children = (
 				827E4A7823DB8A6D00C99BF0 /* Gradient.swift */,
 				827EB45723DD04FB00F8C3E1 /* PictureImageView.swift */,
+				82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -240,6 +250,8 @@
 			children = (
 				82A5B7D1232A73FF009AC33C /* Extensions.swift */,
 				827E4A7C23DC629800C99BF0 /* UIView.swift */,
+				82FE2E8D23E3BB4500C8EB96 /* Padding.swift */,
+				82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -462,12 +474,15 @@
 				8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */,
 				8699401122D40BC900069F8F /* Action.swift in Sources */,
 				827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */,
+				82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */,
 				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
 				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
+				82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */,
 				86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */,
 				8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */,
+				82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */,
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
 				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
 				86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */,
@@ -478,6 +493,7 @@
 				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
 				86F426A022CAA5E80032AA5B /* AppDelegate.swift in Sources */,
 				8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */,
+				82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */,
 				86F426C822CAAD4D0032AA5B /* ViewModel.swift in Sources */,
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,
 				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
