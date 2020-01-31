@@ -13,8 +13,8 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var lineName: UIImageView!
     @IBOutlet weak var time: UIDatePicker!
-    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var byPerson: UIPickerView!
+    @IBOutlet weak var name: TextFieldWithReturn!
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -22,19 +22,19 @@ class ActionViewController: UIViewController {
     }
     func setup() {
         setupName()
-        setupByPrayer()
+//        setupByPrayer()
         setupDate()
         setupTime()
     }
     func setupName() {
-        name.addPadding(.left(20))
+        name.addPadding(.left(10))
         lineName.frame.size.height = 0.5
     }
     func setupByPrayer() {
-        byPerson.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")
-        byPerson.subviews[0].subviews[2].backgroundColor = UIColor(named: "primary")
-        byPerson.subviews[0].subviews[1].alpha = 0.2
-        byPerson.subviews[0].subviews[2].alpha = 0.2
+        byPerson.subviews[1].backgroundColor = UIColor(named: "primary")
+        byPerson.subviews[2].backgroundColor = UIColor(named: "primary")
+        byPerson.subviews[1].alpha = 0.2
+        byPerson.subviews[2].alpha = 0.2
     }
     func setupDate() {
         date.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")

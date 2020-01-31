@@ -12,7 +12,7 @@ class PrayerViewController: UIViewController {
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var lineName: UIImageView!
     @IBOutlet weak var time: UIDatePicker!
-    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var name: TextFieldWithReturn!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,7 +24,7 @@ class PrayerViewController: UIViewController {
         setupTime()
     }
     func setupName() {
-        name.addPadding(.left(20))
+        name.addPadding(.left(10))
         lineName.frame.size.height = 0.5
     }
     func setupDate() {
