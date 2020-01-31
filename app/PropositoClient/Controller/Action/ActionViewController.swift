@@ -27,24 +27,25 @@ class ActionViewController: UIViewController {
         setupTime()
     }
     func setupName() {
+        name.tintColor = .primary
         name.addPadding(.left(10))
         lineName.frame.size.height = 0.5
     }
     func setupByPrayer() {
-        byPerson.subviews[1].backgroundColor = UIColor(named: "primary")
-        byPerson.subviews[2].backgroundColor = UIColor(named: "primary")
+        byPerson.subviews[1].backgroundColor = .primary
+        byPerson.subviews[2].backgroundColor = .primary
         byPerson.subviews[1].alpha = 0.2
         byPerson.subviews[2].alpha = 0.2
     }
     func setupDate() {
-        date.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")
-        date.subviews[0].subviews[2].backgroundColor = UIColor(named: "primary")
+        date.subviews[0].subviews[1].backgroundColor = .primary
+        date.subviews[0].subviews[2].backgroundColor = .primary
         date.subviews[0].subviews[1].alpha = 0.2
         date.subviews[0].subviews[2].alpha = 0.2
     }
     func setupTime() {
-        time.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")
-        time.subviews[0].subviews[2].backgroundColor = UIColor(named: "primary")
+        time.subviews[0].subviews[1].backgroundColor = .primary
+        time.subviews[0].subviews[2].backgroundColor = .primary
         time.subviews[0].subviews[1].alpha = 0.2
         time.subviews[0].subviews[2].alpha = 0.2
     }

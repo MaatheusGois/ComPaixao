@@ -28,14 +28,14 @@ class PrayerViewController: UIViewController {
         lineName.frame.size.height = 0.5
     }
     func setupDate() {
-        date.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")
-        date.subviews[0].subviews[2].backgroundColor = UIColor(named: "primary")
+        date.subviews[0].subviews[1].backgroundColor = .primary
+        date.subviews[0].subviews[2].backgroundColor = .primary
         date.subviews[0].subviews[1].alpha = 0.2
         date.subviews[0].subviews[2].alpha = 0.2
     }
     func setupTime() {
-        time.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")
-        time.subviews[0].subviews[2].backgroundColor = UIColor(named: "primary")
+        time.subviews[0].subviews[1].backgroundColor = .primary
+        time.subviews[0].subviews[2].backgroundColor = .primary
         time.subviews[0].subviews[1].alpha = 0.2
         time.subviews[0].subviews[2].alpha = 0.2
     }

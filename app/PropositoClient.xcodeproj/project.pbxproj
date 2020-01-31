@@ -23,6 +23,7 @@
 		827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB45D23DD0A1800F8C3E1 /* PrayerCellDelegate.swift */; };
 		827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */; };
 		827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */; };
+		8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8285005C23E4A13D00F2B9FE /* UIColor.swift */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
 		82E04C1B23E3F13200ED3BE3 /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E04C1A23E3F13200ED3BE3 /* test.xib */; };
 		82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */; };
@@ -71,6 +72,7 @@
 		827EB45D23DD0A1800F8C3E1 /* PrayerCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellDelegate.swift; sourceTree = "<group>"; };
 		827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPrayerCell.swift; sourceTree = "<group>"; };
 		827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPrayerCell.xib; sourceTree = "<group>"; };
+		8285005C23E4A13D00F2B9FE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		82E04C1A23E3F13200ED3BE3 /* test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
 		82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				827E4A7C23DC629800C99BF0 /* UIView.swift */,
 				82FE2E8D23E3BB4500C8EB96 /* Padding.swift */,
 				82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */,
+				8285005C23E4A13D00F2B9FE /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
 				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
+				8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
 				82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */,
 				86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */,
