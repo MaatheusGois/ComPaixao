@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207CC5423E49309003D8A06 /* ActionViewController.swift */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
 		8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */; };
 		8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */; };
@@ -23,6 +24,7 @@
 		827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */; };
 		827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
+		82E04C1B23E3F13200ED3BE3 /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E04C1A23E3F13200ED3BE3 /* test.xib */; };
 		82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */; };
 		82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */; };
 		82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8D23E3BB4500C8EB96 /* Padding.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8207CC5423E49309003D8A06 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Extra Thin.otf"; sourceTree = "<group>"; };
 		8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Centrale Sans Medium.otf"; path = "PropositoClient/Fonts/Centrale Sans Medium.otf"; sourceTree = SOURCE_ROOT; };
@@ -69,6 +72,7 @@
 		827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPrayerCell.swift; sourceTree = "<group>"; };
 		827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPrayerCell.xib; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		82E04C1A23E3F13200ED3BE3 /* test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
 		82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
 		82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderColor.swift; sourceTree = "<group>"; };
 		82FE2E8D23E3BB4500C8EB96 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = PropositoClient/View/Designable/Padding.swift; sourceTree = SOURCE_ROOT; };
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */,
+				8207CC5423E49309003D8A06 /* ActionViewController.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 		827E4A7623DB815400C99BF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				82E04C1923E3F12300ED3BE3 /* test */,
 				827EB45F23DD0DE700F8C3E1 /* AllPrayerCell */,
 				827EB45223DD031300F8C3E1 /* PrayerCell */,
 				86F426B722CAA6E20032AA5B /* UICollectionViewHorizontal */,
@@ -232,6 +238,14 @@
 				8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */,
 			);
 			path = PrayerCell;
+			sourceTree = "<group>";
+		};
+		82E04C1923E3F12300ED3BE3 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				82E04C1A23E3F13200ED3BE3 /* test.xib */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
@@ -435,6 +449,7 @@
 				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
 				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
 				86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */,
+				82E04C1B23E3F13200ED3BE3 /* test.xib in Resources */,
 				827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */,
 				86F426AA22CAA5EA0032AA5B /* Assets.xcassets in Resources */,
 				8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */,
@@ -489,6 +504,7 @@
 				827EB45C23DD0A0200F8C3E1 /* PrayerCellDataSource.swift in Sources */,
 				827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */,
 				8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */,
+				8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */,
 				827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
 				86F426A022CAA5E80032AA5B /* AppDelegate.swift in Sources */,

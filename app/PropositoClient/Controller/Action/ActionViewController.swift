@@ -1,31 +1,40 @@
 //
-//  PrayerViewController.swift
+//  ActionViewController.swift
 //  PropositoClient
 //
-//  Created by Matheus Silva on 30/01/20.
+//  Created by Matheus Silva on 31/01/20.
 //  Copyright © 2020 Matheus Gois. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class PrayerViewController: UIViewController {
+class ActionViewController: UIViewController {
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var lineName: UIImageView!
     @IBOutlet weak var time: UIDatePicker!
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var byPerson: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setup()
+        // Do any additional setup after loading the view.
     }
     func setup() {
         setupName()
+        setupByPrayer()
         setupDate()
         setupTime()
     }
     func setupName() {
         name.addPadding(.left(20))
         lineName.frame.size.height = 0.5
+    }
+    func setupByPrayer() {
+        byPerson.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")
+        byPerson.subviews[0].subviews[2].backgroundColor = UIColor(named: "primary")
+        byPerson.subviews[0].subviews[1].alpha = 0.2
+        byPerson.subviews[0].subviews[2].alpha = 0.2
     }
     func setupDate() {
         date.subviews[0].subviews[1].backgroundColor = UIColor(named: "primary")
