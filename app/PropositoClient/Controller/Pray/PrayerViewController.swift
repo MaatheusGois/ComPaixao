@@ -13,6 +13,8 @@ class PrayerViewController: UIViewController {
     @IBOutlet weak var lineName: UIImageView!
     @IBOutlet weak var time: UIDatePicker!
     @IBOutlet weak var name: TextFieldWithReturn!
+    @IBOutlet weak var repeatNotificationsView: UIStackView!
+    @IBOutlet weak var repeatSwitch: UISwitch!
     @IBOutlet weak var collectionView: UICollectionView!
     var imageProfileCellDelegate = ImageProfileCellDelegate()
     var imageProfileCellDataSource = ImageProfileCellDataSource()
@@ -38,7 +40,7 @@ class PrayerViewController: UIViewController {
     func setupName() {
         name.tintColor = .primary
         name.addPadding(.left(10))
-        lineName.frame.size.height = 0.5
+        lineName.frame.size.height = 0.2
     }
     func setupCollection() {
         imageSelected = imageProfileCellDataSource.images[0]
@@ -94,18 +96,13 @@ class PrayerViewController: UIViewController {
         print(sender.date)
     }
     @IBAction func notificationChanged(_ sender: UISwitch) {
-        
+        repeatNotificationsView.isHidden = !sender.isOn
+        if !collectionViewRepeat.isHidden {
+            collectionViewRepeat.isHidden = !sender.isOn
+            repeatSwitch.isOn = false
+        }
     }
     @IBAction func repeatChanged(_ sender: UISwitch) {
+        collectionViewRepeat.isHidden = !sender.isOn
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
