@@ -17,7 +17,11 @@
 		8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */; };
 		8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */; };
 		8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */; };
+		8265181E23E575850035E91E /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265181D23E575850035E91E /* EventManager.swift */; };
 		8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */; };
+		827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB623E557BB004156CB /* ConfigurationController.swift */; };
+		827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB923E55C49004156CB /* UserDefaults.swift */; };
+		827ADDBC23E56785004156CB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDBB23E56785004156CB /* Date.swift */; };
 		827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7823DB8A6D00C99BF0 /* Gradient.swift */; };
 		827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7A23DB90C700C99BF0 /* MainController.swift */; };
 		827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7C23DC629800C99BF0 /* UIView.swift */; };
@@ -76,7 +80,11 @@
 		8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Extra Thin.otf"; sourceTree = "<group>"; };
 		8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Centrale Sans Medium.otf"; path = "PropositoClient/Fonts/Centrale Sans Medium.otf"; sourceTree = SOURCE_ROOT; };
 		8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Thin.otf"; sourceTree = "<group>"; };
+		8265181D23E575850035E91E /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellViewModel.swift; sourceTree = "<group>"; };
+		827ADDB623E557BB004156CB /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
+		827ADDB923E55C49004156CB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		827ADDBB23E56785004156CB /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		827E4A7823DB8A6D00C99BF0 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		827E4A7A23DB90C700C99BF0 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		827E4A7C23DC629800C99BF0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = PropositoClient/Controller/Main/UIView.swift; sourceTree = SOURCE_ROOT; };
@@ -137,14 +145,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		823922BB23E4A6B800DA2255 /* Keyboard */ = {
-			isa = PBXGroup;
-			children = (
-				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
-			);
-			path = Keyboard;
-			sourceTree = "<group>";
-		};
 		823922BE23E51F2000DA2255 /* ImageProfileCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +157,9 @@
 		823922C323E5201300DA2255 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				823922BB23E4A6B800DA2255 /* Keyboard */,
+				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
+				827ADDBB23E56785004156CB /* Date.swift */,
+				8265181D23E575850035E91E /* EventManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -205,6 +207,22 @@
 				827EB45B23DD0A0200F8C3E1 /* PrayerCellDataSource.swift */,
 			);
 			path = PrayerCell;
+			sourceTree = "<group>";
+		};
+		827ADDB523E55799004156CB /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				827ADDB623E557BB004156CB /* ConfigurationController.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		827ADDB823E55C35004156CB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				827ADDB923E55C49004156CB /* UserDefaults.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		827E4A7323DB80D400C99BF0 /* Assets */ = {
@@ -436,11 +454,13 @@
 		86F426B622CAA6880032AA5B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				827ADDB823E55C35004156CB /* Helpers */,
 				823922C323E5201300DA2255 /* Utils */,
 				827EB45923DD098800F8C3E1 /* Components */,
 				8246345823D90EE500AA58F6 /* Main */,
 				8246345923D90EF300AA58F6 /* Pray */,
 				8246345A23D90EFB00AA58F6 /* Action */,
+				827ADDB523E55799004156CB /* Configuration */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -584,9 +604,11 @@
 				8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */,
 				82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */,
 				82B3889923E54CB800D9B2CE /* PickerDateDataSource.swift in Sources */,
+				827ADDBC23E56785004156CB /* Date.swift in Sources */,
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
 				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
 				86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */,
+				8265181E23E575850035E91E /* EventManager.swift in Sources */,
 				827EB45C23DD0A0200F8C3E1 /* PrayerCellDataSource.swift in Sources */,
 				827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */,
 				8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */,
@@ -604,11 +626,13 @@
 				86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */,
 				82F14C8923E5309E00D20107 /* RepeatCell.swift in Sources */,
 				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,
+				827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */,
 				823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */,
 				82F14C8D23E530BF00D20107 /* RepeatCellDelegate.swift in Sources */,
 				827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */,
 				827EB45523DD033D00F8C3E1 /* PrayerCell.swift in Sources */,
 				8699401322D40C7600069F8F /* ActionHandler.swift in Sources */,
+				827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */,
 				82B3889623E54C7B00D9B2CE /* PickerDateDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

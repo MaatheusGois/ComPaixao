@@ -10,30 +10,48 @@ import UIKit
 
 class MainController: UIViewController {
     @IBOutlet weak var prayerCollectionView: UICollectionView!
-    var prayerCellDelegate: PrayerCellDelegate!
-    var prayerCellDataSource: PrayerCellDataSource!
+    @IBOutlet weak var illustrationPrayer: UIImageView!
+    @IBOutlet weak var illustrationAction: UIImageView!
+    var prayerCellDelegate: PrayerCellDelegate = PrayerCellDelegate(prayers: [])
+    var prayerCellDataSource: PrayerCellDataSource = PrayerCellDataSource(prayers: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
     func setup() {
-        prayerCellDelegate = PrayerCellDelegate(prayers: [])
-        prayerCellDataSource = PrayerCellDataSource(prayers: [])
+        setupCellDelegate()
+        setupCellDataSource()
+        loadCellData()
+        prayerIllustration()
+        setupEvents()
     }
-    func setupDelegate() {
-        prayerCollectionView.delegate = prayerCellDelegate
+    func setupCellDelegate() {
         prayerCellDelegate.setup(collectionView: prayerCollectionView, viewController: self)
     }
-    func setupDataSource() {
-        prayerCellDataSource.setup(collectionView: prayerCollectionView,
-                                   viewController: self)
+    func setupCellDataSource() {
+        prayerCellDataSource.setup(collectionView: prayerCollectionView, viewController: self)
     }
-    func loadData() {
-        
+    func loadCellData() {
+        prayerCellDataSource.fetch(delegate: prayerCellDelegate)
     }
+    func prayerIllustration() {
+        if prayerCellDataSource.prayers.count > 0 {
+            illustrationPrayer.alpha = 0
+        } else {
+            illustrationPrayer.alpha = 1
+        }
+    }
+    func actionIllustration() {
+    }
+    func setupEvents() {
+        EventManager.shared.listenTo(eventName: "addPrayer") {
+            self.prayerCellDataSource.fetch(delegate: self.prayerCellDelegate)
+        }
+    }
+    //MARK: - Actions
     @IBAction func seeConfig(_ sender: Any) {
         generatorImpact()
-        performSegue(withIdentifier: "toConfig", sender: nil)
     }
     @IBAction func addPrayer(_ sender: Any) {
         generatorImpact()

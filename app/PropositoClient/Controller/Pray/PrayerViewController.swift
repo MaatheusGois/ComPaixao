@@ -24,6 +24,9 @@ class PrayerViewController: UIViewController {
     
     var imageSelected = ""
     var repeatSelected = ""
+    var remember = false
+    var repetition = false
+    var dateTime = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,35 +77,49 @@ class PrayerViewController: UIViewController {
         generator.impactOccurred()
     }
     // MARK: - Actions
-    @IBAction func close(_ sender: Any) {
+    @IBAction func close(_ sender: Any? = nil) {
         generatorImpact()
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func add(_ sender: Any) {
-        generatorImpact()
-        print(imageSelected, repeatSelected)
-    }
-
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
-         let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = DateFormatter.Style.short
-                dateFormatter.timeStyle = DateFormatter.Style.short
-                print(sender.date)
+        dateTime = sender.date
     }
     @IBAction func timePickerChanged(_ sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.timeStyle = DateFormatter.Style.short
-        print(sender.date)
+        dateTime = sender.date
     }
     @IBAction func notificationChanged(_ sender: UISwitch) {
+        remember = sender.isOn
         repeatNotificationsView.isHidden = !sender.isOn
         if !collectionViewRepeat.isHidden {
             collectionViewRepeat.isHidden = !sender.isOn
             repeatSwitch.isOn = false
+            repetition = false
         }
     }
     @IBAction func repeatChanged(_ sender: UISwitch) {
+        repetition = sender.isOn
         collectionViewRepeat.isHidden = !sender.isOn
+    }
+    @IBAction func add(_ sender: Any) {
+        generatorImpact()
+        let prayer = Prayer(uuid: UUID(),
+                            name: name.text ?? "",
+                            image: imageSelected,
+                            date: dateTime,
+                            time: DateUltils.shared.getHours(date: dateTime),
+                            remember: remember,
+                            repetition: repetition,
+                            whenRepeat: repetition ? repeatSelected : "",
+                            answered: false,
+                            actions: [])
+        PrayerHandler.create(pray: prayer) { (response) in
+            switch response {
+            case .error(let description):
+                NSLog(description)
+            case .success(_ ):
+                EventManager.shared.trigger(eventName: "addPrayer")
+                self.close()
+            }
+        }
     }
 }

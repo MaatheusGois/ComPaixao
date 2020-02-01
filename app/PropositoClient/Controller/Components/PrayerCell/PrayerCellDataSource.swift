@@ -27,10 +27,17 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
     func fetch(delegate: PrayerCellDelegate) {
         PrayerHandler.getAll { (response) in
             switch response {
-            case .success(let prayers):
-                print(prayers)
             case .error(let description):
-                print(description) //TODO:- Gerar alerta
+                NSLog(description)
+            case .success(let prayers):
+                DispatchQueue.main.async {
+                    self.prayers = prayers
+                    delegate.prayers = prayers
+                    if let view = self.viewController as? MainController {
+                        view.prayerCollectionView.reloadData()
+                        view.prayerIllustration()
+                    }
+                }
             }
         }
     }

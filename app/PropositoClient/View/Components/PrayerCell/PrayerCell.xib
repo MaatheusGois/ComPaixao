@@ -31,9 +31,14 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="WW0-p5-DxD">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-7O-gt5" customClass="ProfilePictureImageView" customModule="PropositoClient" customModuleProvider="target">
-                                <rect key="frame" x="128" y="12" width="20" height="20"/>
+                                <rect key="frame" x="128" y="16" width="20" height="20"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -41,7 +46,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdasdasdasdasdasdas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XU-gw-gR1">
-                                <rect key="frame" x="12" y="12" width="104" height="59.5"/>
+                                <rect key="frame" x="12" y="20" width="104" height="59.5"/>
                                 <fontDescription key="fontDescription" name="CentraleSans-Medium" family="Centrale Sans Medium" pointSize="17"/>
                                 <color key="textColor" name="default_02"/>
                                 <nil key="highlightedColor"/>
@@ -64,12 +69,17 @@
                             <constraint firstAttribute="trailing" secondItem="idb-5B-gb3" secondAttribute="trailing" constant="12" id="a2q-Fm-Wnc"/>
                             <constraint firstAttribute="bottom" secondItem="WW0-p5-DxD" secondAttribute="bottom" id="d8R-np-VX5"/>
                             <constraint firstItem="ynm-7O-gt5" firstAttribute="height" secondItem="tAD-VW-Wun" secondAttribute="height" multiplier="0.181818" id="m2N-5s-URa"/>
-                            <constraint firstItem="ynm-7O-gt5" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="12" id="ovt-Ht-kbC"/>
+                            <constraint firstItem="ynm-7O-gt5" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="16" id="ovt-Ht-kbC"/>
                             <constraint firstAttribute="bottom" secondItem="idb-5B-gb3" secondAttribute="bottom" constant="12" id="r11-i9-OTp"/>
-                            <constraint firstItem="9XU-gw-gR1" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="12" id="sZP-fG-6n7"/>
+                            <constraint firstItem="9XU-gw-gR1" firstAttribute="top" secondItem="tAD-VW-Wun" secondAttribute="top" constant="20" id="sZP-fG-6n7"/>
                             <constraint firstAttribute="trailing" secondItem="WW0-p5-DxD" secondAttribute="trailing" id="spX-nv-mDf"/>
                             <constraint firstItem="idb-5B-gb3" firstAttribute="leading" secondItem="tAD-VW-Wun" secondAttribute="leading" constant="12" id="x0c-ED-IWZ"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -81,6 +91,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="161" height="106"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="descriptionLabel" destination="idb-5B-gb3" id="ryX-kL-x3T"/>
                 <outlet property="image" destination="ynm-7O-gt5" id="DSs-Ut-fjw"/>

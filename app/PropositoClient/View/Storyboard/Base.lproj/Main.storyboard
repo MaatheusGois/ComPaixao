@@ -27,10 +27,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Configuration Controller-->
         <scene sceneID="hf7-nh-xd4">
             <objects>
-                <viewController id="IsX-RM-r1G" sceneMemberID="viewController">
+                <viewController id="IsX-RM-r1G" customClass="ConfigurationController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2oD-km-erQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +58,9 @@
                                                     <constraint firstAttribute="height" constant="21" id="ba6-kv-fdB"/>
                                                 </constraints>
                                                 <state key="normal" image="back_button"/>
+                                                <connections>
+                                                    <action selector="close:" destination="IsX-RM-r1G" eventType="touchUpInside" id="SW1-hS-BWd"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkf-GY-H3j">
                                                 <rect key="frame" x="20" y="105" width="208" height="40"/>
@@ -126,7 +129,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque ativado para não esquecer das orações." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-xJ-P2l">
-                                                                <rect key="frame" x="20" y="57" width="330" height="40"/>
+                                                                <rect key="frame" x="20" y="57" width="290" height="40"/>
                                                                 <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="17"/>
                                                                 <color key="textColor" name="default_02"/>
                                                                 <nil key="highlightedColor"/>
@@ -136,12 +139,15 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="onTintColor" name="primary"/>
-                                                                <color key="thumbTintColor" name="default_02"/>
+                                                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                         <real key="value" value="0.0"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="prayerSwitchChanged:" destination="IsX-RM-r1G" eventType="valueChanged" id="suV-0Z-oJo"/>
+                                                                </connections>
                                                             </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +159,7 @@
                                                             <constraint firstItem="DnY-mo-Thd" firstAttribute="top" secondItem="UkO-kk-1qc" secondAttribute="top" constant="25" id="jl0-yY-6vc"/>
                                                             <constraint firstAttribute="trailing" secondItem="Nud-iB-JXM" secondAttribute="trailing" constant="16" id="rF3-Ap-nLH"/>
                                                             <constraint firstItem="Nud-iB-JXM" firstAttribute="top" secondItem="UkO-kk-1qc" secondAttribute="top" constant="14" id="tQ5-jM-bld"/>
-                                                            <constraint firstAttribute="trailing" secondItem="8nF-xJ-P2l" secondAttribute="trailing" constant="20" id="usj-kz-zot"/>
+                                                            <constraint firstAttribute="trailing" secondItem="8nF-xJ-P2l" secondAttribute="trailing" constant="60" id="usj-kz-zot"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrX-4v-sUF">
@@ -177,8 +183,8 @@
                                                                 <color key="textColor" name="default_02"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque ativado para não esquecer das orações." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0p-fW-6px">
-                                                                <rect key="frame" x="20" y="57" width="330" height="40"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque ativado para não esquecer das práticas." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0p-fW-6px">
+                                                                <rect key="frame" x="20" y="57" width="290" height="40"/>
                                                                 <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="17"/>
                                                                 <color key="textColor" name="default_02"/>
                                                                 <nil key="highlightedColor"/>
@@ -190,13 +196,17 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WdJ-Je-OGY">
                                                                 <rect key="frame" x="305" y="14" width="51" height="31"/>
                                                                 <color key="onTintColor" name="primary"/>
+                                                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="actionSwitchChanged:" destination="IsX-RM-r1G" eventType="valueChanged" id="Qty-NO-b7x"/>
+                                                                </connections>
                                                             </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="QLl-cu-j6F" firstAttribute="width" secondItem="QrX-4v-sUF" secondAttribute="width" constant="40" id="1BH-ih-smP"/>
                                                             <constraint firstAttribute="trailing" secondItem="WdJ-Je-OGY" secondAttribute="trailing" constant="16" id="3ar-9L-feE"/>
-                                                            <constraint firstAttribute="trailing" secondItem="y0p-fW-6px" secondAttribute="trailing" constant="20" id="Bcu-uW-aQm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="y0p-fW-6px" secondAttribute="trailing" constant="60" id="Bcu-uW-aQm"/>
                                                             <constraint firstItem="y0p-fW-6px" firstAttribute="leading" secondItem="QrX-4v-sUF" secondAttribute="leading" constant="20" id="GAr-va-Ktk"/>
                                                             <constraint firstAttribute="trailing" secondItem="QLl-cu-j6F" secondAttribute="trailing" constant="-260" id="LRR-26-Xny"/>
                                                             <constraint firstAttribute="trailing" secondItem="H5l-0L-cDt" secondAttribute="trailing" constant="20" id="UVm-PJ-WuO"/>
@@ -225,14 +235,14 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configurações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-00-hte">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-00-hte">
                                                                 <rect key="frame" x="20" y="25" width="330" height="20"/>
                                                                 <fontDescription key="fontDescription" name="CentraleSans-Medium" family="Centrale Sans Medium" pointSize="17"/>
                                                                 <color key="textColor" name="default_02"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque ativado para não esquecer das orações." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tua-tn-JF8">
-                                                                <rect key="frame" x="20" y="57" width="330" height="40"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salve altomáticamente as suas orações e suas práticas online." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tua-tn-JF8">
+                                                                <rect key="frame" x="20" y="57" width="290" height="40"/>
                                                                 <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="17"/>
                                                                 <color key="textColor" name="default_02"/>
                                                                 <nil key="highlightedColor"/>
@@ -240,6 +250,10 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xaQ-O7-5Jt">
                                                                 <rect key="frame" x="305" y="14" width="51" height="31"/>
                                                                 <color key="onTintColor" name="primary"/>
+                                                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <action selector="iCloudSwitchChanged:" destination="IsX-RM-r1G" eventType="valueChanged" id="I4d-2h-nmo"/>
+                                                                </connections>
                                                             </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -248,7 +262,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="GbW-00-hte" secondAttribute="trailing" constant="20" id="4vy-vo-Fr8"/>
                                                             <constraint firstItem="tua-tn-JF8" firstAttribute="leading" secondItem="waO-pa-ksk" secondAttribute="leading" constant="20" id="Ju7-Ff-ya9"/>
                                                             <constraint firstItem="xaQ-O7-5Jt" firstAttribute="top" secondItem="waO-pa-ksk" secondAttribute="top" constant="14" id="LMx-1w-UqY"/>
-                                                            <constraint firstAttribute="trailing" secondItem="tua-tn-JF8" secondAttribute="trailing" constant="20" id="P3t-sG-JWn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tua-tn-JF8" secondAttribute="trailing" constant="60" id="P3t-sG-JWn"/>
                                                             <constraint firstItem="GbW-00-hte" firstAttribute="top" secondItem="waO-pa-ksk" secondAttribute="top" constant="25" id="jHC-pa-DeT"/>
                                                             <constraint firstItem="tua-tn-JF8" firstAttribute="top" secondItem="GbW-00-hte" secondAttribute="bottom" constant="12" id="nHd-aP-uyi"/>
                                                             <constraint firstItem="GbW-00-hte" firstAttribute="leading" secondItem="waO-pa-ksk" secondAttribute="leading" constant="20" id="qKq-yx-FgB"/>
@@ -390,6 +404,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dMa-E6-XvS"/>
                     </view>
+                    <connections>
+                        <outlet property="actionSwitch" destination="WdJ-Je-OGY" id="KNR-HV-T7X"/>
+                        <outlet property="iCloudSwitch" destination="xaQ-O7-5Jt" id="xpN-bP-ohY"/>
+                        <outlet property="prayerSwitch" destination="Nud-iB-JXM" id="6DN-9d-0vm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcV-yn-kca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -425,7 +444,7 @@
                                                         </constraints>
                                                         <state key="normal" image="list"/>
                                                         <connections>
-                                                            <action selector="seeConfig:" destination="evU-5K-cQa" eventType="touchUpInside" id="z6x-WE-IaQ"/>
+                                                            <action selector="seeConfig:" destination="evU-5K-cQa" eventType="touchUpInside" id="62a-ZB-bms"/>
                                                             <segue destination="IsX-RM-r1G" kind="presentation" id="E1k-DL-GgQ"/>
                                                         </connections>
                                                     </button>
@@ -526,24 +545,15 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-Qo-qBy">
-                                                <rect key="frame" x="0.0" y="259" width="414" height="110"/>
+                                                <rect key="frame" x="0.0" y="253" width="414" height="122.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L3V-t3-GoM">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L3V-t3-GoM">
                                                     <size key="itemSize" width="50" height="50"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TIE-el-Wwz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GvV-JS-VYU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </collectionViewCellContentView>
-                                                    </collectionViewCell>
-                                                </cells>
+                                                <cells/>
                                             </collectionView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_prayer" translatesAutoresizingMaskIntoConstraints="NO" id="Maw-eo-r9Z">
                                                 <rect key="frame" x="57" y="259" width="300" height="110"/>
@@ -581,6 +591,7 @@
                                                         </constraints>
                                                         <state key="normal" image="button_add"/>
                                                         <connections>
+                                                            <action selector="addAction:" destination="evU-5K-cQa" eventType="touchUpInside" id="VW6-nQ-qgA"/>
                                                             <segue destination="N09-Ep-maN" kind="presentation" id="wYn-aJ-5pR"/>
                                                         </connections>
                                                     </button>
@@ -724,7 +735,7 @@
                                             <constraint firstItem="KX9-HJ-vhx" firstAttribute="height" secondItem="ucQ-YR-rKi" secondAttribute="height" multiplier="0.328851" id="Jd0-zJ-Hb8"/>
                                             <constraint firstItem="Gyj-sz-VLC" firstAttribute="width" secondItem="ucQ-YR-rKi" secondAttribute="width" id="JrN-2f-abb"/>
                                             <constraint firstItem="cZm-bM-Cef" firstAttribute="centerX" secondItem="ucQ-YR-rKi" secondAttribute="centerX" id="Len-UU-dBm"/>
-                                            <constraint firstItem="GTz-Qo-qBy" firstAttribute="height" secondItem="ucQ-YR-rKi" secondAttribute="height" multiplier="0.134474" id="O5e-J2-bqi"/>
+                                            <constraint firstItem="GTz-Qo-qBy" firstAttribute="height" secondItem="ucQ-YR-rKi" secondAttribute="height" multiplier="0.15" id="O5e-J2-bqi"/>
                                             <constraint firstItem="L6t-Vs-SHg" firstAttribute="centerX" secondItem="ucQ-YR-rKi" secondAttribute="centerX" id="PRr-7T-409"/>
                                             <constraint firstItem="iBo-bA-vao" firstAttribute="width" secondItem="ucQ-YR-rKi" secondAttribute="width" multiplier="0.724638" id="Sxx-xz-Mz6"/>
                                             <constraint firstItem="L6t-Vs-SHg" firstAttribute="width" secondItem="ucQ-YR-rKi" secondAttribute="width" id="T7t-bu-83b"/>
@@ -782,6 +793,9 @@
                         <viewLayoutGuide key="safeArea" id="2iC-Pn-jGm"/>
                     </view>
                     <connections>
+                        <outlet property="illustrationAction" destination="iBo-bA-vao" id="vfe-Ym-3kl"/>
+                        <outlet property="illustrationPrayer" destination="Maw-eo-r9Z" id="wqF-I8-pHi"/>
+                        <outlet property="prayerCollectionView" destination="GTz-Qo-qBy" id="lhf-8W-aZP"/>
                         <segue destination="hA7-qW-w1a" kind="presentation" id="uvb-7G-urL"/>
                         <segue destination="QVc-bZ-zbp" kind="presentation" id="k2g-29-Wwb"/>
                     </connections>
