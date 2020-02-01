@@ -56,4 +56,14 @@ class AllPrayersController: UIViewController {
     @IBAction func add(_ sender: Any? = nil) {
         generatorImpact()
     }
+    // MARK: - NEXT
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let view = segue.destination as? PrayerDetailController {
+            guard let prayer = sender as? Prayer else {
+                NSLog("Não esta chegando a Oração")
+                return
+            }
+            view.prayer = prayer
+        }
+    }
 }

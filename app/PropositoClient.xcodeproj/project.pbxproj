@@ -21,6 +21,8 @@
 		8265182123E57EB60035E91E /* AllPrayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182023E57EB60035E91E /* AllPrayersController.swift */; };
 		8265182423E5805E0035E91E /* PrayerAllCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182323E5805E0035E91E /* PrayerAllCellDelegate.swift */; };
 		8265182623E5806A0035E91E /* PrayerAllCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182523E5806A0035E91E /* PrayerAllCellDataSource.swift */; };
+		8265182923E6119F0035E91E /* PrayerDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182823E6119F0035E91E /* PrayerDetailController.swift */; };
+		8265182C23E611E50035E91E /* PrayerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182B23E611E50035E91E /* PrayerDetailViewModel.swift */; };
 		8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */; };
 		827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB623E557BB004156CB /* ConfigurationController.swift */; };
 		827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB923E55C49004156CB /* UserDefaults.swift */; };
@@ -87,6 +89,8 @@
 		8265182023E57EB60035E91E /* AllPrayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPrayersController.swift; sourceTree = "<group>"; };
 		8265182323E5805E0035E91E /* PrayerAllCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerAllCellDelegate.swift; sourceTree = "<group>"; };
 		8265182523E5806A0035E91E /* PrayerAllCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerAllCellDataSource.swift; sourceTree = "<group>"; };
+		8265182823E6119F0035E91E /* PrayerDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDetailController.swift; sourceTree = "<group>"; };
+		8265182B23E611E50035E91E /* PrayerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDetailViewModel.swift; sourceTree = "<group>"; };
 		8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellViewModel.swift; sourceTree = "<group>"; };
 		827ADDB623E557BB004156CB /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		827ADDB923E55C49004156CB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -223,6 +227,22 @@
 			path = PrayerAllCell;
 			sourceTree = "<group>";
 		};
+		8265182723E6117A0035E91E /* PrayerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8265182823E6119F0035E91E /* PrayerDetailController.swift */,
+			);
+			path = PrayerDetail;
+			sourceTree = "<group>";
+		};
+		8265182A23E611CC0035E91E /* PrayerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8265182B23E611E50035E91E /* PrayerDetailViewModel.swift */,
+			);
+			path = PrayerDetail;
+			sourceTree = "<group>";
+		};
 		8272B22523DFC29500CFFD9B /* PrayerCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +349,7 @@
 		827EB46423DD187300F8C3E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8265182A23E611CC0035E91E /* PrayerDetail */,
 				827EB46523DD189A00F8C3E1 /* PrayerCell */,
 			);
 			path = ViewModel;
@@ -484,6 +505,7 @@
 				8246345823D90EE500AA58F6 /* Main */,
 				8265181F23E57E8E0035E91E /* AllPrayers */,
 				8246345923D90EF300AA58F6 /* Pray */,
+				8265182723E6117A0035E91E /* PrayerDetail */,
 				8246345A23D90EFB00AA58F6 /* Action */,
 				827ADDB523E55799004156CB /* Configuration */,
 			);
@@ -640,6 +662,7 @@
 				8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */,
 				8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */,
 				827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */,
+				8265182923E6119F0035E91E /* PrayerDetailController.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
 				86F426A022CAA5E80032AA5B /* AppDelegate.swift in Sources */,
 				8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */,
@@ -649,6 +672,7 @@
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,
 				823922C623E5204400DA2255 /* ImageProfileCellDelegate.swift in Sources */,
 				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
+				8265182C23E611E50035E91E /* PrayerDetailViewModel.swift in Sources */,
 				86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */,
 				82F14C8923E5309E00D20107 /* RepeatCell.swift in Sources */,
 				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,

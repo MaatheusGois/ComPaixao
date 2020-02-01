@@ -49,6 +49,10 @@ class MainController: UIViewController {
             self.prayerCellDataSource.fetch(delegate: self.prayerCellDelegate)
         }
     }
+    func generatorImpact() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+    }
     //MARK: - Actions
     @IBAction func seeConfig(_ sender: Any) {
         generatorImpact()
@@ -59,8 +63,14 @@ class MainController: UIViewController {
     @IBAction func addAction(_ sender: Any) {
         generatorImpact()
     }
-    func generatorImpact() {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
+    // MARK: - NEXT
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let view = segue.destination as? PrayerDetailController {
+            guard let prayer = sender as? Prayer else {
+                NSLog("Não esta chegando a Oração")
+                return
+            }
+            view.prayer = prayer
+        }
     }
 }

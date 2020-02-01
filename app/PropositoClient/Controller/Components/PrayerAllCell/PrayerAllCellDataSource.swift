@@ -55,9 +55,4 @@ class PrayerAllCellDataSource: NSObject, UICollectionViewDataSource {
         
         return UICollectionViewCell()
     }
-    @objc
-    func toChallengeView() {
-        self.viewController?.performSegue(withIdentifier: "myChallenges",
-                                          sender: nil)
-    }
 }
