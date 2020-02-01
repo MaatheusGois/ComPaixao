@@ -53,6 +53,7 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
         if verify {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AllPrayerCell",
                                                              for: indexPath) as? AllPrayerCell {
+                cell.button.addTarget(self, action: #selector(toAllPrayers), for: .touchUpInside)
                 return cell
             }
         } else {
@@ -69,8 +70,8 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
         return UICollectionViewCell()
     }
     @objc
-    func toChallengeView() {
-        self.viewController?.performSegue(withIdentifier: "myChallenges",
+    func toAllPrayers() {
+        self.viewController?.performSegue(withIdentifier: "toAllPrayers",
                                           sender: nil)
     }
 }

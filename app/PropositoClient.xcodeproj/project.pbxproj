@@ -18,6 +18,9 @@
 		8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */; };
 		8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */; };
 		8265181E23E575850035E91E /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265181D23E575850035E91E /* EventManager.swift */; };
+		8265182123E57EB60035E91E /* AllPrayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182023E57EB60035E91E /* AllPrayersController.swift */; };
+		8265182423E5805E0035E91E /* PrayerAllCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182323E5805E0035E91E /* PrayerAllCellDelegate.swift */; };
+		8265182623E5806A0035E91E /* PrayerAllCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182523E5806A0035E91E /* PrayerAllCellDataSource.swift */; };
 		8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */; };
 		827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB623E557BB004156CB /* ConfigurationController.swift */; };
 		827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB923E55C49004156CB /* UserDefaults.swift */; };
@@ -81,6 +84,9 @@
 		8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Centrale Sans Medium.otf"; path = "PropositoClient/Fonts/Centrale Sans Medium.otf"; sourceTree = SOURCE_ROOT; };
 		8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Thin.otf"; sourceTree = "<group>"; };
 		8265181D23E575850035E91E /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		8265182023E57EB60035E91E /* AllPrayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPrayersController.swift; sourceTree = "<group>"; };
+		8265182323E5805E0035E91E /* PrayerAllCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerAllCellDelegate.swift; sourceTree = "<group>"; };
+		8265182523E5806A0035E91E /* PrayerAllCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerAllCellDataSource.swift; sourceTree = "<group>"; };
 		8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellViewModel.swift; sourceTree = "<group>"; };
 		827ADDB623E557BB004156CB /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		827ADDB923E55C49004156CB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -200,6 +206,23 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
+		8265181F23E57E8E0035E91E /* AllPrayers */ = {
+			isa = PBXGroup;
+			children = (
+				8265182023E57EB60035E91E /* AllPrayersController.swift */,
+			);
+			path = AllPrayers;
+			sourceTree = "<group>";
+		};
+		8265182223E5803E0035E91E /* PrayerAllCell */ = {
+			isa = PBXGroup;
+			children = (
+				8265182323E5805E0035E91E /* PrayerAllCellDelegate.swift */,
+				8265182523E5806A0035E91E /* PrayerAllCellDataSource.swift */,
+			);
+			path = PrayerAllCell;
+			sourceTree = "<group>";
+		};
 		8272B22523DFC29500CFFD9B /* PrayerCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +312,7 @@
 				82F14C8B23E530B000D20107 /* RepeatCell */,
 				823922C423E5202500DA2255 /* ImageProfileCell */,
 				8272B22523DFC29500CFFD9B /* PrayerCell */,
+				8265182223E5803E0035E91E /* PrayerAllCell */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -458,6 +482,7 @@
 				823922C323E5201300DA2255 /* Utils */,
 				827EB45923DD098800F8C3E1 /* Components */,
 				8246345823D90EE500AA58F6 /* Main */,
+				8265181F23E57E8E0035E91E /* AllPrayers */,
 				8246345923D90EF300AA58F6 /* Pray */,
 				8246345A23D90EFB00AA58F6 /* Action */,
 				827ADDB523E55799004156CB /* Configuration */,
@@ -592,6 +617,7 @@
 				8699401122D40BC900069F8F /* Action.swift in Sources */,
 				827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */,
 				823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */,
+				8265182123E57EB60035E91E /* AllPrayersController.swift in Sources */,
 				82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */,
 				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
@@ -632,6 +658,8 @@
 				827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */,
 				827EB45523DD033D00F8C3E1 /* PrayerCell.swift in Sources */,
 				8699401322D40C7600069F8F /* ActionHandler.swift in Sources */,
+				8265182623E5806A0035E91E /* PrayerAllCellDataSource.swift in Sources */,
+				8265182423E5805E0035E91E /* PrayerAllCellDelegate.swift in Sources */,
 				827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */,
 				82B3889623E54C7B00D9B2CE /* PickerDateDelegate.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  PrayerCellDelegate.swift
+//  PrayerAllCellDelegate.swift
 //  PropositoClient
 //
 //  Created by Matheus Silva on 25/01/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class PrayerAllCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var prayers: Prayers
     weak var viewController: UIViewController?
@@ -22,21 +22,20 @@ class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets (top: 0, left: 20, bottom: 0, right: 20)
+        return UIEdgeInsets (top: 0, left: 10, bottom: 0, right: 10)
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height: Double = Double(collectionView.frame.width) * 0.29333333333
-        let width: Double = Double(collectionView.frame.width) * 0.42666666666
+        let width: Double = Double(collectionView.frame.width - 30) / 2
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let verify = prayers.count > 3 ? indexPath.row == 3 : indexPath.row < prayers.count
-        if verify { toPrayerDetail(index: indexPath.row) }
+        toPrayerDetail(index: indexPath.row) 
     }
     func toPrayerDetail(index: Int) {
-        let prayer = prayers[prayers.count - index - 1]
+        let prayer = prayers[index]
         self.viewController?.performSegue(withIdentifier: "toPrayerDetail",
                                           sender: prayer)
     }
