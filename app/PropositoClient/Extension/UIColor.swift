@@ -12,6 +12,12 @@ extension UIColor {
     static var primary: UIColor {
         UIColor(named: "primary")!
     }
+    static var secondary: UIColor {
+        UIColor(named: "secondary")!
+    }
+    static var secondary02: UIColor {
+        UIColor(named: "secondary_02")!
+    }
     static var default01: UIColor {
         UIColor(named: "default")!
     }

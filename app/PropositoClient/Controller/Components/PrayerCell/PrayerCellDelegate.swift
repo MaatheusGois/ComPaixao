@@ -16,19 +16,14 @@ class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     init(prayers: Prayers) {
         self.prayers = prayers
     }
-    func setup(viewController: UIViewController) {
+    func setup(collectionView: UICollectionView, viewController: UIViewController) {
+        collectionView.delegate = self
         self.viewController = viewController
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let verify = prayers.count > 3 ? indexPath.row == 3 : indexPath.row == prayers.count
-//        if verify {
-//            let height: Double = Double(collectionView.frame.height - 40)
-//            let width: Double = Double(collectionView.frame.width + 20) * 0.32
-//            return CGSize(width: width, height: height)
-//        }
         let height: Double = Double(collectionView.frame.width) * 0.29333333333
         let width: Double = Double(collectionView.frame.width) * 0.42666666666
         return CGSize(width: width, height: height)

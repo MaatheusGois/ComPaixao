@@ -10,14 +10,12 @@ import UIKit
 
 class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
     var prayers: Prayers
-    weak var collectionView: UICollectionView?
     weak var viewController: UIViewController?
     
     init(prayers: Prayers) {
         self.prayers = prayers
     }
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
-        self.collectionView = collectionView
         self.viewController = viewController
         collectionView.dataSource = self
         // Registers

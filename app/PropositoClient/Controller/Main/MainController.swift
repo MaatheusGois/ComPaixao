@@ -22,7 +22,7 @@ class MainController: UIViewController {
     }
     func setupDelegate() {
         prayerCollectionView.delegate = prayerCellDelegate
-        prayerCellDelegate.setup(viewController: self)
+        prayerCellDelegate.setup(collectionView: prayerCollectionView, viewController: self)
     }
     func setupDataSource() {
         prayerCellDataSource.setup(collectionView: prayerCollectionView,

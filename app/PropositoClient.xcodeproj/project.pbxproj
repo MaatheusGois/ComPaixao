@@ -10,6 +10,10 @@
 		8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207CC5423E49309003D8A06 /* ActionViewController.swift */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
 		823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BC23E4A6CB00DA2255 /* Keyboard.swift */; };
+		823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */; };
+		823922C223E51F5B00DA2255 /* ImageProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823922C023E51F5B00DA2255 /* ImageProfileCell.xib */; };
+		823922C623E5204400DA2255 /* ImageProfileCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922C523E5204400DA2255 /* ImageProfileCellDelegate.swift */; };
+		823922C823E5205F00DA2255 /* ImageProfileCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922C723E5205F00DA2255 /* ImageProfileCellDataSource.swift */; };
 		8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */; };
 		8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */; };
 		8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */; };
@@ -26,8 +30,13 @@
 		827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */; };
 		8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8285005C23E4A13D00F2B9FE /* UIColor.swift */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
-		82E04C1B23E3F13200ED3BE3 /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E04C1A23E3F13200ED3BE3 /* test.xib */; };
+		82B3889623E54C7B00D9B2CE /* PickerDateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889523E54C7B00D9B2CE /* PickerDateDelegate.swift */; };
+		82B3889923E54CB800D9B2CE /* PickerDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889823E54CB800D9B2CE /* PickerDateDataSource.swift */; };
 		82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */; };
+		82F14C8923E5309E00D20107 /* RepeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F14C8723E5309E00D20107 /* RepeatCell.swift */; };
+		82F14C8A23E5309E00D20107 /* RepeatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82F14C8823E5309E00D20107 /* RepeatCell.xib */; };
+		82F14C8D23E530BF00D20107 /* RepeatCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F14C8C23E530BF00D20107 /* RepeatCellDelegate.swift */; };
+		82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F14C8E23E530C800D20107 /* RepeatCellDataSource.swift */; };
 		82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */; };
 		82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8D23E3BB4500C8EB96 /* Padding.swift */; };
 		82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */; };
@@ -60,6 +69,10 @@
 		8207CC5423E49309003D8A06 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		823922BC23E4A6CB00DA2255 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCell.swift; sourceTree = "<group>"; };
+		823922C023E51F5B00DA2255 /* ImageProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageProfileCell.xib; sourceTree = "<group>"; };
+		823922C523E5204400DA2255 /* ImageProfileCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCellDelegate.swift; sourceTree = "<group>"; };
+		823922C723E5205F00DA2255 /* ImageProfileCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCellDataSource.swift; sourceTree = "<group>"; };
 		8246345C23D9113A00AA58F6 /* Centrale Sans Extra Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Extra Thin.otf"; sourceTree = "<group>"; };
 		8246346023D911B000AA58F6 /* Centrale Sans Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Centrale Sans Medium.otf"; path = "PropositoClient/Fonts/Centrale Sans Medium.otf"; sourceTree = SOURCE_ROOT; };
 		8246346223D9123F00AA58F6 /* Centrale Sans Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Thin.otf"; sourceTree = "<group>"; };
@@ -76,8 +89,13 @@
 		827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPrayerCell.xib; sourceTree = "<group>"; };
 		8285005C23E4A13D00F2B9FE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
-		82E04C1A23E3F13200ED3BE3 /* test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
+		82B3889523E54C7B00D9B2CE /* PickerDateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDateDelegate.swift; sourceTree = "<group>"; };
+		82B3889823E54CB800D9B2CE /* PickerDateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDateDataSource.swift; sourceTree = "<group>"; };
 		82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
+		82F14C8723E5309E00D20107 /* RepeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCell.swift; sourceTree = "<group>"; };
+		82F14C8823E5309E00D20107 /* RepeatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepeatCell.xib; sourceTree = "<group>"; };
+		82F14C8C23E530BF00D20107 /* RepeatCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCellDelegate.swift; sourceTree = "<group>"; };
+		82F14C8E23E530C800D20107 /* RepeatCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCellDataSource.swift; sourceTree = "<group>"; };
 		82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderColor.swift; sourceTree = "<group>"; };
 		82FE2E8D23E3BB4500C8EB96 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = PropositoClient/View/Designable/Padding.swift; sourceTree = SOURCE_ROOT; };
 		82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReturn.swift; sourceTree = "<group>"; };
@@ -125,6 +143,32 @@
 				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
 			);
 			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		823922BE23E51F2000DA2255 /* ImageProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */,
+				823922C023E51F5B00DA2255 /* ImageProfileCell.xib */,
+			);
+			path = ImageProfileCell;
+			sourceTree = "<group>";
+		};
+		823922C323E5201300DA2255 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				823922BB23E4A6B800DA2255 /* Keyboard */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		823922C423E5202500DA2255 /* ImageProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				823922C523E5204400DA2255 /* ImageProfileCellDelegate.swift */,
+				823922C723E5205F00DA2255 /* ImageProfileCellDataSource.swift */,
+			);
+			path = ImageProfileCell;
 			sourceTree = "<group>";
 		};
 		8246345823D90EE500AA58F6 /* Main */ = {
@@ -192,7 +236,8 @@
 		827E4A7623DB815400C99BF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				82E04C1923E3F12300ED3BE3 /* test */,
+				82F14C8623E5307F00D20107 /* RepeatCell */,
+				823922BE23E51F2000DA2255 /* ImageProfileCell */,
 				827EB45F23DD0DE700F8C3E1 /* AllPrayerCell */,
 				827EB45223DD031300F8C3E1 /* PrayerCell */,
 				86F426B722CAA6E20032AA5B /* UICollectionViewHorizontal */,
@@ -222,7 +267,9 @@
 		827EB45923DD098800F8C3E1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				823922BB23E4A6B800DA2255 /* Keyboard */,
+				82B3889723E54C8C00D9B2CE /* PickerPerson */,
+				82F14C8B23E530B000D20107 /* RepeatCell */,
+				823922C423E5202500DA2255 /* ImageProfileCell */,
 				8272B22523DFC29500CFFD9B /* PrayerCell */,
 			);
 			path = Components;
@@ -253,12 +300,31 @@
 			path = PrayerCell;
 			sourceTree = "<group>";
 		};
-		82E04C1923E3F12300ED3BE3 /* test */ = {
+		82B3889723E54C8C00D9B2CE /* PickerPerson */ = {
 			isa = PBXGroup;
 			children = (
-				82E04C1A23E3F13200ED3BE3 /* test.xib */,
+				82B3889523E54C7B00D9B2CE /* PickerDateDelegate.swift */,
+				82B3889823E54CB800D9B2CE /* PickerDateDataSource.swift */,
 			);
-			path = test;
+			path = PickerPerson;
+			sourceTree = "<group>";
+		};
+		82F14C8623E5307F00D20107 /* RepeatCell */ = {
+			isa = PBXGroup;
+			children = (
+				82F14C8723E5309E00D20107 /* RepeatCell.swift */,
+				82F14C8823E5309E00D20107 /* RepeatCell.xib */,
+			);
+			path = RepeatCell;
+			sourceTree = "<group>";
+		};
+		82F14C8B23E530B000D20107 /* RepeatCell */ = {
+			isa = PBXGroup;
+			children = (
+				82F14C8C23E530BF00D20107 /* RepeatCellDelegate.swift */,
+				82F14C8E23E530C800D20107 /* RepeatCellDataSource.swift */,
+			);
+			path = RepeatCell;
 			sourceTree = "<group>";
 		};
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
@@ -370,6 +436,7 @@
 		86F426B622CAA6880032AA5B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				823922C323E5201300DA2255 /* Utils */,
 				827EB45923DD098800F8C3E1 /* Components */,
 				8246345823D90EE500AA58F6 /* Main */,
 				8246345923D90EF300AA58F6 /* Pray */,
@@ -457,14 +524,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F14C8A23E5309E00D20107 /* RepeatCell.xib in Resources */,
 				8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */,
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
 				86B889A422CC34530097F0D7 /* logo.png in Resources */,
 				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
 				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
 				86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */,
-				82E04C1B23E3F13200ED3BE3 /* test.xib in Resources */,
 				827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */,
+				823922C223E51F5B00DA2255 /* ImageProfileCell.xib in Resources */,
 				86F426AA22CAA5EA0032AA5B /* Assets.xcassets in Resources */,
 				8246345D23D9113E00AA58F6 /* Centrale Sans Extra Thin.otf in Resources */,
 				8246346123D911B000AA58F6 /* Centrale Sans Medium.otf in Resources */,
@@ -503,16 +571,19 @@
 				8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */,
 				8699401122D40BC900069F8F /* Action.swift in Sources */,
 				827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */,
+				823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */,
 				82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */,
 				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
 				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */,
+				82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
 				82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */,
 				86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */,
 				8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */,
 				82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */,
+				82B3889923E54CB800D9B2CE /* PickerDateDataSource.swift in Sources */,
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
 				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
 				86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */,
@@ -526,14 +597,19 @@
 				8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */,
 				82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */,
 				86F426C822CAAD4D0032AA5B /* ViewModel.swift in Sources */,
+				823922C823E5205F00DA2255 /* ImageProfileCellDataSource.swift in Sources */,
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,
+				823922C623E5204400DA2255 /* ImageProfileCellDelegate.swift in Sources */,
 				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
 				86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */,
+				82F14C8923E5309E00D20107 /* RepeatCell.swift in Sources */,
 				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,
 				823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */,
+				82F14C8D23E530BF00D20107 /* RepeatCellDelegate.swift in Sources */,
 				827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */,
 				827EB45523DD033D00F8C3E1 /* PrayerCell.swift in Sources */,
 				8699401322D40C7600069F8F /* ActionHandler.swift in Sources */,
+				82B3889623E54C7B00D9B2CE /* PickerDateDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
