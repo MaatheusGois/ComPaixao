@@ -73,5 +73,10 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
     func toAllPrayers() {
         self.viewController?.performSegue(withIdentifier: "toAllPrayers",
                                           sender: nil)
+        generatorImpact()
+    }
+    func generatorImpact() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
 }

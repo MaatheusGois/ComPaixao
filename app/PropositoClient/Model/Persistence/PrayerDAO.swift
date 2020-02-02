@@ -22,8 +22,9 @@ class PrayerDAO: GenericDAO {
         guard let pray = NSManagedObject(entity: prayEntity, insertInto: managedContext) as? PrayEntity else {
             throw DAOError.internalError(description: "Failed to create NSManagedObject")
         }
-        pray.uuid         = UUID()
+        pray.uuid       = UUID()
         pray.name       = newEntity.name
+        pray.subject    = newEntity.subject
         pray.image      = newEntity.image
         pray.date       = newEntity.date
         pray.time       = newEntity.time
@@ -51,6 +52,7 @@ class PrayerDAO: GenericDAO {
                     Prayer(
                         uuid: data.uuid ?? UUID(),
                         name: data.name ?? "",
+                        subject: data.subject ?? "",
                         image: data.image ?? "",
                         date: data.date ?? Date(),
                         time: data.time ?? "",
@@ -83,6 +85,9 @@ class PrayerDAO: GenericDAO {
                 guard let name: String = pray.value(forKey: "name") as? String else {
                     throw DAOError.internalError(description: "Error to take name")
                 }
+                guard let subject: String = pray.value(forKey: "subject") as? String else {
+                    throw DAOError.internalError(description: "Error to take subject")
+                }
                 guard let image: String = pray.value(forKey: "image") as? String else {
                     throw DAOError.internalError(description: "Error to take image")
                 }
@@ -109,6 +114,7 @@ class PrayerDAO: GenericDAO {
                 }
                 return Prayer(uuid: uuid,
                               name: name,
+                              subject: subject,
                               image: image,
                               date: date,
                               time: time,
@@ -135,6 +141,7 @@ class PrayerDAO: GenericDAO {
                     throw DAOError.internalError(description: "Error to take prayer:NSManagedObject")
                 }
                 pray.setValue(entity.name, forKeyPath: "name")
+                pray.setValue(entity.subject, forKeyPath: "subject")
                 pray.setValue(entity.image, forKeyPath: "image")
                 pray.setValue(entity.date, forKeyPath: "date")
                 pray.setValue(entity.time, forKeyPath: "time")

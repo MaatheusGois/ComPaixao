@@ -27,16 +27,21 @@ class PrayerAllCellDelegate: NSObject, UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: Double = Double(collectionView.frame.width) * 0.29333333333
+        let height: Double = Double(collectionView.frame.width) * 0.4
         let width: Double = Double(collectionView.frame.width - 30) / 2
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        toPrayerDetail(index: indexPath.row) 
+        toPrayerDetail(index: indexPath.row)
+        generatorImpact()
     }
     func toPrayerDetail(index: Int) {
         let prayer = prayers[index]
         self.viewController?.performSegue(withIdentifier: "toPrayerDetail",
                                           sender: prayer)
+    }
+    func generatorImpact() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
 }

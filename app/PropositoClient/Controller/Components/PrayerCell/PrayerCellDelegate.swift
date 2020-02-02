@@ -27,17 +27,22 @@ class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: Double = Double(collectionView.frame.width) * 0.29333333333
-        let width: Double = Double(collectionView.frame.width) * 0.42666666666
+        let height: Double = Double(collectionView.frame.width) * 0.29
+        let width: Double = Double(collectionView.frame.width) * 0.43478260869
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let verify = prayers.count > 3 ? indexPath.row == 3 : indexPath.row < prayers.count
+        let verify = prayers.count > 3 ? indexPath.row != 3 : indexPath.row < prayers.count
         if verify { toPrayerDetail(index: indexPath.row) }
+        generatorImpact()
     }
     func toPrayerDetail(index: Int) {
         let prayer = prayers[prayers.count - index - 1]
         self.viewController?.performSegue(withIdentifier: "toPrayerDetail",
                                           sender: prayer)
+    }
+    func generatorImpact() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ActEntity" representedClassName="ActEntity" syncable="YES" codeGenerationType="class">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -19,12 +19,13 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="remember" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="repetition" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="whenRepeat" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="ActEntity" positionX="-63" positionY="18" width="128" height="178"/>
-        <element name="PrayEntity" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="PrayEntity" positionX="-63" positionY="-18" width="128" height="208"/>
     </elements>
 </model>

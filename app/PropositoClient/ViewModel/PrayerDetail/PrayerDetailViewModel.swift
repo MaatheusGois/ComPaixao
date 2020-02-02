@@ -10,12 +10,14 @@ import UIKit
 
 class PrayerDetailViewModel {
     var name: String
+    var subject: String
     var date: String
     var image: UIImage
     var repetition: String
     var notification: String
     init(prayer: Prayer) {
-        name = prayer.name
+        name = prayer.name != "" ? prayer.name : "Sem título"
+        subject = prayer.subject != "" ? prayer.subject : "Sem assunto"
         date = prayer.date.description
         if prayer.repetition, let whenRepeat = prayer.whenRepeat {
             repetition = whenRepeat

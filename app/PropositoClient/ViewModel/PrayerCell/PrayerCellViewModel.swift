@@ -13,7 +13,7 @@ class PrayerCellViewModel {
     var detailTextString: String
     var image: UIImage
     init(prayer: Prayer) {
-        name = prayer.name
+        name = prayer.name != "" ? prayer.name : "Sem título"
         switch prayer.actions.count {
         case 0:
             detailTextString = "Sem práticas"

@@ -16,6 +16,7 @@ class AllPrayersController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        collectionView.contentSize.height = 1000
     }
     func setup() {
         setupCellDelegate()

@@ -35,13 +35,13 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVg-cI-4Hj">
-                                <rect key="frame" x="12" y="20" width="26" height="17"/>
+                                <rect key="frame" x="12" y="20" width="24.5" height="20"/>
                                 <fontDescription key="fontDescription" name="CentraleSans-Medium" family="Centrale Sans Medium" pointSize="17"/>
                                 <color key="textColor" name="default_02"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezL-4N-bNN">
-                                <rect key="frame" x="12" y="40" width="48" height="17"/>
+                                <rect key="frame" x="12" y="43" width="45.5" height="20"/>
                                 <fontDescription key="fontDescription" name="CentraleSans-Medium" family="Centrale Sans Medium" pointSize="17"/>
                                 <color key="textColor" name="default_02"/>
                                 <nil key="highlightedColor"/>

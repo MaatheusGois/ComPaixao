@@ -13,6 +13,7 @@ class PrayerViewController: UIViewController {
     @IBOutlet weak var lineName: UIImageView!
     @IBOutlet weak var time: UIDatePicker!
     @IBOutlet weak var name: TextFieldWithReturn!
+    @IBOutlet weak var subject: TextFieldWithReturn!
     @IBOutlet weak var repeatNotificationsView: UIStackView!
     @IBOutlet weak var repeatSwitch: UISwitch!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -35,6 +36,7 @@ class PrayerViewController: UIViewController {
     }
     func setup() {
         setupName()
+        setupSubject()
         setupCollection()
         setupDate()
         setupTime()
@@ -44,6 +46,10 @@ class PrayerViewController: UIViewController {
         name.tintColor = .primary
         name.addPadding(.left(10))
         lineName.frame.size.height = 0.2
+    }
+    func setupSubject() {
+        subject.tintColor = .primary
+        subject.addPadding(.left(10))
     }
     func setupCollection() {
         imageSelected = imageProfileCellDataSource.images[0]
@@ -104,6 +110,7 @@ class PrayerViewController: UIViewController {
         generatorImpact()
         let prayer = Prayer(uuid: UUID(),
                             name: name.text ?? "",
+                            subject: subject.text ?? "",
                             image: imageSelected,
                             date: dateTime,
                             time: DateUltils.shared.getHours(date: dateTime),

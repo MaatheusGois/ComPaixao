@@ -12,6 +12,7 @@ class PrayerDetailController: UIViewController {
     var prayer: Prayer!
 
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var repetition: UILabel!
     @IBOutlet weak var notification: UILabel!
@@ -28,6 +29,7 @@ class PrayerDetailController: UIViewController {
     func loadData() {
         let prayerViewModel = PrayerDetailViewModel(prayer: prayer)
         name.text = prayerViewModel.name
+        subject.text = prayerViewModel.subject
         date.text = prayerViewModel.date
         repetition.text = prayerViewModel.repetition
         notification.text = prayerViewModel.notification
