@@ -10,12 +10,14 @@ import UIKit
 
 class PrayerCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     
     var prayerViewModel: PrayerCellViewModel! {
         didSet {
             nameLabel?.text = prayerViewModel.name
+            subjectLabel?.text = prayerViewModel.subject
             descriptionLabel?.text = prayerViewModel.detailTextString
             image?.image = prayerViewModel.image
         }

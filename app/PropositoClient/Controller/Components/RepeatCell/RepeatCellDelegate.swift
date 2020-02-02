@@ -40,11 +40,15 @@ class RepeatCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
                     cell.isSelected = false
                     view.repeatSelected = options[indexPath.row]
                 }
+            } else if let view = viewController as? ActionViewController {
+                if let cell = view.repeatCellDataSource.firstCell {
+                    cell.isSelected = false
+                    view.repeatSelected = options[indexPath.row]
+                }
             }
         }
     }
     func generatorImpact() {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
+        ImpactFeedback.shared.generateSelectionChanged()
     }
 }

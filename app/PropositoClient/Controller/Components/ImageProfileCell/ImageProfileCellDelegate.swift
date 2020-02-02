@@ -43,7 +43,6 @@ class ImageProfileCellDelegate: NSObject, UICollectionViewDelegate, UICollection
         generatorImpact()
     }
     func generatorImpact() {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
+        ImpactFeedback.shared.generateSelectionChanged()
     }
 }

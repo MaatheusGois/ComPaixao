@@ -13,7 +13,7 @@ class DateUltils {
     private init() {}
     static let shared = DateUltils()
     
-    func getHours(date: Date) -> String {
+    func getTime(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh mm a" // "a" prints "pm" or "am"
         formatter.timeZone = TimeZone(abbreviation: "BRT")

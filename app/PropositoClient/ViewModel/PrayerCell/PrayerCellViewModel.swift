@@ -10,10 +10,12 @@ import UIKit
 
 class PrayerCellViewModel {
     var name: String
+    var subject: String
     var detailTextString: String
     var image: UIImage
     init(prayer: Prayer) {
         name = prayer.name != "" ? prayer.name : "Sem título"
+        subject = prayer.subject != "" ? prayer.subject : "Sem Assunto"
         switch prayer.actions.count {
         case 0:
             detailTextString = "Sem práticas"

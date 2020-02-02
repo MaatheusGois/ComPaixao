@@ -1,0 +1,37 @@
+//
+//  PickerDateDelegate.swift
+//  PropositoClient
+//
+//  Created by Matheus Silva on 01/02/20.
+//  Copyright © 2020 Matheus Gois. All rights reserved.
+//
+
+import UIKit
+
+class PickerPersonDelegate: NSObject, UIPickerViewDelegate {
+    var prayers: Prayers?
+    weak var viewController: UIViewController?
+    
+    func config(pickerPerson: UIPickerView, viewController: UIViewController) {
+        pickerPerson.delegate = self
+        self.viewController = viewController
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if row == 0 {
+            return "Por todos"
+        } else {
+            return prayers?[row - 1].name
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row != 0 {
+                if let view = viewController as? ActionViewController {
+                    view.prayerSelected = prayers?[row - 1].uuid
+                }
+            }
+            generatorImpact()
+    }
+    func generatorImpact() {
+        ImpactFeedback.shared.generateSelectionChanged()
+    }
+}

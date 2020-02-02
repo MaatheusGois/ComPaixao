@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207CC5423E49309003D8A06 /* ActionViewController.swift */; };
+		820AE29923E762A600321834 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE29823E762A600321834 /* Global.swift */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
 		823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BC23E4A6CB00DA2255 /* Keyboard.swift */; };
 		823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */; };
@@ -38,9 +39,10 @@
 		827EB46223DD0DFD00F8C3E1 /* AllPrayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */; };
 		827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */; };
 		8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8285005C23E4A13D00F2B9FE /* UIColor.swift */; };
+		828A749F23E758430002424B /* ImpactFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828A749E23E758430002424B /* ImpactFeedback.swift */; };
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
-		82B3889623E54C7B00D9B2CE /* PickerDateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889523E54C7B00D9B2CE /* PickerDateDelegate.swift */; };
-		82B3889923E54CB800D9B2CE /* PickerDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889823E54CB800D9B2CE /* PickerDateDataSource.swift */; };
+		82B3889623E54C7B00D9B2CE /* PickerPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889523E54C7B00D9B2CE /* PickerPersonDelegate.swift */; };
+		82B3889923E54CB800D9B2CE /* PickerPersonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889823E54CB800D9B2CE /* PickerPersonDataSource.swift */; };
 		82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */; };
 		82F14C8923E5309E00D20107 /* RepeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F14C8723E5309E00D20107 /* RepeatCell.swift */; };
 		82F14C8A23E5309E00D20107 /* RepeatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82F14C8823E5309E00D20107 /* RepeatCell.xib */; };
@@ -76,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		8207CC5423E49309003D8A06 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		820AE29823E762A600321834 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		823922BC23E4A6CB00DA2255 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCell.swift; sourceTree = "<group>"; };
@@ -106,9 +109,10 @@
 		827EB46023DD0DFD00F8C3E1 /* AllPrayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPrayerCell.swift; sourceTree = "<group>"; };
 		827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPrayerCell.xib; sourceTree = "<group>"; };
 		8285005C23E4A13D00F2B9FE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		828A749E23E758430002424B /* ImpactFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpactFeedback.swift; sourceTree = "<group>"; };
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
-		82B3889523E54C7B00D9B2CE /* PickerDateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDateDelegate.swift; sourceTree = "<group>"; };
-		82B3889823E54CB800D9B2CE /* PickerDateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDateDataSource.swift; sourceTree = "<group>"; };
+		82B3889523E54C7B00D9B2CE /* PickerPersonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPersonDelegate.swift; sourceTree = "<group>"; };
+		82B3889823E54CB800D9B2CE /* PickerPersonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPersonDataSource.swift; sourceTree = "<group>"; };
 		82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
 		82F14C8723E5309E00D20107 /* RepeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCell.swift; sourceTree = "<group>"; };
 		82F14C8823E5309E00D20107 /* RepeatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepeatCell.xib; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
 				827ADDBB23E56785004156CB /* Date.swift */,
 				8265181D23E575850035E91E /* EventManager.swift */,
+				828A749E23E758430002424B /* ImpactFeedback.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				827ADDB923E55C49004156CB /* UserDefaults.swift */,
+				820AE29823E762A600321834 /* Global.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -366,8 +372,8 @@
 		82B3889723E54C8C00D9B2CE /* PickerPerson */ = {
 			isa = PBXGroup;
 			children = (
-				82B3889523E54C7B00D9B2CE /* PickerDateDelegate.swift */,
-				82B3889823E54CB800D9B2CE /* PickerDateDataSource.swift */,
+				82B3889523E54C7B00D9B2CE /* PickerPersonDelegate.swift */,
+				82B3889823E54CB800D9B2CE /* PickerPersonDataSource.swift */,
 			);
 			path = PickerPerson;
 			sourceTree = "<group>";
@@ -641,17 +647,19 @@
 				823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */,
 				8265182123E57EB60035E91E /* AllPrayersController.swift in Sources */,
 				82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */,
+				828A749F23E758430002424B /* ImpactFeedback.swift in Sources */,
 				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
 				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */,
 				82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */,
+				820AE29923E762A600321834 /* Global.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
 				82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */,
 				86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */,
 				8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */,
 				82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */,
-				82B3889923E54CB800D9B2CE /* PickerDateDataSource.swift in Sources */,
+				82B3889923E54CB800D9B2CE /* PickerPersonDataSource.swift in Sources */,
 				827ADDBC23E56785004156CB /* Date.swift in Sources */,
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
 				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
@@ -685,7 +693,7 @@
 				8265182623E5806A0035E91E /* PrayerAllCellDataSource.swift in Sources */,
 				8265182423E5805E0035E91E /* PrayerAllCellDelegate.swift in Sources */,
 				827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */,
-				82B3889623E54C7B00D9B2CE /* PickerDateDelegate.swift in Sources */,
+				82B3889623E54C7B00D9B2CE /* PickerPersonDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

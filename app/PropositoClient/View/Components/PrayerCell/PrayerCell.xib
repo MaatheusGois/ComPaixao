@@ -114,6 +114,7 @@
                 <outlet property="descriptionLabel" destination="idb-5B-gb3" id="ryX-kL-x3T"/>
                 <outlet property="image" destination="ynm-7O-gt5" id="DSs-Ut-fjw"/>
                 <outlet property="nameLabel" destination="9XU-gw-gR1" id="Q1H-To-Ipx"/>
+                <outlet property="subjectLabel" destination="k2A-TW-58c" id="3hZ-oy-kVa"/>
             </connections>
             <point key="canvasLocation" x="-213.04347826086959" y="75"/>
         </collectionViewCell>

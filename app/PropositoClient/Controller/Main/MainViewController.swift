@@ -105,23 +105,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UIScroll
                 print(description)
             }
         }
-        //Load data of the Acts
-        //        ActionHandler.loadActWith { (res) in
-        //            switch (res) {
-        //            case .success(let acts):
-        //                acts.forEach({ (act) in
-        //                    if !act.completed {
-        //                        self.acts.append(act)
-        //                        self.actsCard.append(
-        //                            CardModel(title: act.title, body: act.pray,
-        //                                      date: Date.getFormattedDate(date: act.date))
-        //                        )
-        //                    }
-        //                })
-        //            case .error(let description):
-        //                print(description)
-        //            }
-        //        }
+        
         setupCollectioViewPray()
         setupCollectioViewAct()
         collectionViewAct.reloadData()

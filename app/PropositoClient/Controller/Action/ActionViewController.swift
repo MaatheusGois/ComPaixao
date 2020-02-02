@@ -15,6 +15,20 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var time: UIDatePicker!
     @IBOutlet weak var byPerson: UIPickerView!
     @IBOutlet weak var name: TextFieldWithReturn!
+    @IBOutlet weak var collectionViewRepeat: UICollectionView!
+    @IBOutlet weak var repeatNotificationsView: UIStackView!
+    @IBOutlet weak var repeatSwitch: UISwitch!
+    var repeatCellDelegate = RepeatCellDelegate()
+    var repeatCellDataSource = RepeatCellDataSource()
+    var pickerPersonDelegate = PickerPersonDelegate()
+    var pickerPersonDataSource = PickerPersonDataSource()
+    
+    var repeatSelected = ""
+    var remember = false
+    var repetition = false
+    var dateTime = Date()
+    var prayerSelected: UUID?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -22,10 +36,10 @@ class ActionViewController: UIViewController {
     }
     func setup() {
         setupName()
-//        setupByPrayer()
+        setupByPrayerData()
         setupDate()
         setupTime()
-//        setupKeyboard()
+        setupCollectionRepeat()
         generatorImpact()
     }
     func setupName() {
@@ -33,11 +47,10 @@ class ActionViewController: UIViewController {
         name.addPadding(.left(10))
         lineName.frame.size.height = 0.5
     }
-    func setupByPrayer() {
-        byPerson.subviews[1].backgroundColor = .primary
-        byPerson.subviews[2].backgroundColor = .primary
-        byPerson.subviews[1].alpha = 0.2
-        byPerson.subviews[2].alpha = 0.2
+    func setupByPrayerData() {
+        pickerPersonDelegate.config(pickerPerson: byPerson, viewController: self)
+        pickerPersonDataSource.config(pickerPerson: byPerson, viewController: self)
+        pickerPersonDataSource.fetch(delegate: pickerPersonDelegate)
     }
     func setupDate() {
         date.subviews[0].subviews[1].backgroundColor = .primary
@@ -51,27 +64,63 @@ class ActionViewController: UIViewController {
         time.subviews[0].subviews[1].alpha = 0.2
         time.subviews[0].subviews[2].alpha = 0.2
     }
-    // MARK: - Back
-    @IBAction func close(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    func setupKeyboard() { //TODO - fix
-        let keyboard = Keyboard(viewController: self)
-        keyboard.hide()
-        keyboard.up()
+    func setupCollectionRepeat() {
+        repeatSelected = repeatCellDataSource.options[0]
+        repeatCellDataSource.setup(collectionView: collectionViewRepeat)
+        repeatCellDelegate.setup(collectionView: collectionViewRepeat, viewController: self)
     }
     func generatorImpact() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    func setupKeyboard() { //TODO - fix
+        let keyboard = Keyboard(viewController: self)
+        keyboard.hide()
+        keyboard.up()
     }
-    */
-
+    @IBAction func close(_ sender: Any? = nil) {
+        generatorImpact()
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        dateTime = sender.date
+    }
+    @IBAction func timePickerChanged(_ sender: UIDatePicker) {
+        dateTime = sender.date
+    }
+    @IBAction func notificationChanged(_ sender: UISwitch) {
+        remember = sender.isOn
+        repeatNotificationsView.isHidden = !sender.isOn
+        if !collectionViewRepeat.isHidden {
+            collectionViewRepeat.isHidden = !sender.isOn
+            repeatSwitch.isOn = false
+            repetition = false
+        }
+    }
+    @IBAction func repeatChanged(_ sender: UISwitch) {
+        repetition = sender.isOn
+        collectionViewRepeat.isHidden = !sender.isOn
+    }
+    @IBAction func add(_ sender: Any) {
+        generatorImpact()
+        let action = Action(uuid: UUID(),
+                            prayID: prayerSelected,
+                            name: name.text ?? "",
+                            date: dateTime,
+                            time: DateUltils.shared.getTime(date: dateTime),
+                            remember: remember,
+                            repetition: repetition,
+                            whenRepeat: repetition ? repeatSelected : "",
+                            completed: false)
+        ActionHandler.create(act: action) { (response) in
+            switch response {
+            case .error(let description):
+                NSLog(description)
+            case .success(_ ):
+                EventManager.shared.trigger(eventName: "addAction")
+                self.close()
+            }
+        }
+    }
 }

@@ -113,7 +113,7 @@ class PrayerViewController: UIViewController {
                             subject: subject.text ?? "",
                             image: imageSelected,
                             date: dateTime,
-                            time: DateUltils.shared.getHours(date: dateTime),
+                            time: DateUltils.shared.getTime(date: dateTime),
                             remember: remember,
                             repetition: repetition,
                             whenRepeat: repetition ? repeatSelected : "",
