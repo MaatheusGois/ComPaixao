@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207CC5423E49309003D8A06 /* ActionViewController.swift */; };
 		820AE29923E762A600321834 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE29823E762A600321834 /* Global.swift */; };
+		820AE29C23E8242200321834 /* ActionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE29B23E8242200321834 /* ActionCellDelegate.swift */; };
+		820AE29E23E8242D00321834 /* ActionCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE29D23E8242D00321834 /* ActionCellDataSource.swift */; };
+		820AE2A223E8247600321834 /* ActionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2A123E8247600321834 /* ActionCellViewModel.swift */; };
+		820AE2A423E8248700321834 /* ActionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2A323E8248700321834 /* ActionDetailViewModel.swift */; };
+		820AE2AA23E826F000321834 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2A823E826F000321834 /* ActionCell.swift */; };
+		820AE2AB23E826F000321834 /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AE2A923E826F000321834 /* ActionCell.xib */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
 		823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BC23E4A6CB00DA2255 /* Keyboard.swift */; };
 		823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */; };
@@ -79,6 +85,12 @@
 /* Begin PBXFileReference section */
 		8207CC5423E49309003D8A06 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		820AE29823E762A600321834 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		820AE29B23E8242200321834 /* ActionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellDelegate.swift; sourceTree = "<group>"; };
+		820AE29D23E8242D00321834 /* ActionCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellDataSource.swift; sourceTree = "<group>"; };
+		820AE2A123E8247600321834 /* ActionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellViewModel.swift; sourceTree = "<group>"; };
+		820AE2A323E8248700321834 /* ActionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDetailViewModel.swift; sourceTree = "<group>"; };
+		820AE2A823E826F000321834 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
+		820AE2A923E826F000321834 /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		823922BC23E4A6CB00DA2255 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCell.swift; sourceTree = "<group>"; };
@@ -159,6 +171,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		820AE29A23E823F400321834 /* ActionCell */ = {
+			isa = PBXGroup;
+			children = (
+				820AE29B23E8242200321834 /* ActionCellDelegate.swift */,
+				820AE29D23E8242D00321834 /* ActionCellDataSource.swift */,
+			);
+			path = ActionCell;
+			sourceTree = "<group>";
+		};
+		820AE29F23E8245600321834 /* ActionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				820AE2A323E8248700321834 /* ActionDetailViewModel.swift */,
+			);
+			path = ActionDetail;
+			sourceTree = "<group>";
+		};
+		820AE2A023E8246100321834 /* ActionCell */ = {
+			isa = PBXGroup;
+			children = (
+				820AE2A123E8247600321834 /* ActionCellViewModel.swift */,
+			);
+			path = ActionCell;
+			sourceTree = "<group>";
+		};
+		820AE2A523E826B800321834 /* ActionCell */ = {
+			isa = PBXGroup;
+			children = (
+				820AE2A823E826F000321834 /* ActionCell.swift */,
+				820AE2A923E826F000321834 /* ActionCell.xib */,
+			);
+			path = ActionCell;
+			sourceTree = "<group>";
+		};
 		823922BE23E51F2000DA2255 /* ImageProfileCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +349,7 @@
 		827E4A7623DB815400C99BF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				820AE2A523E826B800321834 /* ActionCell */,
 				82F14C8623E5307F00D20107 /* RepeatCell */,
 				823922BE23E51F2000DA2255 /* ImageProfileCell */,
 				827EB45F23DD0DE700F8C3E1 /* AllPrayerCell */,
@@ -338,6 +385,7 @@
 				82F14C8B23E530B000D20107 /* RepeatCell */,
 				823922C423E5202500DA2255 /* ImageProfileCell */,
 				8272B22523DFC29500CFFD9B /* PrayerCell */,
+				820AE29A23E823F400321834 /* ActionCell */,
 				8265182223E5803E0035E91E /* PrayerAllCell */,
 			);
 			path = Components;
@@ -355,6 +403,8 @@
 		827EB46423DD187300F8C3E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				820AE2A023E8246100321834 /* ActionCell */,
+				820AE29F23E8245600321834 /* ActionDetail */,
 				8265182A23E611CC0035E91E /* PrayerDetail */,
 				827EB46523DD189A00F8C3E1 /* PrayerCell */,
 			);
@@ -599,6 +649,7 @@
 			files = (
 				82F14C8A23E5309E00D20107 /* RepeatCell.xib in Resources */,
 				8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */,
+				820AE2AB23E826F000321834 /* ActionCell.xib in Resources */,
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
 				86B889A422CC34530097F0D7 /* logo.png in Resources */,
 				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
@@ -653,6 +704,7 @@
 				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */,
 				82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */,
+				820AE29E23E8242D00321834 /* ActionCellDataSource.swift in Sources */,
 				820AE29923E762A600321834 /* Global.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
 				82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */,
@@ -662,6 +714,7 @@
 				82B3889923E54CB800D9B2CE /* PickerPersonDataSource.swift in Sources */,
 				827ADDBC23E56785004156CB /* Date.swift in Sources */,
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
+				820AE2A223E8247600321834 /* ActionCellViewModel.swift in Sources */,
 				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
 				86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */,
 				8265181E23E575850035E91E /* EventManager.swift in Sources */,
@@ -678,6 +731,7 @@
 				86F426C822CAAD4D0032AA5B /* ViewModel.swift in Sources */,
 				823922C823E5205F00DA2255 /* ImageProfileCellDataSource.swift in Sources */,
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,
+				820AE2AA23E826F000321834 /* ActionCell.swift in Sources */,
 				823922C623E5204400DA2255 /* ImageProfileCellDelegate.swift in Sources */,
 				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
 				8265182C23E611E50035E91E /* PrayerDetailViewModel.swift in Sources */,
@@ -685,6 +739,7 @@
 				82F14C8923E5309E00D20107 /* RepeatCell.swift in Sources */,
 				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,
 				827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */,
+				820AE29C23E8242200321834 /* ActionCellDelegate.swift in Sources */,
 				823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */,
 				82F14C8D23E530BF00D20107 /* RepeatCellDelegate.swift in Sources */,
 				827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */,
@@ -692,6 +747,7 @@
 				8699401322D40C7600069F8F /* ActionHandler.swift in Sources */,
 				8265182623E5806A0035E91E /* PrayerAllCellDataSource.swift in Sources */,
 				8265182423E5805E0035E91E /* PrayerAllCellDelegate.swift in Sources */,
+				820AE2A423E8248700321834 /* ActionDetailViewModel.swift in Sources */,
 				827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */,
 				82B3889623E54C7B00D9B2CE /* PickerPersonDelegate.swift in Sources */,
 			);
