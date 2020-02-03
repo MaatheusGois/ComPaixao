@@ -17,5 +17,17 @@ class ActionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func complete(duration: TimeInterval = 0.5,
+                  delay: TimeInterval = 0.0,
+                  completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
+        self.checkButton.setImage(UIImage(named: "check_all"), for: .normal)
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       options: .curveEaseIn,
+                       animations: {
+                        self.alpha = 0.0
+        }, completion: completion)
+    }
 
 }

@@ -64,7 +64,7 @@ class ActionDAO: GenericDAO {
     func readOne(uuid: UUID) throws -> Action {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = \(uuid)")
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid.uuidString)
         do {
             let result = try managedContext.fetch(fetchRequest)
             if result.count != 0 {
@@ -117,7 +117,7 @@ class ActionDAO: GenericDAO {
     func update(entity: Action) throws {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = \(entity.uuid)")
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", entity.uuid.uuidString)
         do {
             let result = try managedContext.fetch(fetchRequest)
             if result.count != 0 {
@@ -150,7 +150,7 @@ class ActionDAO: GenericDAO {
     private func idExists(uuid: UUID) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = \(uuid)")
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid.uuidString)
         do {
             let result = try managedContext.fetch(fetchRequest)
             return result.count > 0

@@ -15,7 +15,7 @@ class DateUltils {
     
     func getTime(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh mm a" // "a" prints "pm" or "am"
+        formatter.dateFormat = "hh:mm a" // "a" prints "pm" or "am"
         formatter.timeZone = TimeZone(abbreviation: "BRT")
         let hourString = formatter.string(from: date)
         return hourString

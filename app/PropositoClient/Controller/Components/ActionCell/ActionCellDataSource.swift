@@ -11,16 +11,17 @@ import UIKit
 class ActionCellDataSource: NSObject, UICollectionViewDataSource {
     var actions: Actions?
     weak var viewController: UIViewController?
-    
+    var collectionView: UICollectionView?
     
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         self.viewController = viewController
+        self.collectionView = collectionView
+        setupCollection(collectionView: collectionView)
+    }
+    func setupCollection(collectionView: UICollectionView) {
         collectionView.dataSource = self
-        // Registers
-        let challengeCell = UINib(nibName: "PrayerCell", bundle: nil)
-        collectionView.register(challengeCell, forCellWithReuseIdentifier: "PrayerCell")
-        let allChallengeCell = UINib(nibName: "AllPrayerCell", bundle: nil)
-        collectionView.register(allChallengeCell, forCellWithReuseIdentifier: "AllPrayerCell")
+        let cell = UINib(nibName: "ActionCell", bundle: nil)
+        collectionView.register(cell, forCellWithReuseIdentifier: "ActionCell")
     }
     func fetch(delegate: ActionCellDelegate) {
         ActionHandler.getAll { (response) in
@@ -28,11 +29,12 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
             case .error(let description):
                 NSLog(description)
             case .success(let actions):
+                let actionsNoCompleted = actions.filter { !$0.completed }
                 DispatchQueue.main.async {
-                    self.actions = actions
-                    delegate.actions = actions
+                    self.actions = actionsNoCompleted
+                    delegate.actions = actionsNoCompleted
                     if let view = self.viewController as? MainController {
-                        view.prayerCollectionView.reloadData()
+                        view.actionCollectionView.reloadData()
                         view.actionIllustration()
                     }
                 }
@@ -43,30 +45,65 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
         if self.actions?.count == 0 {
             return 0
         }
-        return self.prayers.count < 3 ? self.prayers.count + 1 : 4
+        return (self.actions?.count ?? 0)
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActionCell",
                                                          for: indexPath) as? ActionCell {
-//            let index = indexPath.row
-//            let viewModel = ActionCellViewModel(action: actions[index])
-//            cell.nameLabel?.text = viewModel.name
-//            cell.descriptionLabel?.text = viewModel.detailTextString
+            let index = indexPath.row
+            let viewModel = ActionCellViewModel(action: (actions?[index])!)
+            cell.name?.text = viewModel.name
+            cell.date?.text = viewModel.date
+            cell.checkButton.tag = indexPath.row
+            cell.seeDetailButton.addTarget(self, action: #selector(toActionDetail(_:)), for: .touchUpInside)
+            cell.checkButton.addTarget(self, action: #selector(done(_:)), for: .touchUpInside)
             return cell
         }
-        
         return UICollectionViewCell()
     }
     @objc
-    func toAllPrayers() {
-        self.viewController?.performSegue(withIdentifier: "toAllPrayers",
-                                          sender: nil)
+    func toActionDetail(_ sender: Any) {
+        if let sender = sender as? UIButton {
+            self.viewController?.performSegue(withIdentifier: "toActionDetail",
+                                              sender: actions?[sender.tag])
+            generatorImpact()
+        }
+    }
+    @objc
+    func done(_ sender: Any) {
+        if let button = sender as? UIButton {
+            let row = button.tag
+            if var action = actions?[row] {
+                action.completed = true //Make action done
+                ActionHandler.update(act: action) { (response) in
+                    switch response {
+                    case .error(let description):
+                        NSLog(description)
+                    case .success( _):
+                        DispatchQueue.main.async {
+                            if let cell = self.collectionView?.cellForItem(at: IndexPath(row: row, section: 0))
+                                as? ActionCell {
+                                cell.complete(duration: 0.5, delay: 0) { (response) in
+                                    if response {
+                                        EventManager.shared.trigger(eventName: "reloadAction")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         generatorImpact()
     }
+//    func hideAction(row: Int, withCompletion
+//        completion: @escaping (Bool) -> Void) {
+//         else {
+//            completion(false)
+//        }
+//    }
     func generatorImpact() {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
+        ImpactFeedback.shared.generateMedium()
     }
 }

@@ -6,4 +6,13 @@
 //  Copyright © 2020 Matheus Gois. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ActionCellViewModel {
+    var name: String
+    var date: String
+    init(action: Action) {
+        name = action.name != "" ? action.name : "Sem título"
+        date = action.time != "" ? action.time : "Indefinida" //TODO - do formatter date
+    }
+}

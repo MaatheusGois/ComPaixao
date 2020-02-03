@@ -118,7 +118,7 @@ class ActionViewController: UIViewController {
             case .error(let description):
                 NSLog(description)
             case .success(_ ):
-                EventManager.shared.trigger(eventName: "addAction")
+                EventManager.shared.trigger(eventName: "reloadAction")
                 self.close()
             }
         }

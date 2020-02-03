@@ -15,6 +15,7 @@
 		820AE2A423E8248700321834 /* ActionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2A323E8248700321834 /* ActionDetailViewModel.swift */; };
 		820AE2AA23E826F000321834 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2A823E826F000321834 /* ActionCell.swift */; };
 		820AE2AB23E826F000321834 /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AE2A923E826F000321834 /* ActionCell.xib */; };
+		820AE2AE23E83E0700321834 /* ActionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2AD23E83E0700321834 /* ActionDetailController.swift */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
 		823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BC23E4A6CB00DA2255 /* Keyboard.swift */; };
 		823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */; };
@@ -91,6 +92,7 @@
 		820AE2A323E8248700321834 /* ActionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDetailViewModel.swift; sourceTree = "<group>"; };
 		820AE2A823E826F000321834 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		820AE2A923E826F000321834 /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
+		820AE2AD23E83E0700321834 /* ActionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDetailController.swift; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		823922BC23E4A6CB00DA2255 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCell.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 				820AE2A923E826F000321834 /* ActionCell.xib */,
 			);
 			path = ActionCell;
+			sourceTree = "<group>";
+		};
+		820AE2AC23E83DE300321834 /* ActionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				820AE2AD23E83E0700321834 /* ActionDetailController.swift */,
+			);
+			path = ActionDetail;
 			sourceTree = "<group>";
 		};
 		823922BE23E51F2000DA2255 /* ImageProfileCell */ = {
@@ -405,8 +415,8 @@
 			children = (
 				820AE2A023E8246100321834 /* ActionCell */,
 				820AE29F23E8245600321834 /* ActionDetail */,
-				8265182A23E611CC0035E91E /* PrayerDetail */,
 				827EB46523DD189A00F8C3E1 /* PrayerCell */,
+				8265182A23E611CC0035E91E /* PrayerDetail */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -563,6 +573,7 @@
 				8246345923D90EF300AA58F6 /* Pray */,
 				8265182723E6117A0035E91E /* PrayerDetail */,
 				8246345A23D90EFB00AA58F6 /* Action */,
+				820AE2AC23E83DE300321834 /* ActionDetail */,
 				827ADDB523E55799004156CB /* Configuration */,
 			);
 			path = Controller;
@@ -725,6 +736,7 @@
 				827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */,
 				8265182923E6119F0035E91E /* PrayerDetailController.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
+				820AE2AE23E83E0700321834 /* ActionDetailController.swift in Sources */,
 				86F426A022CAA5E80032AA5B /* AppDelegate.swift in Sources */,
 				8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */,
 				82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */,

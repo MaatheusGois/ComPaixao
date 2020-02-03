@@ -72,7 +72,7 @@ class PrayerDAO: GenericDAO {
     func readOne(uuid: UUID) throws -> Prayer {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = \(uuid)")
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid.uuidString)
         do {
             let result = try managedContext.fetch(fetchRequest)
             if result.count != 0 {
@@ -133,7 +133,7 @@ class PrayerDAO: GenericDAO {
     func update(entity: Prayer) throws {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = \(entity.uuid)")
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", entity.uuid.uuidString)
         do {
             let result = try managedContext.fetch(fetchRequest)
             if result.count != 0 {
@@ -168,7 +168,7 @@ class PrayerDAO: GenericDAO {
     private func idExists(uuid: UUID) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = \(uuid)")
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid.uuidString)
         do {
             let result = try managedContext.fetch(fetchRequest)
             return result.count > 0

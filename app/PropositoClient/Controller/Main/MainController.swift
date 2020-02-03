@@ -11,29 +11,40 @@ import UIKit
 class MainController: UIViewController {
     @IBOutlet weak var prayerCollectionView: UICollectionView!
     @IBOutlet weak var illustrationPrayer: UIImageView!
+    @IBOutlet weak var actionCollectionView: UICollectionView!
     @IBOutlet weak var illustrationAction: UIImageView!
     var prayerCellDelegate: PrayerCellDelegate = PrayerCellDelegate(prayers: [])
     var prayerCellDataSource: PrayerCellDataSource = PrayerCellDataSource(prayers: [])
-    
+    var actionCellDelegate = ActionCellDelegate()
+    var actionCellDataSource = ActionCellDataSource()
+    //Buttons Filter - FIXME: - Nunca mais faça isso (Fazer uma collectioin)
+    @IBOutlet weak var today: UIButton!
+    @IBOutlet weak var tomorrow: UIButton!
+    @IBOutlet weak var nexts: UIButton!
+    @IBOutlet weak var all: UIButton!
+    @IBOutlet weak var circleToday: UIImageView!
+    @IBOutlet weak var circleTomorrow: UIImageView!
+    @IBOutlet weak var circleNexts: UIImageView!
+    @IBOutlet weak var circleAll: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
     func setup() {
-        setupCellDelegate()
-        setupCellDataSource()
-        loadCellData()
+        setupPrayer()
+        setupAction()
         prayerIllustration()
         setupEvents()
     }
-    func setupCellDelegate() {
+    func setupPrayer() {
         prayerCellDelegate.setup(collectionView: prayerCollectionView, viewController: self)
-    }
-    func setupCellDataSource() {
         prayerCellDataSource.setup(collectionView: prayerCollectionView, viewController: self)
-    }
-    func loadCellData() {
         prayerCellDataSource.fetch(delegate: prayerCellDelegate)
+    }
+    func setupAction() {
+        actionCellDelegate.setup(collectionView: actionCollectionView, viewController: self)
+        actionCellDataSource.setup(collectionView: actionCollectionView, viewController: self)
+        actionCellDataSource.fetch(delegate: actionCellDelegate)
     }
     func prayerIllustration() {
         if prayerCellDataSource.prayers.count > 0 {
@@ -43,17 +54,25 @@ class MainController: UIViewController {
         }
     }
     func actionIllustration() {
+        if (actionCellDataSource.actions?.count ?? 0) > 0 {
+            illustrationAction.alpha = 0
+        } else {
+            illustrationAction.alpha = 1
+        }
     }
     func setupEvents() {
         EventManager.shared.listenTo(eventName: "addPrayer") {
             self.prayerCellDataSource.fetch(delegate: self.prayerCellDelegate)
+        }
+        EventManager.shared.listenTo(eventName: "reloadAction") {
+            self.actionCellDataSource.fetch(delegate: self.actionCellDelegate)
         }
     }
     func generatorImpact() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
     }
-    //MARK: - Actions
+    // MARK: - Actions
     @IBAction func seeConfig(_ sender: Any) {
         generatorImpact()
     }
@@ -61,6 +80,18 @@ class MainController: UIViewController {
         generatorImpact()
     }
     @IBAction func addAction(_ sender: Any) {
+        generatorImpact()
+    }
+    @IBAction func seeActionsToday(_ sender: Any) {
+        generatorImpact()
+    }
+    @IBAction func seeActionsTomorrow(_ sender: Any) {
+        generatorImpact()
+    }
+    @IBAction func seeActionsNexts(_ sender: Any) {
+        generatorImpact()
+    }
+    @IBAction func seeActionsAll(_ sender: Any) {
         generatorImpact()
     }
     // MARK: - NEXT
@@ -71,6 +102,12 @@ class MainController: UIViewController {
                 return
             }
             view.prayer = prayer
+        } else if let view = segue.destination as? ActionDetailController {
+            guard let action = sender as? Action else {
+                NSLog("Não esta chegando a Ação")
+                return
+            }
+            view.action = action
         }
     }
 }
