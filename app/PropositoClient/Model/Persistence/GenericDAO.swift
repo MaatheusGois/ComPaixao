@@ -17,7 +17,7 @@ protocol GenericDAO {
     associatedtype T
     func create(newEntity: T) throws
     func read() throws -> [T]
-    func readOne(uuid: UUID) throws -> T
+    func readOne(uuid: String) throws -> T
     func update(entity: T) throws
     func delete(entity: T) throws
 }

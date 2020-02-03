@@ -22,7 +22,7 @@ class PrayerDAO: GenericDAO {
         guard let pray = NSManagedObject(entity: prayEntity, insertInto: managedContext) as? PrayEntity else {
             throw DAOError.internalError(description: "Failed to create NSManagedObject")
         }
-        pray.uuid       = UUID()
+        pray.uuid       = UUID().uuidString
         pray.name       = newEntity.name
         pray.subject    = newEntity.subject
         pray.image      = newEntity.image
@@ -50,7 +50,7 @@ class PrayerDAO: GenericDAO {
             for data in prayData {
                 prayers.append(
                     Prayer(
-                        uuid: data.uuid ?? UUID(),
+                        uuid: data.uuid ?? UUID().uuidString,
                         name: data.name ?? "",
                         subject: data.subject ?? "",
                         image: data.image ?? "",
@@ -60,26 +60,26 @@ class PrayerDAO: GenericDAO {
                         repetition: data.repetition ,
                         whenRepeat: data.whenRepeat,
                         answered: data.answered ,
-                        actions: data.actions as? [UUID] ?? []
+                        actions: data.actions as? [String] ?? []
                     )
                 )
             }
             return prayers
         } catch {
-            throw DAOError.internalError(description: "Problem during CoreData fetch")
+            throw DAOError.internalError(description: error.localizedDescription)
         }
     }
-    func readOne(uuid: UUID) throws -> Prayer {
+    func readOne(uuid: String) throws -> Prayer {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid.uuidString)
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid)
         do {
             let result = try managedContext.fetch(fetchRequest)
             if result.count != 0 {
                 guard let pray = result[0] as? NSManagedObject else {
                     throw DAOError.internalError(description: "Error to take prayer:NSManagedObject")
                 }
-                guard let uuid: UUID = pray.value(forKey: "uuid") as? UUID else {
+                guard let uuid: String = pray.value(forKey: "uuid") as? String else {
                     throw DAOError.internalError(description: "Error to take id")
                 }
                 guard let name: String = pray.value(forKey: "name") as? String else {
@@ -94,8 +94,8 @@ class PrayerDAO: GenericDAO {
                 guard let date: Date = pray.value(forKey: "date") as? Date else {
                     throw DAOError.internalError(description: "Error to take date")
                 }
-                guard let time: String = pray.value(forKey: "date") as? String else {
-                    throw DAOError.internalError(description: "Error to take date")
+                guard let time: String = pray.value(forKey: "time") as? String else {
+                    throw DAOError.internalError(description: "Error to take time")
                 }
                 guard let remember: Bool = pray.value(forKey: "remember") as? Bool else {
                     throw DAOError.internalError(description: "Error to take remember")
@@ -109,7 +109,7 @@ class PrayerDAO: GenericDAO {
                 guard let whenRepeat: String = pray.value(forKey: "whenRepeat") as? String else {
                     throw DAOError.internalError(description: "Error to take whenRepeat")
                 }
-                guard let actions: [UUID] = pray.value(forKey: "actions") as? [UUID] else {
+                guard let actions: [String] = pray.value(forKey: "actions") as? [String] else {
                     throw DAOError.internalError(description: "Error to take actions")
                 }
                 return Prayer(uuid: uuid,
@@ -127,13 +127,13 @@ class PrayerDAO: GenericDAO {
                 throw DAOError.internalError(description: "Pray not found")
             }
         } catch {
-            throw DAOError.internalError(description: "Problem during CoreData fetch")
+            throw DAOError.internalError(description: error.localizedDescription)
         }
     }
     func update(entity: Prayer) throws {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid == %@", entity.uuid.uuidString)
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", entity.uuid)
         do {
             let result = try managedContext.fetch(fetchRequest)
             if result.count != 0 {
@@ -153,22 +153,22 @@ class PrayerDAO: GenericDAO {
                 do {
                     try managedContext.save()
                 } catch {
-                    throw DAOError.internalError(description: "Problem to save Pray using CoreData")
+                    throw DAOError.internalError(description: error.localizedDescription)
                 }
             } else {
                 throw DAOError.internalError(description: "Act not found")
             }
         } catch {
-            throw DAOError.internalError(description: "Problema during CoreData fetch")
+            throw DAOError.internalError(description: error.localizedDescription)
         }
     }
     func delete(entity: Prayer) throws {
         throw DAOError.internalError(description: "Not implement")
     }
-    private func idExists(uuid: UUID) -> Bool {
+    private func idExists(uuid: String) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid.uuidString)
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid)
         do {
             let result = try managedContext.fetch(fetchRequest)
             return result.count > 0

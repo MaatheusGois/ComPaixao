@@ -24,7 +24,7 @@ class ActionHandler {
             try ActionDAO.shared.create(newEntity: act)
             completion(ActionUpdateResponse.success(act: act))
         } catch {
-            completion(ActionUpdateResponse.error(description: "\(error)"))
+            completion(ActionUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static func getAll(completion: @escaping (ActionLoadResponse) -> Void) {
@@ -32,16 +32,16 @@ class ActionHandler {
             let acts = try ActionDAO.shared.read()
             completion(ActionLoadResponse.success(acts: acts))
         } catch {
-            completion(ActionLoadResponse.error(description: "\(error)"))
+            completion(ActionLoadResponse.error(description: error.localizedDescription))
         }
     }
-    static func getOne(uuid: UUID, withCompletion
+    static func getOne(uuid: String, withCompletion
         completion: (ActionUpdateResponse) -> Void) {
         do {
             let act = try ActionDAO.shared.readOne(uuid: uuid)
             completion(ActionUpdateResponse.success(act: act))
         } catch {
-            completion(ActionUpdateResponse.error(description: "\(error)"))
+            completion(ActionUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static func update(act: Action, withCompletion completion: (ActionUpdateResponse) -> Void) {
@@ -49,7 +49,7 @@ class ActionHandler {
             try ActionDAO.shared.update(entity: act)
             completion(ActionUpdateResponse.success(act: act))
         } catch {
-            completion(ActionUpdateResponse.error(description: "\(error)"))
+            completion(ActionUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static func delete(act: Action, withCompletion
@@ -58,7 +58,7 @@ class ActionHandler {
             try ActionDAO.shared.delete(entity: act)
             completion(ActionUpdateResponse.success(act: act))
         } catch {
-            completion(ActionUpdateResponse.error(description: "\(error)"))
+            completion(ActionUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static private func saveLocally(_ acts: [Action]) {

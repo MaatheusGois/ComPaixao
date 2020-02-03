@@ -48,16 +48,16 @@ class MainController: UIViewController {
     }
     func prayerIllustration() {
         if prayerCellDataSource.prayers.count > 0 {
-            illustrationPrayer.alpha = 0
+            illustrationPrayer.fadeOut(duration: 0, delay: 0) { (_) in }
         } else {
-            illustrationPrayer.alpha = 1
+            illustrationPrayer.fadeIn(duration: 0.3, delay: 0) { (_) in }
         }
     }
     func actionIllustration() {
         if (actionCellDataSource.actions?.count ?? 0) > 0 {
-            illustrationAction.alpha = 0
+            illustrationAction.fadeOut(duration: 0, delay: 0) { (_) in }
         } else {
-            illustrationAction.alpha = 1
+            illustrationAction.fadeIn(duration: 0.3, delay: 0) { (_) in }
         }
     }
     func setupEvents() {

@@ -27,7 +27,7 @@ class ActionViewController: UIViewController {
     var remember = false
     var repetition = false
     var dateTime = Date()
-    var prayerSelected: UUID?
+    var prayerSelected: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +104,7 @@ class ActionViewController: UIViewController {
     }
     @IBAction func add(_ sender: Any) {
         generatorImpact()
-        let action = Action(uuid: UUID(),
+        let action = Action(uuid: UUID().uuidString,
                             prayID: prayerSelected,
                             name: name.text ?? "",
                             date: dateTime,

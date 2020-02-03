@@ -108,7 +108,7 @@ class PrayerViewController: UIViewController {
     }
     @IBAction func add(_ sender: Any) {
         generatorImpact()
-        let prayer = Prayer(uuid: UUID(),
+        let prayer = Prayer(uuid: UUID().uuidString,
                             name: name.text ?? "",
                             subject: subject.text ?? "",
                             image: imageSelected,

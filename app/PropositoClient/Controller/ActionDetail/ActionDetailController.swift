@@ -41,14 +41,24 @@ class ActionDetailController: UIViewController {
     }
     // MARK: - Actions
     @IBAction func finish(_ sender: Any? = nil) {
-        close()
+        action.completed = true //Make action done
+        ActionHandler.update(act: action) { (response) in
+            switch response {
+            case .error(let description):
+                NSLog(description)
+            case .success( _):
+                DispatchQueue.main.async {
+                self.close()
+                EventManager.shared.trigger(eventName: "reloadAction")
+                }
+            }
+        }
     }
     @IBAction func close(_ sender: Any? = nil) {
         generatorImpact()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func edit(_ sender: Any? = nil) {
-        
     }
     @IBAction func deletePrayer(_ sender: Any? = nil) {
         close()

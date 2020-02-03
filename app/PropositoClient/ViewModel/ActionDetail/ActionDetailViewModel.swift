@@ -27,7 +27,7 @@ class ActionDetailViewModel {
         }
         notification = action.remember ? "Ativadas" : "Desativadas"
     }
-    func getPrayer(prayerID: UUID) {
+    func getPrayer(prayerID: String) {
         PrayerHandler.getOne(uuid: prayerID) { (response) in
             switch response {
             case .error(let description):

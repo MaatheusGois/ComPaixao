@@ -9,7 +9,7 @@
 import UIKit
 
 struct Prayer: Codable {
-    let uuid: UUID
+    let uuid: String
     var name: String
     var subject: String
     var image: String
@@ -19,7 +19,7 @@ struct Prayer: Codable {
     var repetition: Bool
     var whenRepeat: String?
     var answered: Bool
-    var actions: [UUID]
+    var actions: [String]
     
     enum CodingKeys: String, CodingKey {
         case uuid, name, subject, image, date, time, remember, repetition, answered, actions

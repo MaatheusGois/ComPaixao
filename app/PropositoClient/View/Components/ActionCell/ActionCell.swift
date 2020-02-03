@@ -27,7 +27,11 @@ class ActionCell: UICollectionViewCell {
                        options: .curveEaseIn,
                        animations: {
                         self.alpha = 0.0
-        }, completion: completion)
+        }, completion: {
+            _ in
+            self.checkButton.setImage(UIImage(named: "check_void"), for: .normal)
+            completion(true)
+        })
     }
 
 }

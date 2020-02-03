@@ -9,8 +9,8 @@
 import Foundation
 
 struct Action: Codable {
-    let uuid: UUID
-    var prayID: UUID?
+    let uuid: String
+    var prayID: String?
     var name: String
     var date: Date
     var time: String

@@ -25,7 +25,7 @@ class PrayerHandler {
             try PrayerDAO.shared.create(newEntity: pray)
             completion(PrayerUpdateResponse.success(pray: pray))
         } catch {
-            completion(PrayerUpdateResponse.error(description: "\(error)"))
+            completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static func getAll(completion: @escaping (PrayerLoadResponse) -> Void) {
@@ -33,16 +33,16 @@ class PrayerHandler {
             let prayers = try PrayerDAO.shared.read()
             completion(PrayerLoadResponse.success(prayers: prayers))
         } catch {
-            completion(PrayerLoadResponse.error(description: "\(error)"))
+            completion(PrayerLoadResponse.error(description: error.localizedDescription))
         }
     }
-    static func getOne(uuid: UUID, withCompletion
+    static func getOne(uuid: String, withCompletion
                                    completion: (PrayerUpdateResponse) -> Void) {
         do {
             let pray = try PrayerDAO.shared.readOne(uuid: uuid)
             completion(PrayerUpdateResponse.success(pray: pray))
         } catch {
-            completion(PrayerUpdateResponse.error(description: "\(error)"))
+            completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static func update(pray: Prayer, withCompletion
@@ -51,7 +51,7 @@ class PrayerHandler {
             try PrayerDAO.shared.update(entity: pray)
             completion(PrayerUpdateResponse.success(pray: pray))
         } catch {
-            completion(PrayerUpdateResponse.error(description: "\(error)"))
+            completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static func delete(pray: Prayer, withCompletion
@@ -60,7 +60,7 @@ class PrayerHandler {
             try PrayerDAO.shared.delete(entity: pray)
             completion(PrayerUpdateResponse.success(pray: pray))
         } catch {
-            completion(PrayerUpdateResponse.error(description: "\(error)"))
+            completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
     }
     static private func saveLocally(_ prayers: [Prayer]) {
