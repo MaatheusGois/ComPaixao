@@ -14,6 +14,7 @@ class PrayerDetailController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var hours: UILabel!
     @IBOutlet weak var repetition: UILabel!
     @IBOutlet weak var notification: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -31,6 +32,7 @@ class PrayerDetailController: UIViewController {
         name.text = prayerViewModel.name
         subject.text = prayerViewModel.subject
         date.text = prayerViewModel.date
+        hours.text = prayerViewModel.hours
         repetition.text = prayerViewModel.repetition
         notification.text = prayerViewModel.notification
         image.image = prayerViewModel.image

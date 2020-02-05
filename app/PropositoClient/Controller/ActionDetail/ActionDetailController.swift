@@ -13,6 +13,7 @@ class ActionDetailController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var prayer: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var hours: UILabel!
     @IBOutlet weak var repetition: UILabel!
     @IBOutlet weak var notification: UILabel!
     var action: Action!
@@ -33,6 +34,7 @@ class ActionDetailController: UIViewController {
         name.text = viewModel.name
         prayer.text = viewModel.prayer
         date.text = viewModel.date
+        hours.text = viewModel.hours
         repetition.text = viewModel.repetition
         notification.text = viewModel.notification
     }

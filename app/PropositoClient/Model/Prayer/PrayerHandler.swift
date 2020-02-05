@@ -9,7 +9,7 @@
 import UIKit
 
 enum PrayerLoadResponse: Error {
-    case success(prayers: [Prayer])
+    case success(prayers: Prayers)
     case error(description: String)
 }
 
@@ -24,6 +24,17 @@ class PrayerHandler {
         do {
             try PrayerDAO.shared.create(newEntity: pray)
             completion(PrayerUpdateResponse.success(pray: pray))
+        } catch {
+            completion(PrayerUpdateResponse.error(description: error.localizedDescription))
+        }
+    }
+    static func addAction(prayerID: String, actionID: String, withCompletion
+                                     completion: (PrayerUpdateResponse) -> Void) {
+        do {
+            var prayer = try PrayerDAO.shared.readOne(uuid: prayerID)
+            prayer.actions.append(actionID)
+            try PrayerDAO.shared.update(entity: prayer)
+            completion(PrayerUpdateResponse.success(pray: prayer))
         } catch {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }

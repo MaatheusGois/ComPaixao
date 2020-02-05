@@ -13,19 +13,14 @@ class MainController: UIViewController {
     @IBOutlet weak var illustrationPrayer: UIImageView!
     @IBOutlet weak var actionCollectionView: UICollectionView!
     @IBOutlet weak var illustrationAction: UIImageView!
+    @IBOutlet weak var filterCollectionView: UICollectionView!
     var prayerCellDelegate: PrayerCellDelegate = PrayerCellDelegate(prayers: [])
     var prayerCellDataSource: PrayerCellDataSource = PrayerCellDataSource(prayers: [])
     var actionCellDelegate = ActionCellDelegate()
     var actionCellDataSource = ActionCellDataSource()
-    //Buttons Filter - FIXME: - Nunca mais faça isso (Fazer uma collectioin)
-    @IBOutlet weak var today: UIButton!
-    @IBOutlet weak var tomorrow: UIButton!
-    @IBOutlet weak var nexts: UIButton!
-    @IBOutlet weak var all: UIButton!
-    @IBOutlet weak var circleToday: UIImageView!
-    @IBOutlet weak var circleTomorrow: UIImageView!
-    @IBOutlet weak var circleNexts: UIImageView!
-    @IBOutlet weak var circleAll: UIImageView!
+    var filterCellDelegate = FilterCellDelegate()
+    var filterCellDataSource = FilterCellDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -33,6 +28,7 @@ class MainController: UIViewController {
     func setup() {
         setupPrayer()
         setupAction()
+        setupFilter()
         prayerIllustration()
         setupEvents()
     }
@@ -45,6 +41,10 @@ class MainController: UIViewController {
         actionCellDelegate.setup(collectionView: actionCollectionView, viewController: self)
         actionCellDataSource.setup(collectionView: actionCollectionView, viewController: self)
         actionCellDataSource.fetch(delegate: actionCellDelegate)
+    }
+    func setupFilter() {
+        filterCellDataSource.setup(collectionView: filterCollectionView)
+        filterCellDelegate.setup(collectionView: filterCollectionView, viewController: self)
     }
     func prayerIllustration() {
         if prayerCellDataSource.prayers.count > 0 {

@@ -12,6 +12,7 @@ class ActionDetailViewModel {
     var name: String
     var prayer: String
     var date: String
+    var hours: String
     var image: UIImage
     var repetition: String
     var notification: String
@@ -19,7 +20,8 @@ class ActionDetailViewModel {
         name = action.name != "" ? action.name : "Sem título"
         prayer = "Por todos"
         image = UIImage(named: "person_ilustration_0\(Int.random(in: 1...6))")!
-        date = action.date.description
+        date = action.date.getFormattedDate()
+        hours = action.date.getFormattedHours()
         if action.repetition, let whenRepeat = action.whenRepeat {
             repetition = whenRepeat
         } else {

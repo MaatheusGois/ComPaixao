@@ -118,8 +118,20 @@ class ActionViewController: UIViewController {
             case .error(let description):
                 NSLog(description)
             case .success(_ ):
-                EventManager.shared.trigger(eventName: "reloadAction")
-                self.close()
+                if let prayerID = prayerSelected {
+                    PrayerHandler.addAction(prayerID: prayerID, actionID: action.uuid) { (response) in
+                        switch response {
+                        case .error(let description):
+                            NSLog(description)
+                        case .success(_ ):
+                            EventManager.shared.trigger(eventName: "reloadAction")
+                            self.close()
+                        }
+                    }
+                } else {
+                    EventManager.shared.trigger(eventName: "reloadAction")
+                    self.close()
+                }
             }
         }
     }

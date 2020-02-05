@@ -41,6 +41,20 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
             }
         }
     }
+    func getActionsToday() -> Actions? {
+        let calendar = Calendar.current
+        return actions?.filter({calendar.isDateInToday($0.date)})
+    }
+    func getActionsTomorrow() -> Actions? {
+        let calendar = Calendar.current
+        return actions?.filter({calendar.isDateInTomorrow($0.date)})
+    }
+    func getActionsNexts() -> Actions? {
+        return actions?.enumerated().compactMap { $0.offset < 10 ? $0.element : nil }
+    }
+    func getActionsAll() -> Actions? {
+        return actions
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.actions?.count == 0 {
             return 0

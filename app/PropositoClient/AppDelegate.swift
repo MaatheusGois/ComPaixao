@@ -17,14 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         application.applicationIconBadgeNumber = 0
         sleep(1)
-        PrayerHandler.getAll { (res) in
-            switch res {
-            case .success(let prayers):
-                print(prayers)
-            case .error(let description):
-                print(description)
-            }
-        }
         return true
     }
     func applicationWillResignActive(_ application: UIApplication) { }

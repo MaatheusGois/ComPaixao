@@ -16,6 +16,11 @@
 		820AE2AA23E826F000321834 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2A823E826F000321834 /* ActionCell.swift */; };
 		820AE2AB23E826F000321834 /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AE2A923E826F000321834 /* ActionCell.xib */; };
 		820AE2AE23E83E0700321834 /* ActionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2AD23E83E0700321834 /* ActionDetailController.swift */; };
+		820AE2B023E9D2B200321834 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2AF23E9D2B200321834 /* Date.swift */; };
+		820AE2B323EA3BF700321834 /* FilterCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2B223EA3BF700321834 /* FilterCellDelegate.swift */; };
+		820AE2B523EA3C7700321834 /* FilterCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2B423EA3C7700321834 /* FilterCellDataSource.swift */; };
+		820AE2BB23EA3CC000321834 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2B923EA3CC000321834 /* FilterCell.swift */; };
+		820AE2BC23EA3CC000321834 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AE2BA23EA3CC000321834 /* FilterCell.xib */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
 		823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BC23E4A6CB00DA2255 /* Keyboard.swift */; };
 		823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */; };
@@ -34,7 +39,7 @@
 		8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */; };
 		827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB623E557BB004156CB /* ConfigurationController.swift */; };
 		827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB923E55C49004156CB /* UserDefaults.swift */; };
-		827ADDBC23E56785004156CB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDBB23E56785004156CB /* Date.swift */; };
+		827ADDBC23E56785004156CB /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDBB23E56785004156CB /* DateUtils.swift */; };
 		827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7823DB8A6D00C99BF0 /* Gradient.swift */; };
 		827E4A7B23DB90C700C99BF0 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7A23DB90C700C99BF0 /* MainController.swift */; };
 		827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827E4A7C23DC629800C99BF0 /* UIView.swift */; };
@@ -93,6 +98,11 @@
 		820AE2A823E826F000321834 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		820AE2A923E826F000321834 /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		820AE2AD23E83E0700321834 /* ActionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDetailController.swift; sourceTree = "<group>"; };
+		820AE2AF23E9D2B200321834 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		820AE2B223EA3BF700321834 /* FilterCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellDelegate.swift; sourceTree = "<group>"; };
+		820AE2B423EA3C7700321834 /* FilterCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellDataSource.swift; sourceTree = "<group>"; };
+		820AE2B923EA3CC000321834 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		820AE2BA23EA3CC000321834 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		823922BC23E4A6CB00DA2255 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCell.swift; sourceTree = "<group>"; };
@@ -111,7 +121,7 @@
 		8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellViewModel.swift; sourceTree = "<group>"; };
 		827ADDB623E557BB004156CB /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		827ADDB923E55C49004156CB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		827ADDBB23E56785004156CB /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		827ADDBB23E56785004156CB /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		827E4A7823DB8A6D00C99BF0 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		827E4A7A23DB90C700C99BF0 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		827E4A7C23DC629800C99BF0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = PropositoClient/Controller/Main/UIView.swift; sourceTree = SOURCE_ROOT; };
@@ -215,6 +225,25 @@
 			path = ActionDetail;
 			sourceTree = "<group>";
 		};
+		820AE2B123EA3BDF00321834 /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				820AE2B223EA3BF700321834 /* FilterCellDelegate.swift */,
+				820AE2B423EA3C7700321834 /* FilterCellDataSource.swift */,
+			);
+			path = FilterCell;
+			sourceTree = "<group>";
+		};
+		820AE2B623EA3C8300321834 /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				820AE2B923EA3CC000321834 /* FilterCell.swift */,
+				820AE2BA23EA3CC000321834 /* FilterCell.xib */,
+			);
+			name = FilterCell;
+			path = ../../ViewModel/FilterCell;
+			sourceTree = "<group>";
+		};
 		823922BE23E51F2000DA2255 /* ImageProfileCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
-				827ADDBB23E56785004156CB /* Date.swift */,
+				827ADDBB23E56785004156CB /* DateUtils.swift */,
 				8265181D23E575850035E91E /* EventManager.swift */,
 				828A749E23E758430002424B /* ImpactFeedback.swift */,
 			);
@@ -359,6 +388,7 @@
 		827E4A7623DB815400C99BF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				820AE2B623EA3C8300321834 /* FilterCell */,
 				820AE2A523E826B800321834 /* ActionCell */,
 				82F14C8623E5307F00D20107 /* RepeatCell */,
 				823922BE23E51F2000DA2255 /* ImageProfileCell */,
@@ -391,6 +421,7 @@
 		827EB45923DD098800F8C3E1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				820AE2B123EA3BDF00321834 /* FilterCell */,
 				82B3889723E54C8C00D9B2CE /* PickerPerson */,
 				82F14C8B23E530B000D20107 /* RepeatCell */,
 				823922C423E5202500DA2255 /* ImageProfileCell */,
@@ -475,6 +506,7 @@
 				82FE2E8D23E3BB4500C8EB96 /* Padding.swift */,
 				82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */,
 				8285005C23E4A13D00F2B9FE /* UIColor.swift */,
+				820AE2AF23E9D2B200321834 /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -663,6 +695,7 @@
 				820AE2AB23E826F000321834 /* ActionCell.xib in Resources */,
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
 				86B889A422CC34530097F0D7 /* logo.png in Resources */,
+				820AE2BC23EA3CC000321834 /* FilterCell.xib in Resources */,
 				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
 				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
 				86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */,
@@ -710,20 +743,23 @@
 				8265182123E57EB60035E91E /* AllPrayersController.swift in Sources */,
 				82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */,
 				828A749F23E758430002424B /* ImpactFeedback.swift in Sources */,
+				820AE2BB23EA3CC000321834 /* FilterCell.swift in Sources */,
 				827E4A7D23DC629800C99BF0 /* UIView.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
 				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */,
 				82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */,
+				820AE2B523EA3C7700321834 /* FilterCellDataSource.swift in Sources */,
 				820AE29E23E8242D00321834 /* ActionCellDataSource.swift in Sources */,
 				820AE29923E762A600321834 /* Global.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
 				82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */,
+				820AE2B323EA3BF700321834 /* FilterCellDelegate.swift in Sources */,
 				86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */,
 				8628F5CC22CFD9BA00844544 /* GenericDAO.swift in Sources */,
 				82FE2E8E23E3BB4500C8EB96 /* Padding.swift in Sources */,
 				82B3889923E54CB800D9B2CE /* PickerPersonDataSource.swift in Sources */,
-				827ADDBC23E56785004156CB /* Date.swift in Sources */,
+				827ADDBC23E56785004156CB /* DateUtils.swift in Sources */,
 				86F426C622CAAD220032AA5B /* CardModel.swift in Sources */,
 				820AE2A223E8247600321834 /* ActionCellViewModel.swift in Sources */,
 				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
@@ -734,6 +770,7 @@
 				8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */,
 				8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */,
 				827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */,
+				820AE2B023E9D2B200321834 /* Date.swift in Sources */,
 				8265182923E6119F0035E91E /* PrayerDetailController.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
 				820AE2AE23E83E0700321834 /* ActionDetailController.swift in Sources */,
