@@ -54,7 +54,7 @@ class MainController: UIViewController {
         }
     }
     func actionIllustration() {
-        if (actionCellDataSource.actions?.count ?? 0) > 0 {
+        if (actionCellDataSource.actionsFilted?.count ?? 0) > 0 {
             illustrationAction.fadeOut(duration: 0, delay: 0) { (_) in }
         } else {
             illustrationAction.fadeIn(duration: 0.3, delay: 0) { (_) in }

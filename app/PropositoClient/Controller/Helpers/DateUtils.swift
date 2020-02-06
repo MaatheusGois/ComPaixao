@@ -9,7 +9,6 @@
 import UIKit
 
 class DateUltils {
-    
     private init() {}
     static let shared = DateUltils()
     

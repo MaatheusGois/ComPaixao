@@ -13,7 +13,6 @@ class EventManager {
     static let shared = EventManager()
     // using NSMutableArray as Swift arrays can't change size inside dictionaries (yet, probably)
     var listeners = Dictionary<String, NSMutableArray>()
-    
     // Create a new event listener, not expecting information from the trigger
     // + eventName: Matching trigger eventNames will cause this listener to fire
     // + action: The block of code you want executed when the event triggers
@@ -28,13 +27,11 @@ class EventManager {
         let newListener = EventListenerAction(callback: action)
         addListener(eventName: eventName.uppercased(), newEventListener: newListener)
     }
-    
-    internal func addListener(eventName:String, newEventListener:EventListenerAction) {
+    internal func addListener(eventName: String, newEventListener:EventListenerAction) {
         if let listenerArray = self.listeners[eventName] {
             // action array exists for this event, add new action to it
             listenerArray.add(newEventListener)
-        }
-        else {
+        } else {
             // no listeners created for this event yet, create a new array
             self.listeners[eventName] = [newEventListener] as NSMutableArray
         }

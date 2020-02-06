@@ -10,6 +10,7 @@ import UIKit
 
 class ActionCell: UICollectionViewCell {
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var fakeButton: UIButton!
     @IBOutlet weak var seeDetailButton: UIButton!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var date: UILabel!
@@ -17,20 +18,18 @@ class ActionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
     func complete(duration: TimeInterval = 0.5,
                   delay: TimeInterval = 0.0,
                   completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
-        self.checkButton.setImage(UIImage(named: "check_all"), for: .normal)
+        self.fakeButton.setImage(UIImage(named: "check_all"), for: .normal)
         UIView.animate(withDuration: duration,
                        delay: delay,
                        options: .curveEaseIn,
                        animations: {
                         self.alpha = 0.0
-        }, completion: {
-            _ in
-            self.checkButton.setImage(UIImage(named: "check_void"), for: .normal)
-            completion(true)
+        }, completion: { finish in
+            self.fakeButton.setImage(UIImage(named: "check_void"), for: .normal)
+            completion(finish)
         })
     }
 

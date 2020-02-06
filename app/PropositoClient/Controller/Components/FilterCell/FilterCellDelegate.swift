@@ -34,12 +34,19 @@ class FilterCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         generatorImpact()
+        guard let view = viewController as? MainController else { return
+        }
+
         if indexPath.row != 0 {
-            if let view = viewController as? MainController {
-                if let cell = view.filterCellDataSource.firstCell {
-                    cell.isSelected = false
-                }
+            if let cell = view.filterCellDataSource.firstCell {
+                cell.isSelected = false
             }
+        }
+        view.actionCellDataSource.filterBy = indexPath.row
+        view.actionCellDataSource.choiceFilter()
+        DispatchQueue.main.async {
+            view.actionCollectionView.reloadData()
+            view.actionIllustration()
         }
     }
     func generatorImpact() {

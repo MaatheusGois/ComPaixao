@@ -256,11 +256,8 @@
 		823922C323E5201300DA2255 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */,
-				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
-				827ADDBB23E56785004156CB /* DateUtils.swift */,
-				8265181D23E575850035E91E /* EventManager.swift */,
-				828A749E23E758430002424B /* ImpactFeedback.swift */,
+				820AE29823E762A600321834 /* Global.swift */,
+				827ADDB923E55C49004156CB /* UserDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -354,8 +351,11 @@
 		827ADDB823E55C35004156CB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				827ADDB923E55C49004156CB /* UserDefaults.swift */,
-				820AE29823E762A600321834 /* Global.swift */,
+				82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */,
+				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
+				828A749E23E758430002424B /* ImpactFeedback.swift */,
+				8265181D23E575850035E91E /* EventManager.swift */,
+				827ADDBB23E56785004156CB /* DateUtils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -597,9 +597,9 @@
 		86F426B622CAA6880032AA5B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				827EB45923DD098800F8C3E1 /* Components */,
 				827ADDB823E55C35004156CB /* Helpers */,
 				823922C323E5201300DA2255 /* Utils */,
-				827EB45923DD098800F8C3E1 /* Components */,
 				8246345823D90EE500AA58F6 /* Main */,
 				8265181F23E57E8E0035E91E /* AllPrayers */,
 				8246345923D90EF300AA58F6 /* Pray */,
