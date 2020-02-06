@@ -42,7 +42,7 @@ class FilterCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
                 cell.isSelected = false
             }
         }
-        view.actionCellDataSource.filterBy = indexPath.row
+        view.actionCellDataSource.filterBy = Filter(rawValue: indexPath.row)!
         view.actionCellDataSource.choiceFilter()
         DispatchQueue.main.async {
             view.actionCollectionView.reloadData()

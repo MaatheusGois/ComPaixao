@@ -36,7 +36,6 @@ class ActionCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         toActionDetail(index: indexPath.row)
         generatorImpact()
-        print(indexPath.row)
     }
     func toActionDetail(index: Int) {
         let action = actions?[index]

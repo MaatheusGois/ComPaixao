@@ -8,13 +8,19 @@
 
 import UIKit
 
+enum Filter: Int {
+    case today = 0
+    case tomorrow
+    case nexts
+    case all
+}
+
 class ActionCellDataSource: NSObject, UICollectionViewDataSource {
     var actions: Actions?
     var actionsFilted: Actions?
     weak var viewController: UIViewController?
     var collectionView: UICollectionView?
-    var filterBy = 0
-    
+    var filterBy = Filter.today
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         self.viewController = viewController
         self.collectionView = collectionView
@@ -32,10 +38,10 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
                 NSLog(description)
             case .success(let actions):
                 self.actions = actions.filter { !$0.completed }
+                self.choiceFilter()
+                delegate.actions = self.actionsFilted
                 DispatchQueue.main.async {
                     if let view = self.viewController as? MainController {
-                        delegate.actions = self.actionsFilted
-                        self.choiceFilter()
                         view.actionCollectionView.reloadData()
                         view.actionIllustration()
                     }
@@ -45,11 +51,11 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
     }
     func choiceFilter() {
         switch filterBy {
-        case 0:
+        case .today:
             filterToday()
-        case 1:
+        case .tomorrow:
             filterTomorrow()
-        case 2:
+        case .nexts:
             filterNexts()
         default:
             filterAll()
