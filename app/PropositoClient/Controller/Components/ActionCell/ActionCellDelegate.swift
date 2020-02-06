@@ -19,7 +19,7 @@ class ActionCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets (top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets (top: 0, left: 10, bottom: 0, right: 17)
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -30,7 +30,7 @@ class ActionCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height: Double = Double(collectionView.frame.width) * 0.05075
-        let width: Double = Double(collectionView.frame.width)
+        let width: Double = Double(collectionView.frame.width) - 20
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

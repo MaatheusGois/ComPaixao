@@ -32,8 +32,8 @@
                                 <color key="textColor" name="primary"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20/02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFc-w7-V6b">
-                                <rect key="frame" x="277" y="4.5" width="36" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20/02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFc-w7-V6b">
+                                <rect key="frame" x="277" y="3.5" width="36" height="16.5"/>
                                 <fontDescription key="fontDescription" name="CentraleSansRegular" family="Centrale Sans Regular" pointSize="14"/>
                                 <color key="textColor" name="primary"/>
                                 <nil key="highlightedColor"/>
@@ -60,7 +60,6 @@
                             <constraint firstItem="uNV-A8-3yb" firstAttribute="top" secondItem="7hy-BR-ci0" secondAttribute="top" id="Efp-wi-30C"/>
                             <constraint firstItem="wFc-w7-V6b" firstAttribute="centerY" secondItem="7hy-BR-ci0" secondAttribute="centerY" multiplier="1.1" id="Gmb-lN-a4w"/>
                             <constraint firstAttribute="trailing" secondItem="j0f-bo-qRc" secondAttribute="trailing" id="IhB-VC-w62"/>
-                            <constraint firstItem="wFc-w7-V6b" firstAttribute="height" secondItem="7hy-BR-ci0" secondAttribute="height" multiplier="0.666667" id="MuK-6k-HLk"/>
                             <constraint firstItem="uNV-A8-3yb" firstAttribute="height" secondItem="7hy-BR-ci0" secondAttribute="height" id="XAB-jb-SIB"/>
                             <constraint firstItem="blp-qL-Hcc" firstAttribute="centerY" secondItem="7hy-BR-ci0" secondAttribute="centerY" multiplier="1.2" id="XIn-oN-a8X"/>
                             <constraint firstItem="j0f-bo-qRc" firstAttribute="height" secondItem="7hy-BR-ci0" secondAttribute="height" multiplier="0.666667" id="gSJ-oh-AAG"/>

@@ -24,7 +24,8 @@ class FilterCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height: Double = 30
-        let width: Double = Double(options[indexPath.row].count) * 16
+        let wordSize: Double = Double(options[indexPath.row].count)
+        let width: Double = wordSize * Double(collectionView.frame.size.width) / 26
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,

@@ -20,7 +20,8 @@ class FilterCell: UICollectionViewCell {
         didSet {
             name.textColor = isSelected ? .primary : .default01
             circle.backgroundColor = isSelected ? .primary : .default01
-            circle.alpha = isSelected ? 1 : 0
+            isSelected ? circle.fadeIn() : circle.fadeOut()
+            ImpactFeedback.shared.generateSelectionChanged()
         }
     }
 
