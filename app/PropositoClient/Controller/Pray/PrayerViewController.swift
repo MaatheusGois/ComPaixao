@@ -82,6 +82,7 @@ class PrayerViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
     }
+
     // MARK: - Actions
     @IBAction func close(_ sender: Any? = nil) {
         generatorImpact()

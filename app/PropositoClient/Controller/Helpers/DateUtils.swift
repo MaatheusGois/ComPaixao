@@ -19,9 +19,4 @@ class DateUltils {
         let hourString = formatter.string(from: date)
         return hourString
     }
-    func filter(dates: [Date]) {
-        let calendar = Calendar.current
-        let todayDates = dates.filter({calendar.isDateInToday($0 as Date)})
-        let tomorrowDates = dates.filter({calendar.isDateInTomorrow($0 as Date)})
-    }
 }

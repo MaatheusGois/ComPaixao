@@ -19,5 +19,5 @@ protocol GenericDAO {
     func read() throws -> [T]
     func readOne(uuid: String) throws -> T
     func update(entity: T) throws
-    func delete(entity: T) throws
+    func delete(uuid: String) throws
 }

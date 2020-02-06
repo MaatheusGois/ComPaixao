@@ -103,7 +103,10 @@ class PrayerHandler {
     static func delete(pray: Prayer, withCompletion
                                      completion: (PrayerUpdateResponse) -> Void) {
         do {
-            try PrayerDAO.shared.delete(entity: pray)
+            try PrayerDAO.shared.delete(uuid: pray.uuid)
+            for actionUUID in pray.actions {
+                try ActionDAO.shared.delete(uuid: actionUUID)
+            }
             completion(PrayerUpdateResponse.success(prayer: pray))
         } catch {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))

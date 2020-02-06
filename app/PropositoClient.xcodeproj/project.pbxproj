@@ -60,6 +60,7 @@
 		82F14C8A23E5309E00D20107 /* RepeatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82F14C8823E5309E00D20107 /* RepeatCell.xib */; };
 		82F14C8D23E530BF00D20107 /* RepeatCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F14C8C23E530BF00D20107 /* RepeatCellDelegate.swift */; };
 		82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F14C8E23E530C800D20107 /* RepeatCellDataSource.swift */; };
+		82F2E60F23EC513E0007678D /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E60E23EC513E0007678D /* UIAlert.swift */; };
 		82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */; };
 		82FE2E8E23E3BB4500C8EB96 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */; };
 		82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */; };
@@ -142,6 +143,7 @@
 		82F14C8823E5309E00D20107 /* RepeatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepeatCell.xib; sourceTree = "<group>"; };
 		82F14C8C23E530BF00D20107 /* RepeatCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCellDelegate.swift; sourceTree = "<group>"; };
 		82F14C8E23E530C800D20107 /* RepeatCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCellDataSource.swift; sourceTree = "<group>"; };
+		82F2E60E23EC513E0007678D /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
 		82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderColor.swift; sourceTree = "<group>"; };
 		82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = PropositoClient/View/Designable/UITextField.swift; sourceTree = SOURCE_ROOT; };
 		82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReturn.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				820AE29823E762A600321834 /* Global.swift */,
 				827ADDB923E55C49004156CB /* UserDefaults.swift */,
+				82F2E60E23EC513E0007678D /* UIAlert.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				8265182423E5805E0035E91E /* PrayerAllCellDelegate.swift in Sources */,
 				820AE2A423E8248700321834 /* ActionDetailViewModel.swift in Sources */,
 				827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */,
+				82F2E60F23EC513E0007678D /* UIAlert.swift in Sources */,
 				82B3889623E54C7B00D9B2CE /* PickerPersonDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

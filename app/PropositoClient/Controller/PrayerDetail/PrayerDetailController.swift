@@ -95,7 +95,26 @@ class PrayerDetailController: UIViewController {
     @IBAction func edit(_ sender: Any? = nil) {
     }
     @IBAction func deletePrayer(_ sender: Any? = nil) {
-        close()
+        generatorImpact()
+        UIAlert.show(controller: self, title: "Tem certeza que deseja apagar essa oração?",
+                     message: "Junto a essa oração, serão deletados todas as práticas relacionadas a ela",
+                     alertAction1: "Apagar") { (response) in
+            if response {
+                self.generatorImpact()
+                PrayerHandler.delete(pray: self.prayer) { (response) in
+                    switch response {
+                    case .error(let description):
+                        print(description)
+                    case .success(_:):
+                        DispatchQueue.main.async {
+                            self.close()
+                            EventManager.shared.trigger(eventName: "reloadPrayer")
+                            EventManager.shared.trigger(eventName: "reloadAction")
+                        }
+                    }
+                }
+            }
+        }
     }
     // MARK: - NEXT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

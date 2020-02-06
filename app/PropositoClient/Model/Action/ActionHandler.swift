@@ -55,7 +55,12 @@ class ActionHandler {
     static func delete(act: Action, withCompletion
         completion: (ActionUpdateResponse) -> Void) {
         do {
-            try ActionDAO.shared.delete(entity: act)
+            try ActionDAO.shared.delete(uuid: act.uuid)
+            if let uuid = act.prayID {
+                var prayer = try PrayerDAO.shared.readOne(uuid: uuid)
+                prayer.actions = prayer.actions.filter { $0 != act.uuid }
+                try PrayerDAO.shared.update(entity: prayer)
+            }
             completion(ActionUpdateResponse.success(act: act))
         } catch {
             completion(ActionUpdateResponse.error(description: error.localizedDescription))

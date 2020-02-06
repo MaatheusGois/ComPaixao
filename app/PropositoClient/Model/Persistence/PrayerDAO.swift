@@ -162,8 +162,28 @@ class PrayerDAO: GenericDAO {
             throw DAOError.internalError(description: error.localizedDescription)
         }
     }
-    func delete(entity: Prayer) throws {
-        throw DAOError.internalError(description: "Not implement")
+    func delete(uuid: String) throws {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", uuid)
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            if result.count != 0 {
+                let objectToDelete = result[0] as? NSManagedObject
+                if objectToDelete != nil {
+                    managedContext.delete(objectToDelete!)
+                    do {
+                        try managedContext.save()
+                    } catch {
+                        throw DAOError.internalError(description: "Pray not posible deleted")
+                    }
+                }
+            } else {
+                throw DAOError.internalError(description: "Pray not found")
+            }
+        } catch {
+            throw DAOError.internalError(description: error.localizedDescription)
+        }
     }
     private func idExists(uuid: String) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)

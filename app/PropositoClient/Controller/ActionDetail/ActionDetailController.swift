@@ -63,6 +63,25 @@ class ActionDetailController: UIViewController {
     @IBAction func edit(_ sender: Any? = nil) {
     }
     @IBAction func deletePrayer(_ sender: Any? = nil) {
-        close()
+        generatorImpact()
+        UIAlert.show(controller: self, title: "Tem certeza que deseja apagar essa prática?",
+                     message: "Não será mais possível recuperá-la",
+                     alertAction1: "Apagar") { (response) in
+            if response {
+                self.generatorImpact()
+                ActionHandler.delete(act: self.action) { (response) in
+                    switch response {
+                    case .error(let description):
+                        print(description)
+                    case .success(_:):
+                        DispatchQueue.main.async {
+                            self.close()
+                            EventManager.shared.trigger(eventName: "reloadPrayer")
+                            EventManager.shared.trigger(eventName: "reloadAction")
+                        }
+                    }
+                }
+            }
+        }
     }
 }
