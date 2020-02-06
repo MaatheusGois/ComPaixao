@@ -22,13 +22,13 @@ class ActionDAO: GenericDAO {
         guard let act = NSManagedObject(entity: actEntity, insertInto: managedContext) as? ActEntity else {
             throw DAOError.internalError(description: "Failed to create NSManagedObject")
         }
-        act.uuid        = UUID().uuidString
-        act.name = newEntity.name
-        act.prayID    = newEntity.prayID
-        act.date      = newEntity.date
-        act.completed = newEntity.completed
-        act.time = newEntity.time
-        act.remember = newEntity.remember
+        act.uuid       = newEntity.uuid 
+        act.name       = newEntity.name
+        act.prayID     = newEntity.prayID
+        act.date       = newEntity.date
+        act.completed  = newEntity.completed
+        act.time       = newEntity.time
+        act.remember   = newEntity.remember
         act.repetition = newEntity.repetition
         act.whenRepeat = newEntity.whenRepeat
         do {
@@ -83,8 +83,8 @@ class ActionDAO: GenericDAO {
                 guard let date: Date = data.value(forKey: "date") as? Date else {
                     throw DAOError.internalError(description: "Error to take date")
                 }
-                guard let time: String = data.value(forKey: "date") as? String else {
-                    throw DAOError.internalError(description: "Error to take date")
+                guard let time: String = data.value(forKey: "time") as? String else {
+                    throw DAOError.internalError(description: "Error to take time")
                 }
                 guard let remember: Bool = data.value(forKey: "remember") as? Bool else {
                     throw DAOError.internalError(description: "Error to take remember")

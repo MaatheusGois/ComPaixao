@@ -16,6 +16,7 @@ class PrayerDetailViewModel {
     var image: UIImage
     var repetition: String
     var notification: String
+    var actions: Actions?
     init(prayer: Prayer) {
         name = prayer.name != "" ? prayer.name : "Sem título"
         subject = prayer.subject != "" ? prayer.subject : "Sem assunto"

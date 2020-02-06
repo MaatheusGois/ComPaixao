@@ -19,7 +19,7 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
     var actions: Actions?
     var actionsFilted: Actions?
     weak var viewController: UIViewController?
-    var collectionView: UICollectionView?
+    weak var collectionView: UICollectionView?
     var filterBy = Filter.today
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         self.viewController = viewController
@@ -37,15 +37,21 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
             case .error(let description):
                 NSLog(description)
             case .success(let actions):
-                self.actions = actions.filter { !$0.completed }
-                self.choiceFilter()
-                delegate.actions = self.actionsFilted
-                DispatchQueue.main.async {
-                    if let view = self.viewController as? MainController {
-                        view.actionCollectionView.reloadData()
-                        view.actionIllustration()
-                    }
-                }
+                self.setActions(actions: actions, delegate: delegate)
+            }
+        }
+    }
+    func setActions(actions: Actions, delegate: ActionCellDelegate) {
+        self.actions = actions.filter { !$0.completed }
+        self.choiceFilter()
+        delegate.actions = self.actionsFilted
+        DispatchQueue.main.async {
+            if let view = self.viewController as? MainController {
+                view.actionCollectionView.reloadData()
+                view.actionIllustration()
+            } else if let view = self.viewController as? PrayerDetailController {
+                view.collectionView.reloadData()
+                view.actionIllustration()
             }
         }
     }

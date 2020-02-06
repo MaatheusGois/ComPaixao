@@ -22,7 +22,7 @@ class PrayerDAO: GenericDAO {
         guard let pray = NSManagedObject(entity: prayEntity, insertInto: managedContext) as? PrayEntity else {
             throw DAOError.internalError(description: "Failed to create NSManagedObject")
         }
-        pray.uuid       = UUID().uuidString
+        pray.uuid       = newEntity.uuid
         pray.name       = newEntity.name
         pray.subject    = newEntity.subject
         pray.image      = newEntity.image

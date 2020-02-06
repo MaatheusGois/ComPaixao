@@ -13,8 +13,13 @@ enum PrayerLoadResponse: Error {
     case error(description: String)
 }
 
+enum PrayerActionsResponse: Error {
+    case success(actions: Actions)
+    case error(description: String)
+}
+
 enum PrayerUpdateResponse: Error {
-    case success(pray: Prayer)
+    case success(prayer: Prayer)
     case error(description: String)
 }
 
@@ -23,7 +28,7 @@ class PrayerHandler {
                                      completion: (PrayerUpdateResponse) -> Void) {
         do {
             try PrayerDAO.shared.create(newEntity: pray)
-            completion(PrayerUpdateResponse.success(pray: pray))
+            completion(PrayerUpdateResponse.success(prayer: pray))
         } catch {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
@@ -34,7 +39,7 @@ class PrayerHandler {
             var prayer = try PrayerDAO.shared.readOne(uuid: prayerID)
             prayer.actions.append(actionID)
             try PrayerDAO.shared.update(entity: prayer)
-            completion(PrayerUpdateResponse.success(pray: prayer))
+            completion(PrayerUpdateResponse.success(prayer: prayer))
         } catch {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
@@ -51,16 +56,30 @@ class PrayerHandler {
                                    completion: (PrayerUpdateResponse) -> Void) {
         do {
             let pray = try PrayerDAO.shared.readOne(uuid: uuid)
-            completion(PrayerUpdateResponse.success(pray: pray))
+            completion(PrayerUpdateResponse.success(prayer: pray))
         } catch {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
+        }
+    }
+    static func getActions(uuid: String, withCompletion
+                                   completion: (PrayerActionsResponse) -> Void) {
+        do {
+            let prayer = try PrayerDAO.shared.readOne(uuid: uuid)
+            var actions = Actions()
+            for actionUUID in prayer.actions {
+                let action = try ActionDAO.shared.readOne(uuid: actionUUID)
+                actions.append(action)
+            }
+            completion(PrayerActionsResponse.success(actions: actions))
+        } catch {
+            completion(PrayerActionsResponse.error(description: error.localizedDescription))
         }
     }
     static func update(pray: Prayer, withCompletion
                                      completion: (PrayerUpdateResponse) -> Void) {
         do {
             try PrayerDAO.shared.update(entity: pray)
-            completion(PrayerUpdateResponse.success(pray: pray))
+            completion(PrayerUpdateResponse.success(prayer: pray))
         } catch {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
@@ -69,7 +88,7 @@ class PrayerHandler {
                                      completion: (PrayerUpdateResponse) -> Void) {
         do {
             try PrayerDAO.shared.delete(entity: pray)
-            completion(PrayerUpdateResponse.success(pray: pray))
+            completion(PrayerUpdateResponse.success(prayer: pray))
         } catch {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }

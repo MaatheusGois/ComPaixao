@@ -117,8 +117,9 @@ class ActionViewController: UIViewController {
             switch response {
             case .error(let description):
                 NSLog(description)
-            case .success(_ ):
+            case .success(let action):
                 if let prayerID = prayerSelected {
+                    print(action.uuid)
                     PrayerHandler.addAction(prayerID: prayerID, actionID: action.uuid) { (response) in
                         switch response {
                         case .error(let description):
