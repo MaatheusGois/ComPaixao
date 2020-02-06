@@ -61,7 +61,7 @@ class MainController: UIViewController {
         }
     }
     func setupEvents() {
-        EventManager.shared.listenTo(eventName: "addPrayer") {
+        EventManager.shared.listenTo(eventName: "reloadPrayer") {
             self.prayerCellDataSource.fetch(delegate: self.prayerCellDelegate)
         }
         EventManager.shared.listenTo(eventName: "reloadAction") {

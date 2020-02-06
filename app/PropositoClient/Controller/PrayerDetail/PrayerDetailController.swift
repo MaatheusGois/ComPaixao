@@ -75,7 +75,18 @@ class PrayerDetailController: UIViewController {
     }
     // MARK: - Actions
     @IBAction func finish(_ sender: Any? = nil) {
-        close()
+        PrayerHandler.answered(pray: prayer) { (response) in
+            switch response {
+            case .error(let description):
+                NSLog(description)
+            case .success(_:):
+                DispatchQueue.main.async {
+                    self.close()
+                    EventManager.shared.trigger(eventName: "reloadPrayer")
+                    EventManager.shared.trigger(eventName: "reloadAction")
+                }
+            }
+        }
     }
     @IBAction func close(_ sender: Any? = nil) {
         generatorImpact()

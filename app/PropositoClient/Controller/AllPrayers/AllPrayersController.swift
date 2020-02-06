@@ -42,7 +42,7 @@ class AllPrayersController: UIViewController {
         }
     }
     func setupEvents() {
-        EventManager.shared.listenTo(eventName: "addPrayer") {
+        EventManager.shared.listenTo(eventName: "reloadPrayer") {
             self.prayerAllCellDataSource.fetch(delegate: self.prayerAllCellDelegate)
         }
     }

@@ -22,13 +22,11 @@ class ActionViewController: UIViewController {
     var repeatCellDataSource = RepeatCellDataSource()
     var pickerPersonDelegate = PickerPersonDelegate()
     var pickerPersonDataSource = PickerPersonDataSource()
-    
     var repeatSelected = ""
     var remember = false
     var repetition = false
     var dateTime = Date()
     var prayerSelected: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -119,13 +117,13 @@ class ActionViewController: UIViewController {
                 NSLog(description)
             case .success(let action):
                 if let prayerID = prayerSelected {
-                    print(action.uuid)
                     PrayerHandler.addAction(prayerID: prayerID, actionID: action.uuid) { (response) in
                         switch response {
                         case .error(let description):
                             NSLog(description)
-                        case .success(_ ):
+                        case .success(_:):
                             EventManager.shared.trigger(eventName: "reloadAction")
+                            EventManager.shared.trigger(eventName: "reloadPrayer")
                             self.close()
                         }
                     }

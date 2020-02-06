@@ -29,10 +29,9 @@ class PrayerAllCellDataSource: NSObject, UICollectionViewDataSource {
                 NSLog(description)
             case .success(let prayers):
                 DispatchQueue.main.async {
-                    var reversePrayer = prayers
-                    reversePrayer = reversePrayer.reversed()
-                    self.prayers = reversePrayer
-                    delegate.prayers = reversePrayer
+                    let prayerNotAnswered = prayers.reversed().filter { !$0.answered }
+                    self.prayers = prayerNotAnswered
+                    delegate.prayers = prayerNotAnswered
                     if let view = self.viewController as? AllPrayersController {
                         view.collectionView.reloadData()
                         view.prayerIllustration()

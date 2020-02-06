@@ -127,6 +127,7 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
                                 cell.complete(duration: 0.5, delay: 0) { (response) in
                                     if response {
                                         EventManager.shared.trigger(eventName: "reloadAction")
+                                        EventManager.shared.trigger(eventName: "reloadPrayer")
                                     }
                                 }
                             }

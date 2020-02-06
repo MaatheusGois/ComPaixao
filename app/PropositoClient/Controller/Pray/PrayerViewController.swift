@@ -123,8 +123,8 @@ class PrayerViewController: UIViewController {
             switch response {
             case .error(let description):
                 NSLog(description)
-            case .success(_ ):
-                EventManager.shared.trigger(eventName: "addPrayer")
+            case .success(_:):
+                EventManager.shared.trigger(eventName: "reloadPrayer")
                 self.close()
             }
         }

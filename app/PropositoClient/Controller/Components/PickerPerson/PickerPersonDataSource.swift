@@ -23,7 +23,7 @@ class PickerPersonDataSource: NSObject, UIPickerViewDataSource {
             case .success(let prayers):
                 DispatchQueue.main.async {
                     var reversePrayer = prayers
-                    reversePrayer = reversePrayer.reversed()
+                    reversePrayer = reversePrayer.reversed().filter({ !$0.answered })
                     self.prayers = reversePrayer
                     delegate.prayers = reversePrayer
                     if let view = self.viewController as? ActionViewController {
