@@ -41,6 +41,7 @@ class PrayerViewController: UIViewController {
         setupDate()
         setupTime()
         setupCollectionRepeat()
+        setupKeyboard()
     }
     func setupName() {
         name.tintColor = .primary
@@ -73,16 +74,10 @@ class PrayerViewController: UIViewController {
         time.subviews[0].subviews[1].alpha = 0.2
         time.subviews[0].subviews[2].alpha = 0.2
     }
-    func setupKeyboard() { //FIXME - arrumar a transicao em outra classe, erro desconhecido
-        let keyboard = Keyboard(viewController: self)
-        keyboard.hide()
-        keyboard.up()
-    }
     func generatorImpact() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
     }
-
     // MARK: - Actions
     @IBAction func close(_ sender: Any? = nil) {
         generatorImpact()
@@ -129,5 +124,31 @@ class PrayerViewController: UIViewController {
                 self.close()
             }
         }
+    }
+    // MARK: - Keyboard
+    func setupKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    @objc
+    private func keyboardWillShow(sender: NSNotification) {
+        view.frame.origin.y = -150
+    }
+    @objc
+    private func keyboardWillHide(sender: NSNotification) {
+        view.frame.origin.y = 0
+    }
+    @objc
+    private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

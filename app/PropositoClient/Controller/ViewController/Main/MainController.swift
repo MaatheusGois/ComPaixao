@@ -20,7 +20,6 @@ class MainController: UIViewController {
     var actionCellDataSource = ActionCellDataSource()
     var filterCellDelegate = FilterCellDelegate()
     var filterCellDataSource = FilterCellDataSource()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -32,6 +31,10 @@ class MainController: UIViewController {
         prayerIllustration()
         setupEvents()
         setIcon()
+        setupVC()
+    }
+    func setupVC() {
+        FirstTime.isOn = true
     }
     func setupPrayer() {
         prayerCellDelegate.setup(collectionView: prayerCollectionView, viewController: self)
@@ -79,8 +82,7 @@ class MainController: UIViewController {
         }
     }
     func generatorImpact() {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
+        ImpactFeedback.shared.generateMedium()
     }
     // MARK: - Actions
     @IBAction func seeConfig(_ sender: Any) {
@@ -90,18 +92,6 @@ class MainController: UIViewController {
         generatorImpact()
     }
     @IBAction func addAction(_ sender: Any) {
-        generatorImpact()
-    }
-    @IBAction func seeActionsToday(_ sender: Any) {
-        generatorImpact()
-    }
-    @IBAction func seeActionsTomorrow(_ sender: Any) {
-        generatorImpact()
-    }
-    @IBAction func seeActionsNexts(_ sender: Any) {
-        generatorImpact()
-    }
-    @IBAction func seeActionsAll(_ sender: Any) {
         generatorImpact()
     }
     // MARK: - NEXT

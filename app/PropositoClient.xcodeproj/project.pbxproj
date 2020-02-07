@@ -66,6 +66,7 @@
 		82F2E60F23EC513E0007678D /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E60E23EC513E0007678D /* UIAlert.swift */; };
 		82F2E61423EC5EDC0007678D /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E61323EC5EDC0007678D /* TutorialController.swift */; };
 		82F2E61623EC5EF60007678D /* TutorialPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F2E61523EC5EF60007678D /* TutorialPageController.swift */; };
+		82F4180123ED226C0099C3BA /* SwitcherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4180023ED226C0099C3BA /* SwitcherVC.swift */; };
 		82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */; };
 		82FE2E8E23E3BB4500C8EB96 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */; };
 		82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */; };
@@ -76,8 +77,6 @@
 		8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699400E22D40B8E00069F8F /* ActionDAO.swift */; };
 		8699401122D40BC900069F8F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401022D40BC900069F8F /* Action.swift */; };
 		8699401322D40C7600069F8F /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401222D40C7600069F8F /* ActionHandler.swift */; };
-		86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A9871A22D67D730014B71E /* AddPrayViewController.swift */; };
-		86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */; };
 		86B889A422CC34530097F0D7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B889A322CC34530097F0D7 /* logo.png */; };
 		86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */; };
 		86CC746422CFDCF200D5174E /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746322CFDCF200D5174E /* Prayer.swift */; };
@@ -87,7 +86,6 @@
 		86F426A822CAA5E80032AA5B /* PropositoClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86F426A622CAA5E80032AA5B /* PropositoClient.xcdatamodeld */; };
 		86F426AA22CAA5EA0032AA5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F426A922CAA5EA0032AA5B /* Assets.xcassets */; };
 		86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F426AB22CAA5EA0032AA5B /* LaunchScreen.storyboard */; };
-		86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F426B822CAA7410032AA5B /* MainViewController.swift */; };
 		86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F426BB22CAAAD50032AA5B /* Cell.xib */; };
 		86F426C422CAAD140032AA5B /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F426C322CAAD140032AA5B /* Cell.swift */; };
 		86F426C622CAAD220032AA5B /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F426C522CAAD220032AA5B /* CardModel.swift */; };
@@ -154,6 +152,7 @@
 		82F2E60E23EC513E0007678D /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
 		82F2E61323EC5EDC0007678D /* TutorialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		82F2E61523EC5EF60007678D /* TutorialPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageController.swift; sourceTree = "<group>"; };
+		82F4180023ED226C0099C3BA /* SwitcherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherVC.swift; sourceTree = "<group>"; };
 		82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderColor.swift; sourceTree = "<group>"; };
 		82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = PropositoClient/View/Designable/UITextField.swift; sourceTree = SOURCE_ROOT; };
 		82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReturn.swift; sourceTree = "<group>"; };
@@ -164,8 +163,6 @@
 		8699400E22D40B8E00069F8F /* ActionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDAO.swift; sourceTree = "<group>"; };
 		8699401022D40BC900069F8F /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		8699401222D40C7600069F8F /* ActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
-		86A9871A22D67D730014B71E /* AddPrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrayViewController.swift; sourceTree = "<group>"; };
-		86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionViewController.swift; sourceTree = "<group>"; };
 		86B889A322CC34530097F0D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDAO.swift; sourceTree = "<group>"; };
 		86CC746322CFDCF200D5174E /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
@@ -177,7 +174,6 @@
 		86F426A922CAA5EA0032AA5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86F426AC22CAA5EA0032AA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86F426AE22CAA5EA0032AA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86F426B822CAA7410032AA5B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		86F426BB22CAAAD50032AA5B /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		86F426C322CAAD140032AA5B /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		86F426C522CAAD220032AA5B /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
@@ -287,7 +283,6 @@
 		8246345823D90EE500AA58F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				86F426B822CAA7410032AA5B /* MainViewController.swift */,
 				827E4A7A23DB90C700C99BF0 /* MainController.swift */,
 			);
 			path = Main;
@@ -296,7 +291,6 @@
 		8246345923D90EF300AA58F6 /* Pray */ = {
 			isa = PBXGroup;
 			children = (
-				86A9871A22D67D730014B71E /* AddPrayViewController.swift */,
 				82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */,
 			);
 			path = Pray;
@@ -305,7 +299,6 @@
 		8246345A23D90EFB00AA58F6 /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				86B889A022CC2FD00097F0D7 /* AddActionViewController.swift */,
 				8207CC5423E49309003D8A06 /* ActionViewController.swift */,
 			);
 			path = Action;
@@ -370,6 +363,7 @@
 				8265181D23E575850035E91E /* EventManager.swift */,
 				827ADDBB23E56785004156CB /* DateUtils.swift */,
 				82CB9FD423EC61350062E350 /* CustomUIButton.swift */,
+				82F4180023ED226C0099C3BA /* SwitcherVC.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -790,7 +784,6 @@
 				820AE2BB23EA3CC000321834 /* FilterCell.swift in Sources */,
 				82F2E61623EC5EF60007678D /* TutorialPageController.swift in Sources */,
 				820E4B68234E0900002F64C4 /* Constants.swift in Sources */,
-				86A9871B22D67D730014B71E /* AddPrayViewController.swift in Sources */,
 				8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */,
 				82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */,
 				820AE2B523EA3C7700321834 /* FilterCellDataSource.swift in Sources */,
@@ -829,11 +822,10 @@
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,
 				820AE2AA23E826F000321834 /* ActionCell.swift in Sources */,
 				823922C623E5204400DA2255 /* ImageProfileCellDelegate.swift in Sources */,
-				86F426B922CAA7410032AA5B /* MainViewController.swift in Sources */,
+				82F4180123ED226C0099C3BA /* SwitcherVC.swift in Sources */,
 				8265182C23E611E50035E91E /* PrayerDetailViewModel.swift in Sources */,
 				86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */,
 				82F14C8923E5309E00D20107 /* RepeatCell.swift in Sources */,
-				86B889A122CC2FD00097F0D7 /* AddActionViewController.swift in Sources */,
 				827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */,
 				820AE29C23E8242200321834 /* ActionCellDelegate.swift in Sources */,
 				823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */,

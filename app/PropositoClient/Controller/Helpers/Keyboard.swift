@@ -34,14 +34,14 @@ class Keyboard {
     }
     @objc
     private func keyboardWillShow(sender: NSNotification) {
-//        viewController?.view.frame.origin.y = -(keyboardSizeUp)
+        viewController?.view.frame.origin.y = -(keyboardSizeUp)
     }
     @objc
     private func keyboardWillHide(sender: NSNotification) {
-//        viewController?.view.frame.origin.y = 0
+        viewController?.view.frame.origin.y = 0
     }
     @objc
     private func dismissKeyboard() {
-//        viewController?.view.endEditing(true)
+        viewController?.view.endEditing(true)
     }
 }

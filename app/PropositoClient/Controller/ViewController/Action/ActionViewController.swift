@@ -30,7 +30,6 @@ class ActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        // Do any additional setup after loading the view.
     }
     func setup() {
         setupName()
@@ -39,6 +38,7 @@ class ActionViewController: UIViewController {
         setupTime()
         setupCollectionRepeat()
         generatorImpact()
+        setupKeyboard()
     }
     func setupName() {
         name.tintColor = .primary
@@ -72,11 +72,6 @@ class ActionViewController: UIViewController {
         generator.impactOccurred()
     }
     // MARK: - Actions
-    func setupKeyboard() { //TODO - fix
-        let keyboard = Keyboard(viewController: self)
-        keyboard.hide()
-        keyboard.up()
-    }
     @IBAction func close(_ sender: Any? = nil) {
         generatorImpact()
         self.dismiss(animated: true, completion: nil)
@@ -133,5 +128,31 @@ class ActionViewController: UIViewController {
                 }
             }
         }
+    }
+    // MARK: - Keyboard
+    func setupKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    @objc
+    private func keyboardWillShow(sender: NSNotification) {
+        view.frame.origin.y = -150
+    }
+    @objc
+    private func keyboardWillHide(sender: NSNotification) {
+        view.frame.origin.y = 0
+    }
+    @objc
+    private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
