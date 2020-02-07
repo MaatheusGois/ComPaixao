@@ -30,7 +30,6 @@ class MainController: UIViewController {
         setupFilter()
         prayerIllustration()
         setupEvents()
-        setIcon()
         setupVC()
     }
     func setupVC() {
@@ -72,15 +71,7 @@ class MainController: UIViewController {
             self.actionCellDataSource.fetch(delegate: self.actionCellDelegate)
         }
     }
-    func setIcon() {
-        if #available(iOS 13.0, *) {
-            if self.traitCollection.userInterfaceStyle == .dark {
-               UIApplication.shared.setAlternateIconName("AppIcon-DarkMode")
-            } else {
-                UIApplication.shared.setAlternateIconName(nil)
-            }
-        }
-    }
+    
     func generatorImpact() {
         ImpactFeedback.shared.generateMedium()
     }

@@ -27,6 +27,8 @@ class ActionViewController: UIViewController {
     var repetition = false
     var dateTime = Date()
     var prayerSelected: String?
+    var action: Action!
+    var isUpdate = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -67,6 +69,20 @@ class ActionViewController: UIViewController {
         repeatCellDataSource.setup(collectionView: collectionViewRepeat)
         repeatCellDelegate.setup(collectionView: collectionViewRepeat, viewController: self)
     }
+//    func edit() {
+//        name.setText(text: ac.name)
+//        subject.setText(text: prayer.subject)
+//        imageSelected = prayer.image
+//        date.date = prayer.date
+//        time.date = prayer.date
+//        notificationSwitch.isOn = prayer.remember
+//        repeatSwitch.isOn = prayer.repetition
+//        setupEdition()
+//    }
+//    func setupEdition() {
+//        titleLabel.text = "Oração"
+//        subtitleLabel.text = "Atualizar"
+//    }
     func generatorImpact() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
@@ -135,7 +151,6 @@ class ActionViewController: UIViewController {
             target: self,
             action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
             name: UIResponder.keyboardWillShowNotification, object: nil)

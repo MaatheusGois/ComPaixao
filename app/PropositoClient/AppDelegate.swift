@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) { }
     func applicationDidBecomeActive(_ application: UIApplication) { }
     func applicationWillTerminate(_ application: UIApplication) { }
+    
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {

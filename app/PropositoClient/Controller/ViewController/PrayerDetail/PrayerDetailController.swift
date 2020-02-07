@@ -10,7 +10,6 @@ import UIKit
 
 class PrayerDetailController: UIViewController {
     var prayer: Prayer!
-    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var date: UILabel!
@@ -22,7 +21,6 @@ class PrayerDetailController: UIViewController {
     @IBOutlet weak var illustrationAction: UIImageView!
     var actionCellDelegate = ActionCellDelegate()
     var actionCellDataSource = ActionCellDataSource()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -68,6 +66,11 @@ class PrayerDetailController: UIViewController {
         EventManager.shared.listenTo(eventName: "reloadAction") {
             self.setupActions()
         }
+        EventManager.shared.listenTo(eventName: "reloadPrayer") { prayer in
+            guard let prayer = prayer as? Prayer else { return }
+            self.prayer = prayer
+            self.setup()
+        }
     }
     func generatorImpact() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
@@ -93,6 +96,7 @@ class PrayerDetailController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func edit(_ sender: Any? = nil) {
+        performSegue(withIdentifier: "toPrayerEdit", sender: nil)
     }
     @IBAction func deletePrayer(_ sender: Any? = nil) {
         generatorImpact()
@@ -118,12 +122,12 @@ class PrayerDetailController: UIViewController {
     }
     // MARK: - NEXT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       if let view = segue.destination as? ActionDetailController {
-            guard let action = sender as? Action else {
-                NSLog("Não esta chegando a Ação")
-                return
-            }
+        if let view = segue.destination as? ActionDetailController,
+            let action = sender as? Action {
             view.action = action
+        } else if let view = segue.destination as? PrayerViewController {
+            view.prayer = prayer
+            view.isUpdate = true
         }
     }
 }

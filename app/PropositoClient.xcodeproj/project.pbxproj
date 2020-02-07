@@ -56,6 +56,9 @@
 		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
 		82B3889623E54C7B00D9B2CE /* PickerPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889523E54C7B00D9B2CE /* PickerPersonDelegate.swift */; };
 		82B3889923E54CB800D9B2CE /* PickerPersonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889823E54CB800D9B2CE /* PickerPersonDataSource.swift */; };
+		82C8DD1223ED3B5B002DA2FE /* IconUltils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C8DD1123ED3B5B002DA2FE /* IconUltils.swift */; };
+		82C8DD1423ED3D90002DA2FE /* AppIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C8DD1323ED3D90002DA2FE /* AppIcon@3x.png */; };
+		82C8DD1623ED3D95002DA2FE /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C8DD1523ED3D95002DA2FE /* AppIcon@2x.png */; };
 		82CB9FD323EC60FA0062E350 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CB9FD223EC60FA0062E350 /* UIView.swift */; };
 		82CB9FD523EC61350062E350 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CB9FD423EC61350062E350 /* CustomUIButton.swift */; };
 		82ED19BF23E3A4B400C4337E /* PrayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */; };
@@ -69,7 +72,7 @@
 		82F4180123ED226C0099C3BA /* SwitcherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4180023ED226C0099C3BA /* SwitcherVC.swift */; };
 		82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */; };
 		82FE2E8E23E3BB4500C8EB96 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */; };
-		82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */; };
+		82FE2E9123E3C0D400C8EB96 /* TextFieldWithReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE2E9023E3C0D400C8EB96 /* TextFieldWithReturn.swift */; };
 		8611756522D4361800DACA7A /* Centrale Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756322D4361800DACA7A /* Centrale Sans Regular.otf */; };
 		8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8611756422D4361800DACA7A /* Centrale Sans Bold.otf */; };
 		8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628F5C922CFD65800844544 /* CoreDataManager.swift */; };
@@ -142,6 +145,9 @@
 		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		82B3889523E54C7B00D9B2CE /* PickerPersonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPersonDelegate.swift; sourceTree = "<group>"; };
 		82B3889823E54CB800D9B2CE /* PickerPersonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPersonDataSource.swift; sourceTree = "<group>"; };
+		82C8DD1123ED3B5B002DA2FE /* IconUltils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconUltils.swift; sourceTree = "<group>"; };
+		82C8DD1323ED3D90002DA2FE /* AppIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@3x.png"; sourceTree = "<group>"; };
+		82C8DD1523ED3D95002DA2FE /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
 		82CB9FD223EC60FA0062E350 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = PropositoClient/Controller/ViewController/Main/UIView.swift; sourceTree = SOURCE_ROOT; };
 		82CB9FD423EC61350062E350 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		82ED19BE23E3A4B400C4337E /* PrayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +161,7 @@
 		82F4180023ED226C0099C3BA /* SwitcherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherVC.swift; sourceTree = "<group>"; };
 		82FE2E8B23E3B6D400C8EB96 /* PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderColor.swift; sourceTree = "<group>"; };
 		82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = PropositoClient/View/Designable/UITextField.swift; sourceTree = SOURCE_ROOT; };
-		82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReturn.swift; sourceTree = "<group>"; };
+		82FE2E9023E3C0D400C8EB96 /* TextFieldWithReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithReturn.swift; sourceTree = "<group>"; };
 		8611756322D4361800DACA7A /* Centrale Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Regular.otf"; sourceTree = "<group>"; };
 		8611756422D4361800DACA7A /* Centrale Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Centrale Sans Bold.otf"; sourceTree = "<group>"; };
 		8628F5C922CFD65800844544 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -267,6 +273,8 @@
 				820AE29823E762A600321834 /* Global.swift */,
 				827ADDB923E55C49004156CB /* UserDefaults.swift */,
 				82F2E60E23EC513E0007678D /* UIAlert.swift */,
+				82C8DD1123ED3B5B002DA2FE /* IconUltils.swift */,
+				82F4180023ED226C0099C3BA /* SwitcherVC.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -357,13 +365,12 @@
 		827ADDB823E55C35004156CB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				82FE2E9023E3C0D400C8EB96 /* KeyboardReturn.swift */,
+				82FE2E9023E3C0D400C8EB96 /* TextFieldWithReturn.swift */,
 				823922BC23E4A6CB00DA2255 /* Keyboard.swift */,
 				828A749E23E758430002424B /* ImpactFeedback.swift */,
 				8265181D23E575850035E91E /* EventManager.swift */,
 				827ADDBB23E56785004156CB /* DateUtils.swift */,
 				82CB9FD423EC61350062E350 /* CustomUIButton.swift */,
-				82F4180023ED226C0099C3BA /* SwitcherVC.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -371,6 +378,8 @@
 		827C564923ECA84F00398190 /* AppIcon */ = {
 			isa = PBXGroup;
 			children = (
+				82C8DD1323ED3D90002DA2FE /* AppIcon@3x.png */,
+				82C8DD1523ED3D95002DA2FE /* AppIcon@2x.png */,
 				827C564C23ECA8B700398190 /* AppIcon-DarkMode@3x.png */,
 				827C564A23ECA8B100398190 /* AppIcon-DarkMode@2x.png */,
 			);
@@ -732,8 +741,10 @@
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
 				86B889A422CC34530097F0D7 /* logo.png in Resources */,
 				820AE2BC23EA3CC000321834 /* FilterCell.xib in Resources */,
+				82C8DD1423ED3D90002DA2FE /* AppIcon@3x.png in Resources */,
 				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
 				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
+				82C8DD1623ED3D95002DA2FE /* AppIcon@2x.png in Resources */,
 				827C564B23ECA8B100398190 /* AppIcon-DarkMode@2x.png in Resources */,
 				86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */,
 				827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */,
@@ -816,9 +827,10 @@
 				82F2E61423EC5EDC0007678D /* TutorialController.swift in Sources */,
 				86F426A022CAA5E80032AA5B /* AppDelegate.swift in Sources */,
 				8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */,
-				82FE2E9123E3C0D400C8EB96 /* KeyboardReturn.swift in Sources */,
+				82FE2E9123E3C0D400C8EB96 /* TextFieldWithReturn.swift in Sources */,
 				86F426C822CAAD4D0032AA5B /* ViewModel.swift in Sources */,
 				823922C823E5205F00DA2255 /* ImageProfileCellDataSource.swift in Sources */,
+				82C8DD1223ED3B5B002DA2FE /* IconUltils.swift in Sources */,
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,
 				820AE2AA23E826F000321834 /* ActionCell.swift in Sources */,
 				823922C623E5204400DA2255 /* ImageProfileCellDelegate.swift in Sources */,

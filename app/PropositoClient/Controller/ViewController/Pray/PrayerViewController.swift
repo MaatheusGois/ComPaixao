@@ -9,12 +9,15 @@
 import UIKit
 
 class PrayerViewController: UIViewController {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var lineName: UIImageView!
     @IBOutlet weak var time: UIDatePicker!
     @IBOutlet weak var name: TextFieldWithReturn!
     @IBOutlet weak var subject: TextFieldWithReturn!
     @IBOutlet weak var repeatNotificationsView: UIStackView!
+    @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var repeatSwitch: UISwitch!
     @IBOutlet weak var collectionView: UICollectionView!
     var imageProfileCellDelegate = ImageProfileCellDelegate()
@@ -22,13 +25,14 @@ class PrayerViewController: UIViewController {
     @IBOutlet weak var collectionViewRepeat: UICollectionView!
     var repeatCellDelegate = RepeatCellDelegate()
     var repeatCellDataSource = RepeatCellDataSource()
-    
     var imageSelected = ""
     var repeatSelected = ""
     var remember = false
     var repetition = false
     var dateTime = Date()
-    
+    var prayer: Prayer!
+    var isUpdate = false
+    var tap: UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,6 +46,7 @@ class PrayerViewController: UIViewController {
         setupTime()
         setupCollectionRepeat()
         setupKeyboard()
+        if isUpdate { edit() }
     }
     func setupName() {
         name.tintColor = .primary
@@ -74,6 +79,21 @@ class PrayerViewController: UIViewController {
         time.subviews[0].subviews[1].alpha = 0.2
         time.subviews[0].subviews[2].alpha = 0.2
     }
+    func edit() {
+        name.setText(text: prayer.name)
+        subject.setText(text: prayer.subject)
+        imageSelected = prayer.image
+        date.date = prayer.date
+        time.date = prayer.date
+        notificationSwitch.isOn = prayer.remember
+        repeatSwitch.isOn = prayer.repetition
+        repeatSelected = prayer.whenRepeat ?? repeatCellDataSource.options[0]
+        setupEdition()
+    }
+    func setupEdition() {
+        titleLabel.text = "Oração"
+        subtitleLabel.text = "Atualizar"
+    }
     func generatorImpact() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
@@ -104,7 +124,7 @@ class PrayerViewController: UIViewController {
     }
     @IBAction func add(_ sender: Any) {
         generatorImpact()
-        let prayer = Prayer(uuid: UUID().uuidString,
+        let prayer = Prayer(uuid: isUpdate ? self.prayer.uuid : UUID().uuidString,
                             name: name.text ?? "",
                             subject: subject.text ?? "",
                             image: imageSelected,
@@ -114,7 +134,10 @@ class PrayerViewController: UIViewController {
                             repetition: repetition,
                             whenRepeat: repetition ? repeatSelected : "",
                             answered: false,
-                            actions: [])
+                            actions: isUpdate ? self.prayer.actions : [])
+        if isUpdate { update(prayer: prayer) } else { create(prayer: prayer) }
+    }
+    func create(prayer: Prayer) {
         PrayerHandler.create(pray: prayer) { (response) in
             switch response {
             case .error(let description):
@@ -125,13 +148,20 @@ class PrayerViewController: UIViewController {
             }
         }
     }
+    func update(prayer: Prayer) {
+        PrayerHandler.update(pray: prayer) { (response) in
+            switch response {
+            case .error(let description):
+                NSLog(description)
+            case .success(let prayer):
+                EventManager.shared.trigger(eventName: "reloadPrayer", information: prayer)
+                self.close()
+            }
+        }
+    }
     // MARK: - Keyboard
     func setupKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
+        tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
             name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -142,10 +172,12 @@ class PrayerViewController: UIViewController {
     @objc
     private func keyboardWillShow(sender: NSNotification) {
         view.frame.origin.y = -150
+        view.addGestureRecognizer(tap)
     }
     @objc
     private func keyboardWillHide(sender: NSNotification) {
         view.frame.origin.y = 0
+        view.removeGestureRecognizer(tap)
     }
     @objc
     private func dismissKeyboard() {

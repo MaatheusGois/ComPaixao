@@ -13,9 +13,11 @@ class TextFieldWithReturn: UITextField, UITextFieldDelegate {
         super.init(coder: aDecoder)
         self.delegate = self
     }
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    func setText(text: String) {
+        self.text = text
     }
 }

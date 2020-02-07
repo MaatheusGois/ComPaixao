@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Switcher {
+struct Switcher {
     static func updateRootVC() {
         var rootVC: UIViewController?
         if FirstTime.isOn {
@@ -18,6 +18,7 @@ class Switcher {
             rootVC = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "tutorial") as? TutorialViewController
         }
+        IconUltils.setBy(viewController: rootVC)
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.window?.rootViewController = rootVC
     }

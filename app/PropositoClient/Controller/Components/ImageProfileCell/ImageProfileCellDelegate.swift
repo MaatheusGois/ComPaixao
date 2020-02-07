@@ -13,7 +13,6 @@ class ImageProfileCellDelegate: NSObject, UICollectionViewDelegate, UICollection
     var images = ["person_01", "person_02", "person_03", "person_04", "person_05", "person_06"]
     weak var viewController: UIViewController?
     weak var collectionView: UICollectionView?
-    
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         collectionView.delegate = self
         self.viewController = viewController
@@ -27,7 +26,8 @@ class ImageProfileCellDelegate: NSObject, UICollectionViewDelegate, UICollection
         let width: Double = 60 //Double(collectionView.frame.width) * 0.42666666666
         return CGSize(width: width, height: height)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, 
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout, 
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets (top: 0, left: 20, bottom: 0, right: 20)
     }
