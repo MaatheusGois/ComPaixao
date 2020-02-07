@@ -112,7 +112,7 @@ class PrayerHandler {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
     }
-    static private func saveLocally(_ prayers: [Prayer]) {
+    static private func saveLocally(_ prayers: Prayers) {
         for pray in prayers {
             do {
                 try PrayerDAO.shared.create(newEntity: pray)

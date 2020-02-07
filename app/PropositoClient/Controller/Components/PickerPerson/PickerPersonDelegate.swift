@@ -11,7 +11,6 @@ import UIKit
 class PickerPersonDelegate: NSObject, UIPickerViewDelegate {
     var prayers: Prayers?
     weak var viewController: UIViewController?
-    
     func config(pickerPerson: UIPickerView, viewController: UIViewController) {
         pickerPerson.delegate = self
         self.viewController = viewController

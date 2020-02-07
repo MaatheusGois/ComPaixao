@@ -9,7 +9,7 @@
 import Foundation
 
 enum ActionLoadResponse: Error {
-    case success(acts: [Action])
+    case success(acts: Actions)
     case error(description: String)
 }
 
@@ -66,7 +66,7 @@ class ActionHandler {
             completion(ActionUpdateResponse.error(description: error.localizedDescription))
         }
     }
-    static private func saveLocally(_ acts: [Action]) {
+    static private func saveLocally(_ acts: Actions) {
         for act in acts {
             do {
                 try ActionDAO.shared.create(newEntity: act)

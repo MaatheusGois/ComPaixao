@@ -13,31 +13,24 @@ class ImpactFeedback {
     static let shared = ImpactFeedback()
     
     func generateHeavy() {
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
-        generator.impactOccurred()
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
     }
     func generateMedium() {
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
     func generateLight() {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
     func generateError() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
+        UINotificationFeedbackGenerator().notificationOccurred(.error)
     }
     func generateSuccess() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
     func generateWarning() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.warning)
+        UINotificationFeedbackGenerator().notificationOccurred(.warning)
     }
     func generateSelectionChanged() {
-        let generator = UISelectionFeedbackGenerator()
-        generator.selectionChanged()
+        UISelectionFeedbackGenerator().selectionChanged()
     }
 }
