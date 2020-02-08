@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207CC5423E49309003D8A06 /* ActionViewController.swift */; };
+		820925C223EE440500CFF991 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820925C123EE440500CFF991 /* NotificationCenter.swift */; };
+		820925C423EE464500CFF991 /* logo_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 820925C323EE464500CFF991 /* logo_dark.png */; };
+		820925C623EE465300CFF991 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 820925C523EE465200CFF991 /* logo.png */; };
 		820AE29923E762A600321834 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE29823E762A600321834 /* Global.swift */; };
 		820AE29C23E8242200321834 /* ActionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE29B23E8242200321834 /* ActionCellDelegate.swift */; };
 		820AE29E23E8242D00321834 /* ActionCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE29D23E8242D00321834 /* ActionCellDataSource.swift */; };
@@ -80,7 +83,6 @@
 		8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699400E22D40B8E00069F8F /* ActionDAO.swift */; };
 		8699401122D40BC900069F8F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401022D40BC900069F8F /* Action.swift */; };
 		8699401322D40C7600069F8F /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699401222D40C7600069F8F /* ActionHandler.swift */; };
-		86B889A422CC34530097F0D7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B889A322CC34530097F0D7 /* logo.png */; };
 		86CC745D22CFDB4F00D5174E /* PrayerDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */; };
 		86CC746422CFDCF200D5174E /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746322CFDCF200D5174E /* Prayer.swift */; };
 		86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC746522CFDD0D00D5174E /* PrayerHandler.swift */; };
@@ -97,6 +99,9 @@
 
 /* Begin PBXFileReference section */
 		8207CC5423E49309003D8A06 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		820925C123EE440500CFF991 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		820925C323EE464500CFF991 /* logo_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dark.png; sourceTree = "<group>"; };
+		820925C523EE465200CFF991 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		820AE29823E762A600321834 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		820AE29B23E8242200321834 /* ActionCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellDelegate.swift; sourceTree = "<group>"; };
 		820AE29D23E8242D00321834 /* ActionCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCellDataSource.swift; sourceTree = "<group>"; };
@@ -169,7 +174,6 @@
 		8699400E22D40B8E00069F8F /* ActionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDAO.swift; sourceTree = "<group>"; };
 		8699401022D40BC900069F8F /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		8699401222D40C7600069F8F /* ActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
-		86B889A322CC34530097F0D7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDAO.swift; sourceTree = "<group>"; };
 		86CC746322CFDCF200D5174E /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
 		86CC746522CFDD0D00D5174E /* PrayerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerHandler.swift; sourceTree = "<group>"; };
@@ -197,6 +201,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		820925C723EE465800CFF991 /* logo */ = {
+			isa = PBXGroup;
+			children = (
+				820925C523EE465200CFF991 /* logo.png */,
+				820925C323EE464500CFF991 /* logo_dark.png */,
+			);
+			path = logo;
+			sourceTree = "<group>";
+		};
 		820AE29A23E823F400321834 /* ActionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +384,7 @@
 				8265181D23E575850035E91E /* EventManager.swift */,
 				827ADDBB23E56785004156CB /* DateUtils.swift */,
 				82CB9FD423EC61350062E350 /* CustomUIButton.swift */,
+				820925C123EE440500CFF991 /* NotificationCenter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -399,7 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				827C564923ECA84F00398190 /* AppIcon */,
-				86B889A322CC34530097F0D7 /* logo.png */,
+				820925C723EE465800CFF991 /* logo */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -612,6 +626,8 @@
 			isa = PBXGroup;
 			children = (
 				86F4269F22CAA5E80032AA5B /* AppDelegate.swift */,
+				827ADDB823E55C35004156CB /* Helpers */,
+				823922C323E5201300DA2255 /* Utils */,
 				8652531522E16B44009654B8 /* Extension */,
 				827EB46423DD187300F8C3E1 /* ViewModel */,
 				86F426B422CAA6730032AA5B /* Model */,
@@ -649,8 +665,6 @@
 			isa = PBXGroup;
 			children = (
 				827EB45923DD098800F8C3E1 /* Components */,
-				827ADDB823E55C35004156CB /* Helpers */,
-				823922C323E5201300DA2255 /* Utils */,
 				82F2E61223EC5EB40007678D /* ViewController */,
 			);
 			path = Controller;
@@ -739,13 +753,14 @@
 				8611756622D4361800DACA7A /* Centrale Sans Bold.otf in Resources */,
 				820AE2AB23E826F000321834 /* ActionCell.xib in Resources */,
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
-				86B889A422CC34530097F0D7 /* logo.png in Resources */,
 				820AE2BC23EA3CC000321834 /* FilterCell.xib in Resources */,
 				82C8DD1423ED3D90002DA2FE /* AppIcon@3x.png in Resources */,
+				820925C423EE464500CFF991 /* logo_dark.png in Resources */,
 				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
 				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
 				82C8DD1623ED3D95002DA2FE /* AppIcon@2x.png in Resources */,
 				827C564B23ECA8B100398190 /* AppIcon-DarkMode@2x.png in Resources */,
+				820925C623EE465300CFF991 /* logo.png in Resources */,
 				86F426AD22CAA5EA0032AA5B /* LaunchScreen.storyboard in Resources */,
 				827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */,
 				823922C223E51F5B00DA2255 /* ImageProfileCell.xib in Resources */,
@@ -829,6 +844,7 @@
 				8628F5CA22CFD65800844544 /* CoreDataManager.swift in Sources */,
 				82FE2E9123E3C0D400C8EB96 /* TextFieldWithReturn.swift in Sources */,
 				86F426C822CAAD4D0032AA5B /* ViewModel.swift in Sources */,
+				820925C223EE440500CFF991 /* NotificationCenter.swift in Sources */,
 				823922C823E5205F00DA2255 /* ImageProfileCellDataSource.swift in Sources */,
 				82C8DD1223ED3B5B002DA2FE /* IconUltils.swift in Sources */,
 				827E4A7923DB8A6D00C99BF0 /* Gradient.swift in Sources */,

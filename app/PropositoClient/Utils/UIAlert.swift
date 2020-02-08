@@ -10,10 +10,10 @@ import UIKit
 
 struct UIAlert {
     static func show(controller: UIViewController,
-                                      title: String,
-                                      message: String,
-                                      alertAction1: String,
-                                      withComplete complete: @escaping (Bool) -> Void) {
+                     title: String,
+                     message: String,
+                     alertAction1: String,
+                     withComplete complete: @escaping (Bool) -> Void) {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .actionSheet)

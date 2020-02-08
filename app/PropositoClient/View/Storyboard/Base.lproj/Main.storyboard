@@ -412,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcV-yn-kca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="262"/>
+            <point key="canvasLocation" x="1781" y="258"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="fsp-87-vSP">
@@ -1265,7 +1265,7 @@
                     <state key="normal" image="back_button"/>
                 </button>
             </objects>
-            <point key="canvasLocation" x="-465" y="1275"/>
+            <point key="canvasLocation" x="512" y="2251"/>
         </scene>
         <!--Action View Controller-->
         <scene sceneID="64y-DI-hg4">
@@ -1778,7 +1778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwH-Mc-0Tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394" y="1275"/>
+            <point key="canvasLocation" x="3603" y="1275"/>
         </scene>
         <!--Prayer Detail Controller-->
         <scene sceneID="Vo6-vI-TCN">
@@ -2596,7 +2596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcc-ec-yju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1984" y="1275"/>
+            <point key="canvasLocation" x="2406" y="1275"/>
         </scene>
         <!--All Prayers Controller-->
         <scene sceneID="12s-cj-TNK">
@@ -2607,7 +2607,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Lkq-qw-Mj8">
-                                <rect key="frame" x="0.0" y="-38" width="414" height="884"/>
+                                <rect key="frame" x="0.0" y="-38" width="414" height="884.00000000000182"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="250" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWg-Ep-Sr5">
                                 <rect key="frame" x="0.0" y="-60" width="414" height="908"/>
@@ -2627,16 +2627,16 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ET1-yg-mJP">
-                                                <rect key="frame" x="20" y="171" width="111.5" height="80"/>
+                                                <rect key="frame" x="20" y="171" width="117.5" height="68"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-CY-eE9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="34"/>
                                                         <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="34"/>
                                                         <color key="textColor" name="primary"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oração" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="607-5J-BJh">
-                                                        <rect key="frame" x="0.0" y="40" width="111.5" height="40"/>
+                                                        <rect key="frame" x="0.0" y="34" width="117.5" height="34"/>
                                                         <fontDescription key="fontDescription" name="CentraleSans-XThin" family="Centrale Sans XThin" pointSize="34"/>
                                                         <color key="textColor" name="primary"/>
                                                         <nil key="highlightedColor"/>
@@ -2647,7 +2647,7 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ilustration_allprayers" translatesAutoresizingMaskIntoConstraints="NO" id="p72-zX-Cex">
-                                                <rect key="frame" x="237" y="46" width="170" height="222"/>
+                                                <rect key="frame" x="237" y="46" width="170.00000000000045" height="222"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="222" id="F5a-In-rqg"/>
                                                     <constraint firstAttribute="width" constant="170" id="PYk-Ir-TwO"/>
@@ -2772,7 +2772,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0om-zS-VtW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704" y="1275"/>
+            <point key="canvasLocation" x="-465.21739130434787" y="1275"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="Wph-jd-hlM">
@@ -2909,13 +2909,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="pYP-7X-W82">
-                                <rect key="frame" x="0.0" y="-40" width="414" height="986"/>
+                                <rect key="frame" x="0.0" y="-443" width="4140" height="9856.0000000000018"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COw-PK-GsK" userLabel="image">
-                                <rect key="frame" x="20" y="249" width="374" height="227"/>
+                                <rect key="frame" x="200" y="2453" width="3740" height="2270"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person_ilustration_01" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-gv-Wwb">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="227"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="3740" height="2270"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2929,10 +2929,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDc-SS-fhc" userLabel="title">
-                                <rect key="frame" x="0.0" y="540" width="414" height="26"/>
+                                <rect key="frame" x="0.0" y="4787" width="4140" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ComPaixão?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLJ-Zs-COq">
-                                        <rect key="frame" x="144" y="0.0" width="126.5" height="26"/>
+                                        <rect key="frame" x="2006" y="0.0" width="128" height="22"/>
                                         <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="22"/>
                                         <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
@@ -2947,10 +2947,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2T-Mf-b7D" userLabel="text">
-                                <rect key="frame" x="0.0" y="598" width="414" height="59.5"/>
+                                <rect key="frame" x="0.0" y="4841" width="4140" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compaixão é um diário das suas orações, com lembretes para ajudar no habito de se relacionar com Deus." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQG-kQ-9tr">
-                                        <rect key="frame" x="21" y="0.0" width="363" height="59.5"/>
+                                        <rect key="frame" x="3260" y="0.0" width="850" height="17"/>
                                         <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="17"/>
                                         <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
@@ -3215,8 +3215,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="k2g-29-Wwb"/>
-        <segue reference="qQH-dB-cg5"/>
+        <segue reference="r69-wV-9O8"/>
         <segue reference="co5-fw-9kb"/>
-        <segue reference="xUM-p4-WIT"/>
+        <segue reference="fHp-dS-3eJ"/>
     </inferredMetricsTieBreakers>
 </document>

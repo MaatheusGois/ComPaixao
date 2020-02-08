@@ -18,7 +18,7 @@ struct Switcher {
             rootVC = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "tutorial") as? TutorialViewController
         }
-        IconUltils.setBy(viewController: rootVC)
+        AppIcon.change()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.window?.rootViewController = rootVC
     }

@@ -68,6 +68,7 @@ class PrayerViewController: UIViewController {
         repeatCellDelegate.setup(collectionView: collectionViewRepeat, viewController: self)
     }
     func setupDate() {
+        date.minimumDate = Date()
         date.subviews[0].subviews[1].backgroundColor = .primary
         date.subviews[0].subviews[2].backgroundColor = .primary
         date.subviews[0].subviews[1].alpha = 0.2

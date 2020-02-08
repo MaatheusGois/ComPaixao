@@ -20,11 +20,11 @@ class ActionDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupEvents()
         // Do any additional setup after loading the view.
     }
     func setup() {
         loadData()
-        setupEvents()
     }
     func setupEvents() {
         EventManager.shared.listenTo(eventName: "reloadAction") { action in

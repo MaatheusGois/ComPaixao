@@ -24,12 +24,12 @@ class PrayerDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupEvents()
     }
     func setup() {
         loadData()
         setupAction()
         setupActions()
-        setupEvents()
     }
     func setupAction() {
         actionCellDelegate.setup(collectionView: collectionView, viewController: self)

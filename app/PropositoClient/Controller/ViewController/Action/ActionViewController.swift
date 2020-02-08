@@ -59,6 +59,7 @@ class ActionViewController: UIViewController {
         pickerPersonDataSource.fetch(delegate: pickerPersonDelegate)
     }
     func setupDate() {
+        date.minimumDate = Date()
         date.subviews[0].subviews[1].backgroundColor = .primary
         date.subviews[0].subviews[2].backgroundColor = .primary
         date.subviews[0].subviews[1].alpha = 0.2
