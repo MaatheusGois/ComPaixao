@@ -9,9 +9,9 @@
 import UIKit
 
 class RepeatCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    
     var options = ["diariamente", "semanalmente", "mensalmente", "anualmente"]
-
+    var selected = 0
     weak var viewController: UIViewController?
     weak var collectionView: UICollectionView?
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
@@ -34,17 +34,17 @@ class RepeatCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         generatorImpact()
-        if indexPath.row != 0 {
-            if let view = viewController as? PrayerViewController {
-                if let cell = view.repeatCellDataSource.firstCell {
-                    cell.isSelected = false
-                    view.repeatSelected = options[indexPath.row]
-                }
-            } else if let view = viewController as? ActionViewController {
-                if let cell = view.repeatCellDataSource.firstCell {
-                    cell.isSelected = false
-                    view.repeatSelected = options[indexPath.row]
-                }
+        if let view = viewController as? PrayerViewController {
+            if let cell = view.repeatCellDataSource.firstCell,
+                indexPath.row != view.repeatCellDataSource.selected {
+                cell.isSelected = false
+                view.repeatSelected = options[indexPath.row]
+            }
+        } else if let view = viewController as? ActionViewController,
+            indexPath.row != view.repeatCellDataSource.selected {
+            if let cell = view.repeatCellDataSource.firstCell {
+                cell.isSelected = false
+                view.repeatSelected = options[indexPath.row]
             }
         }
     }

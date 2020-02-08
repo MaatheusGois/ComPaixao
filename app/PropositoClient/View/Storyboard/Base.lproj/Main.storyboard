@@ -765,7 +765,7 @@
             <objects>
                 <viewController id="ZJi-k4-qex" customClass="PrayerViewController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J2M-cB-Qmq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gfG-Yh-hv5">
@@ -1246,10 +1246,13 @@
                         <outlet property="date" destination="feA-aa-4O1" id="qDM-f9-vkt"/>
                         <outlet property="lineName" destination="bwU-FC-Lkn" id="gLz-Vm-nDe"/>
                         <outlet property="name" destination="aKV-xD-NJX" id="ZQB-pE-qTr"/>
+                        <outlet property="notificationSwitch" destination="VMO-1G-fHh" id="4Vu-b1-IzM"/>
                         <outlet property="repeatNotificationsView" destination="MCM-GM-pED" id="eRJ-JM-MnD"/>
                         <outlet property="repeatSwitch" destination="sJ7-WG-9Xk" id="06f-g4-ULG"/>
                         <outlet property="subject" destination="oba-XI-uEB" id="2be-Ut-log"/>
+                        <outlet property="subtitleLabel" destination="l0x-q0-0lp" id="g2W-3V-c3d"/>
                         <outlet property="time" destination="Moo-lZ-m0A" id="kJX-qG-L1n"/>
+                        <outlet property="titleLabel" destination="HWX-oD-X6s" id="Irh-4i-enw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9x-AK-FEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1269,7 +1272,7 @@
             <objects>
                 <viewController id="N09-Ep-maN" customClass="ActionViewController" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mid-1w-2Cv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-NO-YUB">
@@ -2200,6 +2203,7 @@
                         <outlet property="repetition" destination="HAT-fE-uir" id="cDy-LL-b7P"/>
                         <outlet property="subject" destination="B8r-gL-PuM" id="Skz-VK-gi0"/>
                         <segue destination="QVc-bZ-zbp" kind="presentation" identifier="toActionDetail" id="Awg-qD-HYq"/>
+                        <segue destination="ZJi-k4-qex" kind="presentation" identifier="toPrayerEdit" id="Gg9-gA-nAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TzB-1q-Ydy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3198,9 +3202,6 @@
         <namedColor name="default_02">
             <color red="0.94900000095367432" green="0.93699997663497925" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="default_02">
-            <color red="0.94900000095367432" green="0.93699997663497925" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="primary">
             <color red="0.14499999582767487" green="0.17599999904632568" blue="0.31799998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -3209,8 +3210,8 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k2g-29-Wwb"/>
-        <segue reference="qQH-dB-cg5"/>
-        <segue reference="xUM-p4-WIT"/>
+        <segue reference="Awg-qD-HYq"/>
+        <segue reference="r69-wV-9O8"/>
+        <segue reference="fHp-dS-3eJ"/>
     </inferredMetricsTieBreakers>
 </document>

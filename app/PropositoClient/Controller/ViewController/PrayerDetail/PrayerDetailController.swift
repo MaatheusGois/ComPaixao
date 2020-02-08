@@ -96,6 +96,7 @@ class PrayerDetailController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func edit(_ sender: Any? = nil) {
+        generatorImpact()
         performSegue(withIdentifier: "toPrayerEdit", sender: nil)
     }
     @IBAction func deletePrayer(_ sender: Any? = nil) {

@@ -14,3 +14,12 @@ extension Int {
         return Int.random(in: 0..<100000000)
     }
 }
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}

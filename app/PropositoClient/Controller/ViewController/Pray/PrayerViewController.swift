@@ -27,7 +27,7 @@ class PrayerViewController: UIViewController {
     var repeatCellDataSource = RepeatCellDataSource()
     var imageSelected = ""
     var repeatSelected = ""
-    var remember = false
+    var notification = false
     var repetition = false
     var dateTime = Date()
     var prayer: Prayer!
@@ -79,18 +79,39 @@ class PrayerViewController: UIViewController {
         time.subviews[0].subviews[1].alpha = 0.2
         time.subviews[0].subviews[2].alpha = 0.2
     }
+    // MARK: - Update Prayer
     func edit() {
         name.setText(text: prayer.name)
         subject.setText(text: prayer.subject)
-        imageSelected = prayer.image
         date.date = prayer.date
         time.date = prayer.date
-        notificationSwitch.isOn = prayer.remember
-        repeatSwitch.isOn = prayer.repetition
-        repeatSelected = prayer.whenRepeat ?? repeatCellDataSource.options[0]
-        setupEdition()
+        setupNotification()
+        setupLayout()
+        setupEditImage()
+        setupEditRepeat()
     }
-    func setupEdition() {
+    func setupNotification() {
+        notification = prayer.notification
+        repetition = prayer.repetition
+        notificationSwitch.isOn = prayer.notification
+        repeatNotificationsView.isHidden = !prayer.notification
+        collectionViewRepeat.isHidden = !prayer.repetition
+        repeatSwitch.isOn = prayer.repetition
+    }
+    func setupEditImage() {
+        if let index: Int = imageProfileCellDataSource.images.firstIndex(of: prayer.image) {
+            imageProfileCellDataSource.selectedCell(selected: index)
+        }
+        imageSelected = prayer.image
+    }
+    func setupEditRepeat() {
+        let selected = prayer.whenRepeat ?? repeatCellDataSource.options[0]
+        if let index: Int = repeatCellDataSource.options.firstIndex(of: selected) {
+            repeatCellDataSource.selectedCell(selected: index)
+        }
+        repeatSelected = selected
+    }
+    func setupLayout() {
         titleLabel.text = "Oração"
         subtitleLabel.text = "Atualizar"
     }
@@ -110,7 +131,7 @@ class PrayerViewController: UIViewController {
         dateTime = sender.date
     }
     @IBAction func notificationChanged(_ sender: UISwitch) {
-        remember = sender.isOn
+        notification = sender.isOn
         repeatNotificationsView.isHidden = !sender.isOn
         if !collectionViewRepeat.isHidden {
             collectionViewRepeat.isHidden = !sender.isOn
@@ -130,7 +151,7 @@ class PrayerViewController: UIViewController {
                             image: imageSelected,
                             date: dateTime,
                             time: DateUltils.shared.getTime(date: dateTime),
-                            remember: remember,
+                            notification: notification,
                             repetition: repetition,
                             whenRepeat: repetition ? repeatSelected : "",
                             answered: false,

@@ -28,7 +28,7 @@ class PrayerDAO: GenericDAO {
         pray.image      = newEntity.image
         pray.date       = newEntity.date
         pray.time       = newEntity.time
-        pray.remember   = newEntity.remember
+        pray.remember   = newEntity.notification
         pray.repetition = newEntity.repetition
         pray.whenRepeat = newEntity.whenRepeat
         pray.answered   = newEntity.answered
@@ -56,7 +56,7 @@ class PrayerDAO: GenericDAO {
                         image: data.image ?? "",
                         date: data.date ?? Date(),
                         time: data.time ?? "",
-                        remember: data.remember ,
+                        notification: data.remember ,
                         repetition: data.repetition ,
                         whenRepeat: data.whenRepeat,
                         answered: data.answered ,
@@ -118,7 +118,7 @@ class PrayerDAO: GenericDAO {
                               image: image,
                               date: date,
                               time: time,
-                              remember: remember,
+                              notification: remember,
                               repetition: repetition,
                               whenRepeat: whenRepeat,
                               answered: answered,
@@ -145,7 +145,7 @@ class PrayerDAO: GenericDAO {
                 pray.setValue(entity.image, forKeyPath: "image")
                 pray.setValue(entity.date, forKeyPath: "date")
                 pray.setValue(entity.time, forKeyPath: "time")
-                pray.setValue(entity.remember, forKeyPath: "remember")
+                pray.setValue(entity.notification, forKeyPath: "remember")
                 pray.setValue(entity.repetition, forKeyPath: "repetition")
                 pray.setValue(entity.whenRepeat, forKeyPath: "whenRepeat")
                 pray.setValue(entity.answered, forKeyPath: "answered")

@@ -12,11 +12,19 @@ class RepeatCellDataSource: NSObject, UICollectionViewDataSource {
     var options = ["diariamente", "semanalmente", "mensalmente", "anualmente"]
     weak var collectionView: UICollectionView?
     var firstCell: RepeatCell?
+    var selected = 0
     func setup(collectionView: UICollectionView) {
         self.collectionView = collectionView
         collectionView.dataSource = self
+        register()
+    }
+    func register() {
         let cell = UINib(nibName: "RepeatCell", bundle: nil)
-        collectionView.register(cell, forCellWithReuseIdentifier: "RepeatCell")
+        collectionView?.register(cell, forCellWithReuseIdentifier: "RepeatCell")
+    }
+    func selectedCell(selected: Int) {
+        self.selected = selected
+        collectionView?.reloadData()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return options.count
@@ -27,7 +35,7 @@ class RepeatCellDataSource: NSObject, UICollectionViewDataSource {
             withReuseIdentifier: "RepeatCell",
             for: indexPath
         ) as? RepeatCell {
-            if indexPath.row == 0 {
+            if indexPath.row == selected {
                 cell.isSelected = true
                 firstCell = cell
             } else {

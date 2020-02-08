@@ -23,11 +23,11 @@ class PrayerDetailViewModel {
         date = prayer.date.getFormattedDate()
         hours = prayer.date.getFormattedHours()
         if prayer.repetition, let whenRepeat = prayer.whenRepeat {
-            repetition = whenRepeat
+            repetition = whenRepeat.capitalizingFirstLetter()
         } else {
             repetition = "Não se repete"
         }
-        notification = prayer.remember ? "Ativadas" : "Desativadas"
+        notification = prayer.notification ? "Ativadas" : "Desativadas"
         let nameImage = prayer.image.split(separator: "_")
         let newName = "person_ilustration_\(nameImage[1])"
         image = UIImage(named: newName)! //REMAKE
