@@ -104,6 +104,22 @@ class PrayerHandler {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
     }
+    static func done(uuid: String, withCompletion
+                                     completion: (PrayerUpdateResponse) -> Void) {
+        do {
+            var prayer = try PrayerDAO.shared.readOne(uuid: uuid)
+            prayer.answered = true
+            try PrayerDAO.shared.update(entity: prayer)
+            for actionUUID in prayer.actions {
+                var action = try ActionDAO.shared.readOne(uuid: actionUUID)
+                action.completed = true
+                try ActionDAO.shared.update(entity: action)
+            }
+            completion(PrayerUpdateResponse.success(prayer: prayer))
+        } catch {
+            completion(PrayerUpdateResponse.error(description: error.localizedDescription))
+        }
+    }
     static func answered(pray: Prayer, withCompletion
                                      completion: (PrayerUpdateResponse) -> Void) {
         do {

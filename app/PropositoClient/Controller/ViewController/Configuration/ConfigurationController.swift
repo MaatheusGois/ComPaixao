@@ -20,9 +20,19 @@ class ConfigurationController: UIViewController {
     }
     @IBAction func prayerSwitchChanged(_ sender: UISwitch) {
         PrayerNotification.isOn = sender.isOn
+        if sender.isOn {
+            Notification.getAuthorization()
+        } else {
+            Notification.disable()
+        }
     }
     @IBAction func actionSwitchChanged(_ sender: UISwitch) {
         ActionNotification.isOn = sender.isOn
+        if sender.isOn {
+            Notification.getAuthorization()
+        } else {
+            Notification.disable()
+        }
     }
     @IBAction func iCloudSwitchChanged(_ sender: UISwitch) {
         IClodNotification.isOn = sender.isOn

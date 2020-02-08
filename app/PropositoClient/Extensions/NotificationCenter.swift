@@ -13,8 +13,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler
-                                completionHandler:
-                                @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler:
+        @escaping (UNNotificationPresentationOptions) -> Void) {
         //Aqui definimos que a notificação deve gerar um alerta com som
         completionHandler([.alert, .sound])
     }
@@ -23,33 +23,75 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         //Chamando identificador de ações
-        let identificador = response.actionIdentifier
-        //Pegando a resposta da notificação pela resposta da ação
-        if identificador == "Soneca"{
-            print("Deixa eu dormir mais um pouquinho!")
-        } else if identificador == "Desligar" {
-            print("Ahhh, vou chegar atrasado mesmo!")
+        let uuid = response.notification.request.identifier
+        let type = response.notification.request.content.categoryIdentifier
+        if type == "action" {
+            if response.actionIdentifier == "done" {
+                ActionHandler.done(uuid: uuid) { (response) in
+                    switch response {
+                    case .error(let description):
+                        NSLog(description)
+                    case .success(_:):
+                        EventManager.shared.trigger(eventName: "reloadAction")
+                        UIApplication.shared.applicationIconBadgeNumber -= 1
+                    }
+                }
+            } else {
+                ActionHandler.getOne(uuid: uuid) { (response) in
+                    switch response {
+                    case .error(let description):
+                        NSLog(description)
+                    case .success(let action):
+                        EventManager.shared.trigger(eventName: "toActionDetail", information: action)
+                        UIApplication.shared.applicationIconBadgeNumber -= 1
+                    }
+                }
+            }
+        } else if type == "prayer" {
+            if response.actionIdentifier == "done" {
+                PrayerHandler.done(uuid: uuid) { (response) in
+                    switch response {
+                    case .error(let description):
+                        NSLog(description)
+                    case .success(_:):
+                        EventManager.shared.trigger(eventName: "reloadPrayer")
+                        UIApplication.shared.applicationIconBadgeNumber -= 1
+                    }
+                }
+            } else {
+                PrayerHandler.getOne(uuid: uuid) { (response) in
+                    switch response {
+                    case .error(let description):
+                        NSLog(description)
+                    case .success(let prayer):
+                        EventManager.shared.trigger(eventName: "toPrayerDetail", information: prayer)
+                        UIApplication.shared.applicationIconBadgeNumber -= 1
+                    }
+                }
+            }
         }
-        //Não há retorno
+        
         completionHandler()
     }
     func enviarNotificacao(titulo: String,
                            subtitulo: String,
                            mensagem: String,
                            identificador: String,
+                           type: String,
                            timeInterval: TimeInterval,
                            repeats: Bool) {
         //Essa instancia de classe é necessária para criar o corpo da notificação
         let contexto = UNMutableNotificationContent()
         //Criando corpo da notificação
-        contexto.title = titulo
+        contexto.title = titulo != "" ? titulo : "Sem título"
         contexto.subtitle = subtitulo
         contexto.body = mensagem
-        contexto.sound = UNNotificationSound.default
-        contexto.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
-        contexto.categoryIdentifier = identificador
+        contexto.sound = .default
+        print(UIApplication.shared.applicationIconBadgeNumber)
+        contexto.badge = 1 as NSNumber
+        contexto.categoryIdentifier = type
         //Colocando a imgem de fundo
-        let imageName = Global.isDark ? "logo" : "logo_dark"
+        let imageName = !Global.isDark ? "logo" : "logo_dark"
         //Aqui verificamos se a mensagem realmente existe, caso ela não exista ele para a função a retornando.
         if let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") {
             //Anexando a imagem
@@ -66,14 +108,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         //Adicionando a requisição ao nosso centro de notificações
         notificationCenter.add(requisicao) { (error) in
             if let error = error {
-                print("Deu ruim: \(error.localizedDescription)")
+                NSLog("Deu ruim: \(error.localizedDescription)")
             }
         }
         //Criando os botões de ações
-        let done = UNNotificationAction(identifier: "done", title: "Feito", options: [])
-        let todo = UNNotificationAction(identifier: "todo", title: "Me lembre mais tarde", options: [.destructive])
+        let done = UNNotificationAction(identifier: "done", title: "Concluir", options: [])
         let categoria = UNNotificationCategory(identifier: identificador,
-                                               actions: [done, todo],
+                                               actions: [done],
                                                intentIdentifiers: [],
                                                options: [])
         //Adicionando as ações ao nosso centro de notificações

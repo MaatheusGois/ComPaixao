@@ -30,6 +30,7 @@ class ActionViewController: UIViewController {
     var repetition = false
     var dateTime = Date()
     var prayerSelected: String?
+    var prayerNameSelected = "Todos"
     var prayerOldSelected: String?
     var action: Action!
     var isUpdate = false
@@ -137,6 +138,7 @@ class ActionViewController: UIViewController {
         dateTime = sender.date
     }
     @IBAction func notificationChanged(_ sender: UISwitch) {
+        if sender.isOn { Notification.getAuthorization() }
         notification = sender.isOn
         repeatNotificationsView.isHidden = !sender.isOn
         if !collectionViewRepeat.isHidden {
@@ -151,11 +153,12 @@ class ActionViewController: UIViewController {
     }
     @IBAction func add(_ sender: Any) {
         generatorImpact()
+        let updateTime = dateTime > Date() ? dateTime : Date().addingTimeInterval(60)
         let actionDone = Action(uuid: isUpdate ? action.uuid : UUID().uuidString,
                             prayID: prayerSelected,
                             name: name.text ?? "",
-                            date: dateTime,
-                            time: DateUltils.shared.getTime(date: dateTime),
+                            date: updateTime,
+                            time: DateUltils.shared.getTime(date: updateTime),
                             notification: notification,
                             repetition: repetition,
                             whenRepeat: repetition ? repeatSelected : "",
@@ -168,7 +171,7 @@ class ActionViewController: UIViewController {
             case .error(let description):
                 NSLog(description)
             case .success(let action):
-                if let prayerID = prayerSelected {
+                if let prayerID = prayerSelected, prayerID != "" {
                     PrayerHandler.addAction(prayerID: prayerID, actionID: action.uuid) { (response) in
                         switch response {
                         case .error(let description):
@@ -176,11 +179,13 @@ class ActionViewController: UIViewController {
                         case .success(_:):
                             EventManager.shared.trigger(eventName: "reloadAction")
                             EventManager.shared.trigger(eventName: "reloadPrayer")
+                            self.sendNotification(action: action)
                             self.close()
                         }
                     }
                 } else {
                     EventManager.shared.trigger(eventName: "reloadAction")
+                    self.sendNotification(action: action)
                     self.close()
                 }
             }
@@ -205,14 +210,27 @@ class ActionViewController: UIViewController {
                         case .success(_:):
                             EventManager.shared.trigger(eventName: "reloadAction", information: action)
                             EventManager.shared.trigger(eventName: "reloadPrayer")
+                            self.sendNotification(action: action)
                             self.close()
                         }
                     }
                 } else {
                     EventManager.shared.trigger(eventName: "reloadAction", information: action)
+                    self.sendNotification(action: action)
                     self.close()
                 }
             }
+        }
+    }
+    func sendNotification(action: Action) {
+        if action.notification, ActionNotification.isOn {
+            Notification.send(titulo: "Lembre-se de agir 🙏🏻",
+                              subtitulo: "A sua prática de hoje é por: \(prayerNameSelected)",
+                mensagem: "Você precisará fazer: \(action.name != "" ? action.name : "Uai, não tem título 😅")",
+                              identificador: action.uuid,
+                              type: "action",
+                              timeInterval: action.date.timeIntervalSinceNow,
+                              repeats: action.repetition)
         }
     }
     // MARK: - Keyboard

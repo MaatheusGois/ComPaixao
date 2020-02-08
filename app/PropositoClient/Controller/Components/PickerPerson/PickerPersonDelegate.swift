@@ -25,6 +25,7 @@ class PickerPersonDelegate: NSObject, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if let view = viewController as? ActionViewController {
             view.prayerSelected = row != 0 ? prayers?[row - 1].uuid : ""
+            view.prayerNameSelected = row != 0 ? prayers?[row - 1].name ?? "Todos" : "Todos"
         }
         generatorImpact()
     }

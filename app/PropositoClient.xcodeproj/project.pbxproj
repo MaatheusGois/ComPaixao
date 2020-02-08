@@ -39,6 +39,7 @@
 		8265182623E5806A0035E91E /* PrayerAllCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182523E5806A0035E91E /* PrayerAllCellDataSource.swift */; };
 		8265182923E6119F0035E91E /* PrayerDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182823E6119F0035E91E /* PrayerDetailController.swift */; };
 		8265182C23E611E50035E91E /* PrayerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265182B23E611E50035E91E /* PrayerDetailViewModel.swift */; };
+		826E91E623EE9CA900E65A48 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E91E523EE9CA900E65A48 /* Notification.swift */; };
 		8272B22423DFC26F00CFFD9B /* PrayerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */; };
 		827ADDB723E557BB004156CB /* ConfigurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB623E557BB004156CB /* ConfigurationController.swift */; };
 		827ADDBA23E55C49004156CB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ADDB923E55C49004156CB /* UserDefaults.swift */; };
@@ -130,6 +131,7 @@
 		8265182523E5806A0035E91E /* PrayerAllCellDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerAllCellDataSource.swift; sourceTree = "<group>"; };
 		8265182823E6119F0035E91E /* PrayerDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDetailController.swift; sourceTree = "<group>"; };
 		8265182B23E611E50035E91E /* PrayerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerDetailViewModel.swift; sourceTree = "<group>"; };
+		826E91E523EE9CA900E65A48 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		8272B22323DFC26F00CFFD9B /* PrayerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCellViewModel.swift; sourceTree = "<group>"; };
 		827ADDB623E557BB004156CB /* ConfigurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationController.swift; sourceTree = "<group>"; };
 		827ADDB923E55C49004156CB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				82F2E60E23EC513E0007678D /* UIAlert.swift */,
 				82C8DD1123ED3B5B002DA2FE /* IconUltils.swift */,
 				82F4180023ED226C0099C3BA /* SwitcherVC.swift */,
+				826E91E523EE9CA900E65A48 /* Notification.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -384,7 +387,6 @@
 				8265181D23E575850035E91E /* EventManager.swift */,
 				827ADDBB23E56785004156CB /* DateUtils.swift */,
 				82CB9FD423EC61350062E350 /* CustomUIButton.swift */,
-				820925C123EE440500CFF991 /* NotificationCenter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -567,6 +569,7 @@
 		8652531522E16B44009654B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				820925C123EE440500CFF991 /* NotificationCenter.swift */,
 				82A5B7D1232A73FF009AC33C /* Extensions.swift */,
 				82CB9FD223EC60FA0062E350 /* UIView.swift */,
 				82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */,
@@ -835,6 +838,7 @@
 				8699400F22D40B8E00069F8F /* ActionDAO.swift in Sources */,
 				8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */,
 				827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */,
+				826E91E623EE9CA900E65A48 /* Notification.swift in Sources */,
 				820AE2B023E9D2B200321834 /* Date.swift in Sources */,
 				8265182923E6119F0035E91E /* PrayerDetailController.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
@@ -1013,6 +1017,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				INFOPLIST_FILE = PropositoClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1032,6 +1037,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				INFOPLIST_FILE = PropositoClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;

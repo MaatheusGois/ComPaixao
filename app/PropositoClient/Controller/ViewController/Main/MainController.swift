@@ -70,6 +70,12 @@ class MainController: UIViewController {
         EventManager.shared.listenTo(eventName: "reloadAction") {
             self.actionCellDataSource.fetch(delegate: self.actionCellDelegate)
         }
+        EventManager.shared.listenTo(eventName: "toPrayerDetail") { sender in
+            self.performSegue(withIdentifier: "toPrayerDetail", sender: sender)
+        }
+        EventManager.shared.listenTo(eventName: "toActionDetail") { sender in
+            self.performSegue(withIdentifier: "toActionDetail", sender: sender)
+        }
     }
     func generatorImpact() {
         ImpactFeedback.shared.generateMedium()
@@ -78,10 +84,10 @@ class MainController: UIViewController {
     @IBAction func seeConfig(_ sender: Any) {
         generatorImpact()
     }
-    @IBAction func addPrayer(_ sender: Any) {
+    @IBAction func addPrayer(_ sender: Any? = nil) {
         generatorImpact()
     }
-    @IBAction func addAction(_ sender: Any) {
+    @IBAction func addAction(_ sender: Any? = nil) {
         generatorImpact()
     }
     // MARK: - NEXT

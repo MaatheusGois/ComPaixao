@@ -52,6 +52,16 @@ class ActionHandler {
             completion(ActionUpdateResponse.error(description: error.localizedDescription))
         }
     }
+    static func done(uuid: String, withCompletion completion: (ActionUpdateResponse) -> Void) {
+        do {
+            var action = try ActionDAO.shared.readOne(uuid: uuid)
+            action.completed = true
+            try ActionDAO.shared.update(entity: action)
+            completion(ActionUpdateResponse.success(act: action))
+        } catch {
+            completion(ActionUpdateResponse.error(description: error.localizedDescription))
+        }
+    }
     static func delete(act: Action, withCompletion
         completion: (ActionUpdateResponse) -> Void) {
         do {

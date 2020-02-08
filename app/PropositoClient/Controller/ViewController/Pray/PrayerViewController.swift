@@ -133,6 +133,7 @@ class PrayerViewController: UIViewController {
         dateTime = sender.date
     }
     @IBAction func notificationChanged(_ sender: UISwitch) {
+        if sender.isOn { Notification.getAuthorization() }
         notification = sender.isOn
         repeatNotificationsView.isHidden = !sender.isOn
         if !collectionViewRepeat.isHidden {
@@ -147,12 +148,13 @@ class PrayerViewController: UIViewController {
     }
     @IBAction func add(_ sender: Any) {
         generatorImpact()
+        let updateTime = dateTime > Date() ? dateTime : Date().addingTimeInterval(60)
         let prayer = Prayer(uuid: isUpdate ? self.prayer.uuid : UUID().uuidString,
                             name: name.text ?? "",
                             subject: subject.text ?? "",
                             image: imageSelected,
-                            date: dateTime,
-                            time: DateUltils.shared.getTime(date: dateTime),
+                            date: updateTime,
+                            time: DateUltils.shared.getTime(date: updateTime),
                             notification: notification,
                             repetition: repetition,
                             whenRepeat: repetition ? repeatSelected : "",
@@ -167,6 +169,7 @@ class PrayerViewController: UIViewController {
                 NSLog(description)
             case .success(_:):
                 EventManager.shared.trigger(eventName: "reloadPrayer")
+                self.sendNotification(prayer: prayer)
                 self.close()
             }
         }
@@ -178,8 +181,21 @@ class PrayerViewController: UIViewController {
                 NSLog(description)
             case .success(let prayer):
                 EventManager.shared.trigger(eventName: "reloadPrayer", information: prayer)
+                self.sendNotification(prayer: prayer)
                 self.close()
             }
+        }
+    }
+    func sendNotification(prayer: Prayer) {
+        if prayer.notification, PrayerNotification.isOn {
+            Notification.send(titulo: "Lembre-se de orar 🙏🏻",
+                              subtitulo: "Sua oração é por: \(prayer.name != "" ? prayer.name : "Ops, sem título 🤷‍♂")",
+                              mensagem:
+                                "O propósito é: \(prayer.subject != "" ? prayer.subject : "Ops, sem descrição 😬")",
+                              identificador: prayer.uuid,
+                              type: "prayer",
+                              timeInterval: prayer.date.timeIntervalSinceNow,
+                              repeats: prayer.repetition)
         }
     }
     // MARK: - Keyboard

@@ -112,6 +112,7 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
     }
     @objc
     func done(_ sender: Any) {
+        ImpactFeedback.shared.generateLight()
         if let button = sender as? UIButton {
             let row = button.tag
             if var action = actionsFilted?[row] {
@@ -120,7 +121,7 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
                     switch response {
                     case .error(let description):
                         NSLog(description)
-                    case .success(_):
+                    case .success(_:):
                         DispatchQueue.main.async {
                             if let cell = self.collectionView?.cellForItem(at: IndexPath(row: row, section: 0))
                                 as? ActionCell {
@@ -136,7 +137,6 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
                 }
             }
         }
-        generatorImpact()
     }
     func generatorImpact() {
         ImpactFeedback.shared.generateMedium()

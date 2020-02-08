@@ -77,7 +77,7 @@ class ActionDAO: GenericDAO {
                 guard let name: String = data.value(forKey: "name") as? String else {
                     throw DAOError.internalError(description: "Error to take name")
                 }
-                guard let prayID: String = data.value(forKey: "prayID") as? String else {
+                guard let prayID: String? = data.value(forKey: "prayID") as? String? else {
                     throw DAOError.internalError(description: "Error to take prayID")
                 }
                 guard let date: Date = data.value(forKey: "date") as? Date else {
