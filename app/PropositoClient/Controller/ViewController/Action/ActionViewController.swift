@@ -34,6 +34,9 @@ class ActionViewController: UIViewController {
     var action: Action!
     var isUpdate = false
     var tap: UITapGestureRecognizer!
+    var prayID = ""
+    var isAdd = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -87,8 +90,8 @@ class ActionViewController: UIViewController {
         setupEditRepeat()
     }
     func byPersonPicker() {
-        if let prayerID = action.prayID,
-            prayerID != "",
+        let prayerID = action?.prayID ?? prayID
+        if prayerID != "",
             let prayers = pickerPersonDataSource.prayers {
             var count = 0
             while prayers[count].uuid != prayerID {

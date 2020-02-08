@@ -55,11 +55,9 @@ class PrayerHandler {
                 return
             }
             oldPrayer.actions.remove(at: index)
-            
             var prayer = try PrayerDAO.shared.readOne(uuid: prayerID)
             prayer.actions.append(actionID)
             try PrayerDAO.shared.update(entity: prayer)
-            
             try PrayerDAO.shared.update(entity: oldPrayer)
             completion(PrayerUpdateResponse.success(prayer: prayer))
         } catch {

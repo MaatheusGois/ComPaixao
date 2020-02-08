@@ -28,7 +28,9 @@ class PickerPersonDataSource: NSObject, UIPickerViewDataSource {
                     delegate.prayers = reversePrayer
                     if let view = self.viewController as? ActionViewController {
                         view.byPerson.reloadAllComponents()
-                        if view.isUpdate { view.byPersonPicker() }
+                        if view.isUpdate || view.isAdd {
+                            view.byPersonPicker()
+                        }
                     }
                 }
             }

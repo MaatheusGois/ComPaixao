@@ -105,22 +105,26 @@ class PrayerDetailController: UIViewController {
         UIAlert.show(controller: self, title: "Tem certeza que deseja apagar essa oração?",
                      message: "Junto a essa oração, serão deletados todas as práticas relacionadas a ela",
                      alertAction1: "Apagar") { (response) in
-            if response {
-                self.generatorImpact()
-                PrayerHandler.delete(pray: self.prayer) { (response) in
-                    switch response {
-                    case .error(let description):
-                        print(description)
-                    case .success(_:):
-                        DispatchQueue.main.async {
-                            self.close()
-                            EventManager.shared.trigger(eventName: "reloadPrayer")
-                            EventManager.shared.trigger(eventName: "reloadAction")
+                        if response {
+                            self.generatorImpact()
+                            PrayerHandler.delete(pray: self.prayer) { (response) in
+                                switch response {
+                                case .error(let description):
+                                    print(description)
+                                case .success(_:):
+                                    DispatchQueue.main.async {
+                                        self.close()
+                                        EventManager.shared.trigger(eventName: "reloadPrayer")
+                                        EventManager.shared.trigger(eventName: "reloadAction")
+                                    }
+                                }
+                            }
                         }
-                    }
-                }
-            }
         }
+    }
+    @IBAction func addAction(_ sender: Any) {
+        generatorImpact()
+        performSegue(withIdentifier: "toAction", sender: nil)
     }
     // MARK: - NEXT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -130,6 +134,9 @@ class PrayerDetailController: UIViewController {
         } else if let view = segue.destination as? PrayerViewController {
             view.prayer = prayer
             view.isUpdate = true
+        } else if let view = segue.destination as? ActionViewController {
+            view.prayID = prayer.uuid
+            view.isAdd = true
         }
     }
 }

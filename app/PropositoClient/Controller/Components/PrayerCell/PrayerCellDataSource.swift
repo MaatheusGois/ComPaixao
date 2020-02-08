@@ -18,7 +18,9 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         self.viewController = viewController
         collectionView.dataSource = self
-        // Registers
+        register(collectionView: collectionView)
+    }
+    func register(collectionView: UICollectionView) {
         let challengeCell = UINib(nibName: "PrayerCell", bundle: nil)
         collectionView.register(challengeCell, forCellWithReuseIdentifier: "PrayerCell")
         let allChallengeCell = UINib(nibName: "AllPrayerCell", bundle: nil)
@@ -63,7 +65,11 @@ class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
                 let index = prayers.count - indexPath.row - 1
                 let prayerViewModel = PrayerCellViewModel(prayer: prayers[index])
                 cell.nameLabel?.text = prayerViewModel.name
-                cell.descriptionLabel?.text = prayerViewModel.detailTextString
+                DispatchQueue.main.async {
+                    prayerViewModel.updateAction(prayer: self.prayers[index]) { (_) in
+                        cell.descriptionLabel?.text = prayerViewModel.detailTextString
+                    }
+                }
                 cell.image.image = prayerViewModel.image
                 return cell
             }
