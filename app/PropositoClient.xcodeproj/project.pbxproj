@@ -564,7 +564,7 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		8652531522E16B44009654B8 /* Extension */ = {
+		8652531522E16B44009654B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				82A5B7D1232A73FF009AC33C /* Extensions.swift */,
@@ -573,7 +573,7 @@
 				8285005C23E4A13D00F2B9FE /* UIColor.swift */,
 				820AE2AF23E9D2B200321834 /* Date.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8699400D22D40B7100069F8F /* Action */ = {
@@ -628,7 +628,7 @@
 				86F4269F22CAA5E80032AA5B /* AppDelegate.swift */,
 				827ADDB823E55C35004156CB /* Helpers */,
 				823922C323E5201300DA2255 /* Utils */,
-				8652531522E16B44009654B8 /* Extension */,
+				8652531522E16B44009654B8 /* Extensions */,
 				827EB46423DD187300F8C3E1 /* ViewModel */,
 				86F426B422CAA6730032AA5B /* Model */,
 				86F426B522CAA67C0032AA5B /* View */,

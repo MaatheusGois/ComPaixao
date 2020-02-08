@@ -1800,7 +1800,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwH-Mc-0Tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3603" y="1275"/>
+            <point key="canvasLocation" x="2406" y="2251"/>
         </scene>
         <!--Prayer Detail Controller-->
         <scene sceneID="Vo6-vI-TCN">
@@ -2992,96 +2992,6 @@
             </objects>
             <point key="canvasLocation" x="-4504" y="259"/>
         </scene>
-        <!--Tutorial View Controller1-->
-        <scene sceneID="FpP-NP-bST">
-            <objects>
-                <viewController restorationIdentifier="tutorial1" storyboardIdentifier="tutorial1" id="oiZ-GQ-34N" customClass="TutorialViewController1" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h1A-XF-Kbx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="pYP-7X-W82">
-                                <rect key="frame" x="0.0" y="-40" width="414" height="986"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COw-PK-GsK" userLabel="image">
-                                <rect key="frame" x="20" y="249" width="374" height="227"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person_ilustration_01" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-gv-Wwb">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="227"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="0Ye-ow-Ebp"/>
-                                    <constraint firstItem="g5C-gv-Wwb" firstAttribute="centerY" secondItem="COw-PK-GsK" secondAttribute="centerY" id="IYM-SO-ZLa"/>
-                                    <constraint firstAttribute="width" secondItem="COw-PK-GsK" secondAttribute="height" multiplier="374:227" id="J08-Dw-jJ8"/>
-                                    <constraint firstItem="g5C-gv-Wwb" firstAttribute="width" secondItem="COw-PK-GsK" secondAttribute="width" id="XfQ-8C-Wi4"/>
-                                    <constraint firstItem="g5C-gv-Wwb" firstAttribute="centerX" secondItem="COw-PK-GsK" secondAttribute="centerX" id="qXr-m8-xXZ"/>
-                                    <constraint firstItem="g5C-gv-Wwb" firstAttribute="height" secondItem="COw-PK-GsK" secondAttribute="height" id="z5O-jd-LWv"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDc-SS-fhc" userLabel="title">
-                                <rect key="frame" x="0.0" y="540" width="414" height="26"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ComPaixão?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLJ-Zs-COq">
-                                        <rect key="frame" x="144" y="0.0" width="126.5" height="26"/>
-                                        <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="22"/>
-                                        <color key="textColor" name="primary"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="QLJ-Zs-COq" secondAttribute="bottom" id="Ceb-on-vUP"/>
-                                    <constraint firstItem="QLJ-Zs-COq" firstAttribute="centerY" secondItem="QDc-SS-fhc" secondAttribute="centerY" id="TpO-y8-ZEZ"/>
-                                    <constraint firstItem="QLJ-Zs-COq" firstAttribute="top" secondItem="QDc-SS-fhc" secondAttribute="top" id="rSQ-xF-Y9Z"/>
-                                    <constraint firstItem="QLJ-Zs-COq" firstAttribute="centerX" secondItem="QDc-SS-fhc" secondAttribute="centerX" id="yTl-ha-Fn3"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2T-Mf-b7D" userLabel="text">
-                                <rect key="frame" x="0.0" y="598" width="414" height="59.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compaixão é um diário das suas orações, com lembretes para ajudar no habito de se relacionar com Deus." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQG-kQ-9tr">
-                                        <rect key="frame" x="21" y="0.0" width="363" height="59.5"/>
-                                        <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="17"/>
-                                        <color key="textColor" name="primary"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="lQG-kQ-9tr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="K2T-Mf-b7D" secondAttribute="leading" constant="20" symbolic="YES" id="11P-dc-W8R"/>
-                                    <constraint firstAttribute="bottom" secondItem="lQG-kQ-9tr" secondAttribute="bottom" id="5ef-Ho-HcT"/>
-                                    <constraint firstItem="lQG-kQ-9tr" firstAttribute="top" secondItem="K2T-Mf-b7D" secondAttribute="top" id="Oki-Ua-89e"/>
-                                    <constraint firstAttribute="trailing" secondItem="lQG-kQ-9tr" secondAttribute="trailing" constant="30" id="R8M-WD-qgo"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="QDc-SS-fhc" firstAttribute="top" secondItem="COw-PK-GsK" secondAttribute="bottom" constant="64" id="Dh1-hK-jeG"/>
-                            <constraint firstItem="pYP-7X-W82" firstAttribute="height" secondItem="h1A-XF-Kbx" secondAttribute="height" multiplier="1.1" id="EmR-Ho-Ql8"/>
-                            <constraint firstItem="K2T-Mf-b7D" firstAttribute="leading" secondItem="4eT-et-HI9" secondAttribute="leading" id="RKe-lM-Bun"/>
-                            <constraint firstAttribute="trailing" secondItem="K2T-Mf-b7D" secondAttribute="trailing" id="SiZ-Ut-yQF"/>
-                            <constraint firstItem="pYP-7X-W82" firstAttribute="width" secondItem="h1A-XF-Kbx" secondAttribute="width" id="Xih-lO-bhX"/>
-                            <constraint firstItem="pYP-7X-W82" firstAttribute="centerY" secondItem="4eT-et-HI9" secondAttribute="centerY" id="Yun-GP-HJe"/>
-                            <constraint firstItem="QDc-SS-fhc" firstAttribute="trailing" secondItem="4eT-et-HI9" secondAttribute="trailing" id="bH8-Ot-0xe"/>
-                            <constraint firstItem="pYP-7X-W82" firstAttribute="centerX" secondItem="4eT-et-HI9" secondAttribute="centerX" id="cxY-Sg-hje"/>
-                            <constraint firstItem="COw-PK-GsK" firstAttribute="width" secondItem="h1A-XF-Kbx" secondAttribute="width" multiplier="0.903382" id="eib-SG-cIA"/>
-                            <constraint firstItem="COw-PK-GsK" firstAttribute="width" secondItem="COw-PK-GsK" secondAttribute="height" multiplier="374:227" id="g2X-yH-505"/>
-                            <constraint firstItem="COw-PK-GsK" firstAttribute="height" secondItem="h1A-XF-Kbx" secondAttribute="height" multiplier="0.253348" id="iIM-bf-mpd"/>
-                            <constraint firstItem="K2T-Mf-b7D" firstAttribute="top" secondItem="QDc-SS-fhc" secondAttribute="bottom" constant="32" id="mP7-Tp-rE2"/>
-                            <constraint firstItem="QDc-SS-fhc" firstAttribute="leading" secondItem="4eT-et-HI9" secondAttribute="leading" id="mYz-So-tR6"/>
-                            <constraint firstItem="COw-PK-GsK" firstAttribute="centerY" secondItem="4eT-et-HI9" secondAttribute="centerY" multiplier="0.8" id="pQN-cz-xX2"/>
-                            <constraint firstItem="COw-PK-GsK" firstAttribute="centerX" secondItem="4eT-et-HI9" secondAttribute="centerX" id="yFa-s9-kpg"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4eT-et-HI9"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q8O-Fw-Wh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2852" y="258"/>
-        </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="kNM-6X-6hT">
             <objects>
@@ -3119,8 +3029,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgh-cM-G1P" userLabel="title">
                                 <rect key="frame" x="0.0" y="540" width="414" height="26"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ComPaixão?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4a-Go-BIK">
-                                        <rect key="frame" x="144" y="0.0" width="126.5" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie uma Oração" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4a-Go-BIK">
+                                        <rect key="frame" x="123.5" y="0.0" width="167.5" height="26"/>
                                         <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="22"/>
                                         <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
@@ -3135,12 +3045,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cv2-JZ-KWM" userLabel="text">
-                                <rect key="frame" x="0.0" y="598" width="414" height="59.5"/>
+                                <rect key="frame" x="0.0" y="598" width="414" height="65.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compaixão é um diário das suas orações, com lembretes para ajudar no habito de se relacionar com Deus." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeW-zY-7uM">
-                                        <rect key="frame" x="21" y="0.0" width="363" height="59.5"/>
-                                        <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="17"/>
-                                        <color key="textColor" name="primary"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeW-zY-7uM">
+                                        <rect key="frame" x="34.5" y="0.0" width="349.5" height="65.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Sabe quando alguém te pede uma oração e você não sabe onde anotar?  Reúna aqui todos os seus pedidos de oração!">
+                                                <attributes>
+                                                    <color key="NSColor" name="primary"/>
+                                                    <font key="NSFont" size="17" name="CentraleSans-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -3206,8 +3123,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZd-hq-C3g" userLabel="title">
                                 <rect key="frame" x="0.0" y="540" width="414" height="26"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ComPaixão?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3m-th-b6b">
-                                        <rect key="frame" x="144" y="0.0" width="126.5" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie uma Prática" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3m-th-b6b">
+                                        <rect key="frame" x="125" y="0.0" width="164" height="26"/>
                                         <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="22"/>
                                         <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
@@ -3222,12 +3139,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnR-pL-QYG" userLabel="text">
-                                <rect key="frame" x="0.0" y="598" width="414" height="59.5"/>
+                                <rect key="frame" x="0.0" y="598" width="414" height="65.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compaixão é um diário das suas orações, com lembretes para ajudar no habito de se relacionar com Deus." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O55-Rt-R8y">
-                                        <rect key="frame" x="30" y="0.0" width="354" height="59.5"/>
-                                        <fontDescription key="fontDescription" name="CentraleSans-Thin" family="Centrale Sans Thin" pointSize="17"/>
-                                        <color key="textColor" name="primary"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O55-Rt-R8y">
+                                        <rect key="frame" x="30" y="0.0" width="354" height="65.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Aqui você poderá viver a fé e obras, podendo criar práticas e relaciona-las a cada uma das suas orações.">
+                                                <attributes>
+                                                    <color key="NSColor" name="primary"/>
+                                                    <font key="NSFont" size="17" name="CentraleSans-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -3265,6 +3189,100 @@
             </objects>
             <point key="canvasLocation" x="-1414" y="258"/>
         </scene>
+        <!--Tutorial View Controller1-->
+        <scene sceneID="KPF-WP-UCk">
+            <objects>
+                <viewController storyboardIdentifier="tutorial1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QyF-p5-zts" customClass="TutorialViewController1" customModule="PropositoClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eu7-Mx-tp6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_reverse" translatesAutoresizingMaskIntoConstraints="NO" id="uPP-JM-YW3">
+                                <rect key="frame" x="0.0" y="-40" width="414" height="986"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lel-UX-hUF" userLabel="image">
+                                <rect key="frame" x="20" y="249" width="374" height="227"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person_ilustration_01" translatesAutoresizingMaskIntoConstraints="NO" id="aQK-dO-ieQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="227"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aQK-dO-ieQ" firstAttribute="centerX" secondItem="lel-UX-hUF" secondAttribute="centerX" id="BTx-1h-Qcg"/>
+                                    <constraint firstItem="aQK-dO-ieQ" firstAttribute="centerY" secondItem="lel-UX-hUF" secondAttribute="centerY" id="DmZ-a2-mRJ"/>
+                                    <constraint firstItem="aQK-dO-ieQ" firstAttribute="height" secondItem="lel-UX-hUF" secondAttribute="height" id="GMF-Lc-ZKR"/>
+                                    <constraint firstItem="aQK-dO-ieQ" firstAttribute="width" secondItem="lel-UX-hUF" secondAttribute="width" id="I8A-Gt-bJH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hv2-Ol-n5U" userLabel="title">
+                                <rect key="frame" x="0.0" y="540" width="414" height="26"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ComPaixão?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caW-HF-PkG">
+                                        <rect key="frame" x="144" y="0.0" width="126.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="22"/>
+                                        <color key="textColor" name="primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="caW-HF-PkG" firstAttribute="top" secondItem="Hv2-Ol-n5U" secondAttribute="top" id="911-NQ-cch"/>
+                                    <constraint firstAttribute="bottom" secondItem="caW-HF-PkG" secondAttribute="bottom" id="Olh-KU-9cl"/>
+                                    <constraint firstItem="caW-HF-PkG" firstAttribute="centerX" secondItem="Hv2-Ol-n5U" secondAttribute="centerX" id="kOF-kr-BAq"/>
+                                    <constraint firstItem="caW-HF-PkG" firstAttribute="centerY" secondItem="Hv2-Ol-n5U" secondAttribute="centerY" id="kRv-EX-Szv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAc-WQ-HxD" userLabel="text">
+                                <rect key="frame" x="0.0" y="598" width="414" height="65.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-yI-gzm">
+                                        <rect key="frame" x="21" y="0.0" width="363" height="65.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Compaixão é um diário das suas orações, com lembretes para o ajudar no habito de se relacionar com Deus.">
+                                                <attributes>
+                                                    <color key="NSColor" name="primary"/>
+                                                    <font key="NSFont" size="17" name="CentraleSans-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fPs-yI-gzm" firstAttribute="top" secondItem="FAc-WQ-HxD" secondAttribute="top" id="7y4-4w-RER"/>
+                                    <constraint firstItem="fPs-yI-gzm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FAc-WQ-HxD" secondAttribute="leading" constant="20" symbolic="YES" id="RU1-1q-tbw"/>
+                                    <constraint firstAttribute="bottom" secondItem="fPs-yI-gzm" secondAttribute="bottom" id="bYR-Gd-DYJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fPs-yI-gzm" secondAttribute="trailing" constant="30" id="oyW-Dt-mBJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FAc-WQ-HxD" firstAttribute="top" secondItem="Hv2-Ol-n5U" secondAttribute="bottom" constant="32" id="9sw-Sz-TQr"/>
+                            <constraint firstItem="Hv2-Ol-n5U" firstAttribute="top" secondItem="lel-UX-hUF" secondAttribute="bottom" constant="64" id="DW7-rt-sdI"/>
+                            <constraint firstItem="lel-UX-hUF" firstAttribute="height" secondItem="Eu7-Mx-tp6" secondAttribute="height" multiplier="0.253348" id="EMJ-dn-HA2"/>
+                            <constraint firstItem="lel-UX-hUF" firstAttribute="centerY" secondItem="qxo-et-12q" secondAttribute="centerY" multiplier="0.8" id="Fvd-yg-rUz"/>
+                            <constraint firstItem="uPP-JM-YW3" firstAttribute="centerY" secondItem="qxo-et-12q" secondAttribute="centerY" id="IP9-8z-KaW"/>
+                            <constraint firstItem="lel-UX-hUF" firstAttribute="centerX" secondItem="qxo-et-12q" secondAttribute="centerX" id="KHk-xA-dBh"/>
+                            <constraint firstItem="lel-UX-hUF" firstAttribute="width" secondItem="Eu7-Mx-tp6" secondAttribute="width" multiplier="0.903382" id="XRX-Qp-Gcb"/>
+                            <constraint firstItem="Hv2-Ol-n5U" firstAttribute="trailing" secondItem="qxo-et-12q" secondAttribute="trailing" id="Y5g-v6-jxD"/>
+                            <constraint firstAttribute="trailing" secondItem="FAc-WQ-HxD" secondAttribute="trailing" id="b6M-lB-erd"/>
+                            <constraint firstItem="uPP-JM-YW3" firstAttribute="centerX" secondItem="qxo-et-12q" secondAttribute="centerX" id="dVT-nd-oEe"/>
+                            <constraint firstItem="Hv2-Ol-n5U" firstAttribute="leading" secondItem="qxo-et-12q" secondAttribute="leading" id="fSf-RG-nRa"/>
+                            <constraint firstItem="FAc-WQ-HxD" firstAttribute="leading" secondItem="qxo-et-12q" secondAttribute="leading" id="gHq-MC-Fbx"/>
+                            <constraint firstItem="uPP-JM-YW3" firstAttribute="width" secondItem="Eu7-Mx-tp6" secondAttribute="width" id="nvG-fR-IA9"/>
+                            <constraint firstItem="uPP-JM-YW3" firstAttribute="height" secondItem="Eu7-Mx-tp6" secondAttribute="height" multiplier="1.1" id="r9r-9J-Pds"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qxo-et-12q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYF-5t-nk6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2888" y="261"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addPrayer_ilustration" width="3252" height="1240"/>
@@ -3297,6 +3315,9 @@
         </namedColor>
         <namedColor name="default_02">
             <color red="0.94900000095367432" green="0.93699997663497925" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.14499999582767487" green="0.17599999904632568" blue="0.31799998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.14499999582767487" green="0.17599999904632568" blue="0.31799998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

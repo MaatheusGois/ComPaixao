@@ -21,10 +21,10 @@ class TutorialPageViewController: UIPageViewController, UIPageViewControllerData
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupEvents()
     }
     func setup() {
         setupScreen()
-        setupEvents()
     }
     func setupScreen() {
         self.delegate = self
@@ -102,5 +102,6 @@ extension TutorialViewController: TutorialPageViewControllerDelegate {
     func tutorialPageViewController(tutorialPageViewController: TutorialPageViewController,
                                     didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
+        setup()
     }
 }

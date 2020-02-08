@@ -41,7 +41,7 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var buttonTitle: UILabel!
-    
+    var oldIndex: Int = 0
     override func viewDidLoad() {
         setup()
     }
@@ -72,7 +72,8 @@ class TutorialViewController: UIViewController {
         }
     }
     // MARK: - Actions
-    @IBAction func next(_ sender: Any) {
+    @IBAction
+    func next(_ sender: Any? = nil) {
         ImpactFeedback.shared.generateMedium()
         if pageControl.currentPage == 2 {
             performSegue(withIdentifier: "toMain", sender: nil)
@@ -81,7 +82,8 @@ class TutorialViewController: UIViewController {
         EventManager.shared.trigger(eventName: "nextPage", information: self.pageControl.currentPage)
         setup()
     }
-    @IBAction func previus(_ sender: Any) {
+    @IBAction
+    func previus(_ sender: Any? = nil) {
         ImpactFeedback.shared.generateMedium()
         pageControl.currentPage -= 1
         EventManager.shared.trigger(eventName: "previusPage", information: self.pageControl.currentPage)
