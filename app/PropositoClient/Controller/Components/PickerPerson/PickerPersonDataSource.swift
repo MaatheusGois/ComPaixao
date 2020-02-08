@@ -28,6 +28,7 @@ class PickerPersonDataSource: NSObject, UIPickerViewDataSource {
                     delegate.prayers = reversePrayer
                     if let view = self.viewController as? ActionViewController {
                         view.byPerson.reloadAllComponents()
+                        if view.isUpdate { view.byPersonPicker() }
                     }
                 }
             }
@@ -38,5 +39,5 @@ class PickerPersonDataSource: NSObject, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return (prayers?.count ?? 0) + 1
-    }    
+    }
 }

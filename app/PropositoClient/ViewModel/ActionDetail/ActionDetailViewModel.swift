@@ -23,11 +23,11 @@ class ActionDetailViewModel {
         date = action.date.getFormattedDate()
         hours = action.date.getFormattedHours()
         if action.repetition, let whenRepeat = action.whenRepeat {
-            repetition = whenRepeat
+            repetition = whenRepeat.capitalizingFirstLetter()
         } else {
             repetition = "Não se repete"
         }
-        notification = action.remember ? "Ativadas" : "Desativadas"
+        notification = action.notification ? "Ativadas" : "Desativadas"
     }
     func getPrayer(prayerID: String) {
         PrayerHandler.getOne(uuid: prayerID) { (response) in

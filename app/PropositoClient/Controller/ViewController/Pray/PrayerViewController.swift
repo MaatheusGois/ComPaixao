@@ -85,6 +85,7 @@ class PrayerViewController: UIViewController {
         subject.setText(text: prayer.subject)
         date.date = prayer.date
         time.date = prayer.date
+        dateTime = prayer.date
         setupNotification()
         setupLayout()
         setupEditImage()

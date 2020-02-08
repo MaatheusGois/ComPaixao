@@ -28,7 +28,7 @@ class ActionDAO: GenericDAO {
         act.date       = newEntity.date
         act.completed  = newEntity.completed
         act.time       = newEntity.time
-        act.remember   = newEntity.remember
+        act.remember   = newEntity.notification
         act.repetition = newEntity.repetition
         act.whenRepeat = newEntity.whenRepeat
         do {
@@ -51,7 +51,7 @@ class ActionDAO: GenericDAO {
                                    name: data.name  ?? "",
                                    date: data.date  ?? Date(),
                                    time: data.time  ?? "",
-                                   remember: data.remember,
+                                   notification: data.remember,
                                    repetition: data.repetition,
                                    whenRepeat: data.whenRepeat,
                                    completed: data.completed))
@@ -103,7 +103,7 @@ class ActionDAO: GenericDAO {
                               name: name,
                               date: date,
                               time: time,
-                              remember: remember,
+                              notification: remember,
                               repetition: repetition,
                               whenRepeat: whenRepeat,
                               completed: completed)
@@ -129,7 +129,7 @@ class ActionDAO: GenericDAO {
                 act.setValue(entity.date, forKeyPath: "date")
                 act.setValue(entity.completed, forKeyPath: "completed")
                 act.setValue(entity.time, forKeyPath: "time")
-                act.setValue(entity.remember, forKeyPath: "remember")
+                act.setValue(entity.notification, forKeyPath: "remember")
                 act.setValue(entity.repetition, forKeyPath: "repetition")
                 act.setValue(entity.whenRepeat, forKeyPath: "whenRepeat")
                 do {

@@ -44,6 +44,28 @@ class PrayerHandler {
             completion(PrayerUpdateResponse.error(description: error.localizedDescription))
         }
     }
+    static func updateAction(prayerID: String,
+                             prayerOldID: String,
+                             actionID: String,
+                             withCompletion completion: (PrayerUpdateResponse) -> Void) {
+        do {
+            var oldPrayer = try PrayerDAO.shared.readOne(uuid: prayerOldID)
+            guard let index: Int = oldPrayer.actions.firstIndex(of: actionID) else {
+                completion(PrayerUpdateResponse.error(description: "oldPrayer without action"))
+                return
+            }
+            oldPrayer.actions.remove(at: index)
+            
+            var prayer = try PrayerDAO.shared.readOne(uuid: prayerID)
+            prayer.actions.append(actionID)
+            try PrayerDAO.shared.update(entity: prayer)
+            
+            try PrayerDAO.shared.update(entity: oldPrayer)
+            completion(PrayerUpdateResponse.success(prayer: prayer))
+        } catch {
+            completion(PrayerUpdateResponse.error(description: error.localizedDescription))
+        }
+    }
     static func getAll(completion: @escaping (PrayerLoadResponse) -> Void) {
         do {
             let prayers = try PrayerDAO.shared.read()

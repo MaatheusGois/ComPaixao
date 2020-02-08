@@ -78,6 +78,7 @@ class PrayerDetailController: UIViewController {
     }
     // MARK: - Actions
     @IBAction func finish(_ sender: Any? = nil) {
+        generatorImpact()
         PrayerHandler.answered(pray: prayer) { (response) in
             switch response {
             case .error(let description):

@@ -23,12 +23,10 @@ class PickerPersonDelegate: NSObject, UIPickerViewDelegate {
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if row != 0 {
-                if let view = viewController as? ActionViewController {
-                    view.prayerSelected = prayers?[row - 1].uuid
-                }
-            }
-            generatorImpact()
+        if let view = viewController as? ActionViewController {
+            view.prayerSelected = row != 0 ? prayers?[row - 1].uuid : ""
+        }
+        generatorImpact()
     }
     func generatorImpact() {
         ImpactFeedback.shared.generateSelectionChanged()

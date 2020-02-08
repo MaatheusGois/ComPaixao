@@ -14,12 +14,12 @@ struct Action: Codable {
     var name: String
     var date: Date
     var time: String
-    var remember: Bool
+    var notification: Bool
     var repetition: Bool
     var whenRepeat: String?
     var completed: Bool
     enum CodingKeys: String, CodingKey {
-        case uuid, prayID, name, date, time, remember, repetition, whenRepeat, completed
+        case uuid, prayID, name, date, time, notification, repetition, whenRepeat, completed
     }
 }
 

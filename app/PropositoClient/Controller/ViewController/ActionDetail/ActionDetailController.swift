@@ -24,6 +24,14 @@ class ActionDetailController: UIViewController {
     }
     func setup() {
         loadData()
+        setupEvents()
+    }
+    func setupEvents() {
+        EventManager.shared.listenTo(eventName: "reloadAction") { action in
+            guard let action = action as? Action else { return }
+            self.action = action
+            self.setup()
+        }
     }
     func loadData() {
         let viewModel = ActionDetailViewModel(action: action)
@@ -43,12 +51,13 @@ class ActionDetailController: UIViewController {
     }
     // MARK: - Actions
     @IBAction func finish(_ sender: Any? = nil) {
+        generatorImpact()
         action.completed = true //Make action done
         ActionHandler.update(act: action) { (response) in
             switch response {
             case .error(let description):
                 NSLog(description)
-            case .success( _):
+            case .success(_:):
                 DispatchQueue.main.async {
                 self.close()
                 EventManager.shared.trigger(eventName: "reloadAction")
@@ -61,6 +70,8 @@ class ActionDetailController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func edit(_ sender: Any? = nil) {
+        generatorImpact()
+        performSegue(withIdentifier: "toActionEdit", sender: nil)
     }
     @IBAction func deletePrayer(_ sender: Any? = nil) {
         generatorImpact()
@@ -82,6 +93,13 @@ class ActionDetailController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    // MARK: - NEXT
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let view = segue.destination as? ActionViewController {
+            view.action = action
+            view.isUpdate = true
         }
     }
 }

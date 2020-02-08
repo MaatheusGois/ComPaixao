@@ -71,7 +71,6 @@ class MainController: UIViewController {
             self.actionCellDataSource.fetch(delegate: self.actionCellDelegate)
         }
     }
-    
     func generatorImpact() {
         ImpactFeedback.shared.generateMedium()
     }
