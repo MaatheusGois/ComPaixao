@@ -35,7 +35,11 @@ class ActionDetailViewModel {
             case .error(let description):
                 NSLog(description)
             case .success(let prayer):
-                self.prayer = prayer.name
+                if prayer.name != "" {
+                    self.prayer = prayer.name
+                } else {
+                    self.prayer = "Sem título"
+                }
                 let nameImage = prayer.image.split(separator: "_")
                 let newName = "person_ilustration_\(nameImage[1])"
                 self.image = UIImage(named: newName)! // REMAKE

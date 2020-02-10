@@ -101,6 +101,8 @@ class ActionViewController: UIViewController {
             prayerSelected = prayers[count].uuid
             prayerOldSelected = prayerSelected
             self.byPerson.selectRow(count + 1, inComponent: 0, animated: true)
+        } else {
+            prayerOldSelected = ""
         }
     }
     func setupNotification() {
@@ -176,7 +178,8 @@ class ActionViewController: UIViewController {
                         switch response {
                         case .error(let description):
                             NSLog(description)
-                        case .success(_:):
+                        case .success(let prayer):
+                            print(prayer)
                             EventManager.shared.trigger(eventName: "reloadAction")
                             EventManager.shared.trigger(eventName: "reloadPrayer")
                             self.sendNotification(action: action)

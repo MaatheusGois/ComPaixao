@@ -13,9 +13,7 @@ struct AppIcon {
         if #available(iOS 13.0, *) {
             DispatchQueue.main.async {
                 if Global.isDark {
-                    UIApplication.shared.setAlternateIconName("AppIcon-DarkMode") { err in
-                        print(err)
-                    }
+                    UIApplication.shared.setAlternateIconName("AppIcon-DarkMode")
                 } else {
                     UIApplication.shared.setAlternateIconName("AppIcon")
                 }

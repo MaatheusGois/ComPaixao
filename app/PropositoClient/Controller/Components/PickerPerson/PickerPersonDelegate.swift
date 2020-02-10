@@ -19,7 +19,8 @@ class PickerPersonDelegate: NSObject, UIPickerViewDelegate {
         if row == 0 {
             return "Por todos"
         } else {
-            return prayers?[row - 1].name
+            let title = prayers?[row - 1].name
+            return title != "" ? title : "Sem título"
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
