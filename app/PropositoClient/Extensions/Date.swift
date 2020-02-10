@@ -9,7 +9,7 @@
 import UIKit
 
 extension Date {
-    //Subtract dates
+    ///Subtract dates
     static func - (lhs: Date, rhs: Date) -> TimeInterval {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
@@ -34,5 +34,15 @@ extension Date {
         dateFormatterPrint.dateFormat = "HH:mm a"
         let string = dateFormatterPrint.string(from: self).lowercased()
         return string
+    }
+}
+
+extension Date {
+    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
+        return calendar.dateComponents(Set(components), from: self)
+    }
+
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
     }
 }

@@ -25,6 +25,10 @@
 		820AE2BB23EA3CC000321834 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820AE2B923EA3CC000321834 /* FilterCell.swift */; };
 		820AE2BC23EA3CC000321834 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820AE2BA23EA3CC000321834 /* FilterCell.xib */; };
 		820E4B68234E0900002F64C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E4B67234E08FF002F64C4 /* Constants.swift */; };
+		821F9DE823F0FDC900C79544 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F9DE723F0FDC900C79544 /* Chapter.swift */; };
+		821F9DEC23F0FE0E00C79544 /* ChapterDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F9DEB23F0FE0E00C79544 /* ChapterDAO.swift */; };
+		821F9DF123F0FF6700C79544 /* Chapter.json in Resources */ = {isa = PBXBuildFile; fileRef = 821F9DF023F0FF6700C79544 /* Chapter.json */; };
+		821F9DF323F102DB00C79544 /* ChapterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F9DF223F102DB00C79544 /* ChapterHandler.swift */; };
 		823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BC23E4A6CB00DA2255 /* Keyboard.swift */; };
 		823922C123E51F5B00DA2255 /* ImageProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */; };
 		823922C223E51F5B00DA2255 /* ImageProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823922C023E51F5B00DA2255 /* ImageProfileCell.xib */; };
@@ -117,6 +121,10 @@
 		820AE2B923EA3CC000321834 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		820AE2BA23EA3CC000321834 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		820E4B67234E08FF002F64C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		821F9DE723F0FDC900C79544 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		821F9DEB23F0FE0E00C79544 /* ChapterDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDAO.swift; sourceTree = "<group>"; };
+		821F9DF023F0FF6700C79544 /* Chapter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Chapter.json; sourceTree = "<group>"; };
+		821F9DF223F102DB00C79544 /* ChapterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterHandler.swift; sourceTree = "<group>"; };
 		823922BC23E4A6CB00DA2255 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		823922BF23E51F5B00DA2255 /* ImageProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProfileCell.swift; sourceTree = "<group>"; };
 		823922C023E51F5B00DA2255 /* ImageProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageProfileCell.xib; sourceTree = "<group>"; };
@@ -271,6 +279,43 @@
 			);
 			name = FilterCell;
 			path = ../../ViewModel/FilterCell;
+			sourceTree = "<group>";
+		};
+		821F9DE623F0FD8900C79544 /* Chapter */ = {
+			isa = PBXGroup;
+			children = (
+				821F9DE723F0FDC900C79544 /* Chapter.swift */,
+				821F9DF223F102DB00C79544 /* ChapterHandler.swift */,
+			);
+			path = Chapter;
+			sourceTree = "<group>";
+		};
+		821F9DE923F0FDDB00C79544 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				8628F5CB22CFD9BA00844544 /* GenericDAO.swift */,
+				86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */,
+				8699400E22D40B8E00069F8F /* ActionDAO.swift */,
+				821F9DEB23F0FE0E00C79544 /* ChapterDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		821F9DEA23F0FDE300C79544 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8628F5C922CFD65800844544 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		821F9DED23F0FF3B00C79544 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				86F426A622CAA5E80032AA5B /* PropositoClient.xcdatamodeld */,
+				821F9DF023F0FF6700C79544 /* Chapter.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		823922BE23E51F2000DA2255 /* ImageProfileCell */ = {
@@ -558,10 +603,8 @@
 		8628F5CD22CFD9BD00844544 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				8628F5CB22CFD9BA00844544 /* GenericDAO.swift */,
-				86CC745C22CFDB4F00D5174E /* PrayerDAO.swift */,
-				8699400E22D40B8E00069F8F /* ActionDAO.swift */,
-				8628F5C922CFD65800844544 /* CoreDataManager.swift */,
+				821F9DE923F0FDDB00C79544 /* DAO */,
+				821F9DEA23F0FDE300C79544 /* CoreData */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -646,9 +689,10 @@
 			isa = PBXGroup;
 			children = (
 				8628F5CD22CFD9BD00844544 /* Persistence */,
+				821F9DE623F0FD8900C79544 /* Chapter */,
 				8699400D22D40B7100069F8F /* Action */,
 				86CC746222CFDCE400D5174E /* Prayer */,
-				86F426A622CAA5E80032AA5B /* PropositoClient.xcdatamodeld */,
+				821F9DED23F0FF3B00C79544 /* Data */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -758,6 +802,7 @@
 				86F426BC22CAAAD50032AA5B /* Cell.xib in Resources */,
 				820AE2BC23EA3CC000321834 /* FilterCell.xib in Resources */,
 				82C8DD1423ED3D90002DA2FE /* AppIcon@3x.png in Resources */,
+				821F9DF123F0FF6700C79544 /* Chapter.json in Resources */,
 				820925C423EE464500CFF991 /* logo_dark.png in Resources */,
 				827EB45623DD033D00F8C3E1 /* PrayerCell.xib in Resources */,
 				8246346323D9123F00AA58F6 /* Centrale Sans Thin.otf in Resources */,
@@ -817,6 +862,7 @@
 				82F14C8F23E530C800D20107 /* RepeatCellDataSource.swift in Sources */,
 				820AE2B523EA3C7700321834 /* FilterCellDataSource.swift in Sources */,
 				820AE29E23E8242D00321834 /* ActionCellDataSource.swift in Sources */,
+				821F9DEC23F0FE0E00C79544 /* ChapterDAO.swift in Sources */,
 				820AE29923E762A600321834 /* Global.swift in Sources */,
 				86F426C422CAAD140032AA5B /* Cell.swift in Sources */,
 				82FE2E8C23E3B6D400C8EB96 /* PlaceholderColor.swift in Sources */,
@@ -839,6 +885,7 @@
 				8207CC5523E49309003D8A06 /* ActionViewController.swift in Sources */,
 				827EB45823DD04FB00F8C3E1 /* PictureImageView.swift in Sources */,
 				826E91E623EE9CA900E65A48 /* Notification.swift in Sources */,
+				821F9DE823F0FDC900C79544 /* Chapter.swift in Sources */,
 				820AE2B023E9D2B200321834 /* Date.swift in Sources */,
 				8265182923E6119F0035E91E /* PrayerDetailController.swift in Sources */,
 				86CC746422CFDCF200D5174E /* Prayer.swift in Sources */,
@@ -863,6 +910,7 @@
 				823922BD23E4A6CB00DA2255 /* Keyboard.swift in Sources */,
 				82F14C8D23E530BF00D20107 /* RepeatCellDelegate.swift in Sources */,
 				827EB45E23DD0A1800F8C3E1 /* PrayerCellDelegate.swift in Sources */,
+				821F9DF323F102DB00C79544 /* ChapterHandler.swift in Sources */,
 				827EB45523DD033D00F8C3E1 /* PrayerCell.swift in Sources */,
 				8699401322D40C7600069F8F /* ActionHandler.swift in Sources */,
 				8265182623E5806A0035E91E /* PrayerAllCellDataSource.swift in Sources */,
@@ -1082,8 +1130,7 @@
 				86F426A722CAA5E80032AA5B /* PropositoClient.xcdatamodel */,
 			);
 			currentVersion = 86F426A722CAA5E80032AA5B /* PropositoClient.xcdatamodel */;
-			name = PropositoClient.xcdatamodeld;
-			path = ../PropositoClient.xcdatamodeld;
+			path = PropositoClient.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -9,6 +9,7 @@
 import UIKit
 
 class MainController: UIViewController {
+    @IBOutlet weak var chapter: UILabel!
     @IBOutlet weak var prayerCollectionView: UICollectionView!
     @IBOutlet weak var illustrationPrayer: UIImageView!
     @IBOutlet weak var actionCollectionView: UICollectionView!
@@ -31,9 +32,20 @@ class MainController: UIViewController {
         prayerIllustration()
         setupEvents()
         setupVC()
+        setupChapter()
     }
     func setupVC() {
         FirstTime.isOn = true
+    }
+    func setupChapter() {
+        ChapterHandler.getOne { (response) in
+            switch response {
+            case .error(let description):
+                NSLog(description)
+            case .success(let chapter):
+                self.chapter.text = chapter.title
+            }
+        }
     }
     func setupPrayer() {
         prayerCellDelegate.setup(collectionView: prayerCollectionView, viewController: self)

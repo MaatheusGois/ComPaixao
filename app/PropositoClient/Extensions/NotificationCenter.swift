@@ -70,7 +70,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 }
             }
         }
-        
         completionHandler()
     }
     func enviarNotificacao(titulo: String,
@@ -103,7 +102,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             }
         }
         //Criando a requisição
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: repeats)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false) //TODO: - Alertas nunca repetem
         let requisicao = UNNotificationRequest(identifier: identificador, content: contexto, trigger: trigger)
         //Adicionando a requisição ao nosso centro de notificações
         notificationCenter.add(requisicao) { (error) in

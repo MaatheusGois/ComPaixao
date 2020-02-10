@@ -33,13 +33,22 @@ class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let verify = prayers.count > 3 ? indexPath.row != 3 : indexPath.row < prayers.count
-        if verify { toPrayerDetail(index: indexPath.row) }
+        if verify {
+            toPrayerDetail(index: indexPath.row)
+        } else {
+            toAllPrayers() 
+        }
         generatorImpact()
     }
     func toPrayerDetail(index: Int) {
         let prayer = prayers[prayers.count - index - 1]
         self.viewController?.performSegue(withIdentifier: "toPrayerDetail",
                                           sender: prayer)
+    }
+    func toAllPrayers() {
+        self.viewController?.performSegue(withIdentifier: "toAllPrayers",
+                                          sender: nil)
+        generatorImpact()
     }
     func generatorImpact() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
