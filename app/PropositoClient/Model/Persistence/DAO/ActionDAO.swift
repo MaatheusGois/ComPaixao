@@ -22,7 +22,7 @@ class ActionDAO: GenericDAO {
         guard let act = NSManagedObject(entity: actEntity, insertInto: managedContext) as? ActEntity else {
             throw DAOError.internalError(description: "Failed to create NSManagedObject")
         }
-        act.uuid       = newEntity.uuid 
+        act.uuid       = newEntity.uuid
         act.name       = newEntity.name
         act.prayID     = newEntity.prayID
         act.date       = newEntity.date
@@ -71,48 +71,51 @@ class ActionDAO: GenericDAO {
                 guard let data = result[0] as? NSManagedObject else {
                     throw DAOError.internalError(description: "Error to take prayer:NSManagedObject")
                 }
-                guard let uuid: String = data.value(forKey: "uuid") as? String else {
-                    throw DAOError.internalError(description: "Error to take id")
-                }
-                guard let name: String = data.value(forKey: "name") as? String else {
-                    throw DAOError.internalError(description: "Error to take name")
-                }
-                guard let prayID: String? = data.value(forKey: "prayID") as? String? else {
-                    throw DAOError.internalError(description: "Error to take prayID")
-                }
-                guard let date: Date = data.value(forKey: "date") as? Date else {
-                    throw DAOError.internalError(description: "Error to take date")
-                }
-                guard let time: String = data.value(forKey: "time") as? String else {
-                    throw DAOError.internalError(description: "Error to take time")
-                }
-                guard let remember: Bool = data.value(forKey: "remember") as? Bool else {
-                    throw DAOError.internalError(description: "Error to take remember")
-                }
-                guard let repetition: Bool = data.value(forKey: "repetition") as? Bool else {
-                    throw DAOError.internalError(description: "Error to take repetition")
-                }
-                guard let completed: Bool = data.value(forKey: "completed") as? Bool else {
-                    throw DAOError.internalError(description: "Error to take completed")
-                }
-                guard let whenRepeat: String = data.value(forKey: "whenRepeat") as? String else {
-                    throw DAOError.internalError(description: "Error to take whenRepeat")
-                }
-                return Action(uuid: uuid,
-                              prayID: prayID,
-                              name: name,
-                              date: date,
-                              time: time,
-                              notification: remember,
-                              repetition: repetition,
-                              whenRepeat: whenRepeat,
-                              completed: completed)
+                return try setup(data: data)
             } else {
                 throw DAOError.internalError(description: "Action not found")
             }
         } catch {
             throw DAOError.internalError(description: error.localizedDescription)
         }
+    }
+    private func setup(data: NSManagedObject) throws -> Action {
+        guard let uuid: String = data.value(forKey: "uuid") as? String else {
+            throw DAOError.internalError(description: "Error to take id")
+        }
+        guard let name: String = data.value(forKey: "name") as? String else {
+            throw DAOError.internalError(description: "Error to take name")
+        }
+        guard let prayID: String? = data.value(forKey: "prayID") as? String? else {
+            throw DAOError.internalError(description: "Error to take prayID")
+        }
+        guard let date: Date = data.value(forKey: "date") as? Date else {
+            throw DAOError.internalError(description: "Error to take date")
+        }
+        guard let time: String = data.value(forKey: "time") as? String else {
+            throw DAOError.internalError(description: "Error to take time")
+        }
+        guard let remember: Bool = data.value(forKey: "remember") as? Bool else {
+            throw DAOError.internalError(description: "Error to take remember")
+        }
+        guard let repetition: Bool = data.value(forKey: "repetition") as? Bool else {
+            throw DAOError.internalError(description: "Error to take repetition")
+        }
+        guard let completed: Bool = data.value(forKey: "completed") as? Bool else {
+            throw DAOError.internalError(description: "Error to take completed")
+        }
+        guard let whenRepeat: String = data.value(forKey: "whenRepeat") as? String else {
+            throw DAOError.internalError(description: "Error to take whenRepeat")
+        }
+        return Action(uuid: uuid,
+                      prayID: prayID,
+                      name: name,
+                      date: date,
+                      time: time,
+                      notification: remember,
+                      repetition: repetition,
+                      whenRepeat: whenRepeat,
+                      completed: completed)
     }
     func update(entity: Action) throws {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)

@@ -11,7 +11,6 @@ import UIKit
 class RepeatCell: UICollectionViewCell {
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var text: UILabel!
-    
     override var isSelected: Bool {
         didSet {
             background.backgroundColor = isSelected ? .secondary02 : .secondary

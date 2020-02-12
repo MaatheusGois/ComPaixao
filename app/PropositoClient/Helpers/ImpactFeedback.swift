@@ -11,7 +11,6 @@ import UIKit
 class ImpactFeedback {
     private init () { }
     static let shared = ImpactFeedback()
-    
     func generateHeavy() {
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
     }

@@ -16,18 +16,18 @@ class EventManager {
     // Create a new event listener, not expecting information from the trigger
     // + eventName: Matching trigger eventNames will cause this listener to fire
     // + action: The block of code you want executed when the event triggers
-    func listenTo(eventName: String, action: @escaping (() -> ())) {
+    func listenTo(eventName: String, action: @escaping (() -> Void)) {
         let newListener = EventListenerAction(callback: action)
         addListener(eventName: eventName.uppercased(), newEventListener: newListener)
     }
     // Create a new event listener, expecting information from the trigger
     // + eventName: Matching trigger eventNames will cause this listener to fire
     // + action: The block of code you want executed when the event triggers
-    func listenTo(eventName: String, action: @escaping ((Any?) -> ())) {
+    func listenTo(eventName: String, action: @escaping ((Any?) -> Void)) {
         let newListener = EventListenerAction(callback: action)
         addListener(eventName: eventName.uppercased(), newEventListener: newListener)
     }
-    internal func addListener(eventName: String, newEventListener:EventListenerAction) {
+    internal func addListener(eventName: String, newEventListener: EventListenerAction) {
         if let listenerArray = self.listeners[eventName] {
             // action array exists for this event, add new action to it
             listenerArray.add(newEventListener)
@@ -77,13 +77,13 @@ class EventManager {
 
 // Class to hold actions to live in NSMutableArray
 class EventListenerAction {
-    let action: (() -> ())?
-    let actionExpectsInfo: ((Any?) -> ())?
-    init(callback: @escaping (() -> ()) ) {
+    let action: (() -> Void)?
+    let actionExpectsInfo: ((Any?) -> Void)?
+    init(callback: @escaping (() -> Void) ) {
         self.action = callback
         self.actionExpectsInfo = nil
     }
-    init(callback: @escaping ((Any?) -> ())) {
+    init(callback: @escaping ((Any?) -> Void)) {
         self.actionExpectsInfo = callback
         self.action = nil
     }
