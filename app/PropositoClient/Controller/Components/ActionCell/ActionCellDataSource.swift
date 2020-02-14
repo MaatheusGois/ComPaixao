@@ -20,6 +20,7 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
     var actionsFilted: Actions?
     weak var viewController: UIViewController?
     weak var collectionView: UICollectionView?
+    weak var delegate: ActionCellDelegate?
     var filterBy = Filter.today
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         self.viewController = viewController
@@ -32,19 +33,20 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
         collectionView.register(cell, forCellWithReuseIdentifier: "ActionCell")
     }
     func fetch(delegate: ActionCellDelegate) {
+        self.delegate = delegate
         ActionHandler.getAll { (response) in
             switch response {
             case .error(let description):
                 NSLog(description)
             case .success(let actions):
-                self.setActions(actions: actions, delegate: delegate)
+                self.setActions(actions: actions)
             }
         }
     }
-    func setActions(actions: Actions, delegate: ActionCellDelegate) {
+    func setActions(actions: Actions) {
         self.actions = actions.filter { !$0.completed }
         self.choiceFilter()
-        delegate.actions = self.actionsFilted
+        delegate?.actions = self.actionsFilted
         DispatchQueue.main.async {
             if let view = self.viewController as? MainController {
                 view.actionCollectionView.reloadData()
@@ -66,6 +68,7 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
         default:
             filterAll()
         }
+        delegate?.actions = self.actionsFilted
     }
     func filterToday() {
         let calendar = Calendar.current

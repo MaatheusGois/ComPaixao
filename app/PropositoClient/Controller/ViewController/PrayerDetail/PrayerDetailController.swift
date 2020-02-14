@@ -41,7 +41,7 @@ class PrayerDetailController: UIViewController {
             case .error(let description):
                 print(description)
             case .success(let actions):
-                self.actionCellDataSource.setActions(actions: actions, delegate: actionCellDelegate)
+                self.actionCellDataSource.setActions(actions: actions)
             }
         }
     }
