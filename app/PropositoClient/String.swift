@@ -7,13 +7,7 @@
 //
 
 import Foundation
-import UIKit
 
-extension Int {
-    static func gererateId() -> Int {
-        return Int.random(in: 0..<100000000)
-    }
-}
 extension String {
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()

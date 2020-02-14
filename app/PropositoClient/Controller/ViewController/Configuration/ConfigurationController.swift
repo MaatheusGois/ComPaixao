@@ -16,7 +16,7 @@ class ConfigurationController: UIViewController {
         super.viewDidLoad()
         prayerSwitch.isOn = PrayerNotification.isOn
         actionSwitch.isOn = ActionNotification.isOn
-        iCloudSwitch.isOn = IClodNotification.isOn
+        iCloudSwitch.isOn = ICloudNotification.isOn
     }
     @IBAction func prayerSwitchChanged(_ sender: UISwitch) {
         PrayerNotification.isOn = sender.isOn
@@ -35,7 +35,7 @@ class ConfigurationController: UIViewController {
         }
     }
     @IBAction func iCloudSwitchChanged(_ sender: UISwitch) {
-        IClodNotification.isOn = sender.isOn
+        ICloudNotification.isOn = sender.isOn
     }
     @IBAction func close(_ sender: Any) {
         generatorImpact()

@@ -61,7 +61,7 @@
 		827EB46323DD0DFD00F8C3E1 /* AllPrayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */; };
 		8285005D23E4A13D00F2B9FE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8285005C23E4A13D00F2B9FE /* UIColor.swift */; };
 		828A749F23E758430002424B /* ImpactFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828A749E23E758430002424B /* ImpactFeedback.swift */; };
-		82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* Extensions.swift */; };
+		82A5B7D2232A73FF009AC33C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5B7D1232A73FF009AC33C /* String.swift */; };
 		82B3889623E54C7B00D9B2CE /* PickerPersonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889523E54C7B00D9B2CE /* PickerPersonDelegate.swift */; };
 		82B3889923E54CB800D9B2CE /* PickerPersonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3889823E54CB800D9B2CE /* PickerPersonDataSource.swift */; };
 		82C8DD1223ED3B5B002DA2FE /* IconUltils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C8DD1123ED3B5B002DA2FE /* IconUltils.swift */; };
@@ -157,7 +157,7 @@
 		827EB46123DD0DFD00F8C3E1 /* AllPrayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPrayerCell.xib; sourceTree = "<group>"; };
 		8285005C23E4A13D00F2B9FE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		828A749E23E758430002424B /* ImpactFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpactFeedback.swift; sourceTree = "<group>"; };
-		82A5B7D1232A73FF009AC33C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = PropositoClient/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		82A5B7D1232A73FF009AC33C /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = PropositoClient/String.swift; sourceTree = SOURCE_ROOT; };
 		82B3889523E54C7B00D9B2CE /* PickerPersonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPersonDelegate.swift; sourceTree = "<group>"; };
 		82B3889823E54CB800D9B2CE /* PickerPersonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPersonDataSource.swift; sourceTree = "<group>"; };
 		82C8DD1123ED3B5B002DA2FE /* IconUltils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconUltils.swift; sourceTree = "<group>"; };
@@ -613,7 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				820925C123EE440500CFF991 /* NotificationCenter.swift */,
-				82A5B7D1232A73FF009AC33C /* Extensions.swift */,
+				82A5B7D1232A73FF009AC33C /* String.swift */,
 				82CB9FD223EC60FA0062E350 /* UIView.swift */,
 				82FE2E8D23E3BB4500C8EB96 /* UITextField.swift */,
 				8285005C23E4A13D00F2B9FE /* UIColor.swift */,
@@ -876,7 +876,7 @@
 				82CB9FD323EC60FA0062E350 /* UIView.swift in Sources */,
 				82CB9FD523EC61350062E350 /* CustomUIButton.swift in Sources */,
 				820AE2A223E8247600321834 /* ActionCellViewModel.swift in Sources */,
-				82A5B7D2232A73FF009AC33C /* Extensions.swift in Sources */,
+				82A5B7D2232A73FF009AC33C /* String.swift in Sources */,
 				86CC746622CFDD0D00D5174E /* PrayerHandler.swift in Sources */,
 				8265181E23E575850035E91E /* EventManager.swift in Sources */,
 				827EB45C23DD0A0200F8C3E1 /* PrayerCellDataSource.swift in Sources */,
@@ -1065,7 +1065,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				INFOPLIST_FILE = PropositoClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1073,6 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = maatheusgois.PropositoClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1085,7 +1086,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				INFOPLIST_FILE = PropositoClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
@@ -1093,6 +1094,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = maatheusgois.PropositoClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

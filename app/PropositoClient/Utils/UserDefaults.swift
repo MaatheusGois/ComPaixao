@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct IClodNotification {
+struct ICloudNotification {
     static let key = "icloud"
     static var isOn: Bool {
         get {

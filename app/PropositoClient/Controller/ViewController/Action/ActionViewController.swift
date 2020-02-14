@@ -64,12 +64,15 @@ class ActionViewController: UIViewController {
     }
     func setupDate() {
         date.minimumDate = Date()
+        date.date = Date()
         date.subviews[0].subviews[1].backgroundColor = .primary
         date.subviews[0].subviews[2].backgroundColor = .primary
         date.subviews[0].subviews[1].alpha = 0.2
         date.subviews[0].subviews[2].alpha = 0.2
     }
     func setupTime() {
+        time.minimumDate = Date()
+        time.date = Date()
         time.subviews[0].subviews[1].backgroundColor = .primary
         time.subviews[0].subviews[2].backgroundColor = .primary
         time.subviews[0].subviews[1].alpha = 0.2
@@ -135,9 +138,11 @@ class ActionViewController: UIViewController {
     }
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         dateTime = sender.date
+        time.date = dateTime
     }
     @IBAction func timePickerChanged(_ sender: UIDatePicker) {
         dateTime = sender.date
+        date.date = dateTime
     }
     @IBAction func notificationChanged(_ sender: UISwitch) {
         if sender.isOn { Notification.getAuthorization() }
