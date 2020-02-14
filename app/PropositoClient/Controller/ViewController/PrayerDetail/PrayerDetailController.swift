@@ -41,6 +41,7 @@ class PrayerDetailController: UIViewController {
             case .error(let description):
                 print(description)
             case .success(let actions):
+                self.actionCellDataSource.filterBy = .all
                 self.actionCellDataSource.setActions(actions: actions)
             }
         }

@@ -51,10 +51,14 @@ class PrayerAllCellDataSource: NSObject, UICollectionViewDataSource {
             cell.nameLabel?.text = prayerViewModel.name
             cell.subjectLabel?.text = prayerViewModel.subject
             cell.descriptionLabel?.text = prayerViewModel.detailTextString
+            DispatchQueue.main.async {
+                prayerViewModel.updateAction(prayer: self.prayers[indexPath.row]) { (_) in
+                    cell.descriptionLabel?.text = prayerViewModel.detailTextString
+                }
+            }
             cell.image?.image = prayerViewModel.image
             return cell
         }
-        
         return UICollectionViewCell()
     }
 }

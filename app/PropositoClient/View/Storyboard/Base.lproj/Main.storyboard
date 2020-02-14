@@ -2693,7 +2693,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Lkq-qw-Mj8">
-                                <rect key="frame" x="0.0" y="-38" width="414" height="884"/>
+                                <rect key="frame" x="0.0" y="-38" width="414" height="884.00000000000182"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="250" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWg-Ep-Sr5">
                                 <rect key="frame" x="0.0" y="-60" width="414" height="908"/>
@@ -2710,16 +2710,16 @@
                                                 <state key="normal" image="back_button"/>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ET1-yg-mJP">
-                                                <rect key="frame" x="20" y="171" width="111.5" height="80"/>
+                                                <rect key="frame" x="20" y="171" width="117.5" height="68"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-CY-eE9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="34"/>
                                                         <fontDescription key="fontDescription" name="CentraleSans-Bold" family="Centrale Sans Bold" pointSize="34"/>
                                                         <color key="textColor" name="primary"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oração" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="607-5J-BJh">
-                                                        <rect key="frame" x="0.0" y="40" width="111.5" height="40"/>
+                                                        <rect key="frame" x="0.0" y="34" width="117.5" height="34"/>
                                                         <fontDescription key="fontDescription" name="CentraleSans-XThin" family="Centrale Sans XThin" pointSize="34"/>
                                                         <color key="textColor" name="primary"/>
                                                         <nil key="highlightedColor"/>
@@ -2730,7 +2730,7 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ilustration_allprayers" translatesAutoresizingMaskIntoConstraints="NO" id="p72-zX-Cex">
-                                                <rect key="frame" x="237" y="46" width="170" height="222"/>
+                                                <rect key="frame" x="237" y="46" width="170.00000000000045" height="222"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="222" id="F5a-In-rqg"/>
                                                     <constraint firstAttribute="width" constant="170" id="PYk-Ir-TwO"/>
@@ -2746,15 +2746,22 @@
                                                             <constraint firstAttribute="height" constant="24" id="yx2-z4-LPy"/>
                                                         </constraints>
                                                         <state key="normal" image="button_add"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkS-Rs-b9U">
+                                                        <rect key="frame" x="358" y="-12" width="48" height="48"/>
                                                         <connections>
-                                                            <action selector="add:" destination="hA7-qW-w1a" eventType="touchDown" id="mCL-oh-ADN"/>
-                                                            <segue destination="ZJi-k4-qex" kind="presentation" id="fHp-dS-3eJ"/>
+                                                            <action selector="add:" destination="hA7-qW-w1a" eventType="touchUpInside" id="GFa-jv-LZ8"/>
+                                                            <segue destination="N09-Ep-maN" kind="presentation" id="IWT-Rp-YLO"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="lkS-Rs-b9U" firstAttribute="height" secondItem="IAJ-5P-XUE" secondAttribute="height" multiplier="2" id="6jH-bT-oO1"/>
                                                     <constraint firstItem="IAJ-5P-XUE" firstAttribute="centerY" secondItem="9Q2-Qf-9A3" secondAttribute="centerY" id="FxM-mH-Peh"/>
+                                                    <constraint firstItem="lkS-Rs-b9U" firstAttribute="centerX" secondItem="IAJ-5P-XUE" secondAttribute="centerX" id="Ge9-oI-gdS"/>
+                                                    <constraint firstItem="lkS-Rs-b9U" firstAttribute="width" secondItem="IAJ-5P-XUE" secondAttribute="width" multiplier="2" id="JFN-9o-n7H"/>
+                                                    <constraint firstItem="lkS-Rs-b9U" firstAttribute="centerY" secondItem="IAJ-5P-XUE" secondAttribute="centerY" id="Ymm-44-bzo"/>
                                                     <constraint firstAttribute="bottom" secondItem="IAJ-5P-XUE" secondAttribute="bottom" id="jwm-h9-OkW"/>
                                                     <constraint firstAttribute="trailing" secondItem="IAJ-5P-XUE" secondAttribute="trailing" constant="20" id="zRQ-7W-deR"/>
                                                 </constraints>
@@ -3301,7 +3308,7 @@
         <image name="ilustration_allprayers" width="1700" height="2224"/>
         <image name="ilustration_config" width="1270" height="2570"/>
         <image name="ilustration_prayer" width="1240" height="2450"/>
-        <image name="list" width="400" height="324"/>
+        <image name="list" width="200" height="166"/>
         <image name="person_ilustration_01" width="2370" height="2270"/>
         <image name="person_ilustration_02" width="2370" height="2270"/>
         <image name="person_ilustration_04" width="2370" height="2270"/>
@@ -3329,8 +3336,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="k2g-29-Wwb"/>
-        <segue reference="qQH-dB-cg5"/>
-        <segue reference="cRT-oC-NBd"/>
+        <segue reference="r69-wV-9O8"/>
+        <segue reference="IWT-Rp-YLO"/>
         <segue reference="xUM-p4-WIT"/>
     </inferredMetricsTieBreakers>
 </document>

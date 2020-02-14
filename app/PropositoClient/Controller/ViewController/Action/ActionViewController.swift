@@ -35,9 +35,9 @@ class ActionViewController: UIViewController {
     var action: Action!
     var isUpdate = false
     var tap: UITapGestureRecognizer!
+    var swipe: UISwipeGestureRecognizer!
     var prayID = ""
     var isAdd = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -244,6 +244,7 @@ class ActionViewController: UIViewController {
     // MARK: - Keyboard
     func setupKeyboard() {
         tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        swipe = UISwipeGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
             name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -255,11 +256,13 @@ class ActionViewController: UIViewController {
     private func keyboardWillShow(sender: NSNotification) {
         view.frame.origin.y = -150
         view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(swipe)
     }
     @objc
     private func keyboardWillHide(sender: NSNotification) {
         view.frame.origin.y = 0
         view.removeGestureRecognizer(tap)
+        view.removeGestureRecognizer(swipe)
     }
     @objc
     private func dismissKeyboard() {

@@ -54,6 +54,7 @@ class ActionHandler {
     }
     static func done(uuid: String, withCompletion completion: (ActionUpdateResponse) -> Void) {
         do {
+            Notification.disable(with: uuid)
             var action = try ActionDAO.shared.readOne(uuid: uuid)
             action.completed = true
             try ActionDAO.shared.update(entity: action)
@@ -65,6 +66,7 @@ class ActionHandler {
     static func delete(act: Action, withCompletion
         completion: (ActionUpdateResponse) -> Void) {
         do {
+            Notification.disable(with: act.uuid)
             try ActionDAO.shared.delete(uuid: act.uuid)
             if let uuid = act.prayID {
                 var prayer = try PrayerDAO.shared.readOne(uuid: uuid)

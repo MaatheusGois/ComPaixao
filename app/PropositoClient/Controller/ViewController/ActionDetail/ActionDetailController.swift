@@ -52,15 +52,14 @@ class ActionDetailController: UIViewController {
     // MARK: - Actions
     @IBAction func finish(_ sender: Any? = nil) {
         generatorImpact()
-        action.completed = true //Make action done
-        ActionHandler.update(act: action) { (response) in
+        ActionHandler.done(uuid: action.uuid) { (response) in
             switch response {
             case .error(let description):
                 NSLog(description)
             case .success(_:):
                 DispatchQueue.main.async {
-                self.close()
-                EventManager.shared.trigger(eventName: "reloadAction")
+                    self.close()
+                    EventManager.shared.trigger(eventName: "reloadAction")
                 }
             }
         }

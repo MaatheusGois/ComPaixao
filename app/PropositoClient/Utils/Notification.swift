@@ -39,4 +39,9 @@ struct Notification {
         center.removeAllPendingNotificationRequests()
         center.removeAllDeliveredNotifications()
     }
+    static func disable(with id: String) {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+        center.removeDeliveredNotifications(withIdentifiers: [id])
+    }
 }

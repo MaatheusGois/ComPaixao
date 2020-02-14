@@ -127,8 +127,10 @@ class PrayerHandler {
         do {
             var prayer = pray
             prayer.answered = true
+            Notification.disable(with: prayer.uuid)
             try PrayerDAO.shared.update(entity: prayer)
             for actionUUID in prayer.actions {
+                Notification.disable(with: actionUUID)
                 var action = try ActionDAO.shared.readOne(uuid: actionUUID)
                 action.completed = true
                 try ActionDAO.shared.update(entity: action)
@@ -141,8 +143,10 @@ class PrayerHandler {
     static func delete(pray: Prayer, withCompletion
                                      completion: (PrayerUpdateResponse) -> Void) {
         do {
+            Notification.disable(with: pray.uuid)
             try PrayerDAO.shared.delete(uuid: pray.uuid)
             for actionUUID in pray.actions {
+                Notification.disable(with: actionUUID)
                 try ActionDAO.shared.delete(uuid: actionUUID)
             }
             completion(PrayerUpdateResponse.success(prayer: pray))
