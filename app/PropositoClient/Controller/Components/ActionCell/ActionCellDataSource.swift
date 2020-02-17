@@ -22,18 +22,22 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
     weak var collectionView: UICollectionView?
     weak var delegate: ActionCellDelegate?
     var filterBy = Filter.today
-    func setup(collectionView: UICollectionView, viewController: UIViewController) {
+    func setup(collectionView: UICollectionView,
+               viewController: UIViewController,
+               delegate: ActionCellDelegate) {
         self.viewController = viewController
         self.collectionView = collectionView
+        self.delegate = delegate
         setupCollection(collectionView: collectionView)
     }
     func setupCollection(collectionView: UICollectionView) {
+        
         collectionView.dataSource = self
         let cell = UINib(nibName: "ActionCell", bundle: nil)
         collectionView.register(cell, forCellWithReuseIdentifier: "ActionCell")
     }
-    func fetch(delegate: ActionCellDelegate) {
-        self.delegate = delegate
+    func fetch() {
+        
         ActionHandler.getAll { (response) in
             switch response {
             case .error(let description):

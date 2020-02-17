@@ -33,7 +33,7 @@ class PrayerDetailController: UIViewController {
     }
     func setupAction() {
         actionCellDelegate.setup(collectionView: collectionView, viewController: self)
-        actionCellDataSource.setup(collectionView: collectionView, viewController: self)
+        actionCellDataSource.setup(collectionView: collectionView, viewController: self, delegate: actionCellDelegate)
     }
     func setupActions() {
         PrayerHandler.getActions(uuid: prayer.uuid) { (response) in

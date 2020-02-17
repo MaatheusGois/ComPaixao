@@ -54,8 +54,8 @@ class MainController: UIViewController {
     }
     func setupAction() {
         actionCellDelegate.setup(collectionView: actionCollectionView, viewController: self)
-        actionCellDataSource.setup(collectionView: actionCollectionView, viewController: self)
-        actionCellDataSource.fetch(delegate: actionCellDelegate)
+        actionCellDataSource.setup(collectionView: actionCollectionView, viewController: self, delegate: actionCellDelegate)
+        actionCellDataSource.fetch()
     }
     func setupFilter() {
         filterCellDataSource.setup(collectionView: filterCollectionView)
@@ -80,7 +80,7 @@ class MainController: UIViewController {
             self.prayerCellDataSource.fetch(delegate: self.prayerCellDelegate)
         }
         EventManager.shared.listenTo(eventName: "reloadAction") {
-            self.actionCellDataSource.fetch(delegate: self.actionCellDelegate)
+            self.actionCellDataSource.fetch()
         }
         EventManager.shared.listenTo(eventName: "toPrayerDetail") { sender in
             self.performSegue(withIdentifier: "toPrayerDetail", sender: sender)
