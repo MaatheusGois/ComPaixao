@@ -9,11 +9,11 @@
 import UIKit
 
 class RepeatCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     var options = ["diariamente", "semanalmente", "mensalmente", "anualmente"]
     var selected = 0
     weak var viewController: UIViewController?
     weak var collectionView: UICollectionView?
+    
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         collectionView.delegate = self
         self.viewController = viewController
