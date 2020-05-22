@@ -7,7 +7,7 @@
   <a href="https://github.com/MaatheusGois/ComPaixao/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/MaatheusGois/ComPaixao/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/MaatheusGois/ComPaixao/blob/develop/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/MaatheusGois/ComPaixao" />
   </a>
 </p>
@@ -35,7 +35,7 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/MaatheusGois/ComPaixao/issues). You can also take a look at the [contributing guide](https://github.com/MaatheusGois/ComPaixao/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/MaatheusGois/ComPaixao/issues). You can also take a look at the [contributing guide](https://github.com/MaatheusGois/ComPaixao/blob/develop/CONTRIBUTING.md).
 
 ## Show your support
 
@@ -44,7 +44,7 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2020 [Matheus Gois <matheusgoislimasilva@gmail.com>](https://github.com/MaatheusGois).<br />
-This project is [MIT](https://github.com/MaatheusGois/ComPaixao/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/MaatheusGois/ComPaixao/blob/develop/LICENSE) licensed.
 
 ***
 _For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. 🙌🏻 John 3:16 [read-the-bible](https://biblia.com/bible/esv/john/3/16)_
