@@ -13,7 +13,7 @@ class RepeatCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
     var selected = 0
     weak var viewController: UIViewController?
     weak var collectionView: UICollectionView?
-    
+
     func setup(collectionView: UICollectionView, viewController: UIViewController) {
         collectionView.delegate = self
         self.viewController = viewController

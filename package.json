@@ -1,0 +1,23 @@
+{
+  "name": "ComPaixao",
+  "version": "1.0.0",
+  "description": "**ComPaixão** is a project inspired in the movie \"I'm Not Ashamed\" for the Kingdom of Jesus.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaatheusGois/ComPaixao.git"
+  },
+  "keywords": [],
+  "author": "Matheus Gois <matheusgoislimasilva@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaatheusGois/ComPaixao/issues"
+  },
+  "homepage": "https://github.com/MaatheusGois/ComPaixao#readme"
+}

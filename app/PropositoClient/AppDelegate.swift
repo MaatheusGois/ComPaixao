@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Switcher.updateRootVC()
         sleep(1)
         UIApplication.shared.applicationIconBadgeNumber = 0
+        UserDefaults.standard.register(defaults: ["SoundActive" : true])
         return true
     }
     func applicationWillResignActive(_ application: UIApplication) { }

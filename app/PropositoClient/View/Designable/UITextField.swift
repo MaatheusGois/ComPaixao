@@ -20,7 +20,7 @@ extension UITextField {
         self.leftViewMode = .always
         self.layer.masksToBounds = true
 
-        switch padding {    
+        switch padding {
         case .left(let spacing):
             let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: spacing, height: self.frame.height))
             self.leftView = paddingView

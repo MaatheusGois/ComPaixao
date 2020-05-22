@@ -12,7 +12,7 @@ class ChapterDAO: GenericDAO {
     typealias T = Chapter
     static let shared: ChapterDAO = ChapterDAO()
     private init() {}
-    
+
     func create(newEntity: Chapter) throws {
         throw DAOError.internalError(description: "Not implemented")
     }

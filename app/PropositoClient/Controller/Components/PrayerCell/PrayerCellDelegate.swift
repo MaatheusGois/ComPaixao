@@ -36,7 +36,7 @@ class PrayerCellDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDe
         if verify {
             toPrayerDetail(index: indexPath.row)
         } else {
-            toAllPrayers() 
+            toAllPrayers()
         }
         generatorImpact()
     }

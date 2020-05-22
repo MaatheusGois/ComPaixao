@@ -31,13 +31,13 @@ class ActionCellDataSource: NSObject, UICollectionViewDataSource {
         setupCollection(collectionView: collectionView)
     }
     func setupCollection(collectionView: UICollectionView) {
-        
+
         collectionView.dataSource = self
         let cell = UINib(nibName: "ActionCell", bundle: nil)
         collectionView.register(cell, forCellWithReuseIdentifier: "ActionCell")
     }
     func fetch() {
-        
+
         ActionHandler.getAll { (response) in
             switch response {
             case .error(let description):

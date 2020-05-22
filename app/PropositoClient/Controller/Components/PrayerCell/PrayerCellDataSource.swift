@@ -11,7 +11,7 @@ import UIKit
 class PrayerCellDataSource: NSObject, UICollectionViewDataSource {
     var prayers: Prayers
     weak var viewController: UIViewController?
-    
+
     init(prayers: Prayers) {
         self.prayers = prayers
     }

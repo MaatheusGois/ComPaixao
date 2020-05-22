@@ -29,7 +29,7 @@ struct Notification {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         appDelegate.notificationCenter.requestAuthorization(options: options) {
-            ( didAllow, error ) in
+            ( didAllow, _ ) in
             PrayerNotification.isOn = didAllow
             ActionNotification.isOn = didAllow
         }

@@ -27,7 +27,7 @@ class ImageProfileCellDelegate: NSObject, UICollectionViewDelegate, UICollection
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout, 
+                        layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets (top: 0, left: 20, bottom: 0, right: 20)
     }
