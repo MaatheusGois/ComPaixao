@@ -16,26 +16,20 @@
 
 <p><img alt="Preview" src="./preview.png"/></p>
 
-### 🏠 [Homepage](https://github.com/MaatheusGois/ComPaixao#readme)
-
 ## Author
 
 👤 **Matheus Gois <matheusgoislimasilva@gmail.com>**
 
-* Website: www.linkedin.com/in/maatheusgois/
+* website: www.maatheusgois.ninja
 
-* Twitter: [@maatheusgois](https://twitter.com/maatheusgois)
+* twitter: [@maatheusgois](https://twitter.com/maatheusgois)
 
-* GitHub: [@maatheusgois](https://github.com/maatheusgois)  
+* gitHub: [@maatheusgois](https://github.com/maatheusgois)  
 
-* LinkedIn: [@maatheusgois](https://linkedin.com/in/maatheusgois)
+* kinkedIn: [@maatheusgois](https://linkedin.com/in/maatheusgois)
 
-* Dribbble: [@maatheusgois](https://dribbble.com/maatheusgois)
+* dribbble: [@maatheusgois](https://dribbble.com/maatheusgois)
 
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/MaatheusGois/ComPaixao/issues). You can also take a look at the [contributing guide](https://github.com/MaatheusGois/ComPaixao/blob/develop/CONTRIBUTING.md).
 
 ## Show your support
 
