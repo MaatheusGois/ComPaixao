@@ -11,3 +11,17 @@
     <img alt="License: MIT" src="https://img.shields.io/github/license/MaatheusGois/ComPaixao" />
   </a>
 </p>
+
+**ComPaixão** is a project inspired in the movie &#34;I'm Not Ashamed&#34; for the Kingdom of Jesus.
+ <p><img alt="Preview" src="./preview.png"/></p>
+
+ ## 📝 License
+
+ Copyright © 2020 [Matheus Gois <matheusgoislimasilva@gmail.com>](https://github.com/MaatheusGois).<br />
+ This project is [MIT](https://github.com/MaatheusGois/ComPaixao/blob/develop/LICENSE) licensed.
+
+ ***
+ 
+ _For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life. 🙌🏻 John 3:16 [read-the-bible](https://biblia.com/bible/esv/john/3/16)_
+
+ _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
